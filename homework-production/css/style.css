@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600i,900|Roboto:300,400,700,900');
+* {
+    padding:          0;
+    margin:           0;
+    border:           0;
+    font-size:        18px;
+    color:            #303030;
+    background-color: transparent;
+    text-decoration:  none;
+    list-style-type:  none;
+    transition:       all .1s ease-in;
+    font-family:      Raleway, sans-serif;
+    font-weight:      400;
+    -webkit-box-sizing:       border-box;
+    -moz-box-sizing:       border-box;
+    box-sizing:       border-box;
+}
 body {
     background: #f0f1f2;
     font-family: Arial, sans-serif;
@@ -33,7 +50,7 @@ main .inner {
     background-size: 70%;
 }
 .s1 {
-    height: 650px;
+    font-family: Roboto, sans-serif;
 }
 .s1 > div {
     width: 50%;
@@ -41,8 +58,9 @@ main .inner {
 }
 .s1 h1 {
     font-size: 130px;
-    margin: 50px -6px 0;
+    margin: 50px 0 0;
     color: #303030;
+    font-weight: bold;
 }
 .s1 .slider {
     padding: 90px 12px;
@@ -61,8 +79,10 @@ main .inner {
 .s2 {
     height: 1100px;
     background: #ffffff;
+    padding-top: 1px;
+    font-family: Roboto, sans-serif;
 }
-.s2 .text {
+.s2 .s2-text {
     text-align: center;
     width: 60%;
     margin: 0 auto;
@@ -74,7 +94,7 @@ main .inner {
     font-size: 50px;
     font-weight: bold;
 }
-.s2 .text img {
+.s2 .s2-text img {
     padding-top: 5px;
 }
 .img {
@@ -148,6 +168,55 @@ main .inner {
     -webkit-background-size: cover;
     background-size: cover;
 }
+.s3 {
+    height: 380px;
+    margin: 0 auto;
+    font-family: Roboto, sans-serif;
+}
+.s3 .s3-text {
+    text-align: center;
+    width: 60%;
+    color: #303030;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+.s3 h2 {
+    padding-top: 50px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.s3 .form {
+    text-align: center;
+    font-size: 0;
+}
+input[type=email] {
+    width: 500px;
+    height: 73px;
+    margin: -4px;
+    padding: 25px 30px;
+    border-radius: 36px 0 0 36px;
+    background: #ffffff;
+    color: #989898;
+    font-style: italic;
+    font-weight: 600;
+}
+input[type=submit] {
+    width: 210px;
+    height: 73px;
+    padding: 25px 55px;
+    border-radius: 0 36px 36px 0;
+    background: #e10011;
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background: #ff0012;
+}
 section > div > a {
     text-decoration: none;
     color: #E10010;
@@ -159,11 +228,15 @@ a {
     color: #303030;
     font-size: 18px;
 }
+a:hover {
+    color: #c10011;
+    text-shadow: 0 0 1px #c10011;
+}
 p {
     color: #303030;
     line-height: 1.4;
     font-size: 20px;
-    margin: 0 0 10px;
+    margin: 0 0 25px;
 }
 .f1 {
     height: 35px;
@@ -174,6 +247,23 @@ p {
 .f1 span {
     color: #303030;
 }
-.s3 {
-    height: 400px;
+footer {
+    text-align: center;
+}
+footer a {
+    margin-left: 15px;
+}
+footer a > img {
+    margin-top: 60px;
+    -webkit-transform: translate3d(0,-50%,0) scale(1);
+    transform: translate3d(0,-50%,0) scale(1);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+footer a > img:hover {
+    -webkit-transform: translate3d(0,-50%,0) scale(1.2);
+    transform: translate3d(0,-50%,0) scale(1.2);
+}
+footer .f1 {
+    color: #aeaeae;
 }
