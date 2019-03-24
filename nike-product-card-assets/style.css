@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    /*background: linear-gradient(to right, #663E97, #AC72AF), url("img/bg_t.jpg");*/
+    background: url("img/bg_t.jpg"), linear-gradient(to right, #663E97, #AC72AF);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.inner {
+    width: 960px;
+    margin: 0 auto;
+}
+.inner:before,
+.inner:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.header {
+
+}
+.header__logo {
+    font-size: 50px;
+    text-decoration: none;
+}
+.menu--mt {
+    margin-top: 40px;
+}
+.menu--right {
+    float: right;
+}
+.menu__item {
+    margin: 50px;
+}
+.menu__item--last-item {
+    margin-right: 0;
+}
+.menu__item--black {
+    color: #000000;
+}
