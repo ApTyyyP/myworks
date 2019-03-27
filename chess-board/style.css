@@ -1,4 +1,4 @@
-﻿body {
+body {
     margin: 0;
     padding: 0;
     background: url(img/bg.jpg) no-repeat;
@@ -16,13 +16,10 @@
 }
 
 #chess div {
+    background: linear-gradient(to top, #44231A, #47271C);
     float: left;
     width: 80px;
     height: 80px;
-}
-
-#chess div {
-    background: linear-gradient(to top, #E2B961, #E4BD5D);
 }
 
 #chess div:nth-child(1), #chess div:nth-child(3), #chess div:nth-child(5), #chess div:nth-child(7),
@@ -34,7 +31,24 @@
 #chess div:nth-child(49), #chess div:nth-child(51), #chess div:nth-child(53), #chess div:nth-child(55),
 #chess div:nth-child(58), #chess div:nth-child(60), #chess div:nth-child(62), #chess div:nth-child(64)
 {
-    background: linear-gradient(to top, #44231A, #47271C);
+    background: linear-gradient(to top, #E2B961, #E4BD5D);
+}
+
+#chess div.white {
+    background: white;
+}
+
+#chess div.black {
+    background: black;
+}
+
+#chess div.white,
+#chess div.black {
+    margin: 10%;
+    background-size: cover;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
 }
 
 .text {
@@ -46,14 +60,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #44231A;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background: linear-gradient(to top, #E2B961, #E4BD5D);
+}
+
+.bottom, .left, .right {
+    position: absolute;
+    bottom: 45px;
+    margin: 0;
 }
 
 .top {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
 }
 
 .top div {
@@ -63,7 +83,10 @@
     font-size: 30px;
 }
 
-.top ul {
+.top ul,
+.bottom ul,
+.left ul,
+.right ul {
     margin: 0;
     padding: 0;
 }
@@ -76,24 +99,11 @@
     transform: rotate(180deg);
 }
 
-.bottom {
-    position: absolute;
-    bottom: 45px;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-}
-
 .bottom div {
     width: 640px;
     position: absolute;
     left: 45px;
     font-size: 30px;
-}
-
-.bottom ul {
-    margin: 0;
-    padding: 0;
 }
 
 .bottom li {
@@ -103,21 +113,9 @@
     text-align: center;
 }
 
-.left {
-    position: absolute;
-    top: 45px;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-}
-
-.left div {
+.left div,
+.right div {
     font-size: 30px;
-}
-
-.left ul {
-    margin: 0;
-    padding: 0;
 }
 
 .left li {
@@ -128,21 +126,8 @@
 }
 
 .right {
-    position: absolute;
     top: 45px;
     right: 0;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-}
-
-.right div {
-    font-size: 30px;
-}
-
-.right ul {
-    margin: 0;
     padding: 0;
 }
 
@@ -151,22 +136,4 @@
     padding-top: 45px;
     text-align: center;
     transform: rotate(90deg);
-}
-
-#chess div.white {
-    background: white;
-    margin: 0;
-    background-size: cover;
-    border-radius: 50%;
-    width: 10%;
-    height: 10%;
-}
-
-#chess div.black {
-    background: black;
-    margin: 0;
-    background-size: cover;
-    border-radius: 50%;
-    width: 10%;
-    height: 10%;
 }
