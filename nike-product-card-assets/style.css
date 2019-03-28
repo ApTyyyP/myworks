@@ -14,7 +14,7 @@ body {
 .header {
     width: 876px;
     height: 627px;
-    background:  url("img/bg_t1.jpg") center no-repeat;
+    background:  url("img/bg_t.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     position: absolute;
