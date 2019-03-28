@@ -31,6 +31,7 @@ body {
     text-decoration: none;
 }
 .menu--mt {
+    font-family: 'Roboto', sans-serif;
     margin: 30px 60px;
     font-size: 13px;
 }
