@@ -129,7 +129,7 @@ main .inner {
     height: 47.3%;
     border-radius: 5px;
     margin-top: 3%;
-    background: url("../img/layer_1.jpg");
+    background: url("../img/layer_1.jpg"), url("../img/layer_2.jpg");
     -webkit-background-size: cover;
     background-size: cover;
 }
