@@ -12,12 +12,11 @@ body {
     clear: both;
 }
 .header {
-    /*background:  url("img/bg_t1.jpg") center no-repeat, linear-gradient(to right, #663E97, #AC72AF)*/
-    width: 876px;
-    height: 627px;
-    background:  url("img/bg_t.jpg") center no-repeat;
+    background:  url("../img/bg_t.png") center no-repeat, linear-gradient(to right, #663E97, #AC72AF);
     -webkit-background-size: cover;
     background-size: cover;
+    width: 876px;
+    height: 627px;
     position: absolute;
     top: 0;
     right: 0;
@@ -55,6 +54,22 @@ body {
 .menu__item--last-item:hover {
     border-bottom: 0;
 }
-.menu__item--black {
-    color: #000000;
+.block {
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    height: 500px;
+}
+.block-1 {
+    padding-top: 50px;
+    width: 92%;
+    height: 60%;
+    background: #ffffff;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
