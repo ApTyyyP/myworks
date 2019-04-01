@@ -57,19 +57,75 @@ body {
 .block {
     margin: 0;
     padding: 0;
-    width: 700px;
-    height: 500px;
 }
-.block-1 {
-    padding-top: 50px;
-    width: 92%;
+.block__block-1 {
+    width: 91%;
     height: 60%;
     background: #ffffff;
-    opacity: .5;
+    opacity: .3;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
+}
+
+.block__block-2 {
+    width: 88%;
+    height: 63%;
+    background: #ffffff;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.block__block-3 {
+    width: 85%;
+    height: 67%;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-size: 0;
+}
+
+.block__block-3:before,
+.block__block-3:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.block__block-3--left {
+    float: left;
+    width: 66%;
+    height: 100%;
+    background: #ffffff;
+    cursor: crosshair;
+        background: url('../img/bg_cross.png') no-repeat;
+    background-size: cover;
+}
+
+.block__block-3--img-1 {
+    padding: 37px 0 0 41px;
+}
+
+.block__block-3--img-2 {
+    margin: 18px;
+    text-align: center;
+}
+
+.block__block-3--right {
+    float: right;
+    width: 34%;
+    height: 100%;
+    background: #ffffff;
 }
