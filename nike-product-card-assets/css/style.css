@@ -141,7 +141,7 @@ body {
 
 .block__block-3--right-block-1 {
     margin: 43px 33px 74px 31px;
-    height: 72.3%;
+    height: 70%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -159,4 +159,58 @@ body {
     margin: 0;
     padding: 0;
     font-size: 14px;
+}
+
+.bl-3-2 {
+    margin: 0;
+    padding: 0;
+}
+
+.bl-3-2  h1 {
+    margin: 5px auto;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.bl-3-2  span {
+    color: #5e4fff;
+}
+
+.bl-3-3 {
+    display: flex;
+    align-items: baseline;
+    margin: 10px auto;
+    height: 14px;
+}
+
+.bl-3-3 span {
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bl-3-3__form {
+    float: left;
+    margin: 0 15px;
+}
+
+.stars input {
+    display: none;
+}
+.stars input + label {
+    float: right;
+    border: 0;
+    margin: 0 3px;
+    width: 14px;
+    height: 14px;
+    background: url('../img/starempty.png') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    background: url('../img/starfull.png') no-repeat;
+    background-size: cover;
 }
