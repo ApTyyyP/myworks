@@ -138,6 +138,7 @@ body {
     width: 34%;
     height: 100%;
     background: #ffffff;
+    letter-spacing: 0.01px;
 }
 
 .block__block-3--right-block-1 {
@@ -182,7 +183,6 @@ body {
     display: flex;
     align-items: baseline;
     margin: 10px auto;
-    height: 14px;
 }
 
 .bl-3-3 span {
@@ -214,4 +214,9 @@ body {
 .stars label:hover ~ label {
     background: url('../img/starfull.png') no-repeat;
     background-size: cover;
+}
+
+.bl-3-4__sena {
+    padding: 10px 0;
+    font-size: 22px;
 }
