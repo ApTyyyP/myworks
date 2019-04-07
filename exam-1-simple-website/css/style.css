@@ -27,7 +27,7 @@ a:hover {
     width: 10em;
     height: 3em;
     margin: 2px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     font-size: 0.8em;
     cursor: pointer;
 }
@@ -83,11 +83,11 @@ header {
     height: 100%;
     border: none;
     text-align: center;
-    font-family: "Josefin Sans";
+    font-family: "Josefin Sans", sans-serif;
     color: #bbb;
 }
 .header_title-btn {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     text-align: center;
 }
@@ -128,7 +128,7 @@ header {
     font-size: 0.8em;
 }
 .logo_nav a {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
     display: inline-block;
     margin: 10px;
 }
