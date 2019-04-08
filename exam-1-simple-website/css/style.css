@@ -37,6 +37,12 @@ a:hover {
 .btn_effect:hover {
     background: #000000;
 }
+.title_h2 {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 3em;
+    text-align: center;
+}
 header {
     min-height: 100vh;
     height: 100vh;
@@ -86,6 +92,7 @@ header {
     font-family: "Josefin Sans", serif;
     color: #bbb;
 }
+
 .header_title-btn {
     font-family: "Montserrat", serif;
     font-weight: 400;
@@ -110,9 +117,12 @@ header {
     transform: scale(1.03);
     opacity: .5;
 }
+.scr {
+    font-weight: 700;
+    /*font-family: "Myriad Pro", sans-serif;*/
+}
 .scroll-down::before {
     content: "\f063";
-    /*font-family: "Myriad Pro", sans-serif;*/
 }
 .scroll-down {
     margin-bottom: 2em;
@@ -134,7 +144,104 @@ header {
     display: inline-block;
     margin: 10px;
 }
+/*---------------------*/
 .nav-content {
     min-height: 4em;
     height: 4em;
+}
+/*---------------------*/
+/*---sl2---*/
+.sl2_us {
+    background: url("../img/sl2_bg.png") no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.sl2_us ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.sl2_us li {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 5%;
+}
+.sl2_us li:nth-child(1) {
+    justify-content: center;
+}
+.sl2_us li:nth-child(2) {
+    justify-content: center;
+}
+.sl2_us h2 {
+    margin-bottom: 1.2em;
+    text-align: left;
+}
+.sl2_us p {
+    font-family: "Josefin Sans";
+    font-size: 0.9em;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+}
+.sl2_buttons {
+    width: 11em;
+    height: 4em;
+    border-radius: 3px;
+}
+.sl2_us img {
+    width: 20em;
+    margin: 2.5px;
+}
+.sl2_us img:nth-child(2) {
+    align-self: center;
+}
+/*---------------------*/
+/*---ICONS---*/
+.icons {
+    height: 19em;
+    background: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icons-line {
+    padding-top: 2em;
+    width: 65%;
+}
+.icons-line img {
+    width: 100%;
+}
+.icons ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 2em;
+}
+.icons li {
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+.icons p {
+    font-family: "Josefin Sans";
+    font-size: 2em;
+}
+.ico {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+.scs.sc-search::before {
+    content: "\f002";
+    color: #4d67d5;
+}
+.scr.sc-check-circle::before {
+    content: "\f058";
+    color: #ff6363;
+}
+.scr.sc-thumbs-up {
+    content: "\f164";
+    color: #00a2ff;
 }
