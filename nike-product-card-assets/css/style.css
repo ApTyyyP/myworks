@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400');
+
 body {
     margin: 0;
     padding: 0;
 }
+
+a {
+    transition: all .3s ease-in;
+}
+
 .inner {
     width: 100%;
 }
@@ -11,6 +18,7 @@ body {
     display: block;
     clear: both;
 }
+
 .header {
     background:  url("../img/bg_t.png") center no-repeat, linear-gradient(to right, #663E97, #AC72AF);
     -webkit-background-size: cover;
@@ -29,6 +37,7 @@ body {
     font-size: 46px;
     text-decoration: none;
 }
+
 .menu--mt {
     font-family: 'Roboto', sans-serif;
     margin: 30px 60px;
@@ -39,12 +48,14 @@ body {
     float: right;
 }
 .menu__item {
+    font: 300 12px Roboto, sans-serif;
     margin-left: 50px;
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
+    border-bottom: 2px solid transparent;
 }
-.menu__item:hover {
+.menu__item--hover:hover {
     border-bottom: 2px solid white;
 }
 .menu__item--last-item {
@@ -52,8 +63,9 @@ body {
     vertical-align: -webkit-baseline-middle;
 }
 .menu__item--last-item:hover {
-    border-bottom: 0;
+    border-bottom: 2px solid transparent;
 }
+
 .block {
     margin: 0;
     padding: 0;
@@ -70,7 +82,6 @@ body {
     left: 0;
     margin: auto;
 }
-
 .block__block-2 {
     width: 88%;
     height: 63%;
@@ -83,7 +94,6 @@ body {
     left: 0;
     margin: auto;
 }
-
 .block__block-3 {
     width: 85%;
     height: 67%;
@@ -96,14 +106,12 @@ body {
     margin: auto;
     font-size: 0;
 }
-
 .block__block-3:before,
 .block__block-3:after {
     content: '';
     display: block;
     clear: both;
 }
-
 .block__block-3--img-close {
     background: url('../img/btn_close.png');
     width: 16px;
@@ -113,7 +121,6 @@ body {
     right: 0;
     cursor: pointer;
 }
-
 .block__block-3--left {
     float: left;
     width: 66%;
@@ -123,16 +130,13 @@ body {
         background: url('../img/bg_cross.png') no-repeat;
     background-size: cover;
 }
-
 .block__block-3--img-1 {
     padding: 37px 0 0 41px;
 }
-
 .block__block-3--img-2 {
     margin: 18px;
     text-align: center;
 }
-
 .block__block-3--right {
     float: right;
     width: 34%;
@@ -140,13 +144,11 @@ body {
     background: #ffffff;
     letter-spacing: 0.01px;
 }
-
 .block__block-3--right-block-1 {
     margin: 43px 33px 74px 31px;
     height: 70%;
     font-family: 'Roboto', sans-serif;
 }
-
 .bl-3-1 {
     width: 50px;
     height: 25px;
@@ -156,41 +158,33 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .bl-3-1 span {
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font: 400 14px Roboto, sans-serif;
 }
-
 .bl-3-2 {
     margin: 0;
     padding: 0;
 }
-
 .bl-3-2  h1 {
     margin: 5px auto;
-    font-size: 21px;
-    line-height: 1.4;
-    font-weight: bold;
+    font: 24px "Roboto Condensed", sans-serif;
+    color: #000000;
 }
-
 .bl-3-2  span {
     color: #5e4fff;
 }
-
 .bl-3-3 {
     display: flex;
     align-items: baseline;
     margin: 10px auto;
 }
-
 .bl-3-3 span {
-    float: left;
-    font-size: 12px;
+    font: 12px "Roboto Condensed", sans-serif;
     font-weight: bold;
+    float: left;
 }
-
 .bl-3-3__form {
     float: left;
     margin: 0 15px;
@@ -217,6 +211,60 @@ body {
 }
 
 .bl-3-4__sena {
-    padding: 10px 0;
+    font: 300 22px Roboto, sans-serif;
+    padding: 0 0 10px;
     font-size: 22px;
+}
+
+.form-to-buy__size-label {
+    font: 600 12px Roboto, sans-serif;
+}
+.form-to-buy label {
+    font: 600 15px "Roboto Condensed", sans-serif;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+.form-to-buy__size {
+    display: none;
+}
+.form-to-buy__size-select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-to-buy__size--active:checked + label,
+.form-to-buy__size-select label:hover {
+    outline: 1px solid black;
+}
+.form-to-buy__submit-btn {
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #a200b8;
+    width: 118px;
+    height: 30px;
+    font: 12px "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.form-to-buy__submit-btn:hover {
+    background-color: #680079;
+}
+.form-to-buy__wishlist-btn {
+    border: 1px solid #0f0f0f;
+    background-color:  #ffffff;
+    font: 12px "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    width: 118px;
+    height: 30px;
+    margin-top: 5px;
+    outline: none;
+    cursor: pointer;
+}
+.form-to-buy__wishlist-btn:hover {
+    background-color: #ebebeb;
 }

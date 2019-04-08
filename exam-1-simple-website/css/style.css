@@ -117,17 +117,20 @@ header {
     transform: scale(1.03);
     opacity: .5;
 }
-.scr {
-    font-weight: 700;
-    /*font-family: "Myriad Pro", sans-serif;*/
-}
-.scroll-down::before {
-    content: "\f063";
-}
-.scroll-down {
+.fa-arrow-down {
     margin-bottom: 2em;
     display: flex;
     justify-content: center;
+    /*font-family: "Myriad Pro", sans-serif;*/
+}
+.fa, .fas {
+    font-weight: 900;
+}
+.fa, .far, .fas {
+    font-family: Font Awesome\ 5 Free;
+}
+.fas.fa-arrow-down::before {
+    content: "\f063";
 }
 .logo_nav {
     height: 100%;

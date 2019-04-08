@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nike product card-assets</title>
-    <link rel="shortcut icon" href="img/logo_nike.png" type="image/x-icon">
+<!--    <link rel="shortcut icon" href="img/logo_nike.png" type="image/x-icon">-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,10 +14,10 @@
                 <img src="img/logo.png" alt="Nike">
             </a>
             <nav class="menu menu--right menu--mt">
-                <a href="#" class="menu__item">Lifestyle</a>
-                <a href="#" class="menu__item">Running</a>
-                <a href="#" class="menu__item">Football</a>
-                <a href="#" class="menu__item">Skateboarding</a>
+                <a href="#" class="menu__item menu__item--hover">Lifestyle</a>
+                <a href="#" class="menu__item menu__item--hover">Running</a>
+                <a href="#" class="menu__item menu__item--hover">Football</a>
+                <a href="#" class="menu__item menu__item--hover">Skateboarding</a>
                 <a href="#" class="menu__item menu__item--last-item">
                     <img src="img/btn_menu.png" alt="Menu">
                 </a>
@@ -39,7 +39,7 @@
                         <div class="block__block-3--right-block-1">
                             <div class="bl-3-1"><span>NEW</span></div>
                             <div class="bl-3-2">
-                                <h1>THE <span>RUNNING</span> HAS JUST BEGUN</h1>
+                                <h1>THE <span>RUNNING</span><br> HAS JUST BEGUN</h1>
                             </div>
                             <div class="bl-3-3">
                                 <span>Huarache</span>
@@ -61,8 +61,25 @@
                             <div class="bl-3-4">
                                 <div class="bl-3-4__sena">$ 200</div>
                             </div>
-                            <div class="bl-3-5"></div>
-                            <div class="bl-3-6"></div>
+                            <div class="bl-3-5">
+                                <form class="form-to-buy">
+                                    <div class="form-to-buy__size-label">Size</div>
+                                    <div class="form-to-buy__size-select">
+                                        <input type="radio" name="size" value="7" id="size-7" class="form-to-buy__size form-to-buy__size--active">
+                                        <label for="size-7">7</label>
+                                        <input type="radio" name="size" value="8" id="size-8" class="form-to-buy__size form-to-buy__size--active">
+                                        <label for="size-8">8</label>
+                                        <input type="radio" name="size" value="9" id="size-9" class="form-to-buy__size form-to-buy__size--active">
+                                        <label for="size-9">9</label>
+                                        <input type="radio" name="size" value="10" id="size-10" class="form-to-buy__size form-to-buy__size--active">
+                                        <label for="size-10">10</label>
+                                        <input type="radio" name="size" value="11" id="size-11" class="form-to-buy__size form-to-buy__size--active">
+                                        <label for="size-11">11</label>
+                                    </div>
+                                    <input type="submit" value="ADD TO CART" class="form-to-buy__submit-btn">
+                                    <button class="form-to-buy__wishlist-btn">WISHLIST</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
