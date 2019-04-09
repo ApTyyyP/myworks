@@ -221,7 +221,8 @@ header {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    margin-bottom: 2em;
+    margin: -4em 0 2em -2em;
+    list-style-type: none;
 }
 .icons li {
     text-align: center;
@@ -231,20 +232,162 @@ header {
 .icons p {
     font-family: "Josefin Sans";
     font-size: 2em;
+    margin: 0;
 }
 .ico {
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin: 0.5em 0;
 }
-.scs.sc-search::before {
+
+.fas.fa-search::before {
     content: "\f002";
     color: #4d67d5;
 }
-.scr.sc-check-circle::before {
+.far.fa-check-circle::before {
     content: "\f058";
     color: #ff6363;
 }
-.scr.sc-thumbs-up {
+.far.fa-thumbs-up {
     content: "\f164";
     color: #00a2ff;
+}
+
+/*---SPAIN ONE---*/
+.spain{
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 35em;
+  padding: 0 5%;
+  padding-bottom: 2em;
+}
+.spain.one{
+  background: url("../img/sl4_1_bg.png") no-repeat center center;
+  background-size: cover;
+}
+.spain_box{
+  background: rgba(42, 39, 41, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  height: 45%;
+  padding: 3%;
+  color: #ffffff;
+  font-family: "Josefin Sans";
+  font-weight: 300;
+}
+.spain_box h3{
+  text-transform: uppercase;
+}
+.spain_box p{
+  line-height: 1.5;
+}
+/*---SPAIN TWO---*/
+.spain.two{
+  background: url("../img/sl4_2_bg.png") no-repeat center center;
+  background-size: cover;
+}
+.spain_two{
+  align-self: flex-end;
+}
+/*---FEEDBACK---*/
+.feedback{
+  background: url("../img/sl5_bg.png") no-repeat center left;
+  background-size: cover;
+  padding: 10%;
+}
+.feedback_title{
+  color: #fff;
+  font-size: 3em;
+  padding: 1em 0;
+  font-weight: 300;
+}
+.slider_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*---*/
+.slider_picture{
+  width: 100%;
+}
+.slider_picture img{
+    width: 100%;
+}
+.slider_text{
+  width: 44%;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Josefin Sans";
+  font-weight: 300;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #fff;
+  background: #333333;
+}
+.slider_text h2{
+  text-transform: uppercase;
+  font-size: 2em;
+}
+.slider_text .fas.fa-quote-left::before{
+  content: "\f10d";
+  vertical-align: top;
+  margin-right: 5px;
+  color: #03a9f4;
+}
+/*---FOOTER---*/
+footer{
+  background: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 17em;
+  color: #ffffff;
+}
+.footer div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact_icons{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  margin: 1.4em 0;
+}
+.fab{
+  transition: color 0.5s linear;
+}
+.fab.fa-facebook-f::before{
+  content: "\f39e";
+}
+.fab.fa-facebook-f:hover{
+  color: #3f51b5;
+}
+.fab.fa-twitter::before{
+  content: "\f099";
+}
+.fab.fa-twitter:hover{
+  color: #03a9f4;
+}
+.fab.fa-linkedin-in::before{
+  content: "\f0e1";
+}
+.fab.fa-linkedin-in:hover{
+  color: #3f51b5;
+}
+.fab.fa-youtube::before{
+  content: "\f167";
+}
+.fab.fa-youtube:hover{
+  color: #ff1c1c;
+}
+.fab.fa-pinterest::before{
+  content: "\f0d2";
+}
+.fab.fa-pinterest:hover{
+  color: #f44336;
 }
