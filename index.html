@@ -1,75 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>My Works</title>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/sass/main.css"/>
+    <script src="assets/js/time.js"></script>
+    <script src="assets/js/date.js"></script>
+    <script src="assets/js/info.js"></script>
+    <script src="assets/js/browser.js"></script>
+    <script src="assets/js/health.js"></script>
+    <script src="assets/php/getip.php"></script>
 </head>
-<body>
-    <main>
-        <div class="container">
-            <div class="header">
-                <h1>Мои работы</h1>
-            </div>
-            <br>
-            <div>
-                <table>
-                    <tbody>
-                    <tr class="bg-th">
-                        <th>Номер</th>
-                        <th>Картинка</th>
-                        <th>Название</th>
-                    </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td class="img">
-                            <img src="css-dinner-psd/css-dinner-psd.png" alt="css-dinner-psd">
-                        </td>
-                        <td class="col-3">
-                            <a href="css-dinner-psd/" target=_blank>css-dinner-psd</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td class="img">
-                            <img src="homework-production/img/productman.jpg" alt="productman">
-                        </td>
-                        <td class="col-3">
-                            <a href="homework-production/" target=_blank>homework-production</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3.</td>
-                        <td class="img">
-                            <img src="chess-board/img/board.jpg" alt="chess-board">
-                        </td>
-                        <td class="col-3">
-                            <a href="chess-board/" target=_blank>chess-board</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4.</td>
-                        <td class="img">
-                            <img src="nike-product-card-assets/img/nike_product_card.jpg" alt="nike_product_card">
-                        </td>
-                        <td class="col-3">
-                            <a href="nike-product-card-assets/" target=_blank>nike-product-card-assets</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5.</td>
-                        <td class="img">
-                            <img src="exam-1-simple-website/img/Travel-More.jpg" alt="Travel-More">
-                        </td>
-                        <td class="col-3">
-                            <a href="exam-1-simple-website/" target=_blank>Экзамен 1 &mdash; Simple Website</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+<body class="is-preload" onLoad="ImgClock()">
+
+<!-- Header -->
+<div id="header">
+
+    <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+            <span class="image avatar80-60"><img src="images/avatar.jpg" alt="avatar"/></span>
+            <h1 id="title">Arthur Morza</h1>
+            <p>Front-End Developer</p>
         </div>
-    </main>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="#top" id="top-link">
+                        <span class="icon fa-home">Главная</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio" id="portfolio-link">
+                        <span class="icon fa-th">Портфолио</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" id="about-link">
+                        <span class="icon fa-user">Обо мне</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" id="contact-link">
+                        <span class="icon fa-envelope">Контакты</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Hr10">
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Hr">
+                    <img src="images/time/colon.gif" alt="colon" width=15 height=20 name="imgSpacer1">
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Min10">
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Min">
+                    <img src="images/time/colon.gif" alt="colon" width=15 height=20 name="imgSpacer2">
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Sec10">
+                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Sec">
+                </li>
+                <li>
+                    <script>document.write('Сегодня ' + getDateStr() + ' года.')</script>
+                </li>
+                <li>
+                    <hr>
+                    Ваш IP: <script src="assets/php/getip.php"></script>
+                </li>
+                <li>
+                    <hr>
+                    <script>
+                        var data = browserDetectNav();
+                        document.write("Ваш Браузер: <font color='red'><b>" + data[0] + "</b></font>, Версия: <font color='#ff0000'><b>" + data[1] + "." + data[2] + "</b></font>.");
+                    </script>
+                </li>
+                <li>
+                    <hr>
+                    <script>
+                        d0 = new Date('april 14, 2019');
+                        d1 = new Date();
+                        dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
+                        document.write('Этот сайт живёт <b><span style="color: #ff0000">' + Math.round(dt) + '</span></b>-й день.');
+                    </script>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="bottom">
+
+        <!-- Social Icons -->
+        <ul class="icons">
+            <li>
+                <a href="https://github.com/ApTyyyP" title="GitHub" target="_blank" class="icon fa-github">
+                    <span class="label">GitHub</span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:arturhelpme@gmail.com" title="Gmail" class="icon fa-envelope">
+                    <span class="label">Email</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://vk.com/artur_morza" title="Вконтакте" target="_blank" class="icon fa-vk">
+                    <span class="label">VK</span>
+                </a>
+            </li>
+            <li>
+                <a href="skype:artur-tz" title="Skype" class="icon fa-skype">
+                    <span class="label">VK</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Intro -->
+    <section id="top" class="one dark cover">
+        <div class="container">
+
+            <header>
+                <h2 class="alt">Привет! Я
+                    <strong>очень рад</strong>
+                    , что Вы зашли на мою страничку :)
+                </h2>
+                <p>Здесь показаны мои работы в процессе обучения на курсах
+                    <a href="https://beetroot.academy" title="Перейти на сайт" target="_blank">
+                        <strong>Beetroot-академии</strong>
+                        .
+                </p>
+            </header>
+
+            <footer>
+                <a href="#portfolio" class="button scrolly">Спуститься на Портфолио</a>
+            </footer>
+
+        </div>
+        <marquee direction="right">
+            <span itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><img itemprop="url image"
+                                                                                               alt="animaciya-dog"
+                                                                                               src="images/animaciya-dog.gif"
+                                                                                               width="125" height="111"><meta
+                    itemprop="width" content="125"><meta itemprop="height" content="111"></span>
+        </marquee>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="two">
+        <div class="container">
+
+            <header>
+                <h2>Портфолио</h2>
+            </header>
+
+            <p>HTML + CSS</p>
+
+            <div class="row">
+                <div class="col-4 col-12-mobile">
+                    <article class="item">
+                        <a href="https://aptyyyp.github.io/myworks/css-dinner-psd/" target="_blank" class="image fit">
+                            <img src="css-dinner-psd/css-dinner-psd.png" alt="css-dinner-psd"/>
+                        </a>
+                        <header>
+                            <h3>css-dinner-psd</h3>
+                        </header>
+                    </article>
+                    <article class="item">
+                        <a href="https://aptyyyp.github.io/myworks/nike-product-card-assets/" target="_blank"
+                           class="image fit">
+                            <img src="nike-product-card-assets/img/nike_product_card.jpg"
+                                 alt="nike-product-card-assets"/>
+                        </a>
+                        <header>
+                            <h3>nike-product-card-assets</h3>
+                        </header>
+                    </article>
+                </div>
+                <div class="col-4 col-12-mobile">
+                    <article class="item">
+                        <a href="https://aptyyyp.github.io/myworks/homework-production/" target="_blank"
+                           class="image fit">
+                            <img src="homework-production/img/productman.jpg" alt="productman"/>
+                        </a>
+                        <header>
+                            <h3>homework-production</h3>
+                        </header>
+                    </article>
+                </div>
+                <div class="col-4 col-12-mobile">
+                    <article class="item">
+                        <a href="https://aptyyyp.github.io/myworks/chess-board/" target="_blank" class="image fit">
+                            <img src="chess-board/img/board.jpg" alt="board"/>
+                        </a>
+                        <header>
+                            <h3>chess-board</h3>
+                        </header>
+                    </article>
+                    <article class="item">
+                        <a href="https://aptyyyp.github.io/myworks/exam-1-simple-website/" target="_blank"
+                           class="image fit">
+                            <img src="exam-1-simple-website/img/Travel-More.jpg" alt="Travel-More"/>
+                        </a>
+                        <header>
+                            <h3>Экзамен 1 — Simple Website</h3>
+                        </header>
+                    </article>
+                </div>
+                <!--
+                <div class="col-4 col-12-mobile" onLoad="start()">
+                    <article class="item">
+                        <div class="health">
+
+                        </div>
+                        <header>
+                            <h3>Количество прожитого времени</h3>
+                        </header>
+                    </article>
+                </div>
+                -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="three">
+        <div class="container">
+
+            <header>
+                <h2>Обо мне</h2>
+            </header>
+
+            <h3>Навыки</h3>
+            <p>
+            <ul>
+                <li>Мелкий ремонт компьютерной техники</li>
+                <li>Исправление ошибок ОС Windows</li>
+                <li>Решение проблем клиента по удалёнке (Team Viewer) и на выезде к нему</li>
+                <li>Работа в 1С:Комплексная Автоматизация</li>
+                <li>Базовые знания: HTML, CSS, JavaScript, php, SQL, Java, С#</li>
+                <li>Среда разработки: Visual Studio, Adobe Dreamweaver, Webstorm</li>
+                <li>Способность разбираться в чужом коде</li>
+                <li>Создавал десктопные программы на языке C# (простые с вычислениями)</li>
+                <li>Работал с различными системами управления сайтом (CMS)</li>
+                <li>Работал с шаблоном MVC на языке php</li>
+            </ul>
+            </p>
+
+            <h3>Личные качества</h3>
+            <p>
+            <ul>
+                <li>Усидчивость</li>
+                <li>Ответственность</li>
+                <li>Работа в команде</li>
+                <li>Отсутствие вредных привычек</li>
+                <li>Коммуникабельность</li>
+                <li>Обучаемость</li>
+                <li>Не конфликтность</li>
+                <li>Работа на результат</li>
+                <li>Трудоголик</li>
+                <li>Грамотность</li>
+            </ul>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="four">
+        <div class="container">
+
+            <header>
+                <h2>Контакты</h2>
+            </header>
+
+            <p>Для обратной связи со мной, можете заполнить форму отправки.</p>
+
+            <form method="post" action="#">
+                <div class="row">
+                    <div class="col-6 col-12-mobile">
+                        <input type="text" name="name" placeholder="Ваше имя"/>
+                    </div>
+                    <div class="col-6 col-12-mobile">
+                        <input type="text" name="email" placeholder="Ваш Email"/>
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" placeholder="Введите сообщение..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" value="Отправить"/>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<div id="footer">
+
+    <!-- Copyright -->
+    <ul class="copyright">
+        <li>Copyright &copy;
+            <script>currentYear = new Date().getFullYear();
+            document.write(currentYear)</script>
+            | All rights reserved.
+        </li>
+    </ul>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
