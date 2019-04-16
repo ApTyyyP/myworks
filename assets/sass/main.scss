@@ -811,10 +811,29 @@ button,
           -o-transform: scale(1.1);
         }
 
-        .health {
+      }
 
-          height: 379px;
+      table {
+        margin-bottom: 0;
+        text-align: center;
+
+        td {
+          padding: 2px 15px;
         }
+      }
+
+      form {
+        & input[type=text] {
+          padding: 0;
+        }
+
+        & select {
+          width: inherit;
+        }
+      }
+
+      p {
+        line-height: 1;
       }
     }
 

@@ -1,14 +1,20 @@
-﻿function GetDay(intDay) {
-    var DayArray = new Array("<b><u>Воскресенье</u></b>", "<b><u>Понедельник</u></b>",
-        "<b><u>Вторник</u></b>", "<b><u>Среда</u></b>", "<b><u>Четверг</u></b>", "<b><u>Пятница</u></b>", "<b><u>Суббота</u></b>");
+﻿/**
+ * @return {string}
+ */
+function GetDay(intDay) {
+    var DayArray = ["<b><u>Воскресенье</u></b>", "<b><u>Понедельник</u></b>",
+        "<b><u>Вторник</u></b>", "<b><u>Среда</u></b>", "<b><u>Четверг</u></b>", "<b><u>Пятница</u></b>", "<b><u>Суббота</u></b>"];
     return DayArray[intDay];
 }
 
+/**
+ * @return {string}
+ */
 function GetMonth(intMonth) {
-    var MonthArray = new Array("Января", "Февраля", "Марта",
+    var MonthArray = ["Января", "Февраля", "Марта",
         "Апреля", "Мая", "Июня",
         "Июля", "Августа", "Сентября",
-        "Октября", "Ноября", "Декабря</b>");
+        "Октября", "Ноября", "Декабря</b>"];
     return MonthArray[intMonth];
 }
 

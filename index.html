@@ -5,14 +5,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/sass/main.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <script src="assets/js/time.js"></script>
     <script src="assets/js/date.js"></script>
     <script src="assets/js/info.js"></script>
     <script src="assets/js/browser.js"></script>
-    <script src="assets/js/health.js"></script>
+    <script src="assets/js/life.js"></script>
 </head>
-<body class="is-preload" onLoad="ImgClock()">
+<body class="is-preload" onLoad="ImgClock();">
 
 <!-- Header -->
 <div id="header">
@@ -66,7 +66,7 @@
                     <hr>
                     <script>
                         var data = browserDetectNav();
-                        document.write("Ваш Браузер: <font color='red'><b>" + data[0] + "</b></font>, Версия: <font color='#ff0000'><b>" + data[1] + "." + data[2] + "</b></font>.");
+                        document.write("Ваш Браузер: <span style = color:red><b>" + data[0] + "</b></span>, Версия: <span style=color:red><b>" + data[1] + "." + data[2] + "</b></span>.");
                     </script>
                 </li>
                 <li>
@@ -75,7 +75,7 @@
                         d0 = new Date('april 14, 2019');
                         d1 = new Date();
                         dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
-                        document.write('Этот сайт живёт <b><span style="color: #ff0000">' + Math.round(dt) + '</span></b>-й день.');
+                        document.write('Этот сайт живёт <b><span style="color: red">' + Math.round(dt) + '</span></b>-й день.');
                     </script>
                 </li>
             </ul>
@@ -138,11 +138,7 @@
 
         </div>
         <marquee direction="right">
-            <span itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><img itemprop="url image"
-                                                                                               alt="animaciya-dog"
-                                                                                               src="images/animaciya-dog.gif"
-                                                                                               width="125" height="111"><meta
-                    itemprop="width" content="125"><meta itemprop="height" content="111"></span>
+            <span itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><img itemprop="url image" alt="animaciya-dog" src="images/animaciya-dog.gif" width="125" height="111"><meta itemprop="width" content="125"><meta itemprop="height" content="111"></span>
         </marquee>
     </section>
 
@@ -207,18 +203,112 @@
                         </header>
                     </article>
                 </div>
-                <!--
-                <div class="col-4 col-12-mobile" onLoad="start()">
+                <div id="life" class="col-12" onLoad="start();">
                     <article class="item">
-                        <div class="health">
-
-                        </div>
                         <header>
-                            <h3>Количество прожитого времени</h3>
+                            <h2>Количество прожитого времени</h2>
+                            <p>в зависимости от браузера <b>год рождения</b> необходимо указывать 4 цифры или 2</p>
+                            <div class="life">
+                                <!----FORM----->
+                                <form name=form1>
+
+                                    <table>
+                                        <tr>
+                                            <td><b>Число:
+                                                <label>
+                                                <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                </label></b></td>
+                                            <td><b>Месяц:
+                                                <label>
+                                                    <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                </label></b></td>
+                                            <td><b>Год:
+                                                <label>
+                                                    <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                </label></b></td>
+                                            <td><b>Час:
+                                                <label>
+                                                    <input type="text" name="hrs" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                </label></b></td>
+                                        </tr>
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label>
+                                                    <select name="ampm">
+                                                        <option selected>AM</option>
+                                                        <option>PM</option>
+                                                    </select>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <td><input type="button" name="start" onClick="run();" value="Считать"></td>
+                                        </tr>
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" name="age" value="" style="font-family: system" maxlength="50" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr></tr>
+                                        <tr>
+                                            <td><input type="reset" value="Сброс"></td>
+                                        </tr>
+                                    </table>
+
+                                    <table>
+                                        <td style="font-family: system; background: #f4f4f4; text-align: center;"><h2>Вы живёте уже:</h2></td>
+                                    </table>
+
+                                    <table>
+                                        <tr>
+                                            <td><b>Месяцев:</b></td>
+                                            <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Недель:</b></td>
+                                            <td><input type="text" name="weeks" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Дней:</b></td>
+                                            <td><input type="text" name="answer" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Часов:</b></td>
+                                            <td><input type="text" name="hours" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Минут:</b></td>
+                                            <td><input type="text" name="min" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Секунд:</b></td>
+                                            <td><input type="text" name="sec" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Миллисекунд:</b></td>
+                                            <td><input type="text" name="milli" onKeypress="event.returnValue = false;"></td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <table>
+                                        <td style="font-family: system; background: #f4f4f4; line-height: 1em;"><b>Ваш следующий день рождения через:</b></td>
+                                        <td><input type="text" name="bday" size="40" onKeypress="event.returnValue = false;"></td>
+                                    </table>
+
+                                </form>
+                            </div>
                         </header>
                     </article>
                 </div>
-                -->
             </div>
 
         </div>
@@ -239,12 +329,13 @@
                 <li>Исправление ошибок ОС Windows</li>
                 <li>Решение проблем клиента по удалёнке (Team Viewer) и на выезде к нему</li>
                 <li>Работа в 1С:Комплексная Автоматизация</li>
-                <li>Базовые знания: HTML, CSS, JavaScript, php, SQL, Java, С#</li>
+                <li>Базовые знания: HTML, CSS, JavaScript, GitHub, php, SQL, Java, С#</li>
                 <li>Среда разработки: Visual Studio, Adobe Dreamweaver, Webstorm</li>
                 <li>Способность разбираться в чужом коде</li>
                 <li>Создавал десктопные программы на языке C# (простые с вычислениями)</li>
                 <li>Работал с различными системами управления сайтом (CMS)</li>
                 <li>Работал с шаблоном MVC на языке php</li>
+                <li>Работал с препроцессором SASS</li>
             </ul>
             </p>
 
@@ -280,13 +371,19 @@
             <form method="post" action="#">
                 <div class="row">
                     <div class="col-6 col-12-mobile">
-                        <input type="text" name="name" placeholder="Ваше имя"/>
+                        <label>
+                            <input type="text" name="name" placeholder="Ваше имя"/>
+                        </label>
                     </div>
                     <div class="col-6 col-12-mobile">
-                        <input type="text" name="email" placeholder="Ваш Email"/>
+                        <label>
+                            <input type="text" name="email" placeholder="Ваш Email"/>
+                        </label>
                     </div>
                     <div class="col-12">
-                        <textarea name="message" placeholder="Введите сообщение..."></textarea>
+                        <label>
+                            <textarea name="message" placeholder="Введите сообщение..."></textarea>
+                        </label>
                     </div>
                     <div class="col-12">
                         <input type="submit" value="Отправить"/>
@@ -306,7 +403,7 @@
     <ul class="copyright">
         <li>Copyright &copy;
             <script>currentYear = new Date().getFullYear();
-            document.write(currentYear)</script>
+            document.write('<b>' + currentYear + '</b>')</script>
             | All rights reserved.
         </li>
     </ul>

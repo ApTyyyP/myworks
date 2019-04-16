@@ -1827,8 +1827,21 @@ button:active,
   -moz-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
-#main > section.two img .health {
-  height: 379px;
+#main > section.two table {
+  margin-bottom: 0;
+  text-align: center;
+}
+#main > section.two table td {
+  padding: 2px 15px;
+}
+#main > section.two form input[type=text] {
+  padding: 0;
+}
+#main > section.two form select {
+  width: inherit;
+}
+#main > section.two p {
+  line-height: 1;
 }
 #main > section.three {
   background: #ecf1f1 url("../../images/bg_ul.png");
