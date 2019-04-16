@@ -1796,6 +1796,13 @@ button:active,
   font-weight: bold;
   border-color: inherit;
 }
+#main > section.dark strong:hover {
+  color: #ff7000;
+  -moz-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+  -webkit-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+  -ms-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+}
 #main > section.dark a {
   color: #fff;
   border-color: inherit;
