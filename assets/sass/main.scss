@@ -774,7 +774,7 @@ button,
         border-color: inherit;
 
         &:hover {
-          color: #ff7000;
+          color: rgb(255, 237, 48);
           @include vendor('transition', ('color 0.35s ease-in-out', 'border-bottom-color 0.35s ease-in-out'));
         }
       }
@@ -829,11 +829,7 @@ button,
 
       form {
         & input[type=text] {
-          padding: 0;
-        }
-
-        & select {
-          width: inherit;
+          padding: 5px;
         }
       }
 

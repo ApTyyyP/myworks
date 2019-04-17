@@ -23,15 +23,15 @@ function click() {
 document.oncontextmenu = click;
 
 function run() {
-    var ap;
+    // var ap; - for am/pm
     dd = document.form1.day.value;
     mm = document.form1.month.value;
     yy = document.form1.year.value;
     with (document.form1) {
-        ap = parseInt(ampm.selectedIndex);
+        // ap = parseInt(ampm.selectedIndex);
         hr = parseInt(hrs.value);
         if (hr <= 0 && hr >= 13) {
-            ap = null;
+            // ap = null;
             alert("Ошибка!")
         }
     }
@@ -225,7 +225,9 @@ function run() {
         gmin = time.getMinutes();
         gsec = time.getSeconds();
         hour = ((age * 365) + n + p) * 24;
-        hour += (parseInt(age / 4) * 24);
+        hour += (parseInt(age / 4) * 24) - hr; // -hr for 24 hour
+
+        /* For AM/PM
         if (ap == 0)
             hour = hour - hr;
         else {
@@ -233,6 +235,8 @@ function run() {
                 hour = hour - (11 + hr)
             }
         }
+        */
+
         document.form1.hours.value = hour + " часов.";
         var min;
         min = (hour * 60) + gmin;
