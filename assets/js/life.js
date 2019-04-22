@@ -372,28 +372,28 @@ function run() {
                 day = parseInt(day)
                 switch (day) {
                     case 1 :
-                        document.form1.age.value += "Вы родились в воскресенье."
-                        break
+                        document.form1.age.value += "Вы родились в воскресенье.";
+                        break;
                     case 2 :
-                        document.form1.age.value += "Вы родились в понедельник."
-                        break
+                        document.form1.age.value += "Вы родились в понедельник.";
+                        break;
                     case 3 :
-                        document.form1.age.value += "Вы родились во вторник."
-                        break
+                        document.form1.age.value += "Вы родились во вторник.";
+                        break;
                     case 4 :
-                        document.form1.age.value += "Вы родились в среду."
-                        break
+                        document.form1.age.value += "Вы родились в среду.";
+                        break;
                     case 5 :
-                        document.form1.age.value += "Вы родились в четверг."
-                        break
+                        document.form1.age.value += "Вы родились в четверг.";
+                        break;
                     case 6 :
-                        document.form1.age.value += "Вы родились в пятницу."
-                        break
+                        document.form1.age.value += "Вы родились в пятницу.";
+                        break;
                     case 7 :
-                        document.form1.age.value += "Вы родились в субботу."
-                        break
+                        document.form1.age.value += "Вы родились в субботу.";
+                        break;
                     case 0 :
-                        document.form1.age.value += "Вы родились в субботу."
+                        document.form1.age.value += "Вы родились в субботу.";
                         break
                 }
             } else {

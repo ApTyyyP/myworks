@@ -5,12 +5,12 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/sass/main.css"/>
-    <script src="assets/js/time.js"></script>
-    <script src="assets/js/date.js"></script>
-    <script src="assets/js/info.js"></script>
-    <script src="assets/js/browser.js"></script>
-    <script src="assets/js/life.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <script src="assets/js/time.js" async></script>
+    <script src="assets/js/date.js" async></script>
+    <script src="assets/js/info.js" async></script>
+    <script src="assets/js/browser.js" async></script>
+    <script src="assets/js/life.js" defer></script>
 </head>
 <body class="is-preload" onLoad="ImgClock();">
 
@@ -50,14 +50,14 @@
                     </a>
                 </li>
                 <li>
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Hr10">
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Hr">
-                    <img src="images/time/colon.gif" alt="colon" width=15 height=20 name="imgSpacer1">
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Min10">
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Min">
-                    <img src="images/time/colon.gif" alt="colon" width=15 height=20 name="imgSpacer2">
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Sec10">
-                    <img src="images/time/0.gif" alt="0" width=15 height=20 name="img24Sec">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr10">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr">
+                    <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer1">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min10">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min">
+                    <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer2">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec10">
+                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec">
                 </li>
                 <li>
                     <script>document.write('Сегодня ' + getDateStr() + ' года.')</script>
@@ -75,7 +75,7 @@
                         d0 = new Date('april 14, 2019');
                         d1 = new Date();
                         dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
-                        document.write('Этот сайт живёт <b><span style="color: red">' + Math.round(dt) + '</span></b>-й день.');
+                        document.write('Этот сайт живёт <b><span style="color:red">' + Math.round(dt) + '</span></b>-й день.');
                     </script>
                 </li>
             </ul>
@@ -209,27 +209,31 @@
                             <h2>Количество прожитого времени</h2>
                             <p>в зависимости от браузера <b>год рождения</b> необходимо указывать 4 цифры или 2</p>
                             <div class="life">
-                                <!----FORM----->
+                                <!-- FORM -->
                                 <form name=form1>
 
-                                    <table>
+                                    <table style="font-family: System, monospace;">
                                         <tr>
                                             <td><b>Число:
                                                 <label>
-                                                <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b></td>
+                                                    <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                </label></b>
+                                            </td>
                                             <td><b>Месяц:
                                                 <label>
                                                     <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b></td>
+                                                </label></b>
+                                            </td>
                                             <td><b>Год:
                                                 <label>
                                                     <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b></td>
+                                                </label></b>
+                                            </td>
                                             <td><b>Час:
                                                 <label>
                                                     <input type="text" name="hrs" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b></td>
+                                                </label></b>
+                                            </td>
                                         </tr>
                                     </table>
 
@@ -241,7 +245,7 @@
 
                                     <table>
                                         <tr>
-                                            <td><input type="text" name="age" value="" style="font-family: system" maxlength="50" onKeypress="event.returnValue = false;"></td>
+                                            <td><input type="text" name="age" value="" style="font-family: System, monospace" maxlength="50" onKeypress="event.returnValue = false;"></td>
                                         </tr>
                                         <tr></tr>
                                         <tr>
@@ -250,10 +254,10 @@
                                     </table>
 
                                     <table>
-                                        <td style="font-family: system; background: #f4f4f4; text-align: center;"><h2>Вы живёте уже:</h2></td>
+                                        <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2>Вы живёте уже:</h2></td>
                                     </table>
 
-                                    <table>
+                                    <table style="font-family: System, monospace;">
                                         <tr>
                                             <td><b>Месяцев:</b></td>
                                             <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
@@ -285,8 +289,10 @@
                                     </table>
                                     <hr>
                                     <table>
-                                        <td style="font-family: system; background: #f4f4f4; line-height: 1em;"><b>Ваш следующий день рождения через:</b></td>
-                                        <td><input type="text" name="bday" size="40" onKeypress="event.returnValue = false;"></td>
+                                        <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш следующий день рождения через:</b></td>
+                                        <td>
+                                            <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
+                                        </td>
                                     </table>
 
                                 </form>
@@ -308,37 +314,33 @@
             </header>
 
             <h3>Навыки</h3>
-            <p>
-            <ul>
-                <li>Мелкий ремонт компьютерной техники</li>
-                <li>Исправление ошибок ОС Windows</li>
-                <li>Решение проблем клиента по удалёнке (Team Viewer) и на выезде к нему</li>
-                <li>Работа в 1С:Комплексная Автоматизация</li>
-                <li>Базовые знания: HTML, CSS, JavaScript, GitHub, php, SQL, Java, С#</li>
-                <li>Среда разработки: Visual Studio, Adobe Dreamweaver, Webstorm</li>
-                <li>Способность разбираться в чужом коде</li>
-                <li>Создавал десктопные программы на языке C# (простые с вычислениями)</li>
-                <li>Работал с различными системами управления сайтом (CMS)</li>
-                <li>Работал с шаблоном MVC на языке php</li>
-                <li>Работал с препроцессором SASS</li>
-            </ul>
-            </p>
+                <ul>
+                    <li>Мелкий ремонт компьютерной техники</li>
+                    <li>Исправление ошибок ОС Windows</li>
+                    <li>Решение проблем клиента по удалёнке (Team Viewer) и на выезде к нему</li>
+                    <li>Работа в 1С:Комплексная Автоматизация</li>
+                    <li>Базовые знания: HTML, CSS, JavaScript, jQuery, GitHub, php, SQL, Java, С#</li>
+                    <li>Среда разработки: Visual Studio, Adobe Dreamweaver, Webstorm</li>
+                    <li>Способность разбираться в чужом коде</li>
+                    <li>Создавал десктопные программы на языке C# (простые с вычислениями)</li>
+                    <li>Работал с различными системами управления сайтом (CMS)</li>
+                    <li>Работал с шаблоном MVC на языке php</li>
+                    <li>Работал с препроцессором SASS</li>
+                </ul>
 
             <h3>Личные качества</h3>
-            <p>
-            <ul>
-                <li>Усидчивость</li>
-                <li>Ответственность</li>
-                <li>Работа в команде</li>
-                <li>Отсутствие вредных привычек</li>
-                <li>Коммуникабельность</li>
-                <li>Обучаемость</li>
-                <li>Не конфликтность</li>
-                <li>Работа на результат</li>
-                <li>Трудоголик</li>
-                <li>Грамотность</li>
-            </ul>
-            </p>
+                <ul>
+                    <li>Усидчивость</li>
+                    <li>Ответственность</li>
+                    <li>Работа в команде</li>
+                    <li>Отсутствие вредных привычек</li>
+                    <li>Коммуникабельность</li>
+                    <li>Обучаемость</li>
+                    <li>Не конфликтность</li>
+                    <li>Работа на результат</li>
+                    <li>Трудоголик</li>
+                    <li>Грамотность</li>
+                </ul>
 
         </div>
     </section>
@@ -396,13 +398,13 @@
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/jquery.min.js" async></script>
+<script src="assets/js/jquery.scrolly.min.js" async></script>
+<script src="assets/js/jquery.scrollex.min.js" async></script>
+<script src="assets/js/browser.min.js" async></script>
+<script src="assets/js/breakpoints.min.js" async></script>
+<script src="assets/js/util.js" async></script>
+<script src="assets/js/main.js" async></script>
 
 </body>
 </html>

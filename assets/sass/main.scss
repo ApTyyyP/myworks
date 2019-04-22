@@ -831,6 +831,10 @@ button,
         & input[type=text] {
           padding: 5px;
         }
+        & textarea {
+          min-height: 5.6em;
+          line-height: 1;
+        }
       }
 
       p {

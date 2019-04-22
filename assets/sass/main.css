@@ -1844,6 +1844,10 @@ button:active,
 #main > section.two form input[type=text] {
   padding: 5px;
 }
+#main > section.two form textarea {
+  min-height: 5.6em;
+  line-height: 1;
+}
 #main > section.two p {
   line-height: 1;
 }
