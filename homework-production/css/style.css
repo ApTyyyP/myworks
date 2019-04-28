@@ -162,11 +162,15 @@ main .inner {
 .img-4:hover,
 .img-5:hover {
     background: #E10012;
+    cursor: pointer;
+    transition: all .5s ease-in;
 }
 .img-3:hover {
     background: url("../img/layer_2.jpg");
     -webkit-background-size: cover;
     background-size: cover;
+    cursor: pointer;
+    transition: all .5s ease-in;
 }
 .s3 {
     height: 380px;
@@ -197,26 +201,32 @@ input[type=email] {
     margin: -4px;
     padding: 25px 30px;
     border-radius: 36px 0 0 36px;
-    background: #ffffff;
     color: #989898;
     font-style: italic;
     font-weight: 600;
+    background: #ffffff;
 }
 input[type=submit] {
     width: 210px;
     height: 73px;
     padding: 25px 55px;
     border-radius: 0 36px 36px 0;
-    background: #e10011;
+    background: #b20011;
     color: #ffffff;
     font-family: Roboto, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all .3s ease-in;
 }
 input[type=submit]:hover {
     background: #ff0012;
 }
+label {
+    background: url("../img/letter.png") no-repeat center left;
+    padding-left: 41px;
+}
+
 section > div > a {
     text-decoration: none;
     color: #E10010;
@@ -227,6 +237,7 @@ a {
     text-decoration: none;
     color: #303030;
     font-size: 18px;
+    transition: all .3s ease-in;
 }
 a:hover {
     color: #c10011;

@@ -12,6 +12,7 @@ body{
 a {
     text-decoration: none;
     color: #ffffff;
+    transition: all .3s ease-in;
 }
 a:hover {
     color: #9f9f9f;
@@ -108,6 +109,10 @@ header {
     text-align: center;
     width: calc(10em - 0.16em);
     border: 2px solid rgba(0, 0, 0, 0);
+    transition: all .3s ease-in;
+}
+.header_title-btn label {
+    cursor: pointer;
 }
 .header_title-btn svg {
     fill: #fff;
@@ -116,6 +121,7 @@ header {
 }
 .header_title-btn:hover {
     background: #869dfe;
+    transition: all .3s ease-in;
     -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     -moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
@@ -169,6 +175,7 @@ header {
     font-family: "Montserrat", sans-serif;
     display: inline-block;
     margin: 10px;
+    transition: all .3s ease-in;
 }
 /*---------------------*/
 .nav-content {
