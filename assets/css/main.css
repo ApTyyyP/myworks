@@ -1851,6 +1851,23 @@ button:active,
 #main > section.two p {
     line-height: 1;
 }
+#main > section.two ol {
+    list-style-type: none;
+    /* Убираем исходные маркеры */
+    counter-reset: item;
+    /* Обнуляем счетчик списка */
+}
+#main > section.two li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+#main > section.two li:before {
+    content: counter(item) ") ";
+    /* Добавляем к числам скобку */
+    counter-increment: item;
+    /* Задаём имя счетчика */
+}
 #main > section.three {
     background: #ecf1f1 url("../../images/bg_ul.png");
     -webkit-background-size: cover;

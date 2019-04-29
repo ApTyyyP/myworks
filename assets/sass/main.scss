@@ -840,6 +840,22 @@ button,
       p {
         line-height: 1;
       }
+
+      ol {
+        list-style-type: none; /* Убираем исходные маркеры */
+        counter-reset:  item; /* Обнуляем счетчик списка */
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+
+        &:before {
+          content: counter(item) ') '; /* Добавляем к числам скобку */
+          counter-increment: item; /* Задаём имя счетчика */
+        }
+      }
     }
 
     &.three {

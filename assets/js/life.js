@@ -318,7 +318,7 @@ function run() {
         go();
         if (((bday == 366) && (leapyear(yy))) || ((bday == 365) && (!leapyear(yy)))) {
             document.form1.bday.value = "Ваш день рождения сегодня.";
-            age = age + 1
+            age = age + 1;
             alert("С Днём Рождения Вас!!! Вам сегодня исполнилось " + age + " лет."); //Появляется сообщение
         } else {
             document.form1.bday.value = bday + " дней " + nhour + " часов " + nmin + " минут " + nsec + " секунд.";
@@ -369,7 +369,7 @@ function run() {
                 fhunds = yy / 400;
                 var day;
                 day = (yy + n + fours - hunds + fhunds) % 7;
-                day = parseInt(day)
+                day = parseInt(day);
                 switch (day) {
                     case 1 :
                         document.form1.age.value += "Вы родились в воскресенье.";
