@@ -195,11 +195,19 @@ main .inner {
     text-align: center;
     font-size: 0;
 }
+.fa {
+    position: absolute;
+    padding: 26px 20px 0 20px;
+    color: #979797;
+}
+input {
+    outline: none;
+}
 input[type=email] {
     width: 500px;
     height: 73px;
     margin: -4px;
-    padding: 25px 30px;
+    padding: 25px 50px;
     border-radius: 36px 0 0 36px;
     color: #989898;
     font-style: italic;
@@ -221,10 +229,6 @@ input[type=submit] {
 }
 input[type=submit]:hover {
     background: #ff0012;
-}
-label {
-    background: url("../img/letter.png") no-repeat center left;
-    padding-left: 41px;
 }
 
 section > div > a {
