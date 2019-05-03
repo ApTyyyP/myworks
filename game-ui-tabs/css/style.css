@@ -1,62 +1,74 @@
 @font-face {
-    font-family: 'Lato Regular';
-    src: url('../fonts/Lato-Regular.woff2') format('woff2'),
-    url('../fonts/Lato-Regular.woff') format('woff'),
-    url('../fonts/Lato-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Lato Regular";
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-
 body {
-    margin: 0;
-    padding: 0;
-    background: #292d3e;
+  margin: 0;
+}
+body a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #b7bacd;
+  transition: all 0.3s ease-in;
+}
+body main {
+  background: #292d3e;
+  background-size: cover;
+}
+body main header {
+  min-height: 100vh;
+  height: 100vh;
+  color: #292d3e;
+  font-family: "Lato Regular", sans-serif;
+}
+body main header .inner {
+  position: relative;
+  background-size: contain;
+  background: url(../img/bg.jpg) no-repeat fixed center center;
+  height: calc(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato Regular", sans-serif;
+}
+body main header .inner:before, body main header .inner:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body main header .inner .section {
+  width: 702px;
+  height: 643px;
+  background: url(../img/rectangle_bot.png) no-repeat;
+}
+body main header .inner .section .top {
+  margin: 28px 51px 0 50px;
+  height: 115px;
+  background: #2b3040;
+}
+body main header .inner .section .top nav {
+  height: 100%;
+}
+body main header .inner .section .top div {
+  display: inline-block;
+  text-align: center;
+  width: 33.33%;
+  float: left;
+  padding: 32px 0;
+}
+body main header .inner .section .top div .active {
+  color: #ffffff;
+}
+body main header .inner .section .top div a {
+  font-size: 16px;
+  line-height: 1.6;
+  border-bottom: 2px solid transparent;
+}
+body main header .inner .section .top div a:hover {
+  border-bottom: 2px solid white;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    padding: 58px 42px;
-}
-
-li a {
-    list-style: none;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-header {
-    min-height: 100vh;
-    height: 100vh;
-    color: #292d3e;
-    font-family: "Lato Regular", sans-serif;
-}
-
-.header_bg {
-    position: relative;
-    background-size: contain;
-    background: url(../img/bg.jpg) no-repeat fixed center center;
-    height: calc(100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Lato Regular", sans-serif;
-}
-
-.section {
-    width: 702px;
-    height: 643px;
-    background: url(../img/rectangle_bot.png) no-repeat;
-}
-
-.top {
-    margin: 28px 51px 0 50px;;
-    height: 117px;
-    background: #2b3040;
-}
+/*# sourceMappingURL=style.css.map */
