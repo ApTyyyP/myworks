@@ -149,6 +149,33 @@ body {
               & .img {
                 padding: 39px 0 0 24px;
               }
+
+              & .star {
+                float: left;
+                margin: 0 40px;
+
+                & .stars input {
+                  display: none;
+
+                  & + label {
+                    float: right;
+                    border: 0;
+                    margin: 0 3px;
+                    width: 18px;
+                    height: 17px;
+                    background: url('../img/star_off.png') no-repeat;
+                    background-size: cover;
+                    cursor: pointer;
+                  }
+
+                  &:checked ~ label,
+                  &:hover,
+                  &:hover ~ label {
+                    background: url('../img/star_on.png') no-repeat;
+                    background-size: cover;
+                  }
+                }
+              }
             }
           }
         }

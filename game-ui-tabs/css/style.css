@@ -133,5 +133,26 @@ body main header .inner .section .bottom .bottom-left {
 body main header .inner .section .bottom .bottom-left .img {
   padding: 39px 0 0 24px;
 }
+body main header .inner .section .bottom .bottom-left .star {
+  float: left;
+  margin: 0 40px;
+}
+body main header .inner .section .bottom .bottom-left .star .stars input {
+  display: none;
+}
+body main header .inner .section .bottom .bottom-left .star .stars input + label {
+  float: right;
+  border: 0;
+  margin: 0 3px;
+  width: 18px;
+  height: 17px;
+  background: url("../img/star_off.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+body main header .inner .section .bottom .bottom-left .star .stars input:checked ~ label, body main header .inner .section .bottom .bottom-left .star .stars input:hover, body main header .inner .section .bottom .bottom-left .star .stars input:hover ~ label {
+  background: url("../img/star_on.png") no-repeat;
+  background-size: cover;
+}
 
 /*# sourceMappingURL=style.css.map */
