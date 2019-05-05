@@ -15,6 +15,10 @@ body {
     text-transform: uppercase;
     color: #b7bacd;
     transition: all .3s ease-in;
+    
+    &:hover {
+      color: #ffffff;
+    }
   }
 
   main {
@@ -47,11 +51,11 @@ body {
 
         & .section {
           width: 702px;
-          height: 643px;
+          height: 623px;
           background: url(../img/rectangle_bot.png) no-repeat;
 
           & .top {
-            margin: 28px 51px 0 50px;
+            margin: 28px 51px 0 51px;
             height: 115px;
             background: #2b3040;
 
@@ -59,38 +63,96 @@ body {
               height: 100%;
             }
 
-            & div {
-              display: inline-block;
-              text-align: center;
-              width: 33.33%;
-              float: left;
-              padding: 32px 0;
+            & ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
 
-              & .active {
+              & li {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                width: 33.33%;
+                float: left;
+                padding: 32px 0;
+
+                & .active {
                   color: #ffffff;
-              }
 
-              & a {
-                font-size: 16px;
-                line-height: 1.6;
-                border-bottom: 2px solid transparent;
+                  &:before {
+                    position: absolute;
+                    bottom: -25px;
+                    left: -14px;
+                    width: 127%;
+                    height: 2px;
+                    background: #ffffff;
+                    content: '';
+                  }
+                }
 
-                &:hover {
-                  border-bottom: 2px solid white;
+                & .menu_link {
+                  position: relative;
+                  display: inline-block;
+                  height: 100%;
+
+                  &:before {
+                    position: absolute;
+                    bottom: -27px;
+                    left: -15px;
+                    width: 125%;
+                    height: 2px;
+                    background: #ffffff;
+                    content: '';
+                    opacity: 0;
+                  }
+                }
+                & a {
+                  font-size: 16px;
+                  display: inline-block;
+                  line-height: 2;
+                  text-decoration: none;
+                  cursor: pointer;
+                  position: relative;
+
+                  &:after {
+                    display: block;
+                    content: '';
+                    background-color: #ffffff;
+                    height: 2px;
+                    width: 0;
+                    left: 50%;
+                    top: 55px;
+                    position: absolute;
+                    -webkit-transition: width .3s ease-in-out;
+                    -moz--transition: width .3s ease-in-out;
+                    transition: width .3s ease-in-out;
+                    -webkit-transform: translateX(-50%);
+                    -moz-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                  }
+
+                  &:hover:after {
+                    width: 125%;
+                  }
                 }
               }
             }
           }
           & .bottom {
+            margin: 0 51px 0 51px;
+            height: 426px;
+            
+            & .bottom-left {
+              width: 200px;
+              height: inherit;
 
+              & .img {
+                padding: 39px 0 0 24px;
+              }
+            }
           }
         }
       }
     }
   }
 }
-
-
-
-
-

@@ -13,6 +13,9 @@ body a {
   color: #b7bacd;
   transition: all 0.3s ease-in;
 }
+body a:hover {
+  color: #ffffff;
+}
 body main {
   background: #292d3e;
   background-size: cover;
@@ -41,34 +44,94 @@ body main header .inner:before, body main header .inner:after {
 }
 body main header .inner .section {
   width: 702px;
-  height: 643px;
+  height: 623px;
   background: url(../img/rectangle_bot.png) no-repeat;
 }
 body main header .inner .section .top {
-  margin: 28px 51px 0 50px;
+  margin: 28px 51px 0 51px;
   height: 115px;
   background: #2b3040;
 }
 body main header .inner .section .top nav {
   height: 100%;
 }
-body main header .inner .section .top div {
+body main header .inner .section .top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body main header .inner .section .top ul li {
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
   width: 33.33%;
   float: left;
   padding: 32px 0;
 }
-body main header .inner .section .top div .active {
+body main header .inner .section .top ul li .active {
   color: #ffffff;
 }
-body main header .inner .section .top div a {
-  font-size: 16px;
-  line-height: 1.6;
-  border-bottom: 2px solid transparent;
+body main header .inner .section .top ul li .active:before {
+  position: absolute;
+  bottom: -25px;
+  left: -14px;
+  width: 127%;
+  height: 2px;
+  background: #ffffff;
+  content: "";
 }
-body main header .inner .section .top div a:hover {
-  border-bottom: 2px solid white;
+body main header .inner .section .top ul li .menu_link {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+body main header .inner .section .top ul li .menu_link:before {
+  position: absolute;
+  bottom: -27px;
+  left: -15px;
+  width: 125%;
+  height: 2px;
+  background: #ffffff;
+  content: "";
+  opacity: 0;
+}
+body main header .inner .section .top ul li a {
+  font-size: 16px;
+  display: inline-block;
+  line-height: 2;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+body main header .inner .section .top ul li a:after {
+  display: block;
+  content: "";
+  background-color: #ffffff;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  top: 55px;
+  position: absolute;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+body main header .inner .section .top ul li a:hover:after {
+  width: 125%;
+}
+body main header .inner .section .bottom {
+  margin: 0 51px 0 51px;
+  height: 426px;
+}
+body main header .inner .section .bottom .bottom-left {
+  width: 200px;
+  height: inherit;
+}
+body main header .inner .section .bottom .bottom-left .img {
+  padding: 39px 0 0 24px;
 }
 
 /*# sourceMappingURL=style.css.map */
