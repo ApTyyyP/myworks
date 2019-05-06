@@ -126,16 +126,21 @@ body main header .inner .section .bottom {
   margin: 0 51px 0 51px;
   height: 426px;
 }
+body main header .inner .section .bottom:before, body main header .inner .section .bottom:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 body main header .inner .section .bottom .bottom-left {
-  width: 200px;
-  height: inherit;
+  width: 33.33%;
+  float: left;
 }
 body main header .inner .section .bottom .bottom-left .img {
   padding: 39px 0 0 24px;
 }
 body main header .inner .section .bottom .bottom-left .star {
   float: left;
-  margin: 0 40px;
+  margin: 0 39px;
 }
 body main header .inner .section .bottom .bottom-left .star .stars input {
   display: none;
@@ -153,6 +158,79 @@ body main header .inner .section .bottom .bottom-left .star .stars input + label
 body main header .inner .section .bottom .bottom-left .star .stars input:checked ~ label, body main header .inner .section .bottom .bottom-left .star .stars input:hover, body main header .inner .section .bottom .bottom-left .star .stars input:hover ~ label {
   background: url("../img/star_on.png") no-repeat;
   background-size: cover;
+}
+body main header .inner .section .bottom .bottom-right {
+  margin: 0 0 0 30px;
+  width: 61.6%;
+  height: 83%;
+  float: left;
+  font-family: "Lato Regular", serif;
+}
+body main header .inner .section .bottom .bottom-right .one {
+  padding: 50px 0 25px 0;
+}
+body main header .inner .section .bottom .bottom-right .one .text {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+}
+body main header .inner .section .bottom .bottom-right .one .text h1 {
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 10px 0 0 0;
+}
+body main header .inner .section .bottom .bottom-right .one .text p {
+  font-size: 14px;
+  color: #fdfdfd;
+  margin: 7px 0 0 0;
+}
+body main header .inner .section .bottom .bottom-right .one .img {
+  margin: 0 36px;
+  display: inline-block;
+}
+body main header .inner .section .bottom .bottom-right .two {
+  font-size: 14px;
+}
+body main header .inner .section .bottom .bottom-right .two p {
+  color: #b7bacd;
+  line-height: 1.6;
+}
+body main header .inner .section .bottom .bottom-right .three {
+  padding: 42px 0 0 0;
+}
+body main header .inner .section .bottom .bottom-right .three .text {
+  display: inline-block;
+}
+body main header .inner .section .bottom .bottom-right .three .text .promotion {
+  font-size: 12px;
+  color: #fedc3f;
+}
+body main header .inner .section .bottom .bottom-right .three .text .cost {
+  font-size: 32px;
+  color: #ffffff;
+}
+body main header .inner .section .bottom .bottom-right .three .button {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 52px;
+}
+body main header .inner .section .bottom .bottom-right .three .button .btn {
+  text-transform: uppercase;
+  background-color: #13e28d;
+  width: 160px;
+  height: 50px;
+  font: 16px "Lato Regular", sans-serif;
+  color: #ffffff;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+body main header .inner .section .bottom .bottom-right .three .button .btn:hover {
+  background-color: #129450;
+  transition: all 0.3s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */
