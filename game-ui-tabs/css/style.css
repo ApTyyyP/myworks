@@ -55,47 +55,53 @@ body main header .inner .section .top {
 body main header .inner .section .top nav {
   height: 100%;
 }
-body main header .inner .section .top ul {
+body main header .inner .section .top nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-body main header .inner .section .top ul li {
+body main header .inner .section .top nav ul li {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   width: 33.33%;
   float: left;
   padding: 32px 0;
+  /*                  & .active {
+                      color: #ffffff;
+
+                      &:before {
+                        position: absolute;
+                        bottom: -25px;
+                        left: -14px;
+                        width: 127%;
+                        height: 2px;
+                        background: #ffffff;
+                        content: '';
+                      }
+                    }
+
+                    & .menu_link {
+                      position: relative;
+                      display: inline-block;
+                      height: 100%;
+
+                      &:before {
+                        position: absolute;
+                        bottom: -27px;
+                        left: -15px;
+                        width: 125%;
+                        height: 2px;
+                        background: #ffffff;
+                        content: '';
+                        opacity: 0;
+                      }
+                    }*/
 }
-body main header .inner .section .top ul li .active {
-  color: #ffffff;
+body main header .inner .section .top nav ul li:not(.active) {
+  cursor: pointer;
 }
-body main header .inner .section .top ul li .active:before {
-  position: absolute;
-  bottom: -25px;
-  left: -14px;
-  width: 127%;
-  height: 2px;
-  background: #ffffff;
-  content: "";
-}
-body main header .inner .section .top ul li .menu_link {
-  position: relative;
-  display: inline-block;
-  height: 100%;
-}
-body main header .inner .section .top ul li .menu_link:before {
-  position: absolute;
-  bottom: -27px;
-  left: -15px;
-  width: 125%;
-  height: 2px;
-  background: #ffffff;
-  content: "";
-  opacity: 0;
-}
-body main header .inner .section .top ul li a {
+body main header .inner .section .top nav ul li a {
   font-size: 16px;
   display: inline-block;
   line-height: 2;
@@ -103,7 +109,7 @@ body main header .inner .section .top ul li a {
   cursor: pointer;
   position: relative;
 }
-body main header .inner .section .top ul li a:after {
+body main header .inner .section .top nav ul li a:after {
   display: block;
   content: "";
   background-color: #ffffff;
@@ -119,7 +125,7 @@ body main header .inner .section .top ul li a:after {
   -moz-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-body main header .inner .section .top ul li a:hover:after {
+body main header .inner .section .top nav ul li a:hover:after {
   width: 125%;
 }
 body main header .inner .section .bottom {
@@ -130,6 +136,12 @@ body main header .inner .section .bottom:before, body main header .inner .sectio
   content: "";
   display: block;
   clear: both;
+}
+body main header .inner .section .bottom .tabs__content {
+  display: none;
+}
+body main header .inner .section .bottom .tabs__content.active {
+  display: block;
 }
 body main header .inner .section .bottom .bottom-left {
   width: 33.33%;
@@ -167,7 +179,7 @@ body main header .inner .section .bottom .bottom-right {
   font-family: "Lato Regular", serif;
 }
 body main header .inner .section .bottom .bottom-right .one {
-  padding: 50px 0 25px 0;
+  padding: 40px 0 25px 0;
 }
 body main header .inner .section .bottom .bottom-right .one .text {
   display: inline-block;
@@ -197,7 +209,7 @@ body main header .inner .section .bottom .bottom-right .two p {
   line-height: 1.6;
 }
 body main header .inner .section .bottom .bottom-right .three {
-  padding: 42px 0 0 0;
+  padding: 40px 0 0 0;
 }
 body main header .inner .section .bottom .bottom-right .three .text {
   display: inline-block;
@@ -226,11 +238,14 @@ body main header .inner .section .bottom .bottom-right .three .button .btn {
   border: 0;
   border-radius: 3px;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 body main header .inner .section .bottom .bottom-right .three .button .btn:hover {
   background-color: #129450;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
+}
+body main header .inner .section .bottom .bottom-right .three .button .btn:active {
+  transform: scale(0.9);
 }
 
 /*# sourceMappingURL=style.css.map */

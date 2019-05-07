@@ -6,6 +6,8 @@
     <link rel="icon" href="img/logotype.ico">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.min.js" defer></script>
+    <script src="js/tabs.js" defer></script>
 </head>
 <body>
     <main>
@@ -13,8 +15,8 @@
             <div class="inner">
                 <div class="section">
                     <div class="top">
-                        <nav>
-                            <ul>
+                        <nav class="tabs">
+                            <ul class="tabs__caption">
                                 <li>
                                     <div class="menu_link">
                                         <div><img src="img/tooltip.svg" alt="tooltip"></div>
@@ -37,45 +39,133 @@
                         </nav>
                     </div>
                     <div class="bottom">
-                        <div class="bottom-left">
-                            <div class="img">
-                                <img src="img/game.png" alt="game">
+                        <div class="tabs__content active">
+                            <div class="bottom-left">
+                                <div class="img">
+                                    <img src="img/game.png" alt="game">
+                                </div>
+                                <div class="star">
+                                    <form action="/" class="stars">
+                                        <input type="radio" name="star" id="star-1">
+                                        <label for="star-1"></label>
+                                        <input type="radio" name="star" id="star-2" checked>
+                                        <label for="star-2"></label>
+                                        <input type="radio" name="star" id="star-3">
+                                        <label for="star-3"></label>
+                                        <input type="radio" name="star" id="star-4">
+                                        <label for="star-4"></label>
+                                        <input type="radio" name="star" id="star-5">
+                                        <label for="star-5"></label>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="star">
-                                <form action="/" class="stars">
-                                    <input type="radio" name="star" id="star-1">
-                                    <label for="star-1"></label>
-                                    <input type="radio" name="star" id="star-2" checked>
-                                    <label for="star-2"></label>
-                                    <input type="radio" name="star" id="star-3">
-                                    <label for="star-3"></label>
-                                    <input type="radio" name="star" id="star-4">
-                                    <label for="star-4"></label>
-                                    <input type="radio" name="star" id="star-5">
-                                    <label for="star-5"></label>
-                                </form>
+                            <div class="bottom-right">
+                                <div class="one">
+                                    <div class="text">
+                                        <h1>FarCry 4</h1>
+                                        <p>First Released Nov 17, 2014</p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="img/score.png" alt="score"></div>
+                                </div>
+                                <div class="two">
+                                    <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
+                                        <br>layas struggling under the regime of a despotic
+                                        <br>self-appointed king.</p>
+                                </div>
+                                <div class="three">
+                                    <div class="text">
+                                        <div class="promotion">20% OFF!</div>
+                                        <div class="cost">$59.96</div>
+                                    </div>
+                                    <div class="button"><input type="submit" value="Buy it now" class="btn"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="bottom-right">
-                            <div class="one">
-                                <div class="text">
-                                    <h1>FarCry 4</h1>
-                                    <p>First Released Nov 17, 2014</p>
-                                </div>
+                        <div class="tabs__content">
+                            <div class="bottom-left">
                                 <div class="img">
-                                    <img src="img/score.png" alt="score"></div>
-                            </div>
-                            <div class="two">
-                                <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
-                                    <br>layas struggling under the regime of a despotic
-                                    <br>self-appointed king.</p>
-                            </div>
-                            <div class="three">
-                                <div class="text">
-                                    <div class="promotion">20% OFF!</div>
-                                    <div class="cost">$59.96</div>
+                                    <img src="img/game.png" alt="game">
                                 </div>
-                                <div class="button"><input type="submit" value="Buy it now" class="btn"></div>
+                                <div class="star">
+                                    <form action="/" class="stars">
+                                        <input type="radio" name="star" id="star-1">
+                                        <label for="star-1"></label>
+                                        <input type="radio" name="star" id="star-2" checked>
+                                        <label for="star-2"></label>
+                                        <input type="radio" name="star" id="star-3">
+                                        <label for="star-3"></label>
+                                        <input type="radio" name="star" id="star-4">
+                                        <label for="star-4"></label>
+                                        <input type="radio" name="star" id="star-5">
+                                        <label for="star-5"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="bottom-right">
+                                <div class="one">
+                                    <div class="text">
+                                        <h1>FarCry 5</h1>
+                                        <p>First Released Nov 17, 2014</p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="img/score.png" alt="score"></div>
+                                </div>
+                                <div class="two">
+                                    <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
+                                        <br>layas struggling under the regime of a despotic
+                                        <br>self-appointed king.</p>
+                                </div>
+                                <div class="three">
+                                    <div class="text">
+                                        <div class="promotion">20% OFF!</div>
+                                        <div class="cost">$59.96</div>
+                                    </div>
+                                    <div class="button"><input type="submit" value="Buy it now" class="btn"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__content">
+                            <div class="bottom-left">
+                                <div class="img">
+                                    <img src="img/game.png" alt="game">
+                                </div>
+                                <div class="star">
+                                    <form action="/" class="stars">
+                                        <input type="radio" name="star" id="star-1">
+                                        <label for="star-1"></label>
+                                        <input type="radio" name="star" id="star-2" checked>
+                                        <label for="star-2"></label>
+                                        <input type="radio" name="star" id="star-3">
+                                        <label for="star-3"></label>
+                                        <input type="radio" name="star" id="star-4">
+                                        <label for="star-4"></label>
+                                        <input type="radio" name="star" id="star-5">
+                                        <label for="star-5"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="bottom-right">
+                                <div class="one">
+                                    <div class="text">
+                                        <h1>FarCry 6</h1>
+                                        <p>First Released Nov 17, 2014</p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="img/score.png" alt="score"></div>
+                                </div>
+                                <div class="two">
+                                    <p>In Far Cry 4, players find themselves in Kyrat, a breathtaking, perilous and wild region of the Hima
+                                        <br>layas struggling under the regime of a despotic
+                                        <br>self-appointed king.</p>
+                                </div>
+                                <div class="three">
+                                    <div class="text">
+                                        <div class="promotion">20% OFF!</div>
+                                        <div class="cost">$59.96</div>
+                                    </div>
+                                    <div class="button"><input type="submit" value="Buy it now" class="btn"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
