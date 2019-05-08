@@ -639,6 +639,7 @@ button,
 
     li {
       padding-left: 0;
+      @include vendor('transition', 'all 0.2s ease-in');
 
       a {
         display: block;
@@ -675,8 +676,16 @@ button,
         }
       }
 
-      &:hover {
-        background: #1d2023;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+
+        &:hover {
+          background: #1d2023;
+          padding-right: 10px;
+          @include vendor('transition', 'all 0.2s ease-in');
+        }
       }
 
       &:nth-child(5) {

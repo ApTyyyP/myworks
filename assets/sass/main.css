@@ -1681,6 +1681,10 @@ button:active,
 }
 #nav ul li {
   padding-left: 0;
+  -moz-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 #nav ul li a {
   display: block;
@@ -1715,8 +1719,13 @@ button:active,
 #nav ul li a.active span:before {
   color: #8f9699;
 }
-#nav ul li:hover {
+#nav ul li:nth-child(1):hover, #nav ul li:nth-child(2):hover, #nav ul li:nth-child(3):hover, #nav ul li:nth-child(4):hover {
   background: #1d2023;
+  padding-right: 10px;
+  -moz-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 #nav ul li:nth-child(5) {
   text-align: center;
