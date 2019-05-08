@@ -67,39 +67,36 @@ body main header .inner .section .top nav ul li {
   width: 33.33%;
   float: left;
   padding: 32px 0;
-  /*                  & .active {
-                      color: #ffffff;
-
-                      &:before {
-                        position: absolute;
-                        bottom: -25px;
-                        left: -14px;
-                        width: 127%;
-                        height: 2px;
-                        background: #ffffff;
-                        content: '';
-                      }
-                    }
-
-                    & .menu_link {
-                      position: relative;
-                      display: inline-block;
-                      height: 100%;
-
-                      &:before {
-                        position: absolute;
-                        bottom: -27px;
-                        left: -15px;
-                        width: 125%;
-                        height: 2px;
-                        background: #ffffff;
-                        content: '';
-                        opacity: 0;
-                      }
-                    }*/
 }
 body main header .inner .section .top nav ul li:not(.active) {
   cursor: pointer;
+}
+body main header .inner .section .top nav ul li .active {
+  color: #ffffff;
+}
+body main header .inner .section .top nav ul li .active:before {
+  position: absolute;
+  bottom: -25px;
+  left: -14px;
+  width: 127%;
+  height: 2px;
+  background: #ffffff;
+  content: "";
+}
+body main header .inner .section .top nav ul li .menu_link {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+body main header .inner .section .top nav ul li .menu_link:before {
+  position: absolute;
+  bottom: -27px;
+  left: -15px;
+  width: 125%;
+  height: 2px;
+  background: #ffffff;
+  content: "";
+  opacity: 0;
 }
 body main header .inner .section .top nav ul li a {
   font-size: 16px;
