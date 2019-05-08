@@ -2,27 +2,22 @@
   fill: #262626;
   fill-rule: evenodd;
 }
-
 .inner {
   width: 1170px;
   padding-top: 1px;
 }
-
 body {
   margin: 0;
 }
-
 main {
   background: #f9f8fb url("../img/s1-bg.jpg") no-repeat top center;
 }
-
 header {
   position: absolute;
 }
-
-.s1 .inner {
-  height: 100vh;
-  min-height: 700px;
+.s1 {
+  .inner {
+    height: 100vh;
+    min-height: 700px;
+  }
 }
-
-/*# sourceMappingURL=style.css.map */
