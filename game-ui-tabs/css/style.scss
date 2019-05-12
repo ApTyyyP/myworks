@@ -76,14 +76,6 @@ body {
                   padding: 32px 0;
 
                   & .active {
-
-                  }
-
-                  &:not(.active) {
-                    cursor: pointer;
-                  }
-
-                  & .active {
                     color: #ffffff;
 
                     &:before {
@@ -104,9 +96,9 @@ body {
 
                     &:before {
                       position: absolute;
-                      bottom: -27px;
+                      bottom: -25px;
                       left: -15px;
-                      width: 125%;
+                      width: 127%;
                       height: 2px;
                       background: #ffffff;
                       content: '';
