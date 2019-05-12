@@ -58,15 +58,13 @@ body .btn-active:active {
   transform: scale(0.9);
 }
 body header {
-  min-height: 100vh;
-  height: 100vh;
   color: #ffffff;
 }
 body header .header {
   position: relative;
   background-size: cover;
   background: url("../img/s1-bg.jpg") no-repeat fixed top;
-  height: calc(100%);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
