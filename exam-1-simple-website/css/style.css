@@ -341,6 +341,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    list-style-type: none;
 }
 /*---*/
 .slider_picture {

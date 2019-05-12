@@ -1,3 +1,147 @@
-
+@font-face {
+  font-family: "BIG JOHN";
+  src: url("../fonts/big_john.woff2") format("woff2"), url("../fonts/big_john.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Slim Joe";
+  src: url("../fonts/slim_joe.woff2") format("woff2"), url("../fonts/slim_joe.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", serif;
+}
+body h1 {
+  margin: 0;
+}
+body a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease-in;
+}
+body .inner {
+  margin: 0;
+  padding: 0;
+  width: 1000px;
+}
+body .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  text-transform: uppercase;
+  color: #48bf72;
+  border: 2px solid #48bf72;
+  width: 10em;
+  height: 3.5em;
+  margin: 2px;
+  font-family: "Lato", serif;
+  font-weight: bold;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+body .btn_effect {
+  transition: background 0.3s linear;
+}
+body .btn_effect:hover {
+  background: #48bf72;
+}
+body .btn-active:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+body header {
+  min-height: 100vh;
+  height: 100vh;
+  color: #ffffff;
+}
+body header .header {
+  position: relative;
+  background-size: cover;
+  background: url("../img/s1-bg.jpg") no-repeat fixed top;
+  height: calc(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body header .header .nav-content {
+  min-height: 4em;
+  height: 4em;
+}
+body header .header .nav-content .logo_nav {
+  width: 100%;
+  height: 100%;
+  padding: 36px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  font-size: 16px;
+}
+body header .header .nav-content .logo_nav ul {
+  margin: 0;
+  padding: 0;
+}
+body header .header .nav-content .logo_nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+body header .header .nav-content .logo_nav ul li:after {
+  content: url("../img/sep.png");
+  display: block;
+  float: right;
+  width: 1px;
+  height: 100%;
+  margin-left: 56px;
+  margin-right: 46px;
+}
+body header .header .nav-content .logo_nav ul li:last-child:after {
+  content: none;
+}
+body header .header .nav-content .logo_nav a {
+  font-family: "Lato", serif;
+  font-weight: bold;
+  display: inline-block;
+}
+body header .header .nav-content .logo_nav a:hover {
+  color: #48bf72;
+  transition: all 0.3s ease-in;
+}
+body header .header .text-1 {
+  font-family: "BIG JOHN", serif;
+  font-size: 36px;
+  margin-top: 200px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+body header .header .text-2 {
+  font-family: "Slim Joe", serif;
+  font-size: 20px;
+  margin: 0 0 49px;
+  line-height: 2;
+  display: flex;
+  justify-content: center;
+}
+body header .header .sl2_button {
+  width: 134px;
+  height: 35px;
+  border-radius: 3px;
+  margin: 0 auto;
+  transition: all 0.3s ease-in;
+}
+body header .header .sl2_button:hover {
+  color: #ffffff;
+}
 
 /*# sourceMappingURL=style.css.map */

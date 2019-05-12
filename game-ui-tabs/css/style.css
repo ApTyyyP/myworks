@@ -242,6 +242,10 @@ body main header .inner .section .bottom .bottom-right .three .button .btn:hover
   transition: all 0.2s ease-in;
 }
 body main header .inner .section .bottom .bottom-right .three .button .btn:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
   transform: scale(0.9);
 }
 
