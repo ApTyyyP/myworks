@@ -173,7 +173,6 @@ body {
   }
   main {
     background: #f9f9f9;
-    height: 2320px;
 
     section {
       display: flex;
@@ -199,8 +198,8 @@ body {
           cursor: pointer;
 
           &:hover {
-            background-color: #8CF;
-            color: #222;
+            background-color: #97bfcf;
+            color: #3c4955;
           }
 
           &:active,
@@ -235,6 +234,7 @@ body {
               left: 0;
               right: 16px;
             }
+            transition: all .3s ease-in;
           }
         }
 
@@ -327,6 +327,110 @@ body {
         background: url("../img/s3-bg.jpg") no-repeat top;
         background-size: cover;
         height: 500px;
+
+        & .inner {
+          display: flex;
+          justify-content: flex-end;
+
+          .text {
+            width: 420px;
+            height: 380px;
+            margin: 50px;
+            color: #ffffff;
+
+            h1 {
+              font-size: 22px;
+              line-height: 1.5;
+
+              b {
+                font-size: 30px;
+              }
+            }
+
+            p {
+              line-height: 1.4;
+              margin: 40px 0 0;
+            }
+
+            a {
+              margin-top: 36px;
+              color: #3c4955;
+              border: 2px solid #3c4955;
+              transition: all .3s ease-in;
+
+              &.sl2_button {
+                width: 134px;
+                height: 35px;
+                border-radius: 3px;
+                transition: all 0.3s ease-in;
+              }
+
+              &.btn_effect {
+
+                &:hover {
+                  color: #ffffff;
+                  background: #3c4955;
+                  transition: all .3s ease-in;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.section-3 {
+        height: 566px;
+
+        & .inner {
+          display: flex;
+          justify-content: center;
+
+          h1 {
+            font-family: "BIG JOHN", serif;
+            font-size: 26px;
+            color: #48bf72;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin: 51px 0 54px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    height: 201px;
+    background: #3c4955;
+
+    & .footer {
+      height: 100%;
+
+      & .inner {
+        display: flex;
+        height: 100%;
+      }
+
+      & .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        & .text {
+
+          p {
+            margin: 0;
+            font-size: 16px;
+            color: #ffffff;
+          }
+        }
+
+        & .social {
+
+          a {
+            margin-left: 40px;
+          }
+        }
       }
     }
   }

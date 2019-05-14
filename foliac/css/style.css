@@ -143,7 +143,6 @@ body header .header .sl2_button:hover {
 }
 body main {
   background: #f9f9f9;
-  height: 2320px;
 }
 body main section {
   display: flex;
@@ -171,8 +170,8 @@ body main section.section-1 .button {
   cursor: pointer;
 }
 body main section.section-1 .button:hover {
-  background-color: #8CF;
-  color: #222;
+  background-color: #97bfcf;
+  color: #3c4955;
 }
 body main section.section-1 .button:active, body main section.section-1 .button.is-checked {
   background-color: #48bf72;
@@ -197,6 +196,7 @@ body main section.section-1 .button-group .button {
   border-radius: 3px;
   margin-left: 0;
   margin-right: 16px;
+  transition: all 0.3s ease-in;
 }
 body main section.section-1 .grid {
   max-width: 1000px;
@@ -283,6 +283,86 @@ body main section.section-2 {
   background: url("../img/s3-bg.jpg") no-repeat top;
   background-size: cover;
   height: 500px;
+}
+body main section.section-2 .inner {
+  display: flex;
+  justify-content: flex-end;
+}
+body main section.section-2 .inner .text {
+  width: 420px;
+  height: 380px;
+  margin: 50px;
+  color: #ffffff;
+}
+body main section.section-2 .inner .text h1 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+body main section.section-2 .inner .text h1 b {
+  font-size: 30px;
+}
+body main section.section-2 .inner .text p {
+  line-height: 1.4;
+  margin: 40px 0 0;
+}
+body main section.section-2 .inner .text a {
+  margin-top: 36px;
+  color: #3c4955;
+  border: 2px solid #3c4955;
+  transition: all 0.3s ease-in;
+}
+body main section.section-2 .inner .text a.sl2_button {
+  width: 134px;
+  height: 35px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+}
+body main section.section-2 .inner .text a.btn_effect:hover {
+  color: #ffffff;
+  background: #3c4955;
+  transition: all 0.3s ease-in;
+}
+body main section.section-3 {
+  height: 566px;
+}
+body main section.section-3 .inner {
+  display: flex;
+  justify-content: center;
+}
+body main section.section-3 .inner h1 {
+  font-family: "BIG JOHN", serif;
+  font-size: 26px;
+  color: #48bf72;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 51px 0 54px;
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  height: 201px;
+  background: #3c4955;
+}
+body footer .footer {
+  height: 100%;
+}
+body footer .footer .inner {
+  display: flex;
+  height: 100%;
+}
+body footer .footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+body footer .footer .footer-content .text p {
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+body footer .footer .footer-content .social a {
+  margin-left: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
