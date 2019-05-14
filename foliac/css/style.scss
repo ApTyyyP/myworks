@@ -29,13 +29,13 @@ body {
     transition: all .3s ease-in;
   }
 
-  .inner {
+  & .inner {
     margin: 0;
     padding: 0;
     width: 1000px;
   }
 
-  .button {
+  & a.button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,14 +51,14 @@ body {
     font-size: 0.8em;
     cursor: pointer;
   }
-  .btn_effect {
+  & a.btn_effect {
     transition: background 0.3s linear;
 
     &:hover {
       background: #48bf72;
     }
   }
-  .btn-active:active {
+  & a.btn-active:active {
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     -ms-transform: scale(0.9);
@@ -68,13 +68,13 @@ body {
 
   header {
     color: #ffffff;
+    height: 650px;
 
       & .header {
-        position: relative;
+        background: url("../img/s1-bg.jpg") no-repeat top;
         background-size: cover;
-        background: url("../img/s1-bg.jpg") no-repeat fixed top;
         //height: calc(100%);
-        height: 100vh;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -168,6 +168,165 @@ body {
         &:hover {
           color: #ffffff;
         }
+      }
+    }
+  }
+  main {
+    background: #f9f9f9;
+    height: 2320px;
+
+    section {
+      display: flex;
+      justify-content: center;
+
+      &.section-1 {
+        height: 1000px;
+
+        /* ---- button ---- */
+
+        & .button {
+          display: inline-block;
+          padding: 5px;
+          margin: 51px 0 45px;
+          height: 32px;
+          border: none;
+          background: #EEE linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
+          color: #3c4955;
+          font-family: "Lato",serif;
+          font-weight: bold;
+          text-transform: none;
+          font-size: 16px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #8CF;
+            color: #222;
+          }
+
+          &:active,
+          &.is-checked {
+            background-color: #48bf72;
+          }
+
+          &.is-checked {
+            color: white;
+          }
+
+          &:active {
+            box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+          }
+        }
+        /* ---- button-group ---- */
+
+        .button-group {
+          display: flex;
+          justify-content: center;
+
+          &:after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+
+          & .button {
+             float: left;
+             border-radius: 3px;
+             margin: {
+              left: 0;
+              right: 16px;
+            }
+          }
+        }
+
+        /* ---- grid ---- */
+
+        .grid {
+          max-width: 1000px;
+
+          /* clear fix */
+          &:after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+        }
+
+        /* ---- .element-item ---- */
+
+        .element-item {
+          position: relative;
+          float: left;
+          width: 100px;
+          height: 100px;
+          margin: 5px;
+          padding: 10px;
+          background: #888;
+          color: #262524;
+
+          & > * {
+            margin: 0;
+            padding: 0;
+          }
+
+          & .name {
+            position: absolute;
+
+            left: 10px;
+            top: 60px;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 12px;
+            font-weight: normal;
+          }
+
+          & .symbol {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            font-size: 42px;
+            font-weight: bold;
+            color: white;
+          }
+
+          & .number {
+            position: absolute;
+            right: 8px;
+            top: 5px;
+          }
+
+          & .weight {
+            position: absolute;
+            left: 10px;
+            top: 76px;
+            font-size: 12px;
+          }
+
+          &.alkali          {
+            background: hsl(   0, 100%, 50%); }
+          &.alkaline-earth  {
+            background: hsl(  36, 100%, 50%); }
+          &.lanthanoid      {
+            background: hsl(  72, 100%, 50%); }
+          &.actinoid        {
+            background: hsl( 108, 100%, 50%); }
+          &.transition      {
+            background: hsl( 144, 100%, 50%); }
+          &.post-transition {
+            background: hsl( 180, 100%, 50%); }
+          &.metalloid       {
+            background: hsl( 216, 100%, 50%); }
+          &.diatomic        {
+            background: hsl( 252, 100%, 50%); }
+          &.halogen         {
+            background: hsl( 288, 100%, 50%); }
+          &.noble-gas       {
+            background: hsl( 324, 100%, 50%); }
+        }
+      }
+      &.section-2 {
+        background: url("../img/s3-bg.jpg") no-repeat top;
+        background-size: cover;
+        height: 500px;
       }
     }
   }
