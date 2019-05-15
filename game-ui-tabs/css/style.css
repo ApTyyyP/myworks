@@ -67,11 +67,30 @@ body main header .inner .section .top nav ul li {
   width: 33.33%;
   float: left;
   padding: 32px 0;
+  /*                  & .menu_link {
+                      position: relative;
+                      display: inline-block;
+                      height: 100%;
+
+                      &:before {
+                        position: absolute;
+                        bottom: -25px;
+                        left: -15px;
+                        width: 127%;
+                        height: 2px;
+                        background: #ffffff;
+                        content: '';
+                        opacity: 0;
+                      }
+                    }*/
 }
-body main header .inner .section .top nav ul li .active {
+body main header .inner .section .top nav ul li.active {
   color: #ffffff;
 }
-body main header .inner .section .top nav ul li .active:before {
+body main header .inner .section .top nav ul li.active a {
+  color: #ffffff;
+}
+body main header .inner .section .top nav ul li.active a:before {
   position: absolute;
   bottom: -25px;
   left: -14px;
@@ -80,20 +99,8 @@ body main header .inner .section .top nav ul li .active:before {
   background: #ffffff;
   content: "";
 }
-body main header .inner .section .top nav ul li .menu_link {
-  position: relative;
-  display: inline-block;
-  height: 100%;
-}
-body main header .inner .section .top nav ul li .menu_link:before {
-  position: absolute;
-  bottom: -25px;
-  left: -15px;
-  width: 127%;
-  height: 2px;
-  background: #ffffff;
-  content: "";
-  opacity: 0;
+body main header .inner .section .top nav ul li.active a:after {
+  width: 100%;
 }
 body main header .inner .section .top nav ul li a {
   font-size: 16px;
