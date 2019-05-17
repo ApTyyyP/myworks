@@ -196,6 +196,7 @@ body main section.section-1 .button-group .button {
   border-radius: 3px;
   margin-left: 0;
   margin-right: 16px;
+  outline: none;
   transition: all 0.3s ease-in;
 }
 body main section.section-1 .grid {
