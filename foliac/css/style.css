@@ -298,9 +298,11 @@ body main section.section-2 .inner .text {
 body main section.section-2 .inner .text h1 {
   font-size: 22px;
   line-height: 1.5;
+  font-weight: 300;
 }
 body main section.section-2 .inner .text h1 b {
   font-size: 30px;
+  font-weight: 700;
 }
 body main section.section-2 .inner .text p {
   line-height: 1.4;
