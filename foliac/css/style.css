@@ -492,5 +492,9 @@ body footer .footer .footer-content .text p {
 body footer .footer .footer-content .social a {
   margin-left: 40px;
 }
+body footer .footer .footer-content .social a img:hover {
+    transform: rotate(360deg);
+    transition: all 0.8s ease-in;
+}
 
 /*# sourceMappingURL=style.css.map */
