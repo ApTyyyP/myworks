@@ -351,6 +351,7 @@ body main section.section-3 .inner .form form fieldset {
 body main section.section-3 .inner .form input,
 body main section.section-3 .inner .form textarea {
   font: 700 16px/22px "Lato", serif;
+  outline: none;
 }
 body main section.section-3 .inner .form .register-group label {
   display: flex;
