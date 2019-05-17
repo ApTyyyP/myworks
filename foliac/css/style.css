@@ -417,10 +417,10 @@ body main section.section-3 .inner .form .register-group label input {
   height: 50px;
 }
 body main section.section-3 .inner .form .register-group label input.icon-user {
-  background: url("../img/icon-user.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-user.png") no-repeat;
 }
 body main section.section-3 .inner .form .register-group label input.icon-email {
-  background: url("../img/icon-email.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-email.png") no-repeat;
 }
 body main section.section-3 .inner .form .register-group label input, body main section.section-3 .inner .form .register-group label textarea {
   border: 2px solid #3c4955;
@@ -437,7 +437,7 @@ body main section.section-3 .inner .form .register-group label textarea {
   padding-top: 14px;
 }
 body main section.section-3 .inner .form .register-group label textarea.icon-message {
-  background: url("../img/icon-message.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-message.png") no-repeat;
 }
 body main section.section-3 .inner .form input.btn-default {
   width: 100%;
