@@ -194,9 +194,9 @@ body main section.section-1 .button-group:after {
 body main section.section-1 .button-group .button {
   float: left;
   border-radius: 3px;
+  outline: none;
   margin-left: 0;
   margin-right: 16px;
-  outline: none;
   transition: all 0.3s ease-in;
 }
 body main section.section-1 .grid {
@@ -357,12 +357,22 @@ body main section.section-3 .inner .form textarea {
   outline: none;
 }
 body main section.section-3 .inner .form .register-group label {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: #648880;
   cursor: pointer;
   font-weight: 400;
+}
+body main section.section-3 .inner .form .register-group label span {
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+  top: 20px;
+  left: 52px;
+  border-left-color: #394754;
+  width: 0;
 }
 body main section.section-3 .inner .form .register-group label:nth-of-type(1), body main section.section-3 .inner .form .register-group label:nth-of-type(2) {
   display: inline-block;
@@ -497,8 +507,8 @@ body footer .footer .footer-content .social a {
   margin-left: 40px;
 }
 body footer .footer .footer-content .social a img:hover {
-    transform: rotate(360deg);
-    transition: all 0.8s ease-in;
+  transform: rotate(360deg);
+  transition: all 0.8s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */
