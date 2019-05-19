@@ -83,8 +83,9 @@ body {
 
                       &:before {
                         position: absolute;
-                        bottom: -25px;
+                        bottom: -27px;
                         left: -14px;
+                        top: 57px;
                         width: 127%;
                         height: 2px;
                         background: #ffffff;
@@ -128,7 +129,7 @@ body {
                       height: 2px;
                       width: 0;
                       left: 50%;
-                      top: 55px;
+                      top: 57px;
                       position: absolute;
                       -webkit-transition: width .3s ease-in-out;
                       -moz--transition: width .3s ease-in-out;

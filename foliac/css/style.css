@@ -13,7 +13,20 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Lato", serif;
+  font-family: "Lato", sans-serif;
+}
+body #go-top {
+  position: fixed;
+  bottom: 10px;
+  right: 25px;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background: url("../img/scroll_up.png") no-repeat;
+  opacity: 0.7;
+}
+body #go-top:hover {
+  opacity: 1;
 }
 body h1 {
   margin: 0;
@@ -21,6 +34,9 @@ body h1 {
 body a {
   text-decoration: none;
   color: #ffffff;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
   transition: all 0.3s ease-in;
 }
 body .inner {
@@ -149,11 +165,7 @@ body main section {
   justify-content: center;
 }
 body main section.section-1 {
-  height: 1000px;
-  /* ---- button ---- */
-  /* ---- button-group ---- */
-  /* ---- grid ---- */
-  /* ---- .element-item ---- */
+  height: 100%;
 }
 body main section.section-1 .button {
   display: inline-block;
@@ -194,90 +206,54 @@ body main section.section-1 .button-group:after {
 body main section.section-1 .button-group .button {
   float: left;
   border-radius: 3px;
+  outline: none;
+  white-space: nowrap;
   margin-left: 0;
   margin-right: 16px;
   transition: all 0.3s ease-in;
 }
 body main section.section-1 .grid {
   max-width: 1000px;
-  /* clear fix */
+  margin-bottom: 15px;
 }
 body main section.section-1 .grid:after {
   content: "";
   display: block;
   clear: both;
 }
-body main section.section-1 .element-item {
-  position: relative;
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  padding: 10px;
-  background: #888;
-  color: #262524;
+body main section.section-1 .grid-item {
+  border: 1px solid #3c4955;
+  margin: 30px 30px;
+  border-radius: 7px;
 }
-body main section.section-1 .element-item > * {
-  margin: 0;
-  padding: 0;
+body main section.section-1 .grid-item.img-1 {
+  background: url("../img/images/1img.png") no-repeat;
+  background-size: cover;
+  width: 225px;
+  height: 225px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
 }
-body main section.section-1 .element-item .name {
-  position: absolute;
-  left: 10px;
-  top: 60px;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 12px;
-  font-weight: normal;
+body main section.section-1 .grid-item.img-1 .hover-block {
+  width: 225px;
+  height: 225px;
+  background: #48bf72;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease-in;
 }
-body main section.section-1 .element-item .symbol {
-  position: absolute;
-  left: 10px;
-  top: 0;
-  font-size: 42px;
-  font-weight: bold;
-  color: white;
+body main section.section-1 .grid-item.img-1 .hover-block:hover {
+  opacity: 0.9;
+  border-radius: 7px;
+  transition: all 0.3s ease-in;
 }
-body main section.section-1 .element-item .number {
-  position: absolute;
-  right: 8px;
-  top: 5px;
-}
-body main section.section-1 .element-item .weight {
-  position: absolute;
-  left: 10px;
-  top: 76px;
-  font-size: 12px;
-}
-body main section.section-1 .element-item.alkali {
-  background: red;
-}
-body main section.section-1 .element-item.alkaline-earth {
-  background: #ff9900;
-}
-body main section.section-1 .element-item.lanthanoid {
-  background: #ccff00;
-}
-body main section.section-1 .element-item.actinoid {
-  background: #33ff00;
-}
-body main section.section-1 .element-item.transition {
-  background: #00ff66;
-}
-body main section.section-1 .element-item.post-transition {
-  background: aqua;
-}
-body main section.section-1 .element-item.metalloid {
-  background: #0066ff;
-}
-body main section.section-1 .element-item.diatomic {
-  background: #3300ff;
-}
-body main section.section-1 .element-item.halogen {
-  background: #cc00ff;
-}
-body main section.section-1 .element-item.noble-gas {
-  background: #ff0099;
+body main section.section-1 .grid-item.img-1 .hover-block a b {
+  font-size: 30px;
 }
 body main section.section-2 {
   background: url("../img/s3-bg.jpg") no-repeat top;
@@ -297,9 +273,11 @@ body main section.section-2 .inner .text {
 body main section.section-2 .inner .text h1 {
   font-size: 22px;
   line-height: 1.5;
+  font-weight: 300;
 }
 body main section.section-2 .inner .text h1 b {
   font-size: 30px;
+  font-weight: 700;
 }
 body main section.section-2 .inner .text p {
   line-height: 1.4;
@@ -351,14 +329,25 @@ body main section.section-3 .inner .form form fieldset {
 body main section.section-3 .inner .form input,
 body main section.section-3 .inner .form textarea {
   font: 700 16px/22px "Lato", serif;
+  outline: none;
 }
 body main section.section-3 .inner .form .register-group label {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: #648880;
   cursor: pointer;
   font-weight: 400;
+}
+body main section.section-3 .inner .form .register-group label span {
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+  top: 20px;
+  left: 52px;
+  border-left-color: #394754;
+  width: 0;
 }
 body main section.section-3 .inner .form .register-group label:nth-of-type(1), body main section.section-3 .inner .form .register-group label:nth-of-type(2) {
   display: inline-block;
@@ -417,10 +406,10 @@ body main section.section-3 .inner .form .register-group label input {
   height: 50px;
 }
 body main section.section-3 .inner .form .register-group label input.icon-user {
-  background: url("../img/icon-user.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-user.png") no-repeat;
 }
 body main section.section-3 .inner .form .register-group label input.icon-email {
-  background: url("../img/icon-email.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-email.png") no-repeat;
 }
 body main section.section-3 .inner .form .register-group label input, body main section.section-3 .inner .form .register-group label textarea {
   border: 2px solid #3c4955;
@@ -437,7 +426,7 @@ body main section.section-3 .inner .form .register-group label textarea {
   padding-top: 14px;
 }
 body main section.section-3 .inner .form .register-group label textarea.icon-message {
-  background: url("../img/icon-message.png") no-repeat;
+  background: #f1f1f1 url("../img/icon-message.png") no-repeat;
 }
 body main section.section-3 .inner .form input.btn-default {
   width: 100%;
@@ -491,6 +480,10 @@ body footer .footer .footer-content .text p {
 }
 body footer .footer .footer-content .social a {
   margin-left: 40px;
+}
+body footer .footer .footer-content .social a img:hover {
+  transform: rotate(360deg);
+  transition: all 0.8s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */

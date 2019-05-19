@@ -92,8 +92,9 @@ body main header .inner .section .top nav ul li.active a {
 }
 body main header .inner .section .top nav ul li.active a:before {
   position: absolute;
-  bottom: -25px;
+  bottom: -27px;
   left: -14px;
+  top: 57px;
   width: 127%;
   height: 2px;
   background: #ffffff;
@@ -117,7 +118,7 @@ body main header .inner .section .top nav ul li a:after {
   height: 2px;
   width: 0;
   left: 50%;
-  top: 55px;
+  top: 57px;
   position: absolute;
   -webkit-transition: width 0.3s ease-in-out;
   -moz--transition: width 0.3s ease-in-out;
