@@ -14,19 +14,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
+  /*  #go-top {
+      position: fixed;
+      bottom: 10px;
+      right: 25px;
+      cursor: pointer;
+      width: 64px;
+      height: 64px;
+      background: url("../img/scroll_up.png") no-repeat;
+      opacity: .7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }*/
 }
-body #go-top {
+body .b-up-arrow {
   position: fixed;
-  bottom: 10px;
-  right: 25px;
+  bottom: 70px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   cursor: pointer;
-  width: 64px;
-  height: 64px;
-  background: url("../img/scroll_up.png") no-repeat;
-  opacity: 0.7;
 }
-body #go-top:hover {
-  opacity: 1;
+body .b-up-arrow:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -6px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+body .b-up-arrow_pos_right {
+  right: 36px;
 }
 body h1 {
   margin: 0;
@@ -156,6 +188,9 @@ body header .header .sl2_button {
 }
 body header .header .sl2_button:hover {
   color: #ffffff;
+}
+body header .header i {
+  visibility: hidden;
 }
 body main {
   background: #f9f9f9;

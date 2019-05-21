@@ -20,7 +20,7 @@
         });
 
         // Кнопка "Вверх"
-        $(document).ready(function () {
+/*        $(document).ready(function () {
             $('body').append('<a href="#" id="go-top" title="Вверх"></a>');
         });
 
@@ -41,7 +41,7 @@
 
         $(function () {
             $("#go-top").scrollToTop();
-        });
+        });*/
 
         // Isotope
         $('.grid').isotope({
