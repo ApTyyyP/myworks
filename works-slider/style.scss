@@ -1,0 +1,210 @@
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Regular'), local('Poppins-Regular'), url('fonts/Poppinsregular.woff2') format('woff2'), url('fonts/Poppinsregular.woff') format('woff'), url('fonts/Poppinsregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins Poppins-BoldSemiBold'), local('Poppins-SemiBold'), url('fonts/Poppinspoppins-boldsemibold.woff2') format('woff2'), url('fonts/Poppinspoppins-boldsemibold.woff') format('woff'), url('fonts/Poppinspoppins-boldsemibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+
+  main {
+    height: 100%;
+    background: url("img/bg.jpg") -18px -5px no-repeat;
+    background-size: cover;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      & p {
+        margin: 50px 0 0;
+        font-family: "Poppins-BoldSemiBold", sans-serif;
+        font-weight: bold;
+        color: #303030;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      & h1 {
+        width: 100%;
+        margin: 11px 0 65px;
+        font-family: "Poppins Regular", sans-serif;
+        font-size: 68px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1;
+      }
+    }
+
+    .footer {
+      width: 100%;
+      margin-bottom: 80px;
+
+      .slider .slide {
+        margin-left: 27px;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      .slide.slick-slide {
+        cursor: pointer;
+      }
+
+      .slide {
+
+        & .img-1,
+        & .img-2,
+        & .img-3,
+        & .img-4 {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease-in;
+
+          & .hover-block {
+            background: #1bf1ad;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            opacity: 0;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+              opacity: 0.9;
+              transition: all 0.3s ease-in;
+            }
+
+            & a {
+              color: #ffffff;
+              text-decoration: none;
+              padding: 0 30px 30px 50px;
+              outline: none;
+
+              h1 {
+                font-family: "Poppins Regular", sans-serif;
+                font-size: 28px;
+                letter-spacing: 3px;
+                line-height: .9;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+              }
+
+              span {
+                font-family: "Poppins-BoldSemiBold", sans-serif;
+                font-size: 12px;
+                letter-spacing: 1.4px;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+
+        & .img-1 {
+          background: url("img/sl1.jpg") no-repeat;
+          background-size: cover;
+
+          & .hover-block {
+            width: 440px;
+            height: 400px;
+          }
+        }
+
+        & .img-2 {
+          background: url("img/sl2.jpg") no-repeat;
+          background-size: cover;
+
+          & .hover-block {
+            width: 440px;
+            height: 400px;
+          }
+        }
+
+        & .img-3 {
+          background: url("img/sl3.jpg") no-repeat;
+          background-size: cover;
+
+          & .hover-block {
+            width: 440px;
+            height: 400px;
+          }
+        }
+
+        & .img-4 {
+          background: url("img/sl4.jpg") no-repeat;
+          background-size: cover;
+
+          & .hover-block {
+            width: 333px;
+            height: 400px;
+          }
+        }
+      }
+
+      .slick-slide img {
+        height: 400px;
+      }
+
+      .slick-arrow {
+        font-size: 0;
+        position: absolute;
+        top: 50%;
+        margin-top: -46px;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background: #555;
+        opacity: 0.4;
+        border: none;
+        z-index: 1;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .slick-prev {
+        left: 20px;
+        background: url("img/prev.png");
+        transition: all 0.3s ease-in;
+      }
+
+      .slick-next {
+        right: 20px;
+        background: url("img/next.png");
+        transition: all 0.3s ease-in;
+      }
+
+      .slick-dots {
+        padding: 0;
+        text-align: center;
+
+        & li {
+          display: inline-block;
+        }
+
+        & button {
+          border-radius: 50%;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+
+        & .slick-active button {
+          background: #777777;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Regular"), local("Poppins-Regular"), url("fonts/Poppinsregular.woff2") format("woff2"), url("fonts/Poppinsregular.woff") format("woff"), url("fonts/Poppinsregular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Poppins-BoldSemiBold"), local("Poppins-SemiBold"), url("fonts/Poppinspoppins-boldsemibold.woff2") format("woff2"), url("fonts/Poppinspoppins-boldsemibold.woff") format("woff"), url("fonts/Poppinspoppins-boldsemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  margin: 0;
+}
+body main {
+  height: 100%;
+  background: url("img/bg.jpg") -18px -5px no-repeat;
+  background-size: cover;
+}
+body main .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body main .header p {
+  margin: 50px 0 0;
+  font-family: "Poppins-BoldSemiBold", sans-serif;
+  font-weight: bold;
+  color: #303030;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+body main .header h1 {
+  width: 100%;
+  margin: 11px 0 65px;
+  font-family: "Poppins Regular", sans-serif;
+  font-size: 68px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+body main .footer {
+  width: 100%;
+  margin-bottom: 80px;
+}
+body main .footer .slider .slide {
+  margin-left: 27px;
+  box-sizing: border-box;
+  outline: none;
+}
+body main .footer .slide.slick-slide {
+  cursor: pointer;
+}
+body main .footer .slide .img-1, body main .footer .slide .img-2, body main .footer .slide .img-3, body main .footer .slide .img-4 {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+body main .footer .slide .img-1 .hover-block, body main .footer .slide .img-2 .hover-block, body main .footer .slide .img-3 .hover-block, body main .footer .slide .img-4 .hover-block {
+  background: #1bf1ad;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+body main .footer .slide .img-1 .hover-block:hover, body main .footer .slide .img-2 .hover-block:hover, body main .footer .slide .img-3 .hover-block:hover, body main .footer .slide .img-4 .hover-block:hover {
+  opacity: 0.9;
+  transition: all 0.3s ease-in;
+}
+body main .footer .slide .img-1 .hover-block a, body main .footer .slide .img-2 .hover-block a, body main .footer .slide .img-3 .hover-block a, body main .footer .slide .img-4 .hover-block a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 30px 30px 50px;
+  outline: none;
+}
+body main .footer .slide .img-1 .hover-block a h1, body main .footer .slide .img-2 .hover-block a h1, body main .footer .slide .img-3 .hover-block a h1, body main .footer .slide .img-4 .hover-block a h1 {
+  font-family: "Poppins Regular", sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+body main .footer .slide .img-1 .hover-block a span, body main .footer .slide .img-2 .hover-block a span, body main .footer .slide .img-3 .hover-block a span, body main .footer .slide .img-4 .hover-block a span {
+  font-family: "Poppins-BoldSemiBold", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+body main .footer .slide .img-1 {
+  background: url("img/sl1.jpg") no-repeat;
+  background-size: cover;
+}
+body main .footer .slide .img-1 .hover-block {
+  width: 440px;
+  height: 400px;
+}
+body main .footer .slide .img-2 {
+  background: url("img/sl2.jpg") no-repeat;
+  background-size: cover;
+}
+body main .footer .slide .img-2 .hover-block {
+  width: 440px;
+  height: 400px;
+}
+body main .footer .slide .img-3 {
+  background: url("img/sl3.jpg") no-repeat;
+  background-size: cover;
+}
+body main .footer .slide .img-3 .hover-block {
+  width: 440px;
+  height: 400px;
+}
+body main .footer .slide .img-4 {
+  background: url("img/sl4.jpg") no-repeat;
+  background-size: cover;
+}
+body main .footer .slide .img-4 .hover-block {
+  width: 333px;
+  height: 400px;
+}
+body main .footer .slick-slide img {
+  height: 400px;
+}
+body main .footer .slick-arrow {
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -46px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #555;
+  opacity: 0.4;
+  border: none;
+  z-index: 1;
+  outline: none;
+  cursor: pointer;
+}
+body main .footer .slick-arrow:hover {
+  opacity: 1;
+}
+body main .footer .slick-prev {
+  left: 20px;
+  background: url("img/prev.png");
+  transition: all 0.3s ease-in;
+}
+body main .footer .slick-next {
+  right: 20px;
+  background: url("img/next.png");
+  transition: all 0.3s ease-in;
+}
+body main .footer .slick-dots {
+  padding: 0;
+  text-align: center;
+}
+body main .footer .slick-dots li {
+  display: inline-block;
+}
+body main .footer .slick-dots button {
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+body main .footer .slick-dots .slick-active button {
+  background: #777777;
+}
+
+/*# sourceMappingURL=style.css.map */
