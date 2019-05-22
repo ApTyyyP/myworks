@@ -335,6 +335,7 @@ body {
 
               & > .hover-block {
                 background: #48bf72;
+                background: rgba(72, 191, 114, 0.9);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -343,7 +344,7 @@ body {
                 transition: all .3s ease-in;
 
                 &:hover {
-                  opacity: 0.9;
+                  opacity: 1;
                   transition: all .3s ease-in;
                 }
 

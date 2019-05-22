@@ -74,6 +74,7 @@ body {
 
           & .hover-block {
             background: #1bf1ad;
+            background: rgba(54, 240, 147, 0.9);
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
@@ -81,7 +82,7 @@ body {
             transition: all 0.3s ease-in;
 
             &:hover {
-              opacity: 0.9;
+              opacity: 1;
               transition: all 0.3s ease-in;
             }
 

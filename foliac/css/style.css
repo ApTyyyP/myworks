@@ -278,6 +278,7 @@ body main section.section-1 .inner .grid-item.img-1, body main section.section-1
 }
 body main section.section-1 .inner .grid-item.img-1 > .hover-block, body main section.section-1 .inner .grid-item.img-2 > .hover-block, body main section.section-1 .inner .grid-item.img-3 > .hover-block, body main section.section-1 .inner .grid-item.img-4 > .hover-block, body main section.section-1 .inner .grid-item.img-5 > .hover-block, body main section.section-1 .inner .grid-item.img-6 > .hover-block, body main section.section-1 .inner .grid-item.img-7 > .hover-block, body main section.section-1 .inner .grid-item.img-8 > .hover-block, body main section.section-1 .inner .grid-item.img-9 > .hover-block, body main section.section-1 .inner .grid-item.img-10 > .hover-block {
   background: #48bf72;
+  background: rgba(72, 191, 114, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,7 +287,7 @@ body main section.section-1 .inner .grid-item.img-1 > .hover-block, body main se
   transition: all 0.3s ease-in;
 }
 body main section.section-1 .inner .grid-item.img-1 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-2 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-3 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-4 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-5 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-6 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-7 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-8 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-9 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-10 > .hover-block:hover {
-  opacity: 0.9;
+  opacity: 1;
   transition: all 0.3s ease-in;
 }
 body main section.section-1 .inner .grid-item.img-1 > .hover-block > a, body main section.section-1 .inner .grid-item.img-2 > .hover-block > a, body main section.section-1 .inner .grid-item.img-3 > .hover-block > a, body main section.section-1 .inner .grid-item.img-4 > .hover-block > a, body main section.section-1 .inner .grid-item.img-5 > .hover-block > a, body main section.section-1 .inner .grid-item.img-6 > .hover-block > a, body main section.section-1 .inner .grid-item.img-7 > .hover-block > a, body main section.section-1 .inner .grid-item.img-8 > .hover-block > a, body main section.section-1 .inner .grid-item.img-9 > .hover-block > a, body main section.section-1 .inner .grid-item.img-10 > .hover-block > a {

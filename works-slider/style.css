@@ -63,6 +63,7 @@ body main .footer .slide .img-1, body main .footer .slide .img-2, body main .foo
 }
 body main .footer .slide .img-1 .hover-block, body main .footer .slide .img-2 .hover-block, body main .footer .slide .img-3 .hover-block, body main .footer .slide .img-4 .hover-block {
   background: #1bf1ad;
+  background: rgba(54, 240, 147, 0.9);
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -70,7 +71,7 @@ body main .footer .slide .img-1 .hover-block, body main .footer .slide .img-2 .h
   transition: all 0.3s ease-in;
 }
 body main .footer .slide .img-1 .hover-block:hover, body main .footer .slide .img-2 .hover-block:hover, body main .footer .slide .img-3 .hover-block:hover, body main .footer .slide .img-4 .hover-block:hover {
-  opacity: 0.9;
+  opacity: 1;
   transition: all 0.3s ease-in;
 }
 body main .footer .slide .img-1 .hover-block a, body main .footer .slide .img-2 .hover-block a, body main .footer .slide .img-3 .hover-block a, body main .footer .slide .img-4 .hover-block a {
