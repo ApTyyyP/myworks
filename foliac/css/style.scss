@@ -72,7 +72,7 @@ body {
     margin: 0;
   }
 
-  a {
+  & > a {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -181,6 +181,12 @@ body {
             font-family: "Lato", serif;
             font-weight: bold;
             display: inline-block;
+            transition: all .3s ease-in;
+            text-decoration: none;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 16px;
 
             &:hover {
               color: #48bf72;
@@ -215,6 +221,7 @@ body {
         height: 35px;
         border-radius: 3px;
         margin: 0 auto;
+        text-decoration: none;
         transition: all .3s ease-in;
 
         &:hover {
@@ -325,23 +332,26 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
-              transition: all 0.3s ease-in;
 
-              & .hover-block {
+              & > .hover-block {
                 background: #48bf72;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border-radius: 12px;
                 opacity: 0;
-                transition: all 0.3s ease-in;
+                transition: all .3s ease-in;
 
                 &:hover {
                   opacity: 0.9;
-                  transition: all 0.3s ease-in;
+                  transition: all .3s ease-in;
                 }
 
-                & a {
+                & > a {
+                  color: #ffffff;
+                  text-decoration: none;
+                  text-align: center;
+                  line-height: 1.8;
 
                   b {
                     font-size: 30px;
@@ -487,6 +497,7 @@ body {
               margin-top: 36px;
               color: #3c4955;
               border: 2px solid #3c4955;
+              text-decoration: none;
               transition: all .3s ease-in;
 
               &.sl2_button {

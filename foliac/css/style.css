@@ -63,7 +63,7 @@ body .b-up-arrow_pos_right {
 body h1 {
   margin: 0;
 }
-body a {
+body > a {
   text-decoration: none;
   color: #ffffff;
   text-align: center;
@@ -156,6 +156,12 @@ body header .header .nav-content .logo_nav a {
   font-family: "Lato", serif;
   font-weight: bold;
   display: inline-block;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
 }
 body header .header .nav-content .logo_nav a:hover {
   color: #48bf72;
@@ -184,6 +190,7 @@ body header .header .sl2_button {
   height: 35px;
   border-radius: 3px;
   margin: 0 auto;
+  text-decoration: none;
   transition: all 0.3s ease-in;
 }
 body header .header .sl2_button:hover {
@@ -268,9 +275,8 @@ body main section.section-1 .inner .grid-item.img-1, body main section.section-1
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease-in;
 }
-body main section.section-1 .inner .grid-item.img-1 .hover-block, body main section.section-1 .inner .grid-item.img-2 .hover-block, body main section.section-1 .inner .grid-item.img-3 .hover-block, body main section.section-1 .inner .grid-item.img-4 .hover-block, body main section.section-1 .inner .grid-item.img-5 .hover-block, body main section.section-1 .inner .grid-item.img-6 .hover-block, body main section.section-1 .inner .grid-item.img-7 .hover-block, body main section.section-1 .inner .grid-item.img-8 .hover-block, body main section.section-1 .inner .grid-item.img-9 .hover-block, body main section.section-1 .inner .grid-item.img-10 .hover-block {
+body main section.section-1 .inner .grid-item.img-1 > .hover-block, body main section.section-1 .inner .grid-item.img-2 > .hover-block, body main section.section-1 .inner .grid-item.img-3 > .hover-block, body main section.section-1 .inner .grid-item.img-4 > .hover-block, body main section.section-1 .inner .grid-item.img-5 > .hover-block, body main section.section-1 .inner .grid-item.img-6 > .hover-block, body main section.section-1 .inner .grid-item.img-7 > .hover-block, body main section.section-1 .inner .grid-item.img-8 > .hover-block, body main section.section-1 .inner .grid-item.img-9 > .hover-block, body main section.section-1 .inner .grid-item.img-10 > .hover-block {
   background: #48bf72;
   display: flex;
   justify-content: center;
@@ -279,11 +285,17 @@ body main section.section-1 .inner .grid-item.img-1 .hover-block, body main sect
   opacity: 0;
   transition: all 0.3s ease-in;
 }
-body main section.section-1 .inner .grid-item.img-1 .hover-block:hover, body main section.section-1 .inner .grid-item.img-2 .hover-block:hover, body main section.section-1 .inner .grid-item.img-3 .hover-block:hover, body main section.section-1 .inner .grid-item.img-4 .hover-block:hover, body main section.section-1 .inner .grid-item.img-5 .hover-block:hover, body main section.section-1 .inner .grid-item.img-6 .hover-block:hover, body main section.section-1 .inner .grid-item.img-7 .hover-block:hover, body main section.section-1 .inner .grid-item.img-8 .hover-block:hover, body main section.section-1 .inner .grid-item.img-9 .hover-block:hover, body main section.section-1 .inner .grid-item.img-10 .hover-block:hover {
+body main section.section-1 .inner .grid-item.img-1 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-2 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-3 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-4 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-5 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-6 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-7 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-8 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-9 > .hover-block:hover, body main section.section-1 .inner .grid-item.img-10 > .hover-block:hover {
   opacity: 0.9;
   transition: all 0.3s ease-in;
 }
-body main section.section-1 .inner .grid-item.img-1 .hover-block a b, body main section.section-1 .inner .grid-item.img-2 .hover-block a b, body main section.section-1 .inner .grid-item.img-3 .hover-block a b, body main section.section-1 .inner .grid-item.img-4 .hover-block a b, body main section.section-1 .inner .grid-item.img-5 .hover-block a b, body main section.section-1 .inner .grid-item.img-6 .hover-block a b, body main section.section-1 .inner .grid-item.img-7 .hover-block a b, body main section.section-1 .inner .grid-item.img-8 .hover-block a b, body main section.section-1 .inner .grid-item.img-9 .hover-block a b, body main section.section-1 .inner .grid-item.img-10 .hover-block a b {
+body main section.section-1 .inner .grid-item.img-1 > .hover-block > a, body main section.section-1 .inner .grid-item.img-2 > .hover-block > a, body main section.section-1 .inner .grid-item.img-3 > .hover-block > a, body main section.section-1 .inner .grid-item.img-4 > .hover-block > a, body main section.section-1 .inner .grid-item.img-5 > .hover-block > a, body main section.section-1 .inner .grid-item.img-6 > .hover-block > a, body main section.section-1 .inner .grid-item.img-7 > .hover-block > a, body main section.section-1 .inner .grid-item.img-8 > .hover-block > a, body main section.section-1 .inner .grid-item.img-9 > .hover-block > a, body main section.section-1 .inner .grid-item.img-10 > .hover-block > a {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.8;
+}
+body main section.section-1 .inner .grid-item.img-1 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-2 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-3 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-4 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-5 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-6 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-7 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-8 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-9 > .hover-block > a b, body main section.section-1 .inner .grid-item.img-10 > .hover-block > a b {
   font-size: 30px;
 }
 body main section.section-1 .inner .grid-item.img-1 {
@@ -398,6 +410,7 @@ body main section.section-2 .inner .text a {
   margin-top: 36px;
   color: #3c4955;
   border: 2px solid #3c4955;
+  text-decoration: none;
   transition: all 0.3s ease-in;
 }
 body main section.section-2 .inner .text a.sl2_button {

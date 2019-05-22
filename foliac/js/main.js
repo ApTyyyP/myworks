@@ -47,14 +47,14 @@
         $('.grid').isotope({
             itemSelector: '.grid-item',
             masonry: {
-                columnWidth: 200
+                columnWidth: 2
             }
         });
 
         // init Isotope
         var $grid = $('.grid').isotope({
             itemSelector: '.element-item',
-            layoutMode: 'fitRows',
+            layoutMode: 'masonry', // выбираем модификацию
             getSortData: {
                 design: '.design',
                 front: '.front',
