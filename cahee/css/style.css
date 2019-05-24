@@ -180,7 +180,7 @@ header {
 }
 
 .s3 {
-  background: url("../img/s3-bg.jpg") no-repeat left top;
+  background: url("../img/s3-bg.jpg") no-repeat right top;
   background-size: cover;
   min-height: 100vh;
   height: 100vh;
@@ -200,7 +200,7 @@ header {
 }
 
 .s5 {
-  background: url("../img/s5-bg.jpg") no-repeat left top;
+  background: url("../img/s5-bg.jpg") no-repeat right top;
   background-size: cover;
   min-height: 100vh;
   height: 100vh;
