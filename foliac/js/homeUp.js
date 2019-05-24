@@ -43,7 +43,7 @@
 
     // widget_position can take such value as "b-up-arrow_pos_left" or "b-up-arrow_pos_right"
 
-    upButton.setAttribute('style', 'visibility: hidden; background-color: rgba(0, 0, 0, 0); color: rgba(255, 255, 255, 0);');
+    upButton.setAttribute('style', 'visibility: hidden; background: rgba(0, 0, 0, 0); color: rgba(255, 255, 255, 0);');
     upButton.setAttribute('class', 'b-up-arrow b-up-arrow_pos_right');
     upButton.addEventListener('click', scrollTop.bind(null));
 
@@ -54,11 +54,11 @@
         var scrollY = window.scrollY || window.pageYOffset;
         if (!isShowed && scrollY > minHeightToShow) {
             isShowed = true;
-            upButton.setAttribute('style', 'visibility: visible; background-color: rgba(0, 0, 0, 0.4); color: rgba(255, 255, 255, 1);');
+            upButton.setAttribute('style', 'visibility: visible; background: rgba(0, 0, 0, 0.4); color: rgba(255, 255, 255, 1);');
         }
         if (isShowed && scrollY <= minHeightToShow) {
             isShowed = false;
-            upButton.setAttribute('style', 'visibility: hidden; background-color: rgba(0, 0, 0, 0); color: rgba(255, 255, 255, 0);');
+            upButton.setAttribute('style', 'visibility: hidden; background: rgba(0, 0, 0, 0); color: rgba(255, 255, 255, 0);');
         }
     });
     document.body.appendChild(upButton);

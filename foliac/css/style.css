@@ -34,13 +34,18 @@ body .b-up-arrow {
   bottom: 70px;
   width: 50px;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   border-radius: 50%;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
   cursor: pointer;
+}
+body .b-up-arrow:hover {
+  opacity: 1;
+  background: #000000 !important;
+  transition: all 0.3s ease-in;
 }
 body .b-up-arrow:after {
   content: "";

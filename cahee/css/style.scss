@@ -1,23 +1,204 @@
+@font-face {
+  font-family: 'Raleway Heavy';
+  src: local('Raleway Heavy'), local('Raleway-Heavy'), url('../fonts/raleway-heavy.woff2') format('woff2'), url('../fonts/raleway-heavy.woff') format('woff'), url('../fonts/raleway-heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway Light';
+  src: local('Raleway Light'), local('Raleway-Light'), url('../fonts/ralewaylight.woff2') format('woff2'), url('../fonts/ralewaylight.woff') format('woff'), url('../fonts/ralewaylight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway Bold';
+  src: local('Raleway Bold'), local('Raleway-Bold'), url('../fonts/ralewaybold.woff2') format('woff2'), url('../fonts/ralewaybold.woff') format('woff'), url('../fonts/ralewaybold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 .cls-1 {
   fill: #262626;
   fill-rule: evenodd;
 }
 .inner {
   width: 1170px;
-  padding-top: 1px;
+  padding: 1px;
 }
 body {
   margin: 0;
 }
 main {
-  background: #f9f8fb url("../img/s1-bg.jpg") no-repeat top center;
+
+  height: 100%;
 }
 header {
-  position: absolute;
+  //position: absolute;
+  min-height: 100vh;
+  height: 100vh;
 }
-.s1 {
+
+.header {
+  display: flex;
+  justify-content: center;
+  background: #f9f8fb url("../img/s1-bg.jpg") no-repeat fixed center top;
+  background-size: cover;
+  height: calc(100%);
+
+  nav {
+    display: inline-block;
+    vertical-align: middle;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: "Raleway Bold", sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: 37px;
+      font-size: 16px;
+      color: #262626;
+      cursor: pointer;
+
+      &:after {
+        background-color: #ff6033;
+        display: block;
+        position: relative;
+        content: "";
+        height: 3px;
+        width: 0;
+        top: -25px;
+        -webkit-transition: width .3s ease-in-out;
+        -moz--transition: width .3s ease-in-out;
+        transition: width .3s ease-in-out;
+      }
+      &:hover:after,
+      &:focus:after {
+        width: 100%;
+      }
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  h1 {
+    margin: 261px 0 0;
+    font-family: "Raleway Heavy", sans-serif;
+    font-size: 60px;
+    color: #262626;
+  }
+
+  p {
+    margin: 18px 0 0;
+    font-family: "Raleway Light", sans-serif;
+    font-size: 17px;
+    color: #262626;
+    line-height: 1.7;
+  }
+
+  .btn {
+    margin: 31px 0 0;
+    background: #ff6033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 56px;
+    font-family: "Raleway Light", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 19px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background: #da4b28;
+      box-shadow: none;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  .inner {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+  }
+}
+
+.s2 {
+  background: url("../img/s2-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
   .inner {
     height: 100vh;
-    min-height: 700px;
+  }
+}
+.s3 {
+  background: url("../img/s3-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
+  .inner {
+    height: 100vh;
+  }
+}
+.s4 {
+  background: url("../img/s4-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
+  .inner {
+    height: 100vh;
+  }
+}
+.s5 {
+  background: url("../img/s5-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
+  .inner {
+    height: 100vh;
+  }
+}
+.s6 {
+  background: url("../img/s6-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
+  .inner {
+    height: 100vh;
+  }
+}
+.s7 {
+  background: url("../img/s7-bg.jpg") no-repeat left top;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+
+  .inner {
+    height: 100vh;
   }
 }
