@@ -23,6 +23,42 @@
   fill: #262626;
   fill-rule: evenodd;
 }
+.b-up-arrow {
+  position: fixed;
+  bottom: 70px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.b-up-arrow:hover {
+  opacity: 1;
+  background: #000000 !important;
+  transition: all 0.3s ease-in;
+}
+.b-up-arrow:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -6px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.b-up-arrow_pos_right {
+  right: 36px;
+}
 .inner {
   width: 1170px;
   padding: 1px;
