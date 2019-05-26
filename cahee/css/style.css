@@ -249,7 +249,9 @@ header {
   justify-content: space-between;
 }
 .s3 .s3-content {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .s3 .buttons {
@@ -290,11 +292,8 @@ header {
   top: 27px;
 }
 .s3 h1 {
-  position: absolute;
   color: #ffffff;
   font-size: 90px;
-  top: 39%;
-  right: 12%;
 }
 
 .s4 {

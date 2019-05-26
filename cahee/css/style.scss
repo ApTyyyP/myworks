@@ -266,7 +266,9 @@ header {
   }
 
   .s3-content {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -313,11 +315,8 @@ header {
   }
 
   h1 {
-    position: absolute;
     color: #ffffff;
     font-size: 90px;
-    top: 39%;
-    right: 12%;
   }
 }
 .s4 {
