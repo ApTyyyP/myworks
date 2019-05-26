@@ -369,5 +369,8 @@ footer p span {
   color: #ff2b58;
   font-weight: bold;
 }
+footer svg, footer svg path {
+  fill: #b9b9b9;
+}
 
 /*# sourceMappingURL=style.css.map */
