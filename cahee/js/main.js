@@ -18,5 +18,21 @@
             * 1000 скорость перехода в миллисекундах
             */
         });
+
+        // init Isotope
+        var $grid = $('.grid');
+        $grid.isotope({
+            layoutMode: 'masonry',
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress( function() {
+            $grid.isotope('layout');
+        });
     });
 })(jQuery);

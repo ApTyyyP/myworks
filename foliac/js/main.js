@@ -43,18 +43,13 @@
             $("#go-top").scrollToTop();
         });*/
 
-        // Isotope
-        $('.grid').isotope({
-            itemSelector: '.grid-item',
-            masonry: {
-                columnWidth: 2
-            }
-        });
-
         // init Isotope
         var $grid = $('.grid').isotope({
-            itemSelector: '.element-item',
+            itemSelector: '.grid-item',
             layoutMode: 'masonry', // выбираем модификацию
+            masonry: {
+                columnWidth: 2
+            },
             getSortData: {
                 design: '.design',
                 front: '.front',
