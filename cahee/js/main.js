@@ -19,10 +19,24 @@
             */
         });
 
+        // hamburger-menu
+        var hamburger = $('.hamburger'),
+            nav = $('nav');
+        hamburger.on('click', function () {
+            nav.toggleClass('opened');
+            $(this).toggleClass('active');
+        });
+        $(window).on('resize', function () {
+            if($(this).width() > 740) {
+                nav.removeClass('opened');
+                hamburger.removeClass('active')
+            }
+        });
+
         // init Isotope
         var $grid = $('.grid');
         $grid.isotope({
-            layoutMode: 'masonry',
+            layoutMode: 'fitRows',
             itemSelector: '.grid-item',
             percentPosition: true,
             masonry: {
