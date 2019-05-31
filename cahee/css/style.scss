@@ -168,6 +168,7 @@ header {
   nav {
     display: inline-block;
     vertical-align: middle;
+    outline: none;
 
     @media all and (max-width: 740px) {
       display: none;
@@ -178,6 +179,7 @@ header {
       position: absolute;
       top: 86px;
       right: 50px;
+      z-index: 1;
 
       a {
         display: block;
@@ -240,6 +242,7 @@ header {
   .hamburger {
     cursor: pointer;
     transition: background 0.3s;
+    outline: none;
 
     span {
       display: block;
@@ -312,13 +315,13 @@ header {
   }
 
   .content {
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    left: 0;
     max-width: 370px;
     min-height: 258px;
-    margin: auto;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .scroll {
@@ -596,7 +599,6 @@ header {
       }
     }
   }
-}
 
   .btn {
     margin-bottom: 120px;
@@ -620,20 +622,28 @@ header {
   a {
     display: block;
   }
+}
 
 .s5 {
   background: url("../img/s5-bg.jpg") no-repeat right center;
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 500px;
-  height: 50vh;
 
   .inner {
     height: 100%;
   }
 
+  .s5-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .btn {
+    margin: 31px 0 0;
     width: 170px;
     background: #96b92c;
     display: flex;
@@ -645,6 +655,52 @@ header {
       box-shadow: none;
       transition: all 0.3s ease-in;
     }
+  }
+
+  input {
+    outline: none;
+  }
+
+  input[type=email] {
+    width: 570px;
+    height: 54px;
+    margin: 31px 30px 0 0;
+    padding: 15px;
+    border: 1px solid;
+    color: #262626;
+    background: #ffffff;
+    font-family: "Raleway Light", sans-serif;
+    font-size: 15px;
+  }
+
+  input[type=submit] {
+    width: 170px;
+    height: 56px;
+    background: #96b92c;
+    border: 0;
+    font-family: "Raleway Light", sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 19px rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background: #5f781d;
+      box-shadow: none;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    max-width: 578px;
+    text-align: left;
   }
 }
 .s6 {
@@ -684,17 +740,180 @@ header {
     height: 100%;
   }
 
+  .s7-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .text {
+    font-family: "Raleway Light", sans-serif;
+    font-size: 20px;
+    color: #262626;
+    text-align: left;
+
+    b {
+      font-size: 17px;
+    }
+  }
+
+  form {
+    width: 500px;
+    //height: 445px;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  label {
+    width: 100%;
+
+    input {
+      margin-bottom: 15px;
+      padding: 15px;
+      width: 100%;
+      height: 50px;
+      background: #00c4c4;
+      opacity: .5;
+      border: 0;
+      font-family: "Raleway Light", sans-serif;
+      font-weight: normal;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+      -webkit-transition: .3s all;
+      -moz-transition: .3s all;
+      -ms-transition: .3s all;
+      -o-transition: .3s all;
+      transition: .3s all;
+
+      &:focus {
+        opacity: 1;
+        font-weight: bold;
+        border-left: 5px solid #355b82;
+        -webkit-transition: .3s all;
+        -moz-transition: .3s all;
+        -ms-transition: .3s all;
+        -o-transition: .3s all;
+        transition: .3s all;
+      }
+
+      &[type="text"]::-webkit-input-placeholder {
+        color: #ffffff;
+      }
+      &[type="text"]::-moz-placeholder {
+        color: #ffffff;
+      }
+      &[type="text"]::-ms-input-placeholder {
+        color: #ffffff;
+      }
+
+      &[type="email"]::-webkit-input-placeholder {
+        color: #ffffff;
+      }
+      &[type="email"]::-moz-placeholder {
+        color: #ffffff;
+      }
+      &[type="email"]::-ms-input-placeholder {
+        color: #ffffff;
+      }
+
+      &[type="tel"]::-webkit-input-placeholder {
+        color: #ffffff;
+      }
+      &[type="tel"]::-moz-placeholder {
+        color: #ffffff;
+      }
+      &[type="tel"]::-ms-input-placeholder {
+        color: #ffffff;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      padding: 15px;
+      outline: none;
+      background: #00c4c4;
+      font-family: "Raleway Light", sans-serif;
+      font-weight: normal;
+      color: #ffffff;
+      font-size: 15px;
+      opacity: .5;
+      border: 0;
+      resize: none;
+      -webkit-transition: .3s all;
+      -moz-transition: .3s all;
+      -ms-transition: .3s all;
+      -o-transition: .3s all;
+      transition: .3s all;
+
+      &:focus {
+        opacity: 1;
+        font-weight: bold;
+        border-left: 5px solid #355b82;
+        -webkit-transition: .3s all;
+        -moz-transition: .3s all;
+        -ms-transition: .3s all;
+        -o-transition: .3s all;
+        transition: .3s all;
+      }
+
+      &::-webkit-input-placeholder {
+        color: #ffffff;
+      }
+      &::-moz-placeholder {
+        color: #ffffff;
+      }
+      &::-ms-input-placeholder {
+        color: #ffffff;
+      }
+    }
+  }
+
   .btn {
+    margin: 30px 0 0;
     background: #00c4c4;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
 
     &:hover {
       background: #008686;
       box-shadow: none;
       transition: all 0.3s ease-in;
     }
+
+    &:active {
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+
+  h1 {
+    margin-top: 100px;
+  }
+
+  p {
+    margin-bottom: 46px;
+    max-width: 348px;
+    text-align: center;
   }
 }
 footer {

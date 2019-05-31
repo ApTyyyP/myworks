@@ -157,9 +157,14 @@
         <section class="s5">
             <div class="inner">
                 <div class="s5-content">
-                    <h1></h1>
-                    <p></p>
-                    <a href="#" class="btn">Subscribe</a>
+                    <h1>Subscribe To Us</h1>
+                    <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+                    <form method="post" action="javascript:void(0);">
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" placeholder="Your email address...">
+                        <input type="submit" id="submit-form" value="Subscribe">
+                    </form>
                 </div>
             </div>
         </section>
@@ -177,9 +182,33 @@
         <section class="s7">
             <div class="inner">
                 <div class="s7-content">
-                    <h1></h1>
-                    <p></p>
-                    <a href="#" class="btn">Send</a>
+                    <h1>Contact</h1>
+                    <p>For new projects, ideas, business or anything
+                        you'd like to discuss, contact with me!</p>
+                    <div class="form">
+                        <form class="col-1-3" action="javascript:void(0);" method="post">
+                            <fieldset class="register-group">
+                                <label>
+                                    <input type="text" name="name" placeholder="Auskteez Tran" class="icon-user" required="">
+                                </label>
+                                <label>
+                                    <input type="email" name="email" placeholder="Your email..." class="icon-email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required="">
+                                </label>
+                                <label>
+                                    <input type="tel" name="tel" placeholder="Your phone number..." class="icon-email"  pattern="(\+?\d[- .]*){7,13}" required="">
+                                </label>
+                                <label>
+                                    <textarea name="comments" placeholder="Your message..." class="icon-message"></textarea>
+                                </label>
+                            </fieldset>
+                            <input class="btn" type="submit" name="submit" value="Send">
+                        </form>
+                    </div>
+<!--                    <div class="text">
+                        <p><b>ADDRESS</b><br>123 City name, Street, City, Country</p>
+                        <p><b>EMAIL</b><br> cahee@domain.com</p>
+                        <p><b>PHONE</b><br>+012 345 6789</p>
+                    </div>-->
                 </div>
             </div>
         </section>
