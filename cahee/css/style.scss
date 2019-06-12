@@ -527,10 +527,8 @@ header {
 
       & .hover-block {
         position: absolute;
-        top: 4px;
-        left: 8px;
-        width: 98%;
-        height: 97%;
+        width: 100%;
+        height: 100%;
 /*        width: 778px;
         height: 558px;*/
       }
@@ -544,10 +542,8 @@ header {
 
       & .hover-block {
         position: absolute;
-        top: 2px;
-        left: 4px;
-        width: 98%;
-        height: 97%;
+        width: 100%;
+        height: 100%;
 /*        width: 378px;
         height: 268px;*/
       }
@@ -555,16 +551,15 @@ header {
 
     &:nth-child(3) {
       position: relative;
+      margin-top: 10px;
       //margin: 12px 0 0 10px;
 /*      width: 378px;
       height: 268px;*/
 
       & .hover-block {
         position: absolute;
-        top: 2px;
-        left: 4px;
-        width: 98%;
-        height: 97%;
+        width: 100%;
+        height: 100%;
 /*        width: 378px;
         height: 268px;*/
       }
@@ -572,16 +567,15 @@ header {
 
     &:nth-child(4) {
       position: relative;
+      margin-top: 10px;
       //margin: 10px 0 0 7px;
 /*      width: 568px;
       height: 398px;*/
 
       & .hover-block {
         position: absolute;
-        top: 2px;
-        left: 4px;
-        width: 99%;
-        height: 98%;
+        width: 100%;
+        height: 100%;
 /*        width: 568px;
         height: 398px;*/
       }
@@ -589,16 +583,15 @@ header {
 
     &:nth-child(5) {
       position: relative;
+      margin-top: 10px;
       //margin: 10px 0 0 24px;
 /*      width: 568px;
       height: 398px;*/
 
       & .hover-block {
         position: absolute;
-        top: 2px;
-        left: 3px;
-        width: 99%;
-        height: 98%;
+        width: 100%;
+        height: 100%;
 /*        width: 568px;
         height: 398px;*/
       }
@@ -776,8 +769,8 @@ header {
     p {
       position: absolute;
       max-width: 330px;
-      bottom: 47px;
-      left: 26px;
+      bottom: 30px;
+      left: 20px;
       text-align: left;
       font-family: "Raleway Bold", sans-serif;
       color: #ffffff;
@@ -823,37 +816,52 @@ header {
 
   .s6-img-1 {
     position: relative;
+    height: 310px;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.25), 2px 2px 15px rgba(0, 0, 0, 0.22);
+    transition: all .3s ease-in;
+
+    &:hover {
+      box-shadow: none;
+    }
 
     & .hover-block {
       position: absolute;
-      left: 8px;
-      top: 4px;
-      width: 96%;
-      height: 94%;
+      width: 100%;
+      height: 100%;
     }
   }
   .s6-img-2 {
-    margin-left: 15px;
+    margin-left: 20px;
     position: relative;
+    height: 310px;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.25), 2px 2px 15px rgba(0, 0, 0, 0.22);
+    transition: all .3s ease-in;
+
+    &:hover {
+      box-shadow: none;
+    }
 
     & .hover-block {
       position: absolute;
-      left: 4px;
-      top: 1px;
-      width: 98%;
-      height: 94%;
+      width: 100%;
+      height: 100%;
     }
   }
   .s6-img-3 {
-    margin-left: 15px;
+    margin-left: 20px;
     position: relative;
+    height: 310px;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.25), 2px 2px 15px rgba(0, 0, 0, 0.22);
+    transition: all .3s ease-in;
+
+    &:hover {
+      box-shadow: none;
+    }
 
     & .hover-block {
       position: absolute;
-      left: 4px;
-      top: 1px;
-      width: 98%;
-      height: 94%;
+      width: 100%;
+      height: 100%;
     }
   }
 

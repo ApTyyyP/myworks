@@ -39,8 +39,8 @@
             layoutMode: 'fitRows',
             itemSelector: '.grid-item',
             percentPosition: true,
-            masonry: {
-                columnWidth: '.grid-sizer'
+            fitRows: {
+                gutter: 10
             }
         });
 
