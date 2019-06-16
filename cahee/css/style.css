@@ -19,7 +19,7 @@
 .cls-1 {
   font-size: 50px;
   fill: #262626;
-  text-anchor: end;
+  text-anchor: start;
   font-family: "Pacifico", cursive;
   transition: all 0.3s ease-in;
 }
@@ -90,7 +90,7 @@
 }
 
 .inner {
-  max-width: 1170px;
+  max-width: 1180px;
   padding: 1px;
   margin: 0 auto;
 }
@@ -281,6 +281,7 @@ header {
   transition-delay: 0s, 0.3s;
 }
 .header .inner {
+  width: 100%;
   height: 100%;
   position: relative;
 }
@@ -322,6 +323,7 @@ header {
   height: 100vh;
 }
 .s2 .inner {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -356,6 +358,7 @@ header {
   height: 100vh;
 }
 .s3 .inner {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -364,7 +367,6 @@ header {
 .s3 .s3-content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .s3 .buttons {
@@ -409,7 +411,7 @@ header {
   top: 25px;
 }
 .s3 h1 {
-  margin-bottom: 75px;
+  margin: 0 0 75px 75px;
   color: #ffffff;
   font-size: 90px;
 }
@@ -418,6 +420,7 @@ header {
   background: #ffe92f;
 }
 .s4 .inner {
+  width: 100%;
   height: 100%;
 }
 .s4 .s4-content {
@@ -580,6 +583,7 @@ header {
   min-height: 500px;
 }
 .s5 .inner {
+  width: 100%;
   height: 100%;
 }
 .s5 .s5-content {
@@ -634,6 +638,7 @@ header {
   transition: all 0.3s ease-in;
 }
 .s5 h1 {
+  margin: 0;
   font-size: 40px;
 }
 .s5 p {
@@ -648,6 +653,7 @@ header {
   height: 100vh;
 }
 .s6 .inner {
+  width: 100%;
   height: 100%;
 }
 .s6 .s6-content {
@@ -798,6 +804,7 @@ header {
   height: 100vh;
 }
 .s7 .inner {
+  width: 100%;
   height: 100%;
 }
 .s7 .s7-content {
@@ -972,6 +979,7 @@ footer {
   height: 90px;
 }
 footer .inner {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
