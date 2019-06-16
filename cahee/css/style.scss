@@ -90,7 +90,7 @@
 }
 
 .inner {
-  width: 1170px;
+  max-width: 1170px;
   padding: 1px;
   margin: 0 auto;
 }
@@ -476,7 +476,7 @@ header {
   }
 
   .grid {
-    max-width: 1170px;
+    max-width: 1180px;
 
     &:after {
       content: '';
@@ -485,9 +485,14 @@ header {
     }
   }
 
+  .grid-item {
+    margin-bottom: 15px;
+  }
+
   .grid-sizer,
   .grid-item {
     cursor: pointer;
+    float: left;
 
     .hover-block {
       position: absolute;
@@ -551,7 +556,6 @@ header {
 
     &:nth-child(3) {
       position: relative;
-      margin-top: 10px;
       //margin: 12px 0 0 10px;
 /*      width: 378px;
       height: 268px;*/
@@ -567,7 +571,6 @@ header {
 
     &:nth-child(4) {
       position: relative;
-      margin-top: 10px;
       //margin: 10px 0 0 7px;
 /*      width: 568px;
       height: 398px;*/
@@ -583,7 +586,6 @@ header {
 
     &:nth-child(5) {
       position: relative;
-      margin-top: 10px;
       //margin: 10px 0 0 24px;
 /*      width: 568px;
       height: 398px;*/

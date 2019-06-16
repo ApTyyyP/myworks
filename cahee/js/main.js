@@ -35,18 +35,40 @@
 
         // init Isotope
         var $grid = $('.grid');
-        $grid.isotope({
+/*        $grid.isotope({
             layoutMode: 'fitRows',
             itemSelector: '.grid-item',
+            isResizable: true,
             percentPosition: true,
-            fitRows: {
-                gutter: 10
-            }
+            gutter: 10
         });
 
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress( function() {
             $grid.isotope('layout');
+        });*/
+
+        $grid.masonry({
+            // указываем элемент-контейнер в котором расположены блоки для динамической верстки
+            itemSelector: '.grid-item',
+            // указываем класс элемента являющегося блоком в нашей сетке
+            singleMode: false,
+            // true - если у вас все блоки одинаковой ширины
+            isResizable: true,
+            // перестраивает блоки при изменении размеров окна
+            isAnimated: true,
+            // анимируем перестроение блоков
+            animationOptions: {
+                queue: false,
+                duration: 500
+            },
+            columnWidth: '.grid-sizer',
+            // gutter: 15
+        });
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress( function() {
+            $grid.masonry();
         });
     });
 })(jQuery);

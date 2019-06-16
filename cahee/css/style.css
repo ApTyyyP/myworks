@@ -90,7 +90,7 @@
 }
 
 .inner {
-  width: 1170px;
+  max-width: 1170px;
   padding: 1px;
   margin: 0 auto;
 }
@@ -435,16 +435,20 @@ header {
   font-size: 0;
 }
 .s4 .grid {
-  max-width: 1170px;
+  max-width: 1180px;
 }
 .s4 .grid:after {
   content: "";
   display: block;
   clear: both;
 }
+.s4 .grid-item {
+  margin-bottom: 15px;
+}
 .s4 .grid-sizer,
 .s4 .grid-item {
   cursor: pointer;
+  float: left;
 }
 .s4 .grid-sizer .hover-block,
 .s4 .grid-item .hover-block {
@@ -508,7 +512,6 @@ header {
 .s4 .grid-sizer:nth-child(3),
 .s4 .grid-item:nth-child(3) {
   position: relative;
-  margin-top: 10px;
   /*      width: 378px;
         height: 268px;*/
 }
@@ -523,7 +526,6 @@ header {
 .s4 .grid-sizer:nth-child(4),
 .s4 .grid-item:nth-child(4) {
   position: relative;
-  margin-top: 10px;
   /*      width: 568px;
         height: 398px;*/
 }
@@ -538,7 +540,6 @@ header {
 .s4 .grid-sizer:nth-child(5),
 .s4 .grid-item:nth-child(5) {
   position: relative;
-  margin-top: 10px;
   /*      width: 568px;
         height: 398px;*/
 }
