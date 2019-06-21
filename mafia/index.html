@@ -8,8 +8,12 @@
     <meta name="author" content="">
     <title>Mafiya Royal House</title>
     <link rel="icon" href="img/logo.png">
+
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -40,16 +44,16 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.html">Главная</a>
+                    <a href="#home">Главная</a>
                 </li>
                 <li>
-                    <a href="portfolio-item.html">Фотогалерея</a>
+                    <a href="#gallery">Фотогалерея</a>
                 </li>
                 <li>
-                    <a href="page-sample.html">Правила игры</a>
+                    <a href="#rules">Правила игры</a>
                 </li>
                 <li>
-                    <a href="contact.html">Контакты</a>
+                    <a href="#contact">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -58,16 +62,16 @@
     <!-- /.container -->
 </nav>
 <!-- Intro Header -->
-<header class="intro">
+<header id="home" class="intro">
     <div class="intro-body">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Добро пожаловать</h1>
-                    <p class="intro-text">
+                    <h1 class="brand-heading animated fadeInDown">Добро пожаловать</h1>
+                    <p class="intro-text animated fadeInUp">
                         <span>Мафия</span> &mdash; командная психологическая пошаговая ролевая игра с детективным сюжетом.
                     </p>
-                    <a href="#about" class="btn btn-rectangle page-scroll">
+                    <a href="#gallery" class="btn btn-rectangle page-scroll animated fadeInUp">
                         Начинаем
                     </a>
                 </div>
@@ -76,91 +80,96 @@
     </div>
 </header>
 <!-- About Section -->
-<section id="about">
+<section id="gallery" class="gallery">
     <div class="container content-section text-center">
         <div class="row">
-            <h2>LIL' ABOUT ME</h2>
+            <h2 class="wow fadeInLeft" data-wow-delay="0.3s">Фотогалерея</h2>
             <div class="col-lg-8 col-lg-offset-2">
-                <p>
-                    Praesent ac dignissim diam. Aliquam lobortis elit et sapien eleifend, at sollicitudin metus
-                    elementum. Morbi imperdiet id ipsum at tristique. Nam suscipit tristique sem,
-                    <a href="#">quis</a>
-                    laoreet leo. Maecenas eget ante ipsum.
-                </p>
-                <p>
-                    <a href="#" class="btnghost">
-                        <i class="fa fa-download"></i>
-                        Curriculum Vitae
-                    </a>
-                </p>
+                <p class="wow fadeInRight" data-wow-delay="0.9s">Здесь представлены альбомы с нашими играми. Вы можете посмотреть каждый альбом с картинками нажав на него мышкой. Также работает сортировка альбомов по годам.</p>
             </div>
         </div>
-    </div>
-</section>
-<section id="portfolio">
-    <div class="gallery">
-        <ul>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=1" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=2" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=3" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a class="image" href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=4" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=5" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=6" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=7" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=8" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=10" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=11" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=12" alt="">
-                </a>
-            </li>
-            <li class="col-md-3">
-                <a href="portfolio-item.html">
-                    <img src="http://unsplash.it/680/380?random=13" alt="">
-                </a>
-            </li>
-        </ul>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- Project Nav -->
+                <div class="works-menu wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.5s">
+                    <ul>
+                        <li class="active" data-filter="*"><i class="fa fa-tasks"></i>Все альбомы</li>
+                        <li data-filter=".print"><i class="fa fa-camera"></i>2013</li>
+                        <li data-filter=".identity"><i class="fa fa-camera"></i>2014</li>
+                        <li data-filter=".branding"><i class="fa fa-camera"></i>2015</li>
+                        <li data-filter=".web"><i class="fa fa-camera"></i>2016</li>
+                        <li data-filter=".wordpress"><i class="fa fa-camera"></i>2018</li>
+                    </ul>
+                </div>
+                <!--/ End Project Nav -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="isotop-active wow fadeInUp" data-wow-delay="2s">
+                <div class="col-md-4 col-sm-4 col-xs-12 print identity">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-1.jpg" alt="sl2-img-1">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">WEB DEVELOPMENT</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 wordpress branding">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-2.jpg" alt="sl2-img-2">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">Wordpress</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 web">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-3.jpg" alt="sl2-img-3">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">App Development</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12  wordpress">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-4.jpg" alt="sl2-img-4">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">WEB DEVELOPMENT</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12  branding">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-5.jpg" alt="sl2-img-5">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">Photography</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12  branding">
+                    <!-- albums -->
+                    <div class="albums">
+                        <img src="img/sl2-img-6.jpg" alt="sl2-img-6">
+                        <div class="works-hover">
+                            <h4><a href="javascript:void(0);">SEO Marketing</a></h4>
+                            <div class="link"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 <!-- Contact Section -->
@@ -222,6 +231,11 @@
 <script src="js/bootstrap.min.js" defer></script>
 <!-- Plugin JavaScript -->
 <script src="js/jquery.easing.min.js" defer></script>
+
+<script src="js/isotope.pkgd.min.js" defer></script>
+<script src="js/wow.min.js" defer></script>
+<script src="js/jquery.magnific-popup.min.js" defer></script>
+
 <!-- Custom Theme JavaScript -->
 <script src="js/main.js" defer></script>
 </body>
