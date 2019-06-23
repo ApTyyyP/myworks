@@ -83,6 +83,44 @@ a:hover, a:focus {
   color: inherit;
 }
 
+.b-up-arrow {
+  position: fixed;
+  bottom: 70px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.b-up-arrow:hover {
+  opacity: 1;
+  background: #ff0000 !important;
+  transition: all 0.3s ease-in;
+}
+.b-up-arrow:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -6px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.b-up-arrow_pos_right {
+  right: 36px;
+}
+
 .fa {
   color: #000000;
 }
@@ -185,54 +223,59 @@ a:hover, a:focus {
     padding: 0 0 0 25px;
   }
 }
-.intro {
+.home {
   display: table;
   width: 100%;
   height: auto;
   padding: 100px 0 100px 0;
   text-align: center;
   color: #fff;
-  background: url(../img/slide-1-bg.jpg) no-repeat;
+  background: url(../img/slide-1-bg.jpg) 47% 0 no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
-.intro .intro-body {
+.home .intro-body {
   position: relative;
-  top: 12%;
   display: table-cell;
   vertical-align: middle;
 }
-.intro .intro-body .brand-heading {
+.home .intro-body .brand-heading {
   font-family: "Raleway ExtraBold", sans-serif;
   font-size: 52px;
   color: #ffffff;
   text-transform: uppercase;
 }
-.intro .intro-body .intro-text {
+.home .intro-body .intro-text {
   font-family: "Montserrat Light", sans-serif;
   font-size: 18px;
   color: #ffffff;
 }
-.intro .intro-body .intro-text span {
+.home .intro-body .intro-text span {
   color: #ff0000;
   font-weight: bold;
 }
 
+@media (max-width: 419px) {
+  .home {
+    min-width: 419px;
+    background: url(../img/slide-1-bg.jpg) 50% center no-repeat;
+  }
+}
 @media (min-width: 768px) {
-  .intro {
+  .home {
     height: 100%;
     padding: 0;
   }
-  .intro .intro-body .brand-heading {
+  .home .intro-body .brand-heading {
     font-size: 52px;
     margin-top: 90px;
     margin-bottom: 0;
     display: inline-block;
     padding: 10px 0;
   }
-  .intro .intro-body .intro-text {
+  .home .intro-body .intro-text {
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -241,7 +284,7 @@ a:hover, a:focus {
 .btn-rectangle {
   width: 170px;
   height: 50px;
-  margin-top: 0;
+  margin: 0 0 20px;
   line-height: 40px;
   text-align: center;
   border-radius: 3px !important;
@@ -351,9 +394,6 @@ a:hover, a:focus {
   opacity: 1;
   visibility: visible;
   bottom: -4px;
-}
-.gallery .works-menu ul li:last-child {
-  margin: 0;
 }
 .gallery .albums {
   position: relative;
@@ -584,7 +624,6 @@ ul.banner-social-buttons {
 }
 footer {
   padding: 40px 0;
-  z-index: 1;
   position: relative;
   clear: both;
 }
@@ -656,6 +695,7 @@ img {
 }
 
 section {
+  min-width: 419px;
   background-color: #f9f9f9;
   color: #333;
   overflow: hidden;

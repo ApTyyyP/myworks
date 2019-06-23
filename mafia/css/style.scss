@@ -106,6 +106,46 @@ a {
   }
 }
 
+.b-up-arrow {
+  position: fixed;
+  bottom: 70px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    background: #ff0000 !important;
+    transition: all 0.3s ease-in;
+  }
+
+  &:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -6px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.b-up-arrow_pos_right {
+  right: 36px;
+}
+
 .fa {
   color: #000000;
 }
@@ -231,14 +271,14 @@ a {
   }
 }
 
-.intro {
+.home {
   display: table;
   width: 100%;
   height: auto;
   padding: 100px 0 100px 0;
   text-align: center;
   color: #fff;
-  background: url(../img/slide-1-bg.jpg) no-repeat;
+  background: url(../img/slide-1-bg.jpg) 47% 0 no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -246,7 +286,6 @@ a {
 
   .intro-body {
     position: relative;
-    top: 12%;
     display: table-cell;
     vertical-align: middle;
 
@@ -270,8 +309,15 @@ a {
   }
 }
 
+@media (max-width: 419px) {
+  .home {
+    min-width: 419px;
+    background: url(../img/slide-1-bg.jpg) 50% center no-repeat;
+  }
+}
+
 @media (min-width: 768px) {
-  .intro {
+  .home {
     height: 100%;
     padding: 0;
 
@@ -296,7 +342,7 @@ a {
 .btn-rectangle {
   width: 170px;
   height: 50px;
-  margin-top: 0;
+  margin: 0 0 20px;
   line-height: 40px;
   text-align: center;
   border-radius: 3px !important;
@@ -408,9 +454,6 @@ a {
         opacity: 1;
         visibility: visible;
         bottom: -4px;
-      }
-      &:last-child {
-        margin: 0;
       }
     }
   }
@@ -660,7 +703,6 @@ ul.banner-social-buttons {
 
 footer {
   padding: 40px 0;
-  z-index: 1;
   position: relative;
   clear: both;
 
@@ -745,6 +787,7 @@ section {
     clear: both;
   }
 
+  min-width: 419px;
   background-color: #f9f9f9;
   color: #333;
   overflow: hidden;

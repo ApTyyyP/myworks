@@ -1,6 +1,21 @@
 ;(function ($) {
     $(function () {
 
+        $('li a').on('click', function () {
+            var $this = $(this),
+                i = $this.data('href');
+            $this
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+            var top = $('header[data-href="' + i + '"], ' +
+                        'section[data-href="' + i + '"]')
+                .offset().top;
+
+            $('html, body').animate({
+                scrollTop: top}, 1500);
+        });
+
         // jQuery to collapse the navbar on scroll
         $(window).on('scroll', function () {
             if ($(".navbar").offset().top > 180) {
@@ -8,17 +23,6 @@
             } else {
                 $(".navbar-fixed-top").removeClass("top-nav-collapse");
             }
-        });
-
-        // jQuery for page scrolling feature - requires jQuery Easing plugin
-        $(function () {
-            $('a[href^="#"]').bind('click', function (event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 1500, 'easeInOutExpo');
-                event.preventDefault();
-            });
         });
 
         // Video Popup  //
@@ -43,11 +47,14 @@
         );
         wow.init();
 
+
+
         // Isotop JS //
         $(window).on('load', function() {
 
+            var $isotope = $('.isotop-active');
             if ($.fn.isotope) {
-                $(".isotop-active").isotope({
+                $isotope.isotope({
                     filter: '*'
                 });
 
@@ -56,7 +63,9 @@
                     $(this).addClass("active");
 
                     var selector = $(this).attr('data-filter');
-                    $(".isotop-active").isotope({
+                    $isotope.isotope({
+                        layoutMode: 'fitRows',
+                        itemSelector: '.albums',
                         filter: selector,
                         animationOptions: {
                             duration: 750,
@@ -67,7 +76,11 @@
                     return false;
                 });
             }
-        });
 
+            // layout Isotope after each image loads
+            $isotope.imagesLoaded().progress( function() {
+                $isotope.isotope('layout');
+            });
+        });
     });
 })(jQuery);
