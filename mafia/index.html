@@ -42,18 +42,18 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="javascript:void(0);" data-href="#home">Главная</a>
+            <ul id="nav" class="nav navbar-nav">
+                <li class="current">
+                    <a href="#home">Главная</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" data-href="#gallery">Фотогалерея</a>
+                    <a href="#gallery">Фотогалерея</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" data-href="#rules">Правила игры</a>
+                    <a href="rules">Правила игры</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" data-href="#contact">Контакты</a>
+                    <a href="#contact">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -62,7 +62,7 @@
     <!-- /.container -->
 </nav>
 <!-- Intro Header -->
-<header data-href="#home" id="home" class="home">
+<header id="home" class="home">
     <div class="intro-body">
         <div class="container">
             <div class="row">
@@ -71,7 +71,7 @@
                     <p class="intro-text animated fadeInUp">
                         <span>Мафия</span> &mdash; командная психологическая пошаговая ролевая игра с детективным сюжетом.
                     </p>
-                    <a href="javascript:void(0);" data-href="#gallery" class="btn btn-rectangle page-scroll animated fadeInUp">
+                    <a href="#gallery" data-href="#gallery" class="btn btn-rectangle animated fadeInUp">
                         Начинаем
                     </a>
                 </div>
@@ -81,7 +81,7 @@
 </header>
 <i style="visibility: hidden;" class="b-up-arrow b-up-arrow_pos_right"></i>
 <!-- Gallery Section -->
-<section data-href="#gallery" id="gallery" class="gallery">
+<section id="gallery" class="gallery">
     <div class="container content-section text-center">
         <div class="row">
             <h2 class="wow fadeInLeft" data-wow-delay="0.3s">Фотогалерея</h2>
@@ -174,7 +174,7 @@
     </div>
 </section>
 <!-- Contact Section -->
-<section data-href="#contact" id="contact">
+<section id="contact">
     <div class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -231,6 +231,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js" defer></script>
 <!-- Plugin JavaScript -->
+<script src="js/jquery.nav.js" defer></script>
+<script src="js/jquery.slicknav.min.js" defer></script>
 <script src="js/jquery.easing.min.js" defer></script>
 
 <script src="js/isotope.pkgd.min.js" defer></script>

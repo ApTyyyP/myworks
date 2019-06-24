@@ -183,36 +183,36 @@ a {
     }
   }
 
-  a {
-  }
-
-  .nav li {
-    a {
-      padding: 18px 8px;
-      color: #000000;
-      -webkit-transition: background .3s ease-in-out;
-      -moz-transition: background .3s ease-in-out;
-      transition: background .3s ease-in-out;
-
-      &:hover {
-        outline: 0;
-        color: #ff0000;
-        background-color: transparent;
-        -webkit-transition: all .2s ease-in-out;
-        -moz-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-      }
-
-      &:focus, &:active {
-        outline: 0;
-        background-color: transparent;
-      }
+  #nav {
+    .current a {
+      background: transparent;
+      color: #ff0000;
     }
 
-    &.active {
-      outline: 0;
-
+    li {
       a {
+        padding: 18px 8px;
+        color: #000000;
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+
+        &:hover {
+          outline: 0;
+          color: #ff0000;
+          background-color: transparent;
+          -webkit-transition: all .2s ease-in-out;
+          -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+        }
+
+        &:focus, &:active {
+          color: #ff0000;
+          background-color: transparent;
+        }
+      }
+
+      a.active {
         color: #ff0000;
         -webkit-transition: all .2s ease-in-out;
         -moz-transition: all .2s ease-in-out;
@@ -231,11 +231,11 @@ a {
 
 @media (max-width: 767px) {
   .navbar-custom {
-    .nav li a:hover {
+    #nav li a:hover {
       background-color: #000000;
     }
 
-    .nav li.active {
+    #nav li.active {
       background-color: #000000;
     }
   }

@@ -154,14 +154,18 @@ a:hover, a:focus {
 .navbar-custom .navbar-brand .navbar-toggle:focus, .navbar-custom .navbar-brand .navbar-toggle:active {
   outline: 0;
 }
-.navbar-custom .nav li a {
+.navbar-custom #nav .current a {
+  background: transparent;
+  color: #ff0000;
+}
+.navbar-custom #nav li a {
   padding: 18px 8px;
   color: #000000;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
-.navbar-custom .nav li a:hover {
+.navbar-custom #nav li a:hover {
   outline: 0;
   color: #ff0000;
   background-color: transparent;
@@ -169,20 +173,17 @@ a:hover, a:focus {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
-  outline: 0;
+.navbar-custom #nav li a:focus, .navbar-custom #nav li a:active {
+  color: #ff0000;
   background-color: transparent;
 }
-.navbar-custom .nav li.active {
-  outline: 0;
-}
-.navbar-custom .nav li.active a {
+.navbar-custom #nav li a.active {
   color: #ff0000;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.navbar-custom .nav li.active a:hover {
+.navbar-custom #nav li a.active:hover {
   color: #ff0000;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -190,10 +191,10 @@ a:hover, a:focus {
 }
 
 @media (max-width: 767px) {
-  .navbar-custom .nav li a:hover {
+  .navbar-custom #nav li a:hover {
     background-color: #000000;
   }
-  .navbar-custom .nav li.active {
+  .navbar-custom #nav li.active {
     background-color: #000000;
   }
 }

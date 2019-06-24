@@ -1,12 +1,18 @@
 ;(function ($) {
     $(function () {
 
-        $('li a').on('click', function () {
+        if ($.fn.onePageNav) {
+            $('#nav').onePageNav({});
+        }
+
+/*        $('li a, [data-href="#gallery"]').on('click', function () {
             var $this = $(this),
                 i = $this.data('href');
             $this
                 .addClass('active')
+                .closest('li')
                 .siblings()
+                .find('a')
                 .removeClass('active');
             var top = $('header[data-href="' + i + '"], ' +
                         'section[data-href="' + i + '"]')
@@ -15,6 +21,22 @@
             $('html, body').animate({
                 scrollTop: top}, 1500);
         });
+
+        $(window).scroll(function() {
+            var scrollDistance = $(window).scrollTop();
+
+            // Assign active class to nav links while scolling
+            $('.page-section').each(function() {
+                if ($(this).position().top <= scrollDistance) {
+                    $('.nav a[data-href="' + $(this).data('href') + '"]')
+                        .addClass('active')
+                        .closest('li')
+                        .siblings()
+                        .find('a')
+                        .removeClass('active');
+                }
+            });
+        });*/
 
         // jQuery to collapse the navbar on scroll
         $(window).on('scroll', function () {
@@ -76,11 +98,6 @@
                     return false;
                 });
             }
-
-            // layout Isotope after each image loads
-            $isotope.imagesLoaded().progress( function() {
-                $isotope.isotope('layout');
-            });
         });
     });
 })(jQuery);
