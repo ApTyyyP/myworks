@@ -1,8 +1,22 @@
 ;(function ($) {
     $(function () {
 
+        // hamburger-menu
+        var hamburger = $('.hamburger'),
+            nav = $('#nav');
+        hamburger.on('click', function () {
+            nav.toggleClass('opened');
+            $(this).toggleClass('active');
+        });
+        $(window).on('resize', function () {
+            if($(this).width() > 740) {
+                nav.removeClass('opened');
+                hamburger.removeClass('active')
+            }
+        });
+
         if ($.fn.onePageNav) {
-            $('#nav').onePageNav({});
+            $(nav).onePageNav({});
         }
 
 /*        $('li a, [data-href="#gallery"]').on('click', function () {
@@ -68,8 +82,6 @@
             }
         );
         wow.init();
-
-
 
         // Isotop JS //
         $(window).on('load', function() {
