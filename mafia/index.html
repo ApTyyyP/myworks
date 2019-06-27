@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Mafiya Royal House</title>
+    <meta name="description" content="Mafia Royal House">
+    <title>Mafia Royal House</title>
     <link rel="icon" href="img/logo.png">
-
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- Bootstrap Core CSS -->
@@ -18,9 +16,8 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet"
-          type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" defer></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -72,7 +69,7 @@
                     <p class="intro-text animated fadeInUp">
                         <span>Мафия</span> &mdash; командная психологическая пошаговая ролевая игра с детективным сюжетом.
                     </p>
-                    <a href="#gallery" data-href="#gallery" class="btn btn-rectangle animated fadeInUp">
+                    <a href="javascript:void(0);" data-href="#gallery" class="btn btn-rectangle animated fadeInUp">
                         Начинаем
                     </a>
                 </div>
@@ -209,6 +206,79 @@
                     <p class="wow fadeInRight" data-wow-delay="1.2s">
                         06:18
                     </p>
+                    <a href="javascript:void(0);" data-href="#rules-2" class="btn btn-rectangle wow fadeInRight" data-wow-delay="1.3s">
+                        Расписанные правила
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Rules-2 Section -->
+<section id="rules-2" class="rules-2">
+    <div class="rules-body-2">
+        <div class="container content-section text-center">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="wow fadeInLeft" data-wow-delay="0.6s">Краткая инструкция по игре</h2>
+                    <ol class="wow fadeInUp" data-wow-delay="1s">
+                        <li><span>В игре участвует ровно 10 человек:</span> не больше, не меньше.</li>
+                        <li><span>В игре есть только две команды:</span> черные (мафия) и красные (мирные жители).<br>
+                            Мафий всего 3, включая босса мафии, который обычно называется Доном. Мирных всего 7, включая Шерифа.</li>
+                        <li><span>Никаких других ролей</span> в духе маньяка, доктора, проститутки и тому подобное в игре нет. Только те, роли, что перечислены выше.</li>
+                        <li><span>Роли убитых игроков не вскрываются.</span> То есть ведущий объявляет все роли игроков только, когда игра завершена.</li>
+                        <li><span>Днем, у каждого из игроков по одной минуте на монолог.</span> То есть игроки говорят один за другим, поочередно. Говорить всем вместе не разрешается.<br>
+                            Если кто-либо произносит хоть одно слово не в свою очередь &mdash; получают предупреждение.</li>
+                        <li><span>В игре действуют предупреждения.</span> За 3 предупреждения игроку сообщают, что у него не будет возможности дать речь при ближайшей возможности.<br>
+                            Проще говоря, игрок лишится слова на ближайшем кругу. За четвертое предупреждение игрока дисквалифицируют из игры.</li>
+                        <li><span>Мафия стреляет ночью по мирным жителям с закрытыми глазами.</span>
+                            <p>Как это происходит? Все просто: в самом начале игры, в нулевую ночь мафия просыпается в полном составе и договаривается о стратегии на игру. Обычно Дон Мафии просто жестами показывает, в какой очередности черные будут убивать мирных жителей. Например, в 1-ю ночь мафия выведет игрока 5, во вторую &mdash; 6, в третью &mdash; 9. После нулевой ночи происходит первый ознакомительный день игры, в который, обычно, никто не исключается из игры. Когда наступает первая ночь игры, ведущий громко и четко начинает отсчет игроков от 1 до 10. Вся команда мафии, сидя с закрытыми глазами, должны одновременно сделать специальный жест на игроке номер 5 (ведь именно игрок пять в нашем примере был заказан как жертва на первую ночь). В этом случае игрок 5 будет считаться убитым. Если во время отсчета ведущего, кто-либо из черных сделает специальный жест не на том номере игрока, на котором сделали другие мафиози, то игрок не будет считаться убитым. То есть мафия промахнется, и никто не будет убит.</p>
+                        </li>
+                        <li><span>После отстрела мафии Дон и Шериф поочередно ищут своих противников.</span>
+                            <p>Обратите внимание, что ни Дон, ни Шериф никого не убивают. Просто ведущий заявляет: «Просыпается Дон мафии и показывает номер игрока, которого он считает Шерифом». Дон, конечно же, послушно выполняет просьбу ведущего. Если нашел, то ведущий кивком дает понять, что, мол, «да, этот игрок таки Шериф». Затем Шериф просыпается и ищет черных (то бишь мафию). Заметьте, что шериф ищет ВСЮ мафию, а не только Дона. То есть Шериф делает то же, что и Дон, показывая номер какого-либо игрока. И ведущий точно также кивком дает понять Шерифу является ли тот игрок мафией или нет.</p>
+                            <p>Тут есть важный момент: даже если Дон нашел Шерифа или Шериф нашел Дона &mdash; это не значит, что они убивают друг друга. Это лишь обмен информацией с ведущим. Как игроки поступят с этой информацией &mdash; это уже их личный удел.</p>
+                        </li>
+                        <li><span>Когда наступает утро, предоставляется слово убитому игроку.</span>
+                            <p>То есть даже если мафия отстрелила игрока 1 ночью – он все равно будет говорить, когда наступит утро. Воспринимайте это как «озвучку» предсмертной записки, или показания умирающего свидетеля – что угодно. Но все игроки говорят свое заключительное слово перед тем, как покинуть стол.</p>
+                        </li>
+                        <li><span>Если игрок вылетел из игры, то нужно встать из-за стола и отойти в сторону.</span>
+                            <p>Это тоже довольно важная особенность. Человек, которого вывели из игры, должен отойти в сторону и стать немым зрителем с покерным лицом. Если же игрок остается сидеть за столом, то у него остается впечатление, что он все ещё игре. Из-за этого игрок мимикой и жестами будет участвовать в игре и может невольно навредить команде противника.</p>
+                        </li>
+                        <li><span>Жесткое голосование.</span>
+                            <p>Ведущий объявляет: «Кто против игрока номер 9 – голосуем!». И у игроков есть 2 секунды (не больше) чтобы поставить свою руку с жестом «ОК» (кулак с большим пальцем, поднятым вверх) на стол. Через 2 секунды ведущий говорит «Спасибо», что означает окончание голосования против этого игрока. Если кто поставит голос после слова «Спасибо», то голос засчитан не будет. Тем не менее, игроки, чьи голоса не были засчитаны, имеют право участвовать в дальнейшем голосовании.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Rules-2 Section -->
+<section class="numbers">
+    <div class="numbers-body">
+        <div class="container content-section text-center">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="one">
+                        <img src="img/sl5-multiple-users-silhouette.png" alt="sl5-multiple-users-silhouette">
+                        <h1><span class="counter">250</span></h1>
+                        <h6>и более человек играли</h6>
+                    </div>
+                    <div class="two">
+                        <img src="img/sl5-circular-clock.png" alt="sl5-circular-clock">
+                        <h1><span class="counter">1166</span></h1>
+                        <h6>и более часов сыграно</h6>
+                    </div>
+                    <div class="three">
+                        <img src="img/sl5-camera.png" alt="sl5-camera">
+                        <h1><span class="counter">2200</span></h1>
+                        <h6>и более фотографий</h6>
+                    </div>
+                    <div class="four">
+                        <img src="img/sl5-trophy-silhouette.png" alt="sl5-trophy-silhouette">
+                        <h1><span class="counter">2000</span></h1>
+                        <h6>и более сыграно игр</h6>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,69 +288,29 @@
 <section id="contact">
     <div class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Author's Message</h2>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>Контакты</h2>
                 <p>
                     If you like "Aries" template, we'd love to hear from you, whether it be feedback, thanks, new
                     template ideas or even just to say hello, we welcome it all!
                 </p>
-                <p>
-                    <i>
-                        <a href="mailto:wowthemesnet@gmail.com" style="border-bottom:1px dashed #ccc;">
-                            wowthemesnet@gmail.com
-                        </a>
-                    </i>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/wowthemesnet" class="btn btnghost btn-lg">
-                            <i class="fa fa-twitter fa-fw"></i>
-                            <span class="network-name">Twitter</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/pages/wowthemesnet/562560840468823"
-                           class="btn btnghost btn-lg">
-                            <i class="fa fa-facebook fa-fw"></i>
-                            <span class="network-name">Facebook</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/u/0/b/110916582192388695332/110916582192388695332/posts"
-                           class="btn btnghost btn-lg">
-                            <i class="fa fa-google-plus fa-fw"></i>
-                            <span class="network-name">Google+</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
 </section>
-<!-- Footer -->
-<footer>
-    <div class="container text-center">
-        <p class="credits">
-            Copyright &copy; Your Website 2015
-            <br/>
-            "Aries" Template by WowThemes.net
-        </p>
-    </div>
-</footer>
-<!-- jQuery -->
-<script src="js/jquery-3.4.1.js" defer></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js" defer></script>
 <!-- Plugin JavaScript -->
 <script src="js/jquery.nav.js" defer></script>
 <script src="js/jquery.slicknav.min.js" defer></script>
 <script src="js/jquery.easing.min.js" defer></script>
-
 <script src="js/isotope.pkgd.min.js" defer></script>
 <script src="js/wow.min.js" defer></script>
 <script src="js/jquery.magnific-popup.min.js" defer></script>
-
 <script src="js/homeUp.js" defer></script>
+<script src="js/waypoints.min.js" defer></script>
+<script src="js/jquery.counterup.min.js" defer></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/main.js" defer></script>
 </body>

@@ -19,6 +19,17 @@
             $(nav).onePageNav({});
         }
 
+        // Scroll //
+        $('a[data-href]').on('click', function () {
+            var href = $(this).data('href');
+            if(href === '#rules-2'){
+                $('html, body').animate({
+                    scrollTop: $('#rules-2').offset().top}, 1000);
+            } else {
+                $('nav a[href="' + href + '"]').click();
+            }
+        });
+
 /*        $('li a, [data-href="#gallery"]').on('click', function () {
             var $this = $(this),
                 i = $this.data('href');
@@ -64,6 +75,16 @@
         // Video Popup  //
         $('.video-popup').magnificPopup({
             type: 'video'
+        });
+
+        // Counter Up  //
+        $(document).ready(function($) {
+            $("span.counter").counterUp({
+                delay: 75, /* The delay in milliseconds per number count up */
+                time: 3000, /* The total duration of the count up animation */
+                offset: 100
+                /* The viewport percentile from which the counter starts (by default it's 100, meaning it's triggered at the very moment the element enters the viewport) */
+            });
         });
 
         // Wow JS //

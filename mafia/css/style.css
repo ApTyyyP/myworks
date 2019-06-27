@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat Light"), local("Montserrat-Light"), url("../fonts/montserratlight.woff2") format("woff2"), url("../fonts/montserratlight.woff") format("woff"), url("../fonts/montserratlight.ttf") format("truetype");
@@ -137,10 +138,16 @@ a:hover, a:focus {
   background-color: #ffffff;
   color: #ffffff;
 }
+.navbar-custom .navbar-toggle {
+  padding: 0;
+  border: none;
+}
 .navbar-custom .hamburger {
   cursor: pointer;
   transition: background 0.3s;
   outline: none;
+  display: block;
+  padding: 5px 0;
 }
 .navbar-custom .hamburger span {
   display: block;
@@ -292,6 +299,9 @@ a:hover, a:focus {
   position: relative;
   display: table-cell;
   vertical-align: middle;
+}
+.home .header-body .row {
+  margin: 0;
 }
 .home .header-body .brand-heading {
   font-family: "Raleway ExtraBold", sans-serif;
@@ -586,6 +596,9 @@ a:hover, a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
+.rules .btn-rectangle {
+  width: auto;
+}
 .rules .rules-body {
   position: relative;
   display: table-cell;
@@ -652,32 +665,110 @@ a:hover, a:focus {
     color: #c7b299;
   }
 }
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+.rules-2 {
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.rules-2 .rules-body-2 {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.rules-2 h2 {
+  margin-bottom: 40px;
+}
+.rules-2 ol {
+  list-style: none;
+  /* Убираем исходные маркеры */
+  counter-reset: item;
+  /* Обнуляем счетчик списка */
+  padding-right: 15px;
+  text-align: left;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 15px;
+  color: #8c8c8c;
+}
+.rules-2 ol li {
+  margin-top: 21px;
+  text-align: justify;
+}
+.rules-2 ol li:before {
+  content: counter(item) ") ";
+  /* Добавляем к числам скобку */
+  counter-increment: item;
+  /* Задаём имя счетчика */
+}
+.rules-2 ol span {
+  color: #998675;
+  font-weight: bold;
+}
+.rules-2 ol p {
+  margin: 0;
+  padding: 10px 0;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 15px;
+  color: #8c8c8c;
+}
+
+.numbers {
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background: url(../img/slide-5-bg.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.numbers .numbers-body {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.numbers .one,
+.numbers .two,
+.numbers .three,
+.numbers .four {
+  display: inline-block;
+}
+.numbers h1 {
+  margin: 30px 0 21px;
+  font-family: "Montserrat Ultra Light", sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  color: #ffffff;
+}
+.numbers h6 {
+  margin: 0;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #c7b299;
+}
+.numbers .col-sm-12,
+.numbers .col-md-12 {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media (max-width: 767px) {
+  .numbers h6 {
+    font-size: 17px;
   }
 }
-@-moz-keyframes pulse {
-  0% {
-    -moz-transform: scale(1);
-    transform: scale(1);
+@media (max-width: 565px) {
+  .numbers h1 {
+    font-size: 32px;
   }
-  50% {
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-  100% {
-    -moz-transform: scale(1);
-    transform: scale(1);
+  .numbers h6 {
+    font-size: 11px;
   }
 }
 .content-section {
@@ -685,7 +776,7 @@ a:hover, a:focus {
   clear: both;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .content-section {
     padding: 84px 0;
     clear: both;
@@ -714,86 +805,6 @@ a:hover, a:focus {
   background-color: #42dca3;
 }
 
-ul.banner-social-buttons {
-  margin-top: 0;
-}
-
-@media (max-width: 1199px) {
-  ul.banner-social-buttons {
-    margin-top: 15px;
-  }
-}
-@media (max-width: 767px) {
-  ul.banner-social-buttons li {
-    display: block;
-    margin-bottom: 20px;
-    padding: 0;
-  }
-  ul.banner-social-buttons li:last-child {
-    margin-bottom: 0;
-  }
-}
-footer {
-  padding: 40px 0;
-  position: relative;
-  clear: both;
-}
-footer p {
-  margin: 0;
-  font-size: 15px;
-}
-footer p.credits {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 3px;
-}
-
-::-moz-selection, ::selection {
-  text-shadow: none;
-  background: #fcfcfc;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-img::selection, img::-moz-selection {
-  background: 0 0;
-}
-
-body {
-  webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
-}
-
-.bgblue {
-  background: #22292c;
-}
-
-.inlineblock {
-  display: inline-block;
-}
-
-.btnghost {
-  border: 2px solid #333;
-  background-color: transparent;
-  padding: 15px 20px;
-  letter-spacing: 3px;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #333;
-  margin-top: 20px;
-  display: inline-block;
-}
-.btnghost:hover {
-  background-color: #333;
-  color: #fff;
-  border: 2px solid #333;
-}
-
-.bgcover {
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
 img {
   max-width: 100%;
 }
@@ -807,53 +818,6 @@ section {
 section:after {
   float: none;
   clear: both;
-}
-
-.done {
-  display: none;
-}
-
-.error input, input.error, .error textarea, textarea.error {
-  background-color: #ffffff;
-  border-bottom: 2px solid orangered !important;
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s;
-}
-
-#contactform input, #contactform textarea {
-  border: 0;
-  border-bottom: 2px solid #333;
-  width: 100%;
-  background-color: transparent;
-  padding: 20px 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-#contactform input#submit {
-  width: auto;
-  border: 2px solid;
-  padding: 10px 20px;
-  display: inline-block;
-}
-#contactform input#submit:hover {
-  background-color: #333;
-  color: #fff;
-  border: 2px solid #333;
-}
-#contactform input:focus, #contactform input:active {
-  border-top: 0;
-  border-bottom: 2px solid lightseagreen;
-  outline: 0;
-  outline: none;
-}
-#contactform textarea:focus, #contactform textarea:active {
-  border-top: 0;
-  border-bottom: 2px solid lightseagreen;
-  outline: 0;
-  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */
