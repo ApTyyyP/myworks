@@ -309,7 +309,7 @@ section, article {
   &.avatar80-60 {
     width: 80px;
     height: 60px;
-    background: #f00;
+    background: #eee;
 
     img {
       width: 80px;
@@ -683,7 +683,6 @@ button,
 
         &:hover {
           background: #1d2023;
-          padding-right: 10px;
           @include vendor('transition', 'all 0.2s ease-in');
         }
       }
@@ -733,7 +732,7 @@ button,
 #footer {
   margin-left: 375px;
   text-align: center;
-  background-color: #edf1f1;
+  background: #edf1f1 url("../../images/bg_two.png");
   padding: 0;
   box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
   font-size: 0.8em;
@@ -805,14 +804,13 @@ button,
     }
 
     &.one {
-      background-color: #81918E;
-      background-image: url('../../images/bg.jpg');
+      background: #81918E url('../../images/bg.jpg') fixed;
+      min-height: 25em;
+      height: 100vh;
     }
 
     &.two {
-      background: #f5fafa url("../../images/bg_two.jpg");
-      -webkit-background-size: cover;
-      background-size: cover;
+      background: #f5fafa url("../../images/bg_two.png") fixed;
 
       img {
         -moz-transition: all 1s ease-out;
@@ -868,9 +866,11 @@ button,
     }
 
     &.three {
-      background: #ecf1f1 url("../../images/bg_ul.png");
-      -webkit-background-size: cover;
-      background-size: cover;
+      background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
+      
+      h2, h3 {
+        color: #ffffff;
+      }
 
       ul {
         background: #ecf1f1 url("../../images/bgt.png");
@@ -880,9 +880,7 @@ button,
     }
 
     &.four {
-      background: #e8edec url("../../images/bg_four.jpg");
-      -webkit-background-size: cover;
-      background-size: cover;
+      background: #e8edec url("../../images/bg_four.jpeg") fixed;
     }
   }
 }

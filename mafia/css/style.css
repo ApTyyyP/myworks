@@ -289,7 +289,7 @@ a:hover, a:focus {
   padding: 100px 0 100px 0;
   text-align: center;
   color: #fff;
-  background: url(../img/slide-1-bg.jpg) 47% 0 no-repeat;
+  background: url(../img/slide-1-bg.jpg) fixed 47% 0 no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
