@@ -36,7 +36,7 @@
 				var $this = $(this);
 
 				// External link? Bail.
-					if ($this.attr('href').charAt(0) != '#')
+					if ($this.attr('href').charAt(0) !== '#')
 						return;
 
 				// Prevent default.
@@ -78,7 +78,7 @@
 								$section.removeClass('inactive');
 
 							// No locked links? Deactivate all links and activate this section's one.
-								if ($nav_a.filter('.active-locked').length == 0) {
+								if ($nav_a.filter('.active-locked').length === 0) {
 
 									$nav_a.removeClass('active');
 									$this.addClass('active');
