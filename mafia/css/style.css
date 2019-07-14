@@ -130,6 +130,70 @@ a:hover, a:focus {
   font-weight: 400;
 }
 
+.blink {
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 4s;
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  -webkit-animation-duration: 4s;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.transform {
+  animation-name: transformer;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 2, 0, 1);
+  animation-duration: 3s;
+  -webkit-animation-name: transformer;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1, 2, 0, 1);
+  -webkit-animation-duration: 3s;
+}
+
+@keyframes transformer {
+  0%, 100% {
+    transform: translate(0, 0);
+    background-color: #736357;
+  }
+  50% {
+    transform: translate(50px, 0);
+    background-color: #998675;
+  }
+  80% {
+    transform: translate(-50px, 0);
+  }
+}
+@-webkit-keyframes transformer {
+  0%, 100% {
+    transform: translate(0, 0);
+    background-color: #736357;
+  }
+  50% {
+    transform: translate(50px, 0);
+    background-color: #998675;
+  }
+  80% {
+    transform: translate(-50px, 0);
+  }
+}
 .navbar-custom {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -216,6 +280,7 @@ a:hover, a:focus {
 .navbar-custom #nav .current a {
   background: transparent;
   color: #ff0000;
+  font-weight: bold;
 }
 .navbar-custom #nav li a {
   padding: 18px 8px;
@@ -298,7 +363,7 @@ a:hover, a:focus {
 .home .header-body {
   position: relative;
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 .home .header-body .row {
   margin: 0;
@@ -338,7 +403,7 @@ a:hover, a:focus {
     padding: 10px 0;
   }
   .home .header-body .intro-text {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 1px;
   }
