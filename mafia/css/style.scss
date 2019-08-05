@@ -173,25 +173,28 @@ a {
   to { opacity: 0.0; }
 }
 
-.transform {
-  animation-name: transformer;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(1.0, 2.0, 0, 1.0);
-  animation-duration: 3s;
-  -webkit-animation-name: transformer;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: cubic-bezier(1.0, 2.0, 0, 1.0);
-  -webkit-animation-duration: 3s;
+.transform:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #998675;
+  width: 170px;
+  height: 50px;
+  border-radius: 3px;
+  animation: pulse 1.5s both normal infinite;
+  z-index: -1;
 }
-@keyframes transformer {
-  0%, 100% { transform: translate(0, 0); background-color: #736357; }
-  50% { transform: translate(50px, 0); background-color: #998675; }
-  80% { transform: translate(-50px, 0); }
-}
-@-webkit-keyframes transformer {
-  0%, 100% { transform: translate(0, 0); background-color: #736357; }
-  50% { transform: translate(50px, 0); background-color: #998675; }
-  80% { transform: translate(-50px, 0); }
+
+@keyframes pulse {
+  0% {
+    opacity: .9;
+    transform: scale(1, 1)
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4, 1.4)
+  }
 }
 
 .navbar-custom {
@@ -453,6 +456,7 @@ a {
 }
 
 .btn-rectangle {
+  position: relative;
   width: 170px;
   height: 50px;
   margin: 0 0 20px;
