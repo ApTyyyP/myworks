@@ -134,3 +134,38 @@
         });
     });
 })(jQuery);
+
+function initMap() {
+
+    var coords = {lat: 48.7423164, lng: 37.5936949},
+        container = document.getElementById('map'),
+        content = container.innerHTML,
+        image = "./img/gun_map.png",
+        directionsService = new google.maps.DirectionsService,
+        directionsDisplay = new google.maps.DirectionsRenderer,
+        map = new google.maps.Map(container, {
+            center: coords,
+            zoom: 18
+        });
+
+    marker = new google.maps.Marker({
+        position: coords,
+        map: map,
+        icon: image,
+        animation: google.maps.Animation.BOUNCE
+    })
+
+    infowindow = new google.maps.InfoWindow({
+        content: content
+    });
+
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+    });
+
+    var onChangeHandler = function() {
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+    };
+    document.getElementById('button').addEventListener('click', onChangeHandler);
+    directionsDisplay.setMap(map);
+}

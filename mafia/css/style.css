@@ -810,6 +810,10 @@ a:hover, a:focus {
   align-items: flex-end;
 }
 
+#map {
+  height: 40vh;
+}
+
 @media (max-width: 767px) {
   .numbers h6 {
     font-size: 17px;
