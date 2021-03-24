@@ -810,6 +810,53 @@ a:hover, a:focus {
   align-items: flex-end;
 }
 
+.box-item {
+  position: relative;
+  padding-left: 36px;
+}
+.box-item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.box-item address {
+  margin: 0;
+  line-height: inherit;
+  font-style: inherit;
+}
+.box-item.address :before {
+  content: url(/mafia/img/sl6-maps-and-flags.png);
+}
+.box-item.phone {
+  margin-top: 61px;
+}
+.box-item.email:before {
+  content: url(/mafia/img/sl6-mail.png);
+}
+.box-item.email {
+  margin-top: 84px;
+}
+.box-item a {
+  display: block;
+  margin-top: 20px;
+}
+.box-item h1 {
+  margin: 0;
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+}
+.box-item h6 {
+  margin: 0;
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #8c8c8c;
+}
+
 #map {
   height: 40vh;
 }
