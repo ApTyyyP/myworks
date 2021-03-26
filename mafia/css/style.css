@@ -810,9 +810,13 @@ a:hover, a:focus {
   align-items: flex-end;
 }
 
+ul {
+  list-style: none;
+}
+
 .box-item {
   position: relative;
-  padding-left: 36px;
+  padding-left: 50px;
 }
 .box-item:before {
   position: absolute;
@@ -821,44 +825,48 @@ a:hover, a:focus {
   display: block;
 }
 .box-item address {
-  margin: 0;
+  margin: 21px 0 0;
   line-height: inherit;
   font-style: inherit;
 }
-.box-item.address :before {
-  content: url(/mafia/img/sl6-maps-and-flags.png);
-}
 .box-item.phone {
   margin-top: 61px;
-}
-.box-item.email:before {
-  content: url(/mafia/img/sl6-mail.png);
+  width: 47%;
 }
 .box-item.email {
   margin-top: 84px;
 }
+.box-item.social {
+  margin-top: 86px;
+}
 .box-item a {
   display: block;
   margin-top: 20px;
+  color: #8c8c8c;
 }
 .box-item h1 {
-  margin: 0;
+  margin: 0 10px;
   font-family: "Myriad Pro", sans-serif;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   text-transform: uppercase;
   color: #000000;
 }
 .box-item h6 {
-  margin: 0;
+  margin: 0 10px;
   font-family: "Myriad Pro", sans-serif;
   font-size: 18px;
   font-weight: 300;
   color: #8c8c8c;
 }
+.box-item img {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
 
 #map {
-  height: 40vh;
+  height: 57vh;
 }
 
 @media (max-width: 767px) {
