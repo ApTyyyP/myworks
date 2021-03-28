@@ -839,6 +839,16 @@ ul {
 .box-item.social {
   margin-top: 86px;
 }
+.box-item.social svg {
+  fill: #000000;
+}
+.box-item.social a {
+  float: left;
+  margin-left: 14px;
+}
+.box-item.social a.social-img {
+  margin-left: 40px;
+}
 .box-item a {
   display: block;
   margin-top: 20px;

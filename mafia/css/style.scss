@@ -932,6 +932,19 @@ ul {
 
   &.social {
     margin-top: 86px;
+
+    & svg {
+      fill: #000000;
+    }
+
+    a {
+      float: left;
+      margin-left: 14px;
+
+      &.social-img {
+        margin-left: 40px;
+      }
+    }
   }
 
   a {
