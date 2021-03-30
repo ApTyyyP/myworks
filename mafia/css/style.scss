@@ -902,6 +902,7 @@ a {
 
 ul {
   list-style: none;
+  margin-bottom: 10px;
 }
 
 .box-item {
@@ -923,40 +924,50 @@ ul {
 
   &.phone {
     margin-top: 61px;
-    width: 47%;
+    width: max-content;
   }
 
   &.email {
     margin-top: 84px;
+    width: max-content;
   }
 
   &.social {
     margin-top: 86px;
 
-    & svg {
-      fill: #000000;
+    .icons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 14px;
     }
 
-    a {
-      float: left;
-      margin-left: 14px;
-
-      &.social-img {
-        margin-left: 40px;
-      }
+    & svg {
+      fill: #000000;
     }
   }
 
   a {
     display: block;
     margin-top: 20px;
+    margin-left: 40px;
     color: #8c8c8c;
+
+    &:hover {
+      color: #ff0000;
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   h1 {
     margin: 0 10px;
     font-family: 'Myriad Pro', sans-serif;
-    font-size: 27px;
+    font-size: 26px;
     font-weight: bold;
     text-transform: uppercase;
     color: #000000;
@@ -978,7 +989,7 @@ ul {
 }
 
 #map {
-    height: 57vh;
+    height: 50vh;
 }
 
 @media (max-width: 767px) {
