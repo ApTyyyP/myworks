@@ -372,7 +372,6 @@ a:hover, a:focus {
 
 @media (max-width: 419px) {
   .home {
-    min-width: 419px;
     background: url(../img/slide-1-bg.jpg) 50% center no-repeat;
   }
 }
@@ -885,6 +884,21 @@ ul {
   left: 20px;
 }
 
+@media screen and (max-width: 545px) {
+  #map {
+    left: 10px;
+    height: 60vh;
+  }
+
+  .box-item a {
+    margin-left: 0;
+  }
+
+  .box-item.social .icons {
+    display: block;
+    float: left;
+  }
+}
 #map {
   height: 50vh;
 }
@@ -941,7 +955,6 @@ img {
 }
 
 section {
-  min-width: 419px;
   background-color: #f9f9f9;
   color: #333;
   overflow: hidden;
