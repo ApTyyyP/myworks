@@ -554,6 +554,52 @@ button,
   > .label {
     display: none;
   }
+
+  &#github,
+  &#linkedin,
+  &#gmail,
+  &#vk,
+  &#skype,
+  &#telegram {
+    background-color: #18191f;
+    box-shadow: 0 0 0 #00000080, 0 0 0 #00000080,
+    0 0 0 #00000080, 0 0 0 #00000080, inset 0 0 0 #00000080,
+    inset 0 0 0 #00000080, inset 0 0 0 #00000080,
+    inset 0 0 0 #00000080;
+    border-radius: 29px;
+    margin: 0 2px;
+    padding: 2px 0;
+    animation: animate 3s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+  }
+  &#github {
+    animation-delay: 0.3s;
+  }
+  &#linkedin {
+    animation-delay: 0.7s;
+  }
+  &#gmail {
+    animation-delay: 0.1s;
+  }
+  &#vk {
+    animation-delay: 0.4s;
+  }
+  &#skype {
+    animation-delay: 0.8s;
+  }
+  &#telegram {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes animate {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
 }
 
 /* HomeUp */
@@ -822,6 +868,7 @@ button,
         color: #fff;
         font-weight: bold;
         border-color: inherit;
+        transition: color 0.35s;
 
         &:hover {
           color: rgb(255, 237, 48);
