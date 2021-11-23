@@ -181,7 +181,7 @@ sup {
 
 hr {
   border: 0;
-  border-top: solid 1px #ddd;
+  border-top: dashed 2px #ddd;
 }
 
 blockquote {
