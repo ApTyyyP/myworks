@@ -1743,13 +1743,14 @@ html {
     margin-bottom: 40px;
 }
 .item header {
-    background: #fff;
+    background: #e8e8e8;
     margin: 0;
     padding: 1em 0 1em 0;
     font-size: 0.8em;
 }
 .item header h3 {
     font-size: 1em;
+    font-weight: bold;
 }
 
 /* Icons */
