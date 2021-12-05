@@ -858,10 +858,16 @@ html {
   .bottom {
     @include vendor('flex-shrink', '0');
     padding: 1.5em 0 0.75em 0;
+    overflow: hidden;
 
     > :last-child {
       margin-bottom: 0;
     }
+  }
+
+  .canvas {
+    width: 100%;
+    text-align: left;
   }
 
   .icons {
