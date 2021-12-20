@@ -684,7 +684,6 @@ a:hover, a:focus {
   text-align: center;
   font-size: 20px;
   position: absolute;
-  left: 50%;
   top: 0;
   margin-left: -30px;
   margin-top: -30px;
@@ -736,7 +735,7 @@ a:hover, a:focus {
   /* Убираем исходные маркеры */
   counter-reset: item;
   /* Обнуляем счетчик списка */
-  padding-right: 15px;
+  padding: 0 15px 0 15px;
   text-align: left;
   font-family: "Montserrat Regular", sans-serif;
   font-size: 15px;
@@ -812,11 +811,11 @@ a:hover, a:focus {
 ul {
   list-style: none;
   margin-bottom: 10px;
+  padding-left: 20px;
 }
 
 .box-item {
   position: relative;
-  padding-left: 50px;
 }
 .box-item:before {
   position: absolute;
@@ -844,7 +843,6 @@ ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 14px;
 }
 .box-item.social svg {
   fill: #000000;
@@ -862,6 +860,7 @@ ul {
 }
 .box-item a:first-child {
   margin-left: 0;
+  float: left;
 }
 .box-item h1 {
   margin: 0 10px;
@@ -881,7 +880,7 @@ ul {
 .box-item img {
   position: absolute;
   top: 5px;
-  left: 20px;
+  left: -20px;
 }
 
 @media screen and (max-width: 545px) {
@@ -891,11 +890,7 @@ ul {
   }
 
   .box-item a {
-    margin-left: 0;
-  }
-
-  .box-item.social .icons {
-    display: block;
+    margin-left: 5%;
     float: left;
   }
 }
