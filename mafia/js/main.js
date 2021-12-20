@@ -78,14 +78,14 @@
         });
 
         // Counter Up  //
-        $(document).ready(function($) {
-            $("span.counter").counterUp({
-                delay: 75, /* The delay in milliseconds per number count up */
-                time: 3000, /* The total duration of the count up animation */
-                offset: 100
-                /* The viewport percentile from which the counter starts (by default it's 100, meaning it's triggered at the very moment the element enters the viewport) */
-            });
-        });
+        // $(document).ready(function($) {
+        //     $("span.counter").counterUp({
+        //         delay: 75, /* The delay in milliseconds per number count up */
+        //         time: 3000, /* The total duration of the count up animation */
+        //         offset: 100
+        //         /* The viewport percentile from which the counter starts (by default it's 100, meaning it's triggered at the very moment the element enters the viewport) */
+        //     });
+        // });
 
         // Wow JS //
         var wow = new WOW(
@@ -134,6 +134,55 @@
         });
     });
 })(jQuery);
+
+// Counter UP
+$(function () {
+
+    // when user react the counter area the event start
+    $(".counter-area").waypoint(function (direction) {
+        // set the direction only scroll down
+        if (direction === "down") {
+
+            // select the counter DOM and loop ove the counter and call a function
+            $(".counter").each(function () {
+
+                // define the counter selector with this
+                var $this = $(this);
+
+                // collect the counter number and store with a variable
+                var counterNumber = $this.attr("data-count");
+
+                // store the initial number to an object and animate with the counter number
+                $({
+                    counterInit: $this.text()
+                }).animate({
+                    counterInit: counterNumber
+                }, {
+                    delay: 75, /* The delay in milliseconds per number count up */
+                    // animate function duration property
+                    duration: 4000,
+                    // animation function
+                    easing: 'linear',
+                    // animate function step property
+                    step: function () {
+                        //output the counter number with calculating
+                        $this.text(Math.ceil(this.counterInit));
+                    },
+                    // animate function complete step
+                    complete: function () {
+                        // show the last counter value
+                        $this.text(this.counterNumbercountNum);
+                    }
+                })
+
+            }); // end counter
+
+        } // end if
+
+    },{
+        offset:"80%"
+    });
+});
 
 function initMap() {
 
