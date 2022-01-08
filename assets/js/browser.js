@@ -1,4 +1,4 @@
-﻿(function ($) {
+﻿/*(function ($) {
     var data = [
         {str: navigator.userAgent, sub: 'Chrome', ver: 'Chrome', name: 'chrome'},
         {str: navigator.vendor, sub: 'Apple', ver: 'Version', name: 'safari'},
@@ -15,8 +15,18 @@
             break;
         }
     }
-})(jQuery);
+})(jQuery);*/
 /* end Page */
+
+jQuery.browser = {};
+(function () {
+    jQuery.browser.msie = false;
+    jQuery.browser.version = 0;
+    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+    }
+})();
 
 /* begin Menu */
 jQuery(function () {

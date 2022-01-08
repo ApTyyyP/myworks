@@ -23,10 +23,10 @@ function click() {
 document.oncontextmenu = click;
 
 function run() {
-    // var ap; - for am/pm
-    dd = document.form1.day.value;
-    mm = document.form1.month.value;
-    yy = document.form1.year.value;
+    // let ap; - for am/pm
+    let dd = document.form1.day.value;
+    let mm = document.form1.month.value;
+    let yy = document.form1.year.value;
     with (document.form1) {
         // ap = parseInt(ampm.selectedIndex);
         hr = parseInt(hrs.value);
@@ -35,7 +35,7 @@ function run() {
             alert("Ошибка!")
         }
     }
-    main = "Верно заполнены поля:";
+    let main = "Верно заполнены поля:";
     if ((mm < 1) || (mm > 12) || (dd < 1) || (dd > 31) || (yy < 1) || (mm == "") || (dd == "") || (yy == ""))
         main = "Неверно заполнены поля:";
     else if (((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) && (dd > 30))
@@ -57,11 +57,15 @@ function run() {
                 return false;
         }
 
+        let days, gdate, gmonth, gyear, age;
+
         days = new Date();
         gdate = days.getDate();
-        gmonth = days.getMonth();
-        gyear = days.getYear();
+        gmonth = days.getMonth() + 1;
+        // gmonth = (days.getMonth() + 1).toString().padStart(2, "0");
+        gyear = days.getFullYear();
         age = gyear - yy;
+
         if ((mm == (gmonth + 1)) && (dd <= parseInt(gdate))) {
             age = age;
         } else {
@@ -78,8 +82,9 @@ function run() {
             age = age - 1;
         if ((mm == (gmonth + 1)) && (dd > parseInt(gdate)))
             age = age + 1;
-        var m;
-        var n;
+
+        let n, m;
+
         if (mm == 12) {
             n = 31 - dd;
         }
@@ -118,7 +123,9 @@ function run() {
             n = 365 - dd;
             if (leapyear(yy)) n = n + 1;
         }
-        if (gmonth == 1) m = 31;
+        if (gmonth == 1) {
+            m = 31;
+        }
         if (gmonth == 2) {
             m = 59;
             if (leapyear(gyear)) m = m + 1;
@@ -163,6 +170,9 @@ function run() {
             m = 365;
             if (leapyear(gyear)) m = m + 1;
         }
+
+        let totdays, months, p;
+
         totdays = (parseInt(age) * 365);
         totdays += age / 4;
         totdays = parseInt(totdays) + gdate + m + n;
@@ -216,17 +226,21 @@ function run() {
             p = 365 + gdate;
             if (leapyear(gyear)) p = p + 1;
         }
+
+        let weeks, time, ghour, gmin, gsec, hour, hr;
+
         weeks = totdays / 7;
         weeks += " недель";
         weeks = parseInt(weeks);
         document.form1.weeks.value = weeks + " недель.";
-        var time = new Date();
+        time = new Date();
         ghour = time.getHours();
         gmin = time.getMinutes();
         gsec = time.getSeconds();
         hour = ((age * 365) + n + p) * 24;
-        hour += (parseInt(age / 4) * 24) - hr; // -hr for 24 hour
+        hour += (parseInt(age / 4) * 24); // -hr for 24 hour
 
+        console.log(hour);
         /* For AM/PM
         if (ap == 0)
             hour = hour - hr;
@@ -238,18 +252,18 @@ function run() {
         */
 
         document.form1.hours.value = hour + " часов.";
-        var min;
+        let min;
         min = (hour * 60) + gmin;
         document.form1.min.value = min + " минут.";
         sec = (min * 60) + gsec;
         document.form1.sec.value = sec + " секунд.";
-        var millisec;
-        var gmil;
+        let millisec;
+        let gmil;
         gmil = days.getMilliseconds();
         millisec = (sec * 1000) + gmil;
         document.form1.milli.value = millisec + " миллисекунд.";
         mm = mm - 1;
-        var r;
+        let r;
         if (mm == 0) r = 1;
         if (mm == 1) r = 31;
         if (mm == 2) {
@@ -296,6 +310,7 @@ function run() {
             r = 365;
             if (leapyear(gyear)) r = r + 1;
         }
+        let a, bday;
         mm = mm + 1;
         r = parseInt(r) + parseInt(dd);
         if (mm > (gmonth + 1)) {
@@ -312,6 +327,8 @@ function run() {
                 bday = a + (r - m - gdate);
             }
         }
+        let nhour, nmin, nsec;
+
         nhour = 24 - parseInt(ghour);
         nmin = 60 - parseInt(gmin);
         nsec = 60 - parseInt(gsec);
@@ -327,8 +344,7 @@ function run() {
 
         function go() {
             function lyear(a) {
-                if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0)) return true;
-                else return false;
+                return ((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0);
             }
 
             mm = parseInt(mm);
@@ -343,7 +359,7 @@ function run() {
                     main = "Неверно заполнены поля:";
             } else main = main;
             if (main == "Верно заполнены поля:") {
-                var m;
+                let m;
                 if (mm == 1) n = 31;
                 if (mm == 2) n = 59 + 1;
                 if (mm == 3) n = 90 + 1;
@@ -364,10 +380,13 @@ function run() {
                     if (lyear(yy)) n += 29 + dd - 3;
                     else if (!lyear(yy)) n += 28 + dd - 1;
                 }
+
+                let fours, hunds, fhunds;
+
                 fours = yy / 4;
                 hunds = yy / 100;
                 fhunds = yy / 400;
-                var day;
+                let day;
                 day = (yy + n + fours - hunds + fhunds) % 7;
                 day = parseInt(day);
                 switch (day) {

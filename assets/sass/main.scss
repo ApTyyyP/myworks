@@ -418,10 +418,12 @@ form {
   input[type="password"],
   select {
     line-height: 1.25em;
+    background-color: #fff;
   }
 
   textarea {
     min-height: 14em;
+    background-color: #fff;
   }
 
   ::-webkit-input-placeholder {
@@ -809,7 +811,7 @@ html {
 
   &:hover {
     opacity: 1;
-    background: #000000 !important;
+    background: #FF0000 !important;
     transition: all .3s ease-in;
   }
 
@@ -850,6 +852,7 @@ html {
   text-align: right;
   top: 0;
   width: 375px;
+  z-index: 3;
 
   .top {
     @include vendor('flex-grow', '1');
@@ -1043,6 +1046,90 @@ html {
 
 /* Main */
 
+#bg-animation,
+#bgCanvas {
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#bgCanvas {
+  position: fixed;
+  z-index: -1;
+}
+
+canvas {
+  pointer-events: none;
+}
+
+#bg-animation {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  width: 100%;
+}
+
+.bg-default {
+  background-color: #000;
+}
+
+.bg-default .text-default-variant-1 {
+  opacity: 1;
+  color: #fff;
+}
+
+.bg-default .counter {
+  display: block;
+  margin-top: 30px;
+}
+
+.well-sm {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.bg-contrast {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.bg-contrast,
+.btn {
+  position: relative;
+}
+
+.bg-contrast .counter:before {
+  opacity: .05;
+}
+
+@media (min-width:992px) {
+  #bg-animation,
+  #bgCanvas {
+    display: block;
+  }
+}
+
+@media (min-width:768px) {
+  .well-sm {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .one {
+    background: #81918E url('../../images/bg.jpg') fixed;
+    background-color: #000;
+  }
+
+  .three {
+    background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
+  }
+  .four {
+    background: #e8edec url("../../images/bg_four.jpeg") fixed;
+  }
+}
+
 #main {
   margin-left: 375px;
 
@@ -1054,6 +1141,7 @@ html {
 
     & p {
       margin: 0;
+      color: #ffffff;
     }
   }
 
@@ -1116,12 +1204,13 @@ html {
 
     &.cover {
       padding: 10em 0;
-      background-size: cover;
+      //background-size: cover;
       background-position: center center;
     }
 
     &.one {
-      background: #81918E url('../../images/bg.jpg') fixed;
+      //background: #81918E url('../../images/bg.jpg') fixed;
+      //background-color: #000;
       min-height: 25em;
       height: 100vh;
     }
@@ -1139,7 +1228,6 @@ html {
           -moz-transform: scale(1.1);
           -o-transform: scale(1.1);
         }
-
       }
 
       table {
@@ -1159,6 +1247,10 @@ html {
           min-height: 5.6em;
           line-height: 1;
         }
+      }
+
+      h2 {
+        color: #666;
       }
 
       p {
@@ -1183,21 +1275,26 @@ html {
     }
 
     &.three {
-      background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
+      //background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
       
       h2, h3 {
         color: #ffffff;
       }
 
       ul {
-        background: #ecf1f1 url("../../images/bgt.png");
+        //background: #ecf1f1 url("../../images/bgt.png");
         border: 1px dotted #8099B3;
         text-align: left;
+        color: #fff;
       }
     }
 
     &.four {
-      background: #e8edec url("../../images/bg_four.jpeg") fixed;
+      //background: #e8edec url("../../images/bg_four.jpeg") fixed;
+    }
+
+    h2, p {
+      color: #888;
     }
   }
 }

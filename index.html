@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/inter.min.css" />
     <link rel="stylesheet" href="assets/css/main.css"/>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/time.js"></script>
     <script src="assets/js/date.js"></script>
     <script src="assets/js/info.js"></script>
@@ -15,147 +17,586 @@
 </head>
 <body class="is-preload" onLoad="ImgClock();">
 
-<!-- Header -->
-<div id="header">
+<div id="page">
 
-    <div class="top">
+    <!-- Header -->
+    <div id="header">
 
-        <!-- Logo -->
-        <div id="logo">
-            <span class="image avatar80-60"><img src="images/avatar.jpg" alt="avatar"/></span>
-            <h1 id="title">Artur Morza</h1>
-            <p>Front-End Developer</p>
+        <div class="top">
+
+            <!-- Logo -->
+            <div id="logo">
+                <span class="image avatar80-60"><img src="images/avatar.jpg" alt="avatar"/></span>
+                <h1 id="title">Artur Morza</h1>
+                <p>Front-End Developer</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="#top" id="top-link">
+                            <span class="icon fa-home">Главная</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" id="portfolio-link">
+                            <span class="icon fa-th">Портфолио</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" id="about-link">
+                            <span class="icon fa-user">Обо мне</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" id="contact-link">
+                            <span class="icon fa-envelope">Контакты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr10">
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr">
+                        <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer1">
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min10">
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min">
+                        <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer2">
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec10">
+                        <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec">
+                    </li>
+                    <li>
+                        <script>document.write('Сегодня ' + getDateStr() + ' года.')</script>
+                    </li>
+                    <li>
+                        <hr>
+                        <script>
+                            var data = browserDetectNav();
+                            document.write("Ваш Браузер: <span style = color:red><b>" + data[0] + "</b></span>, Версия: <span style=color:#ff0000><b>" + data[1] + "." + data[2] + "</b></span>.");
+                        </script>
+                    </li>
+                    <li>
+                        <hr>
+                        <script>
+                            d0 = new Date('april 14, 2019');
+                            d1 = new Date();
+                            dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
+                            document.write('Этот сайт живёт <b><span style="color:red">' + Math.round(dt) + '</span></b>-й день.');
+                        </script>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
+        <div class="bottom">
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
+            <!-- Light Wave Animation -->
+            <div class="canvas">
+                <canvas id="webgl-canvas"></canvas>
+
+                <!-- vertexShader -->
+                <script id="js-vertex-shader" type="x-shader/x-vertex">
+                    attribute vec3 position;
+
+                    void main()	{
+                      gl_Position = vec4(position, 1.0);
+                    }
+                </script>
+
+                <!-- fragmentShader -->
+                <script id="js-fragment-shader" type="x-shader/x-fragment">
+                    precision highp float;
+                    uniform vec2 resolution;
+                    uniform float time;
+                    uniform float xScale;
+                    uniform float yScale;
+                    uniform float distortion;
+
+                    void main() {
+                      vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
+
+                      float d = length(p) * distortion;
+
+                      float rx = p.x * (1.0 + d);
+                      float gx = p.x;
+                      float bx = p.x * (1.0 - d);
+
+                      float r = 0.05 / abs(p.y + sin((rx + time) * xScale) * yScale);
+                      float g = 0.05 / abs(p.y + sin((gx + time) * xScale) * yScale);
+                      float b = 0.05 / abs(p.y + sin((bx + time) * xScale) * yScale);
+
+                      gl_FragColor = vec4(r, g, b, 1.0);
+                    }
+                </script>
+            </div>
+
+            <!-- Social Icons -->
+            <ul class="icons">
                 <li>
-                    <a href="#top" id="top-link">
-                        <span class="icon fa-home">Главная</span>
+                    <a href="https://github.com/ApTyyyP/" title="GitHub" target="_blank" class="icon fa-github" id="github">
+                        <span class="label">GitHub</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#portfolio" id="portfolio-link">
-                        <span class="icon fa-th">Портфолио</span>
+                    <a href="https://www.linkedin.com/in/artur-morza-485050191/" title="LinkedIn" target="_blank" class="icon fa-linkedin" id="linkedin">
+                        <span class="label">in</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#about" id="about-link">
-                        <span class="icon fa-user">Обо мне</span>
+                    <a href="mailto:arturhelpme@gmail.com" title="Gmail" class="icon fa-envelope" id="gmail">
+                        <span class="label">Email</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#contact" id="contact-link">
-                        <span class="icon fa-envelope">Контакты</span>
+                    <a href="https://vk.com/artur_morza/" title="Вконтакте" target="_blank" class="icon fa-vk" id="vk">
+                        <span class="label">VK</span>
                     </a>
                 </li>
                 <li>
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr10">
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Hr">
-                    <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer1">
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min10">
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Min">
-                    <img src="images/time/colon.gif" alt="colon" width="15" height="20" name="imgSpacer2">
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec10">
-                    <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec">
+                    <a href="skype:artur-tz" title="Skype" target="_blank" class="icon fa-skype" id="skype">
+                        <span class="label">VK</span>
+                    </a>
                 </li>
                 <li>
-                    <script>document.write('Сегодня ' + getDateStr() + ' года.')</script>
-                </li>
-                <li>
-                    <hr>
-                    <script>
-                        var data = browserDetectNav();
-                        document.write("Ваш Браузер: <span style = color:red><b>" + data[0] + "</b></span>, Версия: <span style=color:#ff0000><b>" + data[1] + "." + data[2] + "</b></span>.");
-                    </script>
-                </li>
-                <li>
-                    <hr>
-                    <script>
-                        d0 = new Date('april 14, 2019');
-                        d1 = new Date();
-                        dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
-                        document.write('Этот сайт живёт <b><span style="color:red">' + Math.round(dt) + '</span></b>-й день.');
-                    </script>
+                    <a href="https://telegram.im/@aptyp_it" title="Telegram" target="_blank" class="icon fa-telegram" id="telegram">
+                        <span class="label">Telegram</span>
+                    </a>
                 </li>
             </ul>
-        </nav>
 
-    </div>
-    <div class="bottom">
-
-        <!-- Light Wave Animation -->
-        <div class="canvas">
-            <canvas id="webgl-canvas"></canvas>
-
-            <!-- vertexShader -->
-            <script id="js-vertex-shader" type="x-shader/x-vertex">
-                attribute vec3 position;
-
-                void main()	{
-                  gl_Position = vec4(position, 1.0);
-                }
-            </script>
-
-            <!-- fragmentShader -->
-            <script id="js-fragment-shader" type="x-shader/x-fragment">
-                precision highp float;
-                uniform vec2 resolution;
-                uniform float time;
-                uniform float xScale;
-                uniform float yScale;
-                uniform float distortion;
-
-                void main() {
-                  vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
-
-                  float d = length(p) * distortion;
-
-                  float rx = p.x * (1.0 + d);
-                  float gx = p.x;
-                  float bx = p.x * (1.0 - d);
-
-                  float r = 0.05 / abs(p.y + sin((rx + time) * xScale) * yScale);
-                  float g = 0.05 / abs(p.y + sin((gx + time) * xScale) * yScale);
-                  float b = 0.05 / abs(p.y + sin((bx + time) * xScale) * yScale);
-
-                  gl_FragColor = vec4(r, g, b, 1.0);
-                }
-            </script>
         </div>
 
-        <!-- Social Icons -->
-        <ul class="icons">
-            <li>
-                <a href="https://github.com/ApTyyyP/" title="GitHub" target="_blank" class="icon fa-github" id="github">
-                    <span class="label">GitHub</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/artur-morza-485050191/" title="LinkedIn" target="_blank" class="icon fa-linkedin" id="linkedin">
-                    <span class="label">in</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:arturhelpme@gmail.com" title="Gmail" class="icon fa-envelope" id="gmail">
-                    <span class="label">Email</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://vk.com/artur_morza/" title="Вконтакте" target="_blank" class="icon fa-vk" id="vk">
-                    <span class="label">VK</span>
-                </a>
-            </li>
-            <li>
-                <a href="skype:artur-tz" title="Skype" target="_blank" class="icon fa-skype" id="skype">
-                    <span class="label">VK</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://telegram.im/@aptyp_it" title="Telegram" target="_blank" class="icon fa-telegram" id="telegram">
-                    <span class="label">Telegram</span>
-                </a>
+    </div>
+
+    <i style="visibility: hidden;" class="b-up-arrow b-up-arrow_pos_right"></i>
+
+    <!-- Main -->
+    <div id="main">
+        <canvas id="bg-animation"></canvas>
+        <div id="bg-default">
+            <canvas id="bgCanvas"></canvas>
+
+            <div id="guiHolder"></div>
+        </div>
+
+        <!-- Intro -->
+        <section id="top" class="one dark cover">
+            <div class="container">
+
+                <header>
+                    <h2 class="alt">Привет! Я
+                        <strong>очень рад</strong>
+                        , что Вы зашли на мою страничку :)
+                    </h2>
+                    <p>
+                        <strong class="blink">Здесь показаны мои проекты</strong></a>
+                    </p>
+                    <div class="resume">
+                        <p>Скачать моё резюме можете тут</p>
+                            <div onLoad="get_file_url();">
+                                <button class="button-progress">
+                                    <svg class="circle" viewBox="0 0 76 76">
+                                        <circle class="default" cx="38" cy="38" r="36"></circle>
+                                        <circle class="active" cx="38" cy="38" r="36"></circle>
+                                    </svg>
+                                    <div class="icon">
+                                        <svg class="line" viewBox="0 0 4 37">
+                                            <line x1="2" y1="2" x2="2" y2="35"></line>
+                                        </svg>
+                                        <div>
+                                            <svg class="arrow" viewBox="0 0 40 32"></svg>
+                                            <svg class="progress" viewBox="0 0 444 10">
+                                                <path d="M2,5 L42,5 C60.0089086,6.33131695 73.3422419,6.99798362 82,7 C87.572404,7.00129781 91.0932494,1.72677301 102,1.99944178 C112.906751,2.27211054 112.000464,7.99986045 122,8 C131.999536,8.00013955 132,2 142,2 C152,2 152,8 162,8 C172,8 172,2 182,2 C192,2 192,8 202,8 C212,8 212,2 222,2 C232,2 232,8 242,8 C252,8 252,2 262,2 C272,2 272,8 282,8 C292,8 292,2 302,2 C312,2 312,8 322,8 C332,8 332,2 342,2 C352,2 351.897852,7.49489262 362,8 C372.102148,8.50510738 378.620177,5.22532154 402,5 L442,5"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span>0%</span>
+                                </button>
+                            </div>
+                        </p>
+                    </div>
+                </header>
+
+                <footer>
+                    <a href="#portfolio" class="button scrolly">Портфолио</a>
+                </footer>
+
+            </div>
+            <marquee direction="right">
+                <span itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><img itemprop="url image" alt="animaciya-dog" src="images/animaciya-dog.gif" width="125" height="111"><meta itemprop="width" content="125"><meta itemprop="height" content="111"></span>
+            </marquee>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="two well-sm bg-contrast">
+            <div class="container">
+
+                <header>
+                    <h2>Портфолио</h2>
+                </header>
+
+                <hr>
+                <h3>Vue.js</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="javascript:void(0);" class="image fit">
+                                <img src="cryptonomicon/public/cryptonomicon_title.jpg" alt="cryptonomicon"/>
+                            </a>
+                            <header>
+                                <h3>Cryptonomicon</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://codesandbox.io/s/vue3-posts-bsmo7" target="_blank" class="image fit">
+                                <img src="vue3-posts/public/vue3_course_title.jpg" alt="vue3-posts"/>
+                            </a>
+                            <header>
+                                <h3>Vue3-Posts</h3>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+                <hr>
+                <h3>React</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/mortal-kombat/" target="_blank"
+                               class="image fit">
+                                <img src="mortal-kombat/assets/mortal_kombat_title.jpg"
+                                     alt="Mortal Kombat"/>
+                            </a>
+                            <header>
+                                <h3>Mortal Kombat</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://codesandbox.io/s/pokemon-game-9cg4d" target="_blank"
+                               class="image fit">
+                                <img src="pokemon-game/src/assets/pokemon_game_title.jpg"
+                                     alt="Pokemon-game"/>
+                            </a>
+                            <header>
+                                <h3>Pokemon-game</h3>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+                <hr>
+                <h3>HTML + CSS + JavaScript</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/mafia/" target="_blank"
+                               class="image fit">
+                                <img src="mafia/img/Mafia_Kramatorsk.jpg"
+                                     alt="Mafia-Kramatorsk"/>
+                            </a>
+                            <header>
+                                <h3>Mafia-Kramatorsk</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/homework-production/" target="_blank"
+                               class="image fit">
+                                <img src="homework-production/img/productman.jpg" alt="productman"/>
+                            </a>
+                            <header>
+                                <h3>homework-production</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/css-dinner-psd/" target="_blank" class="image fit">
+                                <img src="css-dinner-psd/css-dinner-psd.png" alt="css-dinner-psd"/>
+                            </a>
+                            <header>
+                                <h3>css-dinner-psd</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/chess-board/" target="_blank" class="image fit">
+                                <img src="chess-board/img/board.jpg" alt="board"/>
+                            </a>
+                            <header>
+                                <h3>chess-board</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/airplane/" target="_blank"
+                               class="image fit">
+                                <img src="airplane/img/airplane_title.jpg"
+                                     alt="Airplane Effects"/>
+                            </a>
+                            <header>
+                                <h3>Airplane Effects (левой кл. мышки)</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/foliac/" target="_blank"
+                               class="image fit">
+                                <img src="foliac/img/Foliac.jpg"
+                                     alt="Foliac"/>
+                            </a>
+                            <header>
+                                <h3>Foliac</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/exam-1-simple-website/" target="_blank"
+                               class="image fit">
+                                <img src="exam-1-simple-website/img/Travel-More.jpg" alt="Travel-More"/>
+                            </a>
+                            <header>
+                                <h3>Simple Website</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/works-slider/" target="_blank"
+                               class="image fit">
+                                <img src="works-slider/img/works-slider.jpg"
+                                     alt="works-slider"/>
+                            </a>
+                            <header>
+                                <h3>works-slider</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/nike-product-card-assets/" target="_blank"
+                               class="image fit">
+                                <img src="nike-product-card-assets/img/nike_product_card.jpg"
+                                     alt="nike-product-card-assets"/>
+                            </a>
+                            <header>
+                                <h3>nike-product-card-assets</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/racing-game-js/index.html" target="_blank"
+                               class="image fit">
+                                <img src="racing-game-js/img/racing-game-js-title.jpg"
+                                     alt="racing-game-js"/>
+                            </a>
+                            <header>
+                                <h3>racing-game-js</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/game-ui-tabs/" target="_blank"
+                               class="image fit">
+                                <img src="game-ui-tabs/img/Game_ui_Tabs.jpg"
+                                     alt="game-ui-tabs"/>
+                            </a>
+                            <header>
+                                <h3>game-ui-tabs</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="https://aptyyyp.github.io/myworks/cahee/" target="_blank"
+                               class="image fit">
+                                <img src="cahee/img/cahee.jpg"
+                                     alt="cahee"/>
+                            </a>
+                            <header>
+                                <h3>cahee</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div id="life" class="col-12" onLoad="start();">
+                        <article class="item">
+                            <header>
+                                <h2>Количество прожитого времени</h2>
+<!--                                <ol>-->
+<!--                                    <li>в зависимости от браузера <b>год рождения</b> необходимо указывать <b>4 цифры или 2</b></li>-->
+<!--                                    <li>если ваш год рождения <b>начинается с 2000</b>, необходимо ввести число (год), начиная со <b>100</b></li>-->
+<!--                                </ol>-->
+                                <div class="life">
+                                    <!-- FORM -->
+                                    <form name=form1>
+
+                                        <table style="font-family: System, monospace;">
+                                            <tr>
+                                                <td><b>Число:
+                                                    <label>
+                                                        <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                    </label></b>
+                                                </td>
+                                                <td><b>Месяц:
+                                                    <label>
+                                                        <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                    </label></b>
+                                                </td>
+                                                <td><b>Год:
+                                                    <label>
+                                                        <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                    </label></b>
+                                                </td>
+                                                <td><b>Час:
+                                                    <label>
+                                                        <input type="text" name="hrs" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                                    </label></b>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table>
+                                            <tr>
+                                                <td><input type="button" name="start" onClick="run();" value="Считать"></td>
+                                            </tr>
+                                        </table>
+
+                                        <table>
+                                            <tr>
+                                                <td><input type="text" name="age" value="" style="font-family: System, monospace" maxlength="50" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td><input type="reset" value="Сброс"></td>
+                                            </tr>
+                                        </table>
+
+                                        <table>
+                                            <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2>Вы живёте уже:</h2></td>
+                                        </table>
+
+                                        <table style="font-family: System, monospace;">
+                                            <tr>
+                                                <td><b>Месяцев:</b></td>
+                                                <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Недель:</b></td>
+                                                <td><input type="text" name="weeks" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Дней:</b></td>
+                                                <td><input type="text" name="answer" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Часов:</b></td>
+                                                <td><input type="text" name="hours" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Минут:</b></td>
+                                                <td><input type="text" name="min" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Секунд:</b></td>
+                                                <td><input type="text" name="sec" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Миллисекунд:</b></td>
+                                                <td><input type="text" name="milli" onKeypress="event.returnValue = false;"></td>
+                                            </tr>
+                                        </table>
+                                        <hr>
+                                        <table>
+                                            <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш следующий день рождения через:</b></td>
+                                            <td>
+                                                <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
+                                            </td>
+                                        </table>
+
+                                    </form>
+                                </div>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="three">
+            <div class="container">
+
+                <header>
+                    <h2>Обо мне</h2>
+                </header>
+
+                <h3>Навыки</h3>
+                    <ul>
+                        <li>CMS: Joomla, Drupal, WordPress, OpenCart</li>
+                        <li>Базовые знания: Java, С#, React, Vue.js, Gulp, Laravel</li>
+                        <li>Front-End: HTML, CSS, SCSS, JavaScript, DOM, jQuery, GitHub</li>
+                        <li>Back-End: php, MySQL, Apache2, Denver, OpenServer, Vagrant, NPM, Node.js</li>
+                        <li>Среда разработки: Visual Studio, Adobe Dreamweaver, WebStorm, phpStorm</li>
+                        <li>1С:Комплексная Автоматизация, Bitrix, Figma, Photoshop</li>
+                        <li>Ремонт компьютерной техники</li>
+                    </ul>
+
+                <h3>Личные качества</h3>
+                    <ul>
+                        <li>Усидчивость</li>
+                        <li>Ответственность</li>
+                        <li>Работа в команде</li>
+                        <li>Отсутствие вредных привычек</li>
+                        <li>Коммуникабельность</li>
+                        <li>Обучаемость</li>
+                        <li>Не конфликтность</li>
+                        <li>Работа на результат</li>
+                        <li>Грамотность</li>
+                    </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="four">
+            <div class="container">
+
+                <header>
+                    <h2>Контакты</h2>
+                </header>
+
+                <p>Для обратной связи со мной, можете заполнить форму отправки.</p>
+
+                <form method="post" action="#">
+                    <div class="row">
+                        <div class="col-6 col-12-mobile">
+                            <label>
+                                <input type="text" name="name" placeholder="Ваше имя"/>
+                            </label>
+                        </div>
+                        <div class="col-6 col-12-mobile">
+                            <label>
+                                <input type="text" name="email" placeholder="Ваш Email"/>
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
+                                <textarea name="message" placeholder="Введите сообщение..."></textarea>
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Отправить"/>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+
+        <!-- Copyright -->
+        <ul class="copyright">
+            <li>Copyright &copy;
+                <script>currentYear = new Date().getFullYear();
+                document.write('<b>' + currentYear + '</b>')</script>
+                | All rights reserved.
             </li>
         </ul>
 
@@ -163,444 +604,15 @@
 
 </div>
 
-<!-- Main -->
-<div id="main">
-
-    <!-- Intro -->
-    <section id="top" class="one dark cover">
-        <div class="container">
-
-            <header>
-                <h2 class="alt">Привет! Я
-                    <strong>очень рад</strong>
-                    , что Вы зашли на мою страничку :)
-                </h2>
-                <p>
-                    <strong class="blink">Здесь показаны мои проекты</strong></a>
-                </p>
-                <div class="resume">
-                    <p>Скачать моё резюме можете тут</p>
-                        <div onLoad="get_file_url();">
-                            <button class="button-progress">
-                                <svg class="circle" viewBox="0 0 76 76">
-                                    <circle class="default" cx="38" cy="38" r="36"></circle>
-                                    <circle class="active" cx="38" cy="38" r="36"></circle>
-                                </svg>
-                                <div class="icon">
-                                    <svg class="line" viewBox="0 0 4 37">
-                                        <line x1="2" y1="2" x2="2" y2="35"></line>
-                                    </svg>
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 40 32"></svg>
-                                        <svg class="progress" viewBox="0 0 444 10">
-                                            <path d="M2,5 L42,5 C60.0089086,6.33131695 73.3422419,6.99798362 82,7 C87.572404,7.00129781 91.0932494,1.72677301 102,1.99944178 C112.906751,2.27211054 112.000464,7.99986045 122,8 C131.999536,8.00013955 132,2 142,2 C152,2 152,8 162,8 C172,8 172,2 182,2 C192,2 192,8 202,8 C212,8 212,2 222,2 C232,2 232,8 242,8 C252,8 252,2 262,2 C272,2 272,8 282,8 C292,8 292,2 302,2 C312,2 312,8 322,8 C332,8 332,2 342,2 C352,2 351.897852,7.49489262 362,8 C372.102148,8.50510738 378.620177,5.22532154 402,5 L442,5"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <span>0%</span>
-                            </button>
-                        </div>
-                    </p>
-                </div>
-            </header>
-
-            <footer>
-                <a href="#portfolio" class="button scrolly">Портфолио</a>
-            </footer>
-
-        </div>
-        <marquee direction="right">
-            <span itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"><img itemprop="url image" alt="animaciya-dog" src="images/animaciya-dog.gif" width="125" height="111"><meta itemprop="width" content="125"><meta itemprop="height" content="111"></span>
-        </marquee>
-    </section>
-
-    <i style="visibility: hidden;" class="b-up-arrow b-up-arrow_pos_right"></i>
-    <!-- Portfolio -->
-    <section id="portfolio" class="two">
-        <div class="container">
-
-            <header>
-                <h2>Портфолио</h2>
-            </header>
-
-            <hr>
-            <h3>Vue.js</h3>
-            <hr>
-            <div class="row">
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="javascript:void(0);" class="image fit">
-                            <img src="cryptonomicon/public/cryptonomicon_title.jpg" alt="cryptonomicon"/>
-                        </a>
-                        <header>
-                            <h3>Cryptonomicon</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://codesandbox.io/s/vue3-posts-bsmo7" target="_blank" class="image fit">
-                            <img src="vue3-posts/public/vue3_course_title.jpg" alt="vue3-posts"/>
-                        </a>
-                        <header>
-                            <h3>Vue3-Posts</h3>
-                        </header>
-                    </article>
-                </div>
-            </div>
-            <hr>
-            <h3>React</h3>
-            <hr>
-            <div class="row">
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/mortal-kombat/" target="_blank"
-                           class="image fit">
-                            <img src="mortal-kombat/assets/mortal_kombat_title.jpg"
-                                 alt="Mortal Kombat"/>
-                        </a>
-                        <header>
-                            <h3>Mortal Kombat</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://codesandbox.io/s/pokemon-game-9cg4d" target="_blank"
-                           class="image fit">
-                            <img src="pokemon-game/src/assets/pokemon_game_title.jpg"
-                                 alt="Pokemon-game"/>
-                        </a>
-                        <header>
-                            <h3>Pokemon-game</h3>
-                        </header>
-                    </article>
-                </div>
-            </div>
-            <hr>
-            <h3>HTML + CSS + JavaScript</h3>
-            <hr>
-            <div class="row">
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/mafia/" target="_blank"
-                           class="image fit">
-                            <img src="mafia/img/Mafia_Kramatorsk.jpg"
-                                 alt="Mafia-Kramatorsk"/>
-                        </a>
-                        <header>
-                            <h3>Mafia-Kramatorsk</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/homework-production/" target="_blank"
-                           class="image fit">
-                            <img src="homework-production/img/productman.jpg" alt="productman"/>
-                        </a>
-                        <header>
-                            <h3>homework-production</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/css-dinner-psd/" target="_blank" class="image fit">
-                            <img src="css-dinner-psd/css-dinner-psd.png" alt="css-dinner-psd"/>
-                        </a>
-                        <header>
-                            <h3>css-dinner-psd</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/chess-board/" target="_blank" class="image fit">
-                            <img src="chess-board/img/board.jpg" alt="board"/>
-                        </a>
-                        <header>
-                            <h3>chess-board</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/airplane/" target="_blank"
-                           class="image fit">
-                            <img src="airplane/img/airplane_title.jpg"
-                                 alt="Airplane Effects"/>
-                        </a>
-                        <header>
-                            <h3>Airplane Effects (левой кл. мышки)</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/foliac/" target="_blank"
-                           class="image fit">
-                            <img src="foliac/img/Foliac.jpg"
-                                 alt="Foliac"/>
-                        </a>
-                        <header>
-                            <h3>Foliac</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/exam-1-simple-website/" target="_blank"
-                           class="image fit">
-                            <img src="exam-1-simple-website/img/Travel-More.jpg" alt="Travel-More"/>
-                        </a>
-                        <header>
-                            <h3>Simple Website</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/works-slider/" target="_blank"
-                           class="image fit">
-                            <img src="works-slider/img/works-slider.jpg"
-                                 alt="works-slider"/>
-                        </a>
-                        <header>
-                            <h3>works-slider</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/nike-product-card-assets/" target="_blank"
-                           class="image fit">
-                            <img src="nike-product-card-assets/img/nike_product_card.jpg"
-                                 alt="nike-product-card-assets"/>
-                        </a>
-                        <header>
-                            <h3>nike-product-card-assets</h3>
-                        </header>
-                    </article>
-                </div>
-                <div class="col-4 col-12-mobile">
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/racing-game-js/index.html" target="_blank"
-                           class="image fit">
-                            <img src="racing-game-js/img/racing-game-js-title.jpg"
-                                 alt="racing-game-js"/>
-                        </a>
-                        <header>
-                            <h3>racing-game-js</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/game-ui-tabs/" target="_blank"
-                           class="image fit">
-                            <img src="game-ui-tabs/img/Game_ui_Tabs.jpg"
-                                 alt="game-ui-tabs"/>
-                        </a>
-                        <header>
-                            <h3>game-ui-tabs</h3>
-                        </header>
-                    </article>
-                    <article class="item">
-                        <a href="https://aptyyyp.github.io/myworks/cahee/" target="_blank"
-                           class="image fit">
-                            <img src="cahee/img/cahee.jpg"
-                                 alt="cahee"/>
-                        </a>
-                        <header>
-                            <h3>cahee</h3>
-                        </header>
-                    </article>
-                </div>
-                <div id="life" class="col-12" onLoad="start();">
-                    <article class="item">
-                        <header>
-                            <h2>Количество прожитого времени</h2>
-                            <ol>
-                                <li>в зависимости от браузера <b>год рождения</b> необходимо указывать <b>4 цифры или 2</b></li>
-                                <li>если ваш год рождения <b>начинается с 2000</b>, необходимо ввести число (год), начиная со <b>100</b></li>
-                            </ol>
-                            <div class="life">
-                                <!-- FORM -->
-                                <form name=form1>
-
-                                    <table style="font-family: System, monospace;">
-                                        <tr>
-                                            <td><b>Число:
-                                                <label>
-                                                    <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b>
-                                            </td>
-                                            <td><b>Месяц:
-                                                <label>
-                                                    <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b>
-                                            </td>
-                                            <td><b>Год:
-                                                <label>
-                                                    <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b>
-                                            </td>
-                                            <td><b>Час:
-                                                <label>
-                                                    <input type="text" name="hrs" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                </label></b>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <table>
-                                        <tr>
-                                            <td><input type="button" name="start" onClick="run();" value="Считать"></td>
-                                        </tr>
-                                    </table>
-
-                                    <table>
-                                        <tr>
-                                            <td><input type="text" name="age" value="" style="font-family: System, monospace" maxlength="50" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr></tr>
-                                        <tr>
-                                            <td><input type="reset" value="Сброс"></td>
-                                        </tr>
-                                    </table>
-
-                                    <table>
-                                        <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2>Вы живёте уже:</h2></td>
-                                    </table>
-
-                                    <table style="font-family: System, monospace;">
-                                        <tr>
-                                            <td><b>Месяцев:</b></td>
-                                            <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Недель:</b></td>
-                                            <td><input type="text" name="weeks" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Дней:</b></td>
-                                            <td><input type="text" name="answer" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Часов:</b></td>
-                                            <td><input type="text" name="hours" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Минут:</b></td>
-                                            <td><input type="text" name="min" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Секунд:</b></td>
-                                            <td><input type="text" name="sec" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Миллисекунд:</b></td>
-                                            <td><input type="text" name="milli" onKeypress="event.returnValue = false;"></td>
-                                        </tr>
-                                    </table>
-                                    <hr>
-                                    <table>
-                                        <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш следующий день рождения через:</b></td>
-                                        <td>
-                                            <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
-                                        </td>
-                                    </table>
-
-                                </form>
-                            </div>
-                        </header>
-                    </article>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Me -->
-    <section id="about" class="three">
-        <div class="container">
-
-            <header>
-                <h2>Обо мне</h2>
-            </header>
-
-            <h3>Навыки</h3>
-                <ul>
-                    <li>CMS: Joomla, Drupal, WordPress, OpenCart</li>
-                    <li>Базовые знания: Java, С#, React, Vue.js, Gulp, Laravel</li>
-                    <li>Front-End: HTML, CSS, SCSS, JavaScript, DOM, jQuery, GitHub</li>
-                    <li>Back-End: php, MySQL, Apache2, Denver, OpenServer, Vagrant, NPM, Node.js</li>
-                    <li>Среда разработки: Visual Studio, Adobe Dreamweaver, WebStorm, phpStorm</li>
-                    <li>1С:Комплексная Автоматизация, Bitrix, Figma, Photoshop</li>
-                    <li>Ремонт компьютерной техники</li>
-                </ul>
-
-            <h3>Личные качества</h3>
-                <ul>
-                    <li>Усидчивость</li>
-                    <li>Ответственность</li>
-                    <li>Работа в команде</li>
-                    <li>Отсутствие вредных привычек</li>
-                    <li>Коммуникабельность</li>
-                    <li>Обучаемость</li>
-                    <li>Не конфликтность</li>
-                    <li>Работа на результат</li>
-                    <li>Грамотность</li>
-                </ul>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="four">
-        <div class="container">
-
-            <header>
-                <h2>Контакты</h2>
-            </header>
-
-            <p>Для обратной связи со мной, можете заполнить форму отправки.</p>
-
-            <form method="post" action="#">
-                <div class="row">
-                    <div class="col-6 col-12-mobile">
-                        <label>
-                            <input type="text" name="name" placeholder="Ваше имя"/>
-                        </label>
-                    </div>
-                    <div class="col-6 col-12-mobile">
-                        <label>
-                            <input type="text" name="email" placeholder="Ваш Email"/>
-                        </label>
-                    </div>
-                    <div class="col-12">
-                        <label>
-                            <textarea name="message" placeholder="Введите сообщение..."></textarea>
-                        </label>
-                    </div>
-                    <div class="col-12">
-                        <input type="submit" value="Отправить"/>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-    </section>
-</div>
-
-<!-- Footer -->
-<div id="footer">
-
-    <!-- Copyright -->
-    <ul class="copyright">
-        <li>Copyright &copy;
-            <script>currentYear = new Date().getFullYear();
-            document.write('<b>' + currentYear + '</b>')</script>
-            | All rights reserved.
-        </li>
-    </ul>
-
-</div>
-
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
+<script src="assets/js/script.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/homeUp.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/inter-ui@3.11.0/inter.min.css"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>
 <script src="assets/js/progressAnimation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>

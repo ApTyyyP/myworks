@@ -1465,9 +1465,11 @@ form input[type=email],
 form input[type=password],
 form select {
     line-height: 1.25em;
+    background-color: #fff;
 }
 form textarea {
     min-height: 14em;
+    background-color: #fff;
 }
 form ::-webkit-input-placeholder {
     color: #b9b9b9 !important;
@@ -1823,7 +1825,7 @@ html {
 }
 .b-up-arrow:hover {
     opacity: 1;
-    background: #000000 !important;
+    background: #FF0000 !important;
     transition: all 0.3s ease-in;
 }
 .b-up-arrow:after {
@@ -1870,6 +1872,7 @@ html {
     text-align: right;
     top: 0;
     width: 375px;
+    z-index: 3;
 }
 #header .top {
     -moz-flex-grow: 1;
@@ -2043,6 +2046,88 @@ html {
 }
 
 /* Main */
+#bg-animation,
+#bgCanvas {
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#bgCanvas {
+    position: fixed;
+    z-index: -1;
+}
+
+canvas {
+    pointer-events: none;
+}
+
+#bg-animation {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    width: 100%;
+}
+
+.bg-default {
+    background-color: #000;
+}
+
+.bg-default .text-default-variant-1 {
+    opacity: 1;
+    color: #fff;
+}
+
+.bg-default .counter {
+    display: block;
+    margin-top: 30px;
+}
+
+.well-sm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.bg-contrast {
+    background-color: #fff;
+    z-index: 2;
+}
+
+.bg-contrast,
+.btn {
+    position: relative;
+}
+
+.bg-contrast .counter:before {
+    opacity: 0.05;
+}
+
+@media (min-width: 992px) {
+    #bg-animation,
+    #bgCanvas {
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    .well-sm {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .one {
+        background: #81918E url("../../images/bg.jpg") fixed;
+        background-color: #000;
+    }
+
+    .three {
+        background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
+    }
+
+    .four {
+        background: #e8edec url("../../images/bg_four.jpeg") fixed;
+    }
+}
 #main {
     margin-left: 375px;
 }
@@ -2054,6 +2139,7 @@ html {
 }
 #main .resume p {
     margin: 0;
+    color: #ffffff;
 }
 #main > section {
     margin: 0;
@@ -2117,11 +2203,9 @@ html {
 }
 #main > section.cover {
     padding: 10em 0;
-    background-size: cover;
     background-position: center center;
 }
 #main > section.one {
-    background: #81918E url("../../images/bg.jpg") fixed;
     min-height: 25em;
     height: 100vh;
 }
@@ -2152,6 +2236,9 @@ html {
     min-height: 5.6em;
     line-height: 1;
 }
+#main > section.two h2 {
+    color: #666;
+}
 #main > section.two p {
     line-height: 1;
 }
@@ -2172,19 +2259,16 @@ html {
     counter-increment: item;
     /* Задаём имя счетчика */
 }
-#main > section.three {
-    background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
-}
 #main > section.three h2, #main > section.three h3 {
     color: #ffffff;
 }
 #main > section.three ul {
-    background: #ecf1f1 url("../../images/bgt.png");
     border: 1px dotted #8099B3;
     text-align: left;
+    color: #fff;
 }
-#main > section.four {
-    background: #e8edec url("../../images/bg_four.jpeg") fixed;
+#main > section h2, #main > section p {
+    color: #888;
 }
 
 /* Wide */
