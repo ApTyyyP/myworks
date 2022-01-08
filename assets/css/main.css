@@ -2127,6 +2127,10 @@ canvas {
     .four {
         background: #e8edec url("../../images/bg_four.jpeg") fixed;
     }
+
+    #main > section h2, #main > section p {
+        color: #888 !important;
+    }
 }
 #main {
     margin-left: 375px;
@@ -2268,7 +2272,7 @@ canvas {
     color: #fff;
 }
 #main > section h2, #main > section p {
-    color: #888;
+    color: #ffffff;
 }
 
 /* Wide */
