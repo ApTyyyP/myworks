@@ -41,3 +41,70 @@ jQuery(($) => {
         }
     });
 });
+
+$(function () {
+    let filter = $('[data-filter]');
+
+    filter.on('click', function (event) {
+        // Отменяем стандартное поведение ссылки
+        event.preventDefault();
+
+        let make = $(this).data('filter'); // сохраняем значение аттрибута filter в dropdown
+
+        console.log(make);
+
+        if (make == 'make') {
+            $('[data-make]').removeClass('hide_make')
+        } else {
+            $('[data-make]').each(function () {
+                let workMake = $(this).data('make');
+
+                if (workMake != make) {
+                    $(this).addClass('hide_make');
+                } else {
+                    $(this).removeClass('hide_make');
+                }
+            });
+        }
+    });
+});
+
+// // init Isotope
+// var $grid = $('#product-list').isotope({
+//     // options
+// });
+// //filter items on button click
+// $('.filter-button-group').on( 'click', 'li', function() {
+//     event.preventDefault();
+//
+//     let filterValue = $(this).attr('data-filter');
+//
+//     if (filterValue == '.all') {
+//         console.log(filterValue);
+//     }
+//
+//     console.log(filterValue);
+//     $grid.isotope({ filter: filterValue });
+// });
+
+// // Инициализая секции с которой работаем
+// let grid = new Isotope('#product-list', {
+//     itemSelector: '.grid-item',
+//     layoutMode: 'fitRows'
+// });
+//
+// // Работаем с кнопками фильтров
+// let filterBtn = document.querySelectorAll('.filters-button .filter-btn');
+// for (let i = 0; i < filterBtn.length; i++) {
+//     // Если кликнули по ссылке
+//     filterBtn[i].onclick = function (click) {
+//         // Отменяем переход
+//         click.preventDefault();
+//         // Получаем значение дата-атрибута кнопки
+//         let filterData = event.target.getAttribute('data-filter');
+//         // Применяем фильтрацию элементов в Isotope
+//         grid.arrange({
+//             filter: filterData
+//         });
+//     };
+// }
