@@ -4,10 +4,12 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Monza Motosports</title>
+    <link rel="icon" href="./images/favicon.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./css/style.css" type="text/css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -149,13 +151,13 @@
                                 <input class="select__input" type="hidden" name="">
                                 <div class="select__head"><span>Publication date (ascending)</span></div>
                                 <ul class="select__list" style="display: none;">
-                                    <li class="select__item">Publication date (descending)</li>
-                                    <li class="select__item">Price (ascending)</li>
-                                    <li class="select__item">Price (descending)</li>
-                                    <li class="select__item">Mileage (ascending)</li>
-                                    <li class="select__item">Mileage (descending)</li>
-                                    <li class="select__item">Performance (ascending)</li>
-                                    <li class="select__item">Performance (descending)</li>
+                                    <li class="select__item" id="publication-sort-desc">Publication date (descending)</li>
+                                    <li class="select__item" id="price-sort-asc">Price (ascending)</li>
+                                    <li class="select__item" id="price-sort-desc">Price (descending)</li>
+                                    <li class="select__item" id="mileage-sort-asc">Mileage (ascending)</li>
+                                    <li class="select__item" id="mileage-sort-desc">Mileage (descending)</li>
+                                    <li class="select__item" id="performance-sort-asc">Performance (ascending)</li>
+                                    <li class="select__item" id="performance-sort-desc">Performance (descending)</li>
                                 </ul>
                             </div>
                         </div>
@@ -164,494 +166,486 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="volkswagen">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-1.png" alt="Volkswagen Tiguan">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+            <div id="js-sort-container">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="02.01.2010" data-price="34,888" data-mileage="19,855" data-perfomance="" data-make="volkswagen">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-1.png" alt="Volkswagen Tiguan">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
-                        <p>19,855 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="toyota">
-                <div class="product-card new">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
-                        <p>69,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$27,875</span>
+                        <div class="product-details">
+                            <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
+                            <p>19,855 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="lexus">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="03.02.2009" data-price="27,875" data-mileage="69,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card new">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
-                        <p>39,850 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$38,775</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
-                        <p>104,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$23,728</span>
+                        <div class="product-details">
+                            <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
+                            <p>69,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$27,875</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="hundai">
-                <div class="product-card new">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-5.jpg" alt="Hyundai Elantra">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="02.01.2011" data-price="38,775" data-mileage="39,850" data-perfomance="" data-make="lexus">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2017</span><a href="#">Hyundai Elantra</a></h6>
-                        <p>95,000  km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$11,788</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="mercedes">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-6.jpg" alt="Mercedes-Benz GLE-Cl...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Mercedes-Benz GLE-Cl...</a></h6>
-                        <p>59,800 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$38,878</span>
+                        <div class="product-details">
+                            <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
+                            <p>39,850 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$38,775</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card unavailable">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-7.png" alt="Toyota Venza AWD XLE...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="02.02.2015" data-price="23,728" data-mileage="104,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2015</span><a href="#">Toyota Venza AWD XLE...</a></h6>
-                        <p>99,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$18,620 </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card new">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-8.png" alt="Lexus RX 350 F-SPORT">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Lexus RX 350 F-SPORT</a></h6>
-                        <p>86,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
+                            <p>104,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$23,728</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="volkswagen">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-1.png" alt="Volkswagen Tiguan">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="10.03.2012" data-price="11,788" data-mileage="95,000" data-perfomance="" data-make="hundai">
+                    <div class="product-card new">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-5.jpg" alt="Hyundai Elantra">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
-                        <p>19,855 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="toyota">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
-                        <p>69,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$27,875</span>
+                        <div class="product-details">
+                            <h6><span>2017</span><a href="#">Hyundai Elantra</a></h6>
+                            <p>95,000  km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$11,788</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="lexus">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="12.04.2012" data-price="38,878" data-mileage="59,800" data-perfomance="" data-make="mercedes">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-6.jpg" alt="Mercedes-Benz GLE-Cl...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
-                        <p>39,850 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$38,775</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
-                        <p>104,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$23,728</span>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Mercedes-Benz GLE-Cl...</a></h6>
+                            <p>59,800 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$38,878</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="volkswagen">
-                <div class="product-card new">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-1.png" alt="Volkswagen Tiguan">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="14.04.2012" data-price="18,620" data-mileage="99,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card unavailable">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-7.png" alt="Toyota Venza AWD XLE...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
-                        <p>19,855 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="toyota">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
-                        <p>69,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$27,875</span>
+                        <div class="product-details">
+                            <h6><span>2015</span><a href="#">Toyota Venza AWD XLE...</a></h6>
+                            <p>99,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$18,620</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="lexus">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="20.04.2013" data-price="34,888" data-mileage="86,000" data-perfomance="" data-make="lexus">
+                    <div class="product-card new">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-8.png" alt="Lexus RX 350 F-SPORT">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
-                        <p>39,850 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$38,775</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
-                        <p>104,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$23,728</span>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Lexus RX 350 F-SPORT</a></h6>
+                            <p>86,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row" data-make="hundai">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap"><img src="./images/car-5.jpg" alt="Hyundai Elantra">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="21.05.2014" data-price="34,888" data-mileage="19,855" data-perfomance="" data-make="volkswagen">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-1.png" alt="Volkswagen Tiguan">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2017</span><a href="#">Hyundai Elantra</a></h6>
-                        <p>95,000  km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$11,788</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="mercedes">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-6.jpg" alt="Mercedes-Benz GLE-Cl...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Mercedes-Benz GLE-Cl...</a></h6>
-                        <p>59,800 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$38,878</span>
+                        <div class="product-details">
+                            <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
+                            <p>19,855 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-7.png" alt="Toyota Venza AWD XLE...">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="19.04.2013" data-price="27,875" data-mileage="69,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2015</span><a href="#">Toyota Venza AWD XLE...</a></h6>
-                        <p>99,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$18,620 </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="">
-                <div class="product-card new">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-8.png" alt="Lexus RX 350 F-SPORT">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2016</span><a href="#">Lexus RX 350 F-SPORT</a></h6>
-                        <p>86,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
+                        <div class="product-details">
+                            <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
+                            <p>69,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$27,875</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="volkswagen">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-1.png" alt="Volkswagen Tiguan">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="22.05.2015" data-price="38,775" data-mileage="39,850" data-perfomance="" data-make="lexus">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-details">
-                        <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
-                        <p>19,855 km | Automatic | Diesel</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$34,888</span>
+                        <div class="product-details">
+                            <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
+                            <p>39,850 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$38,775</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-20" data-make="toyota">
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <div class="img-wrap">
-                            <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
-                            <h1>Sold</h1>
-                            <div class="rectangle">
-                                <h2>New</h2>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="30.06.2015" data-price="23,728" data-mileage="104,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
+                            <p>104,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$23,728</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="product-details">
-                        <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
-                        <p>69,000 km | Automatic | Gas</p>
-                        <div class="product-bottom-details d-flex justify-content-between">
-                            <div class="product-price">
-                                <span>$27,875</span>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="06.08.2017" data-price="34,888" data-mileage="19,855" data-perfomance="" data-make="volkswagen">
+                    <div class="product-card new">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-1.png" alt="Volkswagen Tiguan">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
+                            <p>19,855 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="09.11.2016" data-price="27,875" data-mileage="69,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
+                            <p>69,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$27,875</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="21.12.2016" data-price="38,775" data-mileage="39,850" data-perfomance="" data-make="lexus">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-3.jpg" alt="Lexus RX 350 LUXURY">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2017</span><a href="#">Lexus RX 350 LUXURY</a></h6>
+                            <p>39,850 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$38,775</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="11.02.2017" data-price="23,728" data-mileage="104,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-4.jpg" alt="Toyota Highlander LE A...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Toyota Highlander LE A...</a></h6>
+                            <p>104,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$23,728</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="17.06.2019" data-price="11,788" data-mileage="95,000" data-perfomance="" data-make="hundai">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap"><img src="./images/car-5.jpg" alt="Hyundai Elantra">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2017</span><a href="#">Hyundai Elantra</a></h6>
+                            <p>95,000  km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$11,788</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="30.06.2018" data-price="38,878" data-mileage="59,800" data-perfomance="" data-make="mercedes">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-6.jpg" alt="Mercedes-Benz GLE-Cl...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Mercedes-Benz GLE-Cl...</a></h6>
+                            <p>59,800 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$38,878</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="29.03.2021" data-price="18,620" data-mileage="99,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-7.png" alt="Toyota Venza AWD XLE...">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2015</span><a href="#">Toyota Venza AWD XLE...</a></h6>
+                            <p>99,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$18,620</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="08.05.2019" data-price="34,888" data-mileage="86,000" data-perfomance="" data-make="lexus">
+                    <div class="product-card new">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-8.png" alt="Lexus RX 350 F-SPORT">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2016</span><a href="#">Lexus RX 350 F-SPORT</a></h6>
+                            <p>86,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="09.06.2017" data-price="34,888" data-mileage="19,855" data-perfomance="" data-make="volkswagen">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-1.png" alt="Volkswagen Tiguan">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2019</span><a href="#">Volkswagen Tiguan</a></h6>
+                            <p>19,855 km | Automatic | Diesel</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$34,888</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-20" data-publication="15.09.2019" data-price="27,875" data-mileage="69,000" data-perfomance="" data-make="toyota">
+                    <div class="product-card">
+                        <div class="product-thumb">
+                            <div class="img-wrap">
+                                <img src="./images/car-2.jpg" alt="Toyota Highlander XLE">
+                                <h1>Sold</h1>
+                                <div class="rectangle">
+                                    <h2>New</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h6><span>2014</span><a href="#">Toyota Highlander XLE</a></h6>
+                            <p>69,000 km | Automatic | Gas</p>
+                            <div class="product-bottom-details d-flex justify-content-between">
+                                <div class="product-price">
+                                    <span>$27,875</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -803,7 +797,6 @@
             <div class="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center justify-content-sm-center justify-content-lg-start align-items-center">
                 <a href="#"><img class="img-fluid" src="./images/logo.png" alt="Monza Motosports"></a>
             </div>
-
             <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-center ">
                 <div class="footer-list">
                     <ul>
@@ -839,7 +832,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script src="./js/main.js"></script>
 </body>
 </html>

@@ -51,60 +51,95 @@ $(function () {
 
         let make = $(this).data('filter'); // сохраняем значение аттрибута filter в dropdown
 
-        console.log(make);
+        setTimeout((function () {
+            if (make === 'make') {
+                $('[data-make]').removeClass('hide_make')
+            } else {
+                $('[data-make]').each(function () {
+                    let workMake = $(this).data('make');
 
-        if (make == 'make') {
-            $('[data-make]').removeClass('hide_make')
-        } else {
-            $('[data-make]').each(function () {
-                let workMake = $(this).data('make');
-
-                if (workMake != make) {
-                    $(this).addClass('hide_make');
-                } else {
-                    $(this).removeClass('hide_make');
-                }
-            });
-        }
+                    if (workMake !== make) {
+                        $(this).addClass('hide_make');
+                    } else {
+                        $(this).removeClass('hide_make');
+                    }
+                });
+            }
+        }), 400);
     });
 });
 
-// // init Isotope
-// var $grid = $('#product-list').isotope({
-//     // options
-// });
-// //filter items on button click
-// $('.filter-button-group').on( 'click', 'li', function() {
-//     event.preventDefault();
-//
-//     let filterValue = $(this).attr('data-filter');
-//
-//     if (filterValue == '.all') {
-//         console.log(filterValue);
-//     }
-//
-//     console.log(filterValue);
-//     $grid.isotope({ filter: filterValue });
-// });
+document.querySelector('#publication-sort-desc').onclick = function() {
+    mySortDescPublication('data-publication');
+}
 
-// // Инициализая секции с которой работаем
-// let grid = new Isotope('#product-list', {
-//     itemSelector: '.grid-item',
-//     layoutMode: 'fitRows'
-// });
-//
-// // Работаем с кнопками фильтров
-// let filterBtn = document.querySelectorAll('.filters-button .filter-btn');
-// for (let i = 0; i < filterBtn.length; i++) {
-//     // Если кликнули по ссылке
-//     filterBtn[i].onclick = function (click) {
-//         // Отменяем переход
-//         click.preventDefault();
-//         // Получаем значение дата-атрибута кнопки
-//         let filterData = event.target.getAttribute('data-filter');
-//         // Применяем фильтрацию элементов в Isotope
-//         grid.arrange({
-//             filter: filterData
-//         });
-//     };
-// }
+document.querySelector('#price-sort-asc').onclick = function() {
+    mySortAsc('data-price');
+}
+
+document.querySelector('#price-sort-desc').onclick = function() {
+    mySortDesc('data-price');
+}
+
+document.querySelector('#mileage-sort-asc').onclick = function() {
+    mySortAsc('data-mileage');
+}
+
+document.querySelector('#mileage-sort-desc').onclick = function() {
+    mySortDesc('data-mileage');
+}
+
+document.querySelector('#performance-sort-asc').onclick = function() {
+    mySortAsc('data-perfomance');
+}
+
+document.querySelector('#performance-sort-desc').onclick = function() {
+    mySortDesc('data-perfomance');
+}
+
+let js_sort_container = document.querySelector('#js-sort-container');
+
+function mySortAsc(sortType) {
+    setTimeout((function () {
+        for (let i = 0; i < js_sort_container.children.length; i++) {
+            for (let j = i; j < js_sort_container.children.length; j++) {
+                if (parseInt(js_sort_container.children[i].getAttribute(sortType)) > parseInt(js_sort_container.children[j].getAttribute(sortType))) {
+                    replacedNode = js_sort_container.replaceChild(js_sort_container.children[j], js_sort_container.children[i]);
+                    insertAfter(replacedNode, js_sort_container.children[i]);
+                }
+            }
+        }
+    }), 400);
+}
+
+function mySortDesc(sortType) {
+    setTimeout((function () {
+        for (let i = 0; i < js_sort_container.children.length; i++) {
+            for (let j = i; j < js_sort_container.children.length; j++) {
+                if (parseInt(js_sort_container.children[i].getAttribute(sortType)) < parseInt(js_sort_container.children[j].getAttribute(sortType))) {
+                    replacedNode = js_sort_container.replaceChild(js_sort_container.children[j], js_sort_container.children[i]);
+                    insertAfter(replacedNode, js_sort_container.children[i]);
+                }
+            }
+        }
+    }), 400);
+}
+
+function insertAfter(elem, refElem) {
+    return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+}
+
+function mySortDescPublication(sortType) {
+    setTimeout((function () {
+
+        for (let i = 0; i < js_sort_container.children.length; i++) {
+            for (let j = i; j < js_sort_container.children.length; j++) {
+                if (Date.parse(js_sort_container.children[i].getAttribute(sortType)) < Date.parse(js_sort_container.children[j].getAttribute(sortType))) {
+                    replacedNode = js_sort_container.replaceChild(js_sort_container.children[j], js_sort_container.children[i]);
+                    insertAfter(replacedNode, js_sort_container.children[i]);
+                }
+            }
+        }
+        // console.log(js_sort_container.children[0].dataset['publication']);
+    }), 400);
+}
