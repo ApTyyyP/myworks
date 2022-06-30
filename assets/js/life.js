@@ -61,7 +61,7 @@ function run() {
 
         days = new Date();
         gdate = days.getDate();
-        gmonth = days.getMonth() + 1;
+        gmonth = days.getMonth();
         // gmonth = (days.getMonth() + 1).toString().padStart(2, "0");
         gyear = days.getFullYear();
         age = gyear - yy;
@@ -240,7 +240,6 @@ function run() {
         hour = ((age * 365) + n + p) * 24;
         hour += (parseInt(age / 4) * 24); // -hr for 24 hour
 
-        console.log(hour);
         /* For AM/PM
         if (ap == 0)
             hour = hour - hr;

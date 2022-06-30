@@ -144,6 +144,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 h2 {
   font-size: 2em;
   letter-spacing: -1px;
+  text-transform: uppercase;
 
   &.alt {
     color: #888;
@@ -423,6 +424,7 @@ form {
 
   textarea {
     min-height: 14em;
+    resize: vertical;
     background-color: #fff;
   }
 
@@ -722,6 +724,10 @@ html {
     h3 {
       font-size: 1em;
       font-weight: bold;
+    }
+
+    h4 {
+      padding: 0 10px;
     }
   }
 }
@@ -1127,10 +1133,10 @@ canvas {
   }
   .four {
     background: #e8edec url("../../images/bg_four.jpeg") fixed;
-  }
 
-  #main > section h2, #main > section p {
-    color: #888 !important;
+    h2, p {
+      color: inherit !important;
+    }
   }
 }
 
@@ -1217,6 +1223,10 @@ canvas {
       //background-color: #000;
       min-height: 25em;
       height: 100vh;
+
+      h2 {
+        text-transform: none;
+      }
     }
 
     &.two {
@@ -1253,8 +1263,8 @@ canvas {
         }
       }
 
-      h2 {
-        color: #666;
+      h3 {
+        font-weight: bold;
       }
 
       p {
@@ -1280,8 +1290,8 @@ canvas {
 
     &.three {
       //background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
-      
-      h2, h3 {
+
+      h3 {
         color: #ffffff;
       }
 
@@ -1341,7 +1351,7 @@ canvas {
 
   #main {
     > section {
-      padding: 3em 0;
+        padding: 3em 0;
     }
 
     section {

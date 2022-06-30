@@ -120,6 +120,7 @@ h1 a strong, h2 a strong, h3 a strong, h4 a strong, h5 a strong, h6 a strong {
 h2 {
     font-size: 2em;
     letter-spacing: -1px;
+    text-transform: uppercase;
 }
 h2.alt {
     color: #888;
@@ -1469,6 +1470,7 @@ form select {
 }
 form textarea {
     min-height: 14em;
+    resize: vertical;
     background-color: #fff;
 }
 form ::-webkit-input-placeholder {
@@ -1753,6 +1755,9 @@ html {
 .item header h3 {
     font-size: 1em;
     font-weight: bold;
+}
+.item header h4 {
+    padding: 0 10px;
 }
 
 /* Icons */
@@ -2127,9 +2132,8 @@ canvas {
     .four {
         background: #e8edec url("../../images/bg_four.jpeg") fixed;
     }
-
-    #main > section h2, #main > section p {
-        color: #888 !important;
+    .four h2, .four p {
+        color: inherit !important;
     }
 }
 #main {
@@ -2213,6 +2217,9 @@ canvas {
     min-height: 25em;
     height: 100vh;
 }
+#main > section.one h2 {
+    text-transform: none;
+}
 #main > section.two {
     background: #f5fafa url("../../images/bg_two.png") fixed;
 }
@@ -2240,8 +2247,8 @@ canvas {
     min-height: 5.6em;
     line-height: 1;
 }
-#main > section.two h2 {
-    color: #666;
+#main > section.two h3 {
+    font-weight: bold;
 }
 #main > section.two p {
     line-height: 1;
@@ -2263,7 +2270,7 @@ canvas {
     counter-increment: item;
     /* Задаём имя счетчика */
 }
-#main > section.three h2, #main > section.three h3 {
+#main > section.three h3 {
     color: #ffffff;
 }
 #main > section.three ul {
