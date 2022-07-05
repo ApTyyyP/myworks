@@ -16,13 +16,13 @@ $(function() {
 
         if(href === '#events'){
             $('html, body').animate({
-                scrollTop: $('#events').offset().top}, 1000);
+                scrollTop: $('#events').offset().top - 100}, 1000);
         } else if(href === '#gallery'){
             $('html, body').animate({
-                scrollTop: $('#gallery').offset().top}, 1000);
+                scrollTop: $('#gallery').offset().top - 100}, 1000);
         } else if(href === '#contact'){
             $('html, body').animate({
-                scrollTop: $('#contact').offset().top}, 1000);
+                scrollTop: $('#contact').offset().top - 100}, 1000);
         }
         else {
             $('a[href="' + href + '"]').click();

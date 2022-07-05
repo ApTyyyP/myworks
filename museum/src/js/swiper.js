@@ -1,39 +1,30 @@
-/*
-import Swiper, {Navigation, Pagination, Autoplay, A11y, Keyboard, Parallax} from 'src/js/swiper';
-import 'swiper/css/bundle';
-
 $(document).ready(function () {
-    const swipers = $('.JS-slider');
+    const swipers = $('.image-slider');
 
     if (swipers.length !== 0) {
         $(swipers).each(function () {
-            const pagEl = $(this).siblings('.swiper-panel').find('.swiper-panel__text')[0];
-            const nextEl = $(this).siblings('.swiper-panel').find('.swiper-btn-next')[0];
-            const prevEl = $(this).siblings('.swiper-panel').find('.swiper-btn-prev')[0];
 
             let swiper = new Swiper(this, {
-                modules: [Navigation, Pagination, Autoplay, A11y, Keyboard, Parallax],
                 loop: true,
                 grabCursor: true,
-                spaceBetween: 30,
-                autoHeight: false,
                 keyboardControl: true,
-                parallax: true,
 
-                navigation: {
-                    nextEl: nextEl,
-                    prevEl: prevEl,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 16,
+                        centeredSlides: false,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
                 },
 
                 pagination: {
-                    el: pagEl,
-                    paginationClickable: true,
-                    type: "fraction",
-                    renderFraction: function (currentClass, totalClass, index, total) {
-                        return '<span class="' + currentClass + '"> ' + index + ' </span>' +
-                            '/' +
-                            '<span class="' + totalClass + '"> ' + total + ' </span>';
-                    },
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
                 },
 
                 autoplay: {
@@ -59,4 +50,4 @@ $(document).ready(function () {
             });
         });
     }
-});*/
+});

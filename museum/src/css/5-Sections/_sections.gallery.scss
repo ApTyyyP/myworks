@@ -28,17 +28,9 @@
   grid-template-rows: repeat(12, 1fr);
   grid-gap: 30px;
 
-  //@include mq($max: $xl) {
-  //  grid-template-columns: repeat(6, 1fr);
-  //  grid-template-rows: repeat(6, 1fr);
-  //  grid-gap: 0 20px;
-  //}
-  //
-  //@include mq($max: $md) {
-  //  grid-template-columns: repeat(2, 1fr);
-  //  grid-template-rows: repeat(2, 1fr);
-  //  grid-gap: 0 16px;
-  //}
+  @include mq($max: $xl) {
+    display: none;
+  }
 }
 
 .s-gallery__image--1 {
@@ -46,20 +38,6 @@
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 8;
-
-  //@include mq($max: $xl) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 4;
-  //  grid-row-start: 1;
-  //  grid-row-end: 7;
-  //}
-  //
-  //@include mq($max: $md) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 3;
-  //  grid-row-start: 1;
-  //  grid-row-end: 3;
-  //}
 }
 
 .s-gallery__image--2 {
@@ -67,20 +45,6 @@
   grid-column-end: 13;
   grid-row-start: 1;
   grid-row-end: 8;
-
-  //@include mq($max: $xl) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 4;
-  //  grid-row-start: 1;
-  //  grid-row-end: 7;
-  //}
-  //
-  //@include mq($max: $md) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 3;
-  //  grid-row-start: 1;
-  //  grid-row-end: 3;
-  //}
 }
 
 .s-gallery__image--3 {
@@ -88,20 +52,6 @@
   grid-column-end: 9;
   grid-row-start: 8;
   grid-row-end: 13;
-
-  //@include mq($max: $xl) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 4;
-  //  grid-row-start: 1;
-  //  grid-row-end: 7;
-  //}
-  //
-  //@include mq($max: $md) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 3;
-  //  grid-row-start: 1;
-  //  grid-row-end: 3;
-  //}
 }
 
 .s-gallery__image--4 {
@@ -109,20 +59,6 @@
   grid-column-end: 13;
   grid-row-start: 8;
   grid-row-end: 13;
-
-  //@include mq($max: $xl) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 4;
-  //  grid-row-start: 1;
-  //  grid-row-end: 7;
-  //}
-  //
-  //@include mq($max: $md) {
-  //  grid-column-start: 1;
-  //  grid-column-end: 3;
-  //  grid-row-start: 1;
-  //  grid-row-end: 3;
-  //}
 }
 
 .s-gallery__img {
