@@ -899,6 +899,19 @@ button {
 .s-events__title-event {
   margin-bottom: 15px;
 }
+.s-events__title-event::after {
+  content: "";
+  top: 9px;
+  right: 0;
+  display: inline-block;
+  margin-left: 20px;
+  width: 15px;
+  height: 15px;
+  vertical-align: top;
+  position: relative;
+  background: #f14a27;
+  overflow: hidden;
+}
 @media screen and (max-width: 767px) {
   .s-events__title-event {
     margin-bottom: 10px;
