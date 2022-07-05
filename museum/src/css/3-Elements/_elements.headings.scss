@@ -1,0 +1,36 @@
+h1 {
+  @include font-family(base);
+  @include font(x1-mid-large, 86, 700);
+  color: palette(primary-black);
+  text-align: center;
+
+  @include mq($max: $xl) {
+    @include font(x1-large, 65, 700);
+  }
+
+  @include mq($max: $md) {
+    @include font(l1-large, 45, 700);
+  }
+}
+
+h2 {
+  @include font-family(base);
+  @include font(x-large, 48, 700);
+  color: palette(secondary-black);
+  text-align: left;
+
+  @include mq($max: $md) {
+    @include font(l-large, 36, 700);
+    text-align: center;
+  }
+}
+
+h3 {
+  @include font-family(base);
+  @include font(l-large, 36, 400);
+  color: palette(secondary-black);
+
+  @include mq($max: $md) {
+    @include font(s-large, 28, 400);
+  }
+}

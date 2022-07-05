@@ -1,0 +1,77 @@
+.s-lection {
+
+  img {
+    width: 100%;
+  }
+}
+
+.s-lection__wrap {
+  max-width: 570px;
+  margin: 0 auto 200px;
+  padding: 0 100px 50px;
+  position: relative;
+  background-color: palette(primary-white);
+  box-shadow: 0 2px 0 rgba(26, 90, 76, .25);
+
+  .c-date {
+    width: 100%;
+    margin-top: 0;
+    padding: 45px 100px 23px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background: palette(primary-white);
+
+    span {
+      padding-right: 180px;
+      position: absolute;
+      right: 0;
+      bottom: 14px;
+
+      @include mq($max: $xl) {
+        padding-right: 185px;
+      }
+
+      @include mq($max: $md) {
+        padding: 0;
+        bottom: 0;
+        position: relative;
+      }
+    }
+
+    @include mq($max: $xl) {
+      padding: 45px 55px 23px;
+    }
+
+    @include mq($max: $md) {
+      padding: 24px 5px 23px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  @include mq($max: $xl) {
+    margin: 0 auto 88px;
+    padding: 0 55px 50px;
+  }
+
+  @include mq($max: $md) {
+    margin: 0 auto 100px;
+    max-width: 280px;
+    padding: 0 5px 20px;
+  }
+}
+
+.s-lection__title {
+  max-width: 370px;
+
+  @include mq($max: $xl) {
+    max-width: 460px;
+  }
+
+  @include mq($max: $md) {
+    text-align: center;
+  }
+}

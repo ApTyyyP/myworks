@@ -1,0 +1,69 @@
+.s-events {
+  margin-bottom: 104px;
+
+  @include mq($max: $xl) {
+    margin-bottom: 64px;
+  }
+
+  @include mq($max: $md) {
+    margin-bottom: 60px;
+  }
+}
+
+.s-events__title {
+  margin-bottom: 56px;
+
+  @include mq($max: $xl) {
+    margin-bottom: 48px;
+  }
+
+  @include mq($max: $md) {
+    margin-bottom: 40px;
+  }
+}
+
+.s-events__event {
+  margin-bottom: 104px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 108px;
+  align-items: center;
+
+  @include mq($max: $xl) {
+    margin-bottom: 64px;
+    grid-template-columns: 1fr;
+  }
+
+  @include mq($max: $md) {
+    margin-bottom: 60px;
+  }
+}
+
+.s-events__thumb {
+
+  @include mq($max: $xl) {
+    width: 100%;
+  }
+}
+
+.s-events__info {
+
+  @include mq($min: $xl) {
+    max-width: 460px;
+  }
+}
+
+.s-events__title-event {
+  margin-bottom: 15px;
+
+  @include mq($max: $md) {
+    margin-bottom: 10px;
+  }
+}
+
+.s-events__desc {
+
+  @include mq($max: $xl) {
+    max-width: 370px;
+  }
+}

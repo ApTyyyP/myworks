@@ -1,0 +1,53 @@
+.o-header {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 1;
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+
+  &.top-collapse {
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .9);
+  }
+}
+
+.o-header__wrap {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.o-header__logo {
+  margin: 0 auto 0 40%;
+
+  @include mq($max: $md) {
+    margin: 0 auto 0 30%;
+  }
+
+  @include mq($max: $sm) {
+    margin: 0 auto 0 40%;
+  }
+}
+
+.o-header__logo-img {
+  width: 170px;
+  height: 72px;
+
+  @include mq($max: $md) {
+    width: 220px;
+  }
+
+  @include mq($max: $sm) {
+    width: 55px;
+    height: 61px;
+  }
+}

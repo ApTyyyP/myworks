@@ -1,0 +1,50 @@
+.c-form {
+  background-color: palette(primary-white);
+  box-shadow: 0 0 8px palette(secondary-light-gray);
+
+  @include mq($max: $md) {
+    max-width: 100%;
+  }
+
+  label {
+    @include font-family(base);
+    @include font(l-small, 21, 400);
+    color: palette(primary-black);
+  }
+
+  input,
+  textarea {
+    padding: 16px;
+    @include font(l-small, 21, 400);
+    color: palette(secondary-gray);
+    background-color: palette(primary-white);
+    caret-color: palette(secondary-light-gray);
+    cursor: text;
+    border: 1px solid palette(secondary-light-gray);
+    outline: none;
+
+    &:focus {
+      border: 1px solid palette(primary-yellow);
+      caret-color: rgba(palette(secondary-gray), 1);
+      transition: all .15s ease-in;
+    }
+
+    &::placeholder {
+      color: rgba(palette(secondary-gray), .5);
+      transition: all .15s ease-in;
+    }
+
+    &:focus::placeholder {
+      transition: all .15s ease-in;
+    }
+  }
+
+  input {
+    min-height: 54px;
+  }
+
+  textarea {
+    min-height: 108px;
+    resize: vertical;
+  }
+}

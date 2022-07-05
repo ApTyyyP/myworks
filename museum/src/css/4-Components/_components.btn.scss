@@ -1,0 +1,113 @@
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c-btn {
+  width: 269px;
+  height: 70px;
+  display: inline-block;
+  position: relative;
+  @include font-family(secondary);
+  @include font(mid, 16, 500);
+  cursor: pointer;
+  transition: .2s linear;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  &:hover {
+    .c-btn--green::before {
+      background-color: rgba(palette(primary-green), .9);
+    }
+
+    .c-btn--red::before {
+      background-color: rgba(palette(primary-red), .9);
+    }
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+}
+
+.c-btn__block-svg {
+  position: absolute;
+  top: 29px;
+  right: 31px;
+  transition: .2s right;
+}
+
+.c-btn--green {
+  padding-right: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: palette(secondary-black);
+  background-color: transparent;
+  border: 1px solid palette(primary-green);
+  transition: .3s linear;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background-color: palette(primary-green);
+    transition: .3s linear;
+  }
+
+  &:hover .c-btn__block-svg {
+    right: 26px;
+    transition: .2s right;
+  }
+
+  .c-btn__block-svg {
+    color: #d7dde3;
+  }
+}
+
+.c-btn--red {
+  padding-right: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: palette(primary-white);
+  background-color: palette(primary-black);
+  border: 1px solid palette(primary-red);
+  transition: .3s linear;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background-color: palette(primary-red);
+    transition: .3s linear;
+  }
+
+  &:hover .c-btn__block-svg {
+    right: 26px;
+    transition: .2s right;
+  }
+
+  .c-btn__block-svg {
+    color: palette(primary-black);
+  }
+}

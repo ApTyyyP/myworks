@@ -1,0 +1,29 @@
+.c-date {
+  margin-bottom: 30px;
+  @include font-family(secondary);
+  @include font(l-small, 14, 500);
+  color: palette(primary-gray);
+  text-transform: uppercase;
+
+  span {
+    padding-left: 26px;
+    @include font(l-small, 21, 700);
+    color: palette(primary-green);
+
+    @include mq($max: $xl) {
+      @include font(mid, 24, 700);
+    }
+  }
+
+  @include mq($max: $xl) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include font(mid, 16, 500);
+  }
+
+  @include mq($max: $md) {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
