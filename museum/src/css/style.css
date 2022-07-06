@@ -1082,6 +1082,7 @@ button {
 .image-slider {
   padding: 0 0 62px;
   position: relative;
+  overflow: hidden;
 }
 @media screen and (min-width: 1280px) {
   .image-slider {

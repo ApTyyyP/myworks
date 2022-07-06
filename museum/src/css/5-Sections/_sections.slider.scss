@@ -1,6 +1,7 @@
 .image-slider {
   padding: 0 0 62px;
   position: relative;
+  overflow: hidden;
 
   @include mq($min: $xl) {
     display: none;
