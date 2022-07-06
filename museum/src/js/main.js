@@ -51,7 +51,7 @@ $(function() {
         },
         // Specify validation error messages
         messages: {
-            email: "Будь-ласка, введіть дійсну адресу email",
+            email: "Будь-ласка, введіть дійсну адресу e-mail",
             phone: "Будь-ласка, введіть ваш номер телефону",
         },
         // Make sure the form is submitted to the destination defined

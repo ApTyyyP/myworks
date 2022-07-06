@@ -45,6 +45,7 @@
     @include font-family(base);
     @include font(l-small, 14, 400);
     color: palette(primary-gray);
+    border: 0;
     background-color: palette(primary-white);
     outline: none;
   }
