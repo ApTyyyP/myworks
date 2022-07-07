@@ -508,12 +508,14 @@ button {
   color: #000000;
 }
 
+.c-nav__pointer {
+  cursor: pointer;
+}
+
 .c-nav__menu-btn {
-  display: block;
   position: relative;
   width: 18px;
   height: 12px;
-  cursor: pointer;
   z-index: 1;
 }
 .c-nav__menu-btn span, .c-nav__menu-btn::before, .c-nav__menu-btn::after {
@@ -606,16 +608,10 @@ button {
   font-size: 1rem;
   line-height: 1;
   font-weight: 600;
-  font-size: 20px;
-  font-weight: 600;
   transition-duration: 0.25s;
 }
 .c-nav__menu-item:hover {
   background-color: #ededed;
-}
-
-#c-nav__menu-toggle {
-  opacity: 0;
 }
 
 .c-form {

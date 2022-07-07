@@ -1,9 +1,11 @@
+.c-nav__pointer {
+  cursor: pointer;
+}
+
 .c-nav__menu-btn {
-  display: block;
   position: relative;
   width: 18px;
   height: 12px;
-  cursor: pointer;
   z-index: 1;
 
   span,
@@ -33,17 +35,6 @@
   span {
     top: 50%;
     transform: scale(1) translate(0, -50%);
-
-    &,
-    &::before,
-    &::after {
-      //display: block;
-      //position: absolute;
-      //width: 100%;
-      //height: 2px;
-      //background-color: palette(secondary-black);
-      //transition-duration: .25s;
-    }
 
     &::before,
     &::after {
@@ -125,15 +116,9 @@
   display: block;
   @include font-family(base);
   @include font(mid, 16, 600);
-  font-size: 20px;
-  font-weight: 600;
   transition-duration: .25s;
 
   &:hover {
     background-color: #ededed;
   }
-}
-
-#c-nav__menu-toggle {
-  opacity: 0;
 }
