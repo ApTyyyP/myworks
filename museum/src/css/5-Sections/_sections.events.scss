@@ -68,6 +68,12 @@
     position: relative;
     background: palette(primary-red);
     overflow: hidden;
+
+    @include mq($max: $md) {
+      width: 10px;
+      height: 10px;
+      margin-left: 12px;
+    }
   }
 
   @include mq($max: $md) {

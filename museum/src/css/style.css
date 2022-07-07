@@ -929,6 +929,13 @@ button {
   overflow: hidden;
 }
 @media screen and (max-width: 767px) {
+  .s-events__title-event::after {
+    width: 10px;
+    height: 10px;
+    margin-left: 12px;
+  }
+}
+@media screen and (max-width: 767px) {
   .s-events__title-event {
     margin-bottom: 10px;
   }
