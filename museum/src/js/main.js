@@ -1,5 +1,46 @@
+"use strict"
+
 // Wait for the DOM to be ready
 $(function() {
+    // Burger menu
+    const iconMenu = document.querySelector('.c-nav__menu-btn');
+    const menuBox = document.querySelector('.c-nav__menu-body');
+
+    if (iconMenu) {
+        iconMenu.addEventListener("click", function (e) {
+            iconMenu.classList.toggle('active');
+            menuBox.classList.toggle('active');
+        })
+    }
+
+    // Scroll on link click
+    const menuLinks = document.querySelectorAll('.c-nav__menu-item[data-href]');
+
+    if (menuLinks.length > 0) {
+        menuLinks.forEach(menuLink => {
+            menuLink.addEventListener("click", onMenuLinkClick);
+        });
+
+        function onMenuLinkClick(e) {
+            const menuLink = e.target;
+
+            if (menuLink.dataset.href && document.querySelector(menuLink.dataset.href)) {
+                const hrefBlock = document.querySelector(menuLink.dataset.href);
+                const hrefBlockValue = hrefBlock.getBoundingClientRect().top + pageYOffset - 100;
+
+                if (iconMenu.classList.contains('active')) {
+                    iconMenu.classList.remove('active');
+                    menuBox.classList.remove('active');
+                }
+
+                window.scrollTo({
+                    top: hrefBlockValue,
+                    behavior: "smooth"
+                });
+                e.preventDefault();
+            }
+        }
+    }
 
     // jQuery to collapse the navbar on scroll
     $(window).on('scroll', function () {
@@ -7,25 +48,6 @@ $(function() {
             $(".o-header").addClass("top-collapse");
         } else {
             $(".o-header").removeClass("top-collapse");
-        }
-    });
-
-    // Scroll
-    $('a[data-href]').on('click', function () {
-        let href = $(this).data('href');
-
-        if(href === '#events'){
-            $('html, body').animate({
-                scrollTop: $('#events').offset().top - 100}, 1000);
-        } else if(href === '#gallery'){
-            $('html, body').animate({
-                scrollTop: $('#gallery').offset().top - 100}, 1000);
-        } else if(href === '#contact'){
-            $('html, body').animate({
-                scrollTop: $('#contact').offset().top - 100}, 1000);
-        }
-        else {
-            $('a[href="' + href + '"]').click();
         }
     });
 
