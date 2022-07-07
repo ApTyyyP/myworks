@@ -33,20 +33,16 @@
   span {
     top: 50%;
     transform: scale(1) translate(0, -50%);
-  }
-
-  > span {
-    transform: scale(1) translate(0, -50%);
 
     &,
     &::before,
     &::after {
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: palette(secondary-black);
-      transition-duration: .25s;
+      //display: block;
+      //position: absolute;
+      //width: 100%;
+      //height: 2px;
+      //background-color: palette(secondary-black);
+      //transition-duration: .25s;
     }
 
     &::before,
@@ -74,11 +70,8 @@
       transform: rotate(45deg) translate(0, 50%);
     }
 
-    > span {
-
-      & {
-        transform: scale(0) translate(0, -50%);
-      }
+    span {
+      transform: scale(0) translate(0, -50%);
 
       &::before {
         top: 50%;
@@ -102,9 +95,9 @@
   background-color: rgba(palette(primary-white), .9);
   padding: 10px 0;
   transition-duration: .25s;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
-  -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
-  -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .2);
   overflow: auto;
 
   @include mq($max: $md) {

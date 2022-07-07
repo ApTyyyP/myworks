@@ -14,7 +14,29 @@ $(function() {
     }
 
     // Scroll on link click
+    const verticalLinks = document.querySelectorAll('.s-main__vertical-link[data-href]');
     const menuLinks = document.querySelectorAll('.c-nav__menu-item[data-href]');
+
+    if (verticalLinks.length > 0) {
+        verticalLinks.forEach(verticalLink => {
+            verticalLink.addEventListener("click", onVerticalLinkClick);
+        });
+
+        function onVerticalLinkClick(e) {
+            const verticalLink = e.target;
+
+            if (verticalLink.dataset.href && document.querySelector(verticalLink.dataset.href)) {
+                const hrefBlock = document.querySelector(verticalLink.dataset.href);
+                const hrefBlockValue = hrefBlock.getBoundingClientRect().top + pageYOffset - 100;
+
+                window.scrollTo({
+                    top: hrefBlockValue,
+                    behavior: "smooth"
+                });
+                e.preventDefault();
+            }
+        }
+    }
 
     if (menuLinks.length > 0) {
         menuLinks.forEach(menuLink => {
