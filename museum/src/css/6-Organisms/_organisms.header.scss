@@ -6,7 +6,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 0;
   z-index: 10;
   -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
   -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
@@ -20,10 +19,10 @@
 }
 
 .o-header__wrap {
-  padding-top: 15px;
   height: 99px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .o-header__logo {
