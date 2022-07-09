@@ -83,7 +83,15 @@
 
 .s-events__desc {
 
-  @include mq($max: $xl) {
+  @include mq($min: $xl) {
     max-width: 370px;
+  }
+
+  @include mq($min: $md, $max: $xl) {
+    max-width: 460px;
+  }
+
+  @include mq($max: $md) {
+    max-width: 100%;
   }
 }
