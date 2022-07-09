@@ -949,7 +949,6 @@ button {
 
 .s-lection {
   margin-bottom: 302px;
-  max-height: 550px;
   position: relative;
 }
 @media screen and (max-width: 1279px) {
@@ -964,6 +963,8 @@ button {
 }
 .s-lection img {
   width: 100%;
+  max-height: 550px;
+  object-fit: cover;
 }
 
 .s-lection__wrap {
