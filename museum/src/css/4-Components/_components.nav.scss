@@ -9,6 +9,10 @@
   cursor: pointer;
   z-index: 1;
 
+  @include mq($max: $md) {
+    cursor: default;
+  }
+
   span {
     position: absolute;
     left: 0;

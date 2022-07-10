@@ -519,6 +519,11 @@ button {
   cursor: pointer;
   z-index: 1;
 }
+@media screen and (max-width: 767px) {
+  .c-nav__menu-btn {
+    cursor: default;
+  }
+}
 .c-nav__menu-btn span {
   position: absolute;
   left: 0;
