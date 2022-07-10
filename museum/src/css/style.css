@@ -516,6 +516,7 @@ button {
   padding: 0;
   border-width: 0;
   background-color: transparent;
+  cursor: pointer;
   z-index: 1;
 }
 .c-nav__menu-btn span {
