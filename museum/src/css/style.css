@@ -508,17 +508,17 @@ button {
   color: #000000;
 }
 
-.c-nav__pointer {
-  cursor: pointer;
-}
-
 .c-nav__menu-btn {
+  display: block;
   position: relative;
   width: 18px;
   height: 12px;
+  padding: 0;
+  border-width: 0;
+  background-color: transparent;
   z-index: 1;
 }
-.c-nav__menu-btn span, .c-nav__menu-btn::before, .c-nav__menu-btn::after {
+.c-nav__menu-btn span {
   position: absolute;
   left: 0;
   width: 100%;
@@ -526,46 +526,25 @@ button {
   transition: all 0.3s ease 0s;
   background-color: #0f0e08;
 }
-.c-nav__menu-btn::before, .c-nav__menu-btn::after {
-  content: "";
-}
-.c-nav__menu-btn::before {
+.c-nav__menu-btn span.top {
   top: 0;
 }
-.c-nav__menu-btn::after {
+.c-nav__menu-btn span.center {
+  top: 5px;
+}
+.c-nav__menu-btn span.bottom {
   bottom: 0;
 }
-.c-nav__menu-btn span {
+.c-nav__menu-btn.active .top {
   top: 50%;
-  transform: scale(1) translate(0, -50%);
+  transform: rotate(45deg);
 }
-.c-nav__menu-btn span::before, .c-nav__menu-btn span::after {
-  content: "";
+.c-nav__menu-btn.active .center {
+  opacity: 0;
 }
-.c-nav__menu-btn span::before {
-  top: 0;
-}
-.c-nav__menu-btn span::after {
-  bottom: 0;
-}
-.c-nav__menu-btn.active::before {
+.c-nav__menu-btn.active .bottom {
   top: 50%;
-  transform: rotate(-45deg) translate(0, -50%);
-}
-.c-nav__menu-btn.active::after {
-  bottom: 50%;
-  transform: rotate(45deg) translate(0, 50%);
-}
-.c-nav__menu-btn.active span {
-  transform: scale(0) translate(0, -50%);
-}
-.c-nav__menu-btn.active span::before {
-  top: 50%;
-  transform: rotate(-45deg) translate(0, -50%);
-}
-.c-nav__menu-btn.active span::after {
-  bottom: 50%;
-  transform: rotate(45deg) translate(0, 50%);
+  transform: rotate(-45deg);
 }
 
 .c-nav__menu-body {
