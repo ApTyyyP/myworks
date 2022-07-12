@@ -1209,17 +1209,7 @@ button {
 }
 
 .o-header__logo {
-  margin: 0 auto 0 40%;
-}
-@media screen and (max-width: 767px) {
-  .o-header__logo {
-    margin: 0 auto 0 30%;
-  }
-}
-@media screen and (max-width: 575px) {
-  .o-header__logo {
-    margin: 0 auto 0 40%;
-  }
+  margin: 0 auto;
 }
 
 .o-header__logo-img {

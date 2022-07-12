@@ -26,15 +26,7 @@
 }
 
 .o-header__logo {
-  margin: 0 auto 0 40%;
-
-  @include mq($max: $md) {
-    margin: 0 auto 0 30%;
-  }
-
-  @include mq($max: $sm) {
-    margin: 0 auto 0 40%;
-  }
+  margin: 0 auto;
 }
 
 .o-header__logo-img {
