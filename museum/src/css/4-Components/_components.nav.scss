@@ -9,7 +9,7 @@
   cursor: pointer;
   z-index: 1;
 
-  @include mq($max: $md) {
+  @include mq($max: $xl) {
     cursor: default;
   }
 
