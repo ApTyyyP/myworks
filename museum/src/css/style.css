@@ -684,29 +684,24 @@ button {
 }
 
 .c-arrow-up {
+  display: none;
   position: fixed;
+  right: 40px;
   bottom: 70px;
   width: 50px;
   height: 50px;
-  background: #ffffff;
   border: 1px solid #1a5a4c;
-  color: #fff;
-  border-radius: 50%;
-  -webkit-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  cursor: pointer;
+  border-radius: 100%;
+  background: #ffffff;
+  z-index: 1;
 }
-.c-arrow-up::after {
-  content: "";
+.c-arrow-up img {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -5px;
-  margin-left: -5px;
   width: 10px;
   height: 12px;
-  background: url(../img/arrow-up.svg) no-repeat;
+  transform: translate(-50%, -50%);
 }
 
 .c-arrow-up--pos-right {

@@ -1,7 +1,16 @@
-"use strict"
+"use strict";
 
 // Wait for the DOM to be ready
 $(function() {
+    // jQuery to collapse the navbar on scroll
+    $(window).on('scroll', function () {
+        if ($(".o-header").offset().top > 80) {
+            $(".o-header").addClass("top-collapse");
+        } else {
+            $(".o-header").removeClass("top-collapse");
+        }
+    });
+
     // Burger menu
     const iconMenu = document.querySelector('.c-nav__menu-btn');
     const menuBox = document.querySelector('.c-nav__menu-body');
@@ -13,65 +22,54 @@ $(function() {
         })
     }
 
-    // Scroll on link click
+    // Smooth scroll and pageup
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 970 ) {
+            $('.c-arrow-up').fadeIn();
+        } else {
+            $('.c-arrow-up').fadeOut();
+        }
+    });
+
+    $("a[href^='#']").click(function () {
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"}, 1000);
+        return false;
+    });
+
     const verticalLinks = document.querySelectorAll('.s-main__vertical-link[data-href]');
     const menuLinks = document.querySelectorAll('.c-nav__menu-item[data-href]');
 
-    if (verticalLinks.length > 0) {
-        verticalLinks.forEach(verticalLink => {
-            verticalLink.addEventListener("click", onVerticalLinkClick);
-        });
+    function linkScroll(link) {
+        if (link.length > 0) {
+            link.forEach(item => {
+                item.addEventListener("click", onVerticalLinkClick);
+            });
 
-        function onVerticalLinkClick(e) {
-            const verticalLink = e.target;
+            function onVerticalLinkClick(e) {
+                const item = e.target;
 
-            if (verticalLink.dataset.href && document.querySelector(verticalLink.dataset.href)) {
-                const hrefBlock = document.querySelector(verticalLink.dataset.href);
-                const hrefBlockValue = hrefBlock.getBoundingClientRect().top + pageYOffset - 100;
+                if (item.dataset.href && document.querySelector(item.dataset.href)) {
+                    const hrefBlock = document.querySelector(item.dataset.href);
+                    const hrefBlockValue = hrefBlock.getBoundingClientRect().top + pageYOffset - 100;
 
-                window.scrollTo({
-                    top: hrefBlockValue,
-                    behavior: "smooth"
-                });
-                e.preventDefault();
-            }
-        }
-    }
+                    if (iconMenu.classList.contains('active')) {
+                        iconMenu.classList.remove('active');
+                        menuBox.classList.remove('active');
+                    }
 
-    if (menuLinks.length > 0) {
-        menuLinks.forEach(menuLink => {
-            menuLink.addEventListener("click", onMenuLinkClick);
-        });
-
-        function onMenuLinkClick(e) {
-            const menuLink = e.target;
-
-            if (menuLink.dataset.href && document.querySelector(menuLink.dataset.href)) {
-                const hrefBlock = document.querySelector(menuLink.dataset.href);
-                const hrefBlockValue = hrefBlock.getBoundingClientRect().top + pageYOffset - 100;
-
-                if (iconMenu.classList.contains('active')) {
-                    iconMenu.classList.remove('active');
-                    menuBox.classList.remove('active');
+                    window.scrollTo({
+                        top: hrefBlockValue,
+                        behavior: "smooth"
+                    });
+                    e.preventDefault();
                 }
-
-                window.scrollTo({
-                    top: hrefBlockValue,
-                    behavior: "smooth"
-                });
-                e.preventDefault();
             }
         }
     }
 
-    // jQuery to collapse the navbar on scroll
-    $(window).on('scroll', function () {
-        if ($(".o-header").offset().top > 80) {
-            $(".o-header").addClass("top-collapse");
-        } else {
-            $(".o-header").removeClass("top-collapse");
-        }
-    });
+    linkScroll(verticalLinks);
+    linkScroll(menuLinks);
 
     // Phone mask
     $('#phone[data-inputmask-mask]').inputmask();
