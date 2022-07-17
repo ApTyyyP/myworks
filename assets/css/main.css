@@ -1896,6 +1896,23 @@ html {
 #header .bottom > :last-child {
     margin-bottom: 0;
 }
+#header .tray {
+    height: 60%;
+    width: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#header .sum {
+    padding-top: 25px;
+    font-weight: bold;
+    font-size: 100px;
+    width: 100px;
+    text-align: center;
+    opacity: 0;
+}
 #header .canvas {
     width: 100%;
     text-align: left;
