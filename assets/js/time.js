@@ -1,8 +1,8 @@
-﻿var imgArray = [];
-var setTime24 = 1;
+﻿let imgArray = [];
+let setTime24 = 1;
 
 function ImgClock() {
-    var i = 0;
+    let i = 0;
     for (i = 0; i < 10; i++) {
         imgArray[i] = new Image(15, 20)
     }
@@ -21,16 +21,16 @@ function ImgClock() {
 
 function jsImgClock24hr() {
 
-    var time = new Date();
-    var hour = time.getHours();
-    var minute = time.getMinutes();
-    var second = time.getSeconds();
-    var sec = 0;
-    var sec10 = 0;
-    var min = 0;
-    var min10 = 0;
-    var hr = 0;
-    var hr10 = 0;
+    let time = new Date();
+    let hour = time.getHours();
+    let minute = time.getMinutes();
+    let second = time.getSeconds();
+    let sec = 0;
+    let sec10 = 0;
+    let min = 0;
+    let min10 = 0;
+    let hr = 0;
+    let hr10 = 0;
 
     sec10 = Math.floor(second / 10);
     sec = second - sec10 * 10;
