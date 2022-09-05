@@ -206,6 +206,11 @@
  * 1. Makes sure that some fonts are better rendered
  * 2. Set font to lining figures
  */
+html,
+body {
+  min-width: 320px;
+}
+
 html {
   /*  -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
