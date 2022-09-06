@@ -2,7 +2,7 @@
 
 (function ($) {
 
-    var $window = $(window),
+    let $window = $(window),
         $body = $('body'),
         $nav = $('#nav');
 
@@ -23,13 +23,13 @@
     });
 
     // Nav.
-    var $nav_a = $nav.find('a');
+    let $nav_a = $nav.find('a');
 
     $nav_a
         .addClass('scrolly')
         .on('click', function (e) {
 
-            var $this = $(this);
+            let $this = $(this);
 
             // External link? Bail.
             if ($this.attr('href').charAt(0) !== '#')
@@ -49,7 +49,7 @@
         })
         .each(function () {
 
-            var $this = $(this),
+            let $this = $(this),
                 id = $this.attr('href'),
                 $section = $(id);
 
@@ -140,8 +140,9 @@
 		background:(i)=>'url(images/dieSprite.svg) 0px -'+String(i*300)+'px'
 	});
 
-	let die2 = document.querySelector('.die').cloneNode(true);
-	document.querySelector('.tray').append(die2);
+	let die2 = document.querySelector('.die').cloneNode(true),
+		tray = document.querySelector('.tray');
+	tray.append(die2);
 
 	gsap.set('.die', {attr:{class:(i)=>'die die'+(i+1)}, width:300, height:300, perspective:299});
 	gsap.set('.cube', {position:'absolute', width:300, height:300, transformStyle: 'preserve-3d', z:-600});
@@ -187,6 +188,8 @@
 			}, 0.8)
 	}
 
-	window.onpointerup = window.onload = roll;
+	tray.addEventListener("click", roll, false)
+
+	// window.onpointerup = window.onload = roll;
 
 })(jQuery);

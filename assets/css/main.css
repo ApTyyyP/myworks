@@ -1905,6 +1905,11 @@ html {
     justify-content: center;
     align-items: center;
 }
+#header .tray h2 {
+    color: #fff;
+    font-weight: bold;
+    text-transform: none;
+}
 #header .sum {
     padding-top: 25px;
     font-weight: bold;
