@@ -866,7 +866,7 @@ html {
 
   .bottom {
     @include vendor('flex-shrink', '0');
-    padding: 1.5em 0 0.75em 0;
+    padding: 0.75em 0 0.75em 0;
     overflow: hidden;
 
     > :last-child {
@@ -1014,6 +1014,7 @@ html {
       }
 
       &:nth-child(6) {
+        padding: 0.5em 1.5em 0.5em 1.5em;
         text-align: center;
         font-size: 0.8em;
         line-height: 1.3;
@@ -1024,6 +1025,7 @@ html {
       }
 
       &:nth-child(7) {
+        padding: 0 1.5em 0.5em 1.5em;
         text-align: center;
         font-size: 0.8em;
         line-height: 1.3;
@@ -1034,6 +1036,7 @@ html {
       }
 
       &:nth-child(8) {
+        padding: 0 1.5em 0 1.5em;
         text-align: center;
         font-size: 0.8em;
 

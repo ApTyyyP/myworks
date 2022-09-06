@@ -1890,7 +1890,7 @@ html {
     -webkit-flex-shrink: 0;
     -ms-flex-shrink: 0;
     flex-shrink: 0;
-    padding: 1.5em 0 0.75em 0;
+    padding: 0.75em 0 0.75em 0;
     overflow: hidden;
 }
 #header .bottom > :last-child {
@@ -2023,6 +2023,7 @@ html {
     background: rgba(0, 0, 0, 0);
 }
 #nav ul li:nth-child(6) {
+    padding: 0.5em 1.5em 0.5em 1.5em;
     text-align: center;
     font-size: 0.8em;
     line-height: 1.3;
@@ -2031,6 +2032,7 @@ html {
     background: rgba(0, 0, 0, 0);
 }
 #nav ul li:nth-child(7) {
+    padding: 0 1.5em 0.5em 1.5em;
     text-align: center;
     font-size: 0.8em;
     line-height: 1.3;
@@ -2039,6 +2041,7 @@ html {
     background: rgba(0, 0, 0, 0);
 }
 #nav ul li:nth-child(8) {
+    padding: 0 1.5em 0 1.5em;
     text-align: center;
     font-size: 0.8em;
 }
