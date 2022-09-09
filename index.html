@@ -26,9 +26,15 @@
 
             <!-- Logo -->
             <div id="logo">
-                <span class="image avatar80-60"><img src="images/avatar.jpg" alt="avatar"/></span>
-                <h1 id="title">Artur Morza</h1>
-                <p>Front-End Developer</p>
+                <div class="box">
+                    <div class="logo__wrapper">
+                        <span class="image avatar80-60">
+                            <img src="images/avatar.jpg" alt="avatar"/>
+                        </span>
+                        <h1 id="title">Artur Morza</h1>
+                        <p>Front-End Developer</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Nav -->
@@ -36,22 +42,22 @@
                 <ul>
                     <li>
                         <a href="#top" id="top-link">
-                            <span class="icon fa-home">Главная</span>
+                            <span class="icon fa-home">Головна</span>
                         </a>
                     </li>
                     <li>
                         <a href="#portfolio" id="portfolio-link">
-                            <span class="icon fa-th">Портфолио</span>
+                            <span class="icon fa-th">Портфоліо</span>
                         </a>
                     </li>
                     <li>
                         <a href="#about" id="about-link">
-                            <span class="icon fa-user">Обо мне</span>
+                            <span class="icon fa-user">Про мене</span>
                         </a>
                     </li>
                     <li>
                         <a href="#contact" id="contact-link">
-                            <span class="icon fa-envelope">Контакты</span>
+                            <span class="icon fa-envelope">Контакти</span>
                         </a>
                     </li>
                      <li>
@@ -65,13 +71,13 @@
                         <img src="images/time/0.gif" alt="0" width="15" height="20" name="img24Sec">
                     </li>
                     <li>
-                        <script>document.write('Сегодня ' + getDateStr() + ' года.')</script>
+                        <script>document.write('Сьогодні ' + getDateStr() + ' року')</script>
                     </li>
                     <li>
                         <hr>
                         <script>
                             var data = browserDetectNav();
-                            document.write("Ваш Браузер: <span style=color:red><b>" + data[0] + "</b></span><br/>Версия: <span style=color:#ff0000><b>" + data[1] + "." + data[2] + "</b></span>");
+                            document.write("Ваш Браузер: <span style=color:red><b>" + data[0] + "</b></span><br/>Версія: <span style=color:#ff0000><b>" + data[1] + "." + data[2] + "</b></span>");
                         </script>
                     </li>
                     <li>
@@ -80,7 +86,7 @@
                             d0 = new Date('april 14, 2019');
                             d1 = new Date();
                             dt = (d1.getTime() - d0.getTime()) / (1000 * 60 * 60 * 24);
-                            document.write('Этот сайт живёт <b><span style="color:red">' + Math.round(dt) + '</span></b>-й день.');
+                            document.write('Цей сайт живе <b><span style="color:red">' + Math.round(dt) + '</span></b>-й день');
                         </script>
                     </li>
                 </ul>
@@ -200,41 +206,66 @@
             <div class="container">
 
                 <header>
-                    <h2 class="alt">Привет! Я
-                        <strong>очень рад</strong>
-                        , что Вы зашли на мою страничку :)
+                    <h2 class="alt">Привіт! Я
+                        <strong>дуже радий</strong>
+                        , що Ви зайшли на мою сторінку :)
                     </h2>
                     <p>
-                        <strong class="blink">Здесь показаны мои проекты</strong></a>
+                        <strong class="blink">Тут показані мої проекти</strong></a>
                     </p>
                     <div class="resume">
-                        <p>Скачать моё резюме можете тут</p>
+                        <p>Завантажити моє резюме можете тут</p>
                             <div onLoad="get_file_url();">
-                                <button class="button-progress">
-                                    <svg class="circle" viewBox="0 0 76 76">
-                                        <circle class="default" cx="38" cy="38" r="36"></circle>
-                                        <circle class="active" cx="38" cy="38" r="36"></circle>
+                                <div class="income__flask-wrap">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+                                        <symbol id="wave">
+                                            <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                            <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                            <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                            <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                        </symbol>
                                     </svg>
-                                    <div class="icon">
-                                        <svg class="line" viewBox="0 0 4 37">
-                                            <line x1="2" y1="2" x2="2" y2="35"></line>
-                                        </svg>
-                                        <div>
-                                            <svg class="arrow" viewBox="0 0 40 32"></svg>
-                                            <svg class="progress" viewBox="0 0 444 10">
-                                                <path d="M2,5 L42,5 C60.0089086,6.33131695 73.3422419,6.99798362 82,7 C87.572404,7.00129781 91.0932494,1.72677301 102,1.99944178 C112.906751,2.27211054 112.000464,7.99986045 122,8 C131.999536,8.00013955 132,2 142,2 C152,2 152,8 162,8 C172,8 172,2 182,2 C192,2 192,8 202,8 C212,8 212,2 222,2 C232,2 232,8 242,8 C252,8 252,2 262,2 C272,2 272,8 282,8 C292,8 292,2 302,2 C312,2 312,8 322,8 C332,8 332,2 342,2 C352,2 351.897852,7.49489262 362,8 C372.102148,8.50510738 378.620177,5.22532154 402,5 L442,5"></path>
+                                    <div class="flask">
+                                        <div class="flask__percent">
+                                            <div class="flask__percentNum" id="count"></div>
+                                            <div class="flask__percentB">
+                                                <button class="button-progress">
+                                                    <svg class="circle" viewBox="0 0 76 76">
+                                                        <circle class="default" cx="38" cy="38" r="36"></circle>
+                                                        <circle class="active" cx="38" cy="38" r="36"></circle>
+                                                    </svg>
+                                                    <div class="icon">
+                                                        <svg class="line" viewBox="0 0 4 37">
+                                                            <line x1="2" y1="2" x2="2" y2="35"></line>
+                                                        </svg>
+                                                        <div>
+                                                            <svg class="arrow" viewBox="0 0 40 32"></svg>
+                                                            <svg class="progress" viewBox="0 0 444 10">
+                                                                <path d="M2,5 L42,5 C60.0089086,6.33131695 73.3422419,6.99798362 82,7 C87.572404,7.00129781 91.0932494,1.72677301 102,1.99944178 C112.906751,2.27211054 112.000464,7.99986045 122,8 C131.999536,8.00013955 132,2 142,2 C152,2 152,8 162,8 C172,8 172,2 182,2 C192,2 192,8 202,8 C212,8 212,2 222,2 C232,2 232,8 242,8 C252,8 252,2 262,2 C272,2 272,8 282,8 C292,8 292,2 302,2 C312,2 312,8 322,8 C332,8 332,2 342,2 C352,2 351.897852,7.49489262 362,8 C372.102148,8.50510738 378.620177,5.22532154 402,5 L442,5"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <span>0%</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="water" class="flask__water">
+                                            <svg viewBox="0 0 560 20" class="flask__water_wave flask__water_wave_back">
+                                                <use xlink:href="#wave"></use>
+                                            </svg>
+                                            <svg viewBox="0 0 560 20" class="flask__water_wave flask__water_wave_front">
+                                                <use xlink:href="#wave"></use>
                                             </svg>
                                         </div>
                                     </div>
-                                    <span>0%</span>
-                                </button>
+                                </div>
                             </div>
                         </p>
                     </div>
                 </header>
 
                 <footer>
-                    <a href="#portfolio" class="button scrolly">Портфолио</a>
+                    <a href="#portfolio" class="btn scrolly" style="--clr:#1e9bff"><span>Портфоліо</span><i></i></a>
                 </footer>
 
             </div>
@@ -248,7 +279,7 @@
             <div class="container">
 
                 <header>
-                    <h2 class="alt"><strong>Портфолио</strong></h2>
+                    <h2 class="alt"><strong>Портфоліо</strong></h2>
                 </header>
 
                 <hr>
@@ -462,8 +493,8 @@
                     <div id="life" class="col-12" onLoad="start();">
                         <article class="item">
                             <header>
-                                <h2 class="alt"><strong>Количество прожитого времени</strong></h2>
-                                    <h4>введите в соответствующие поля вашу дату рождения и нажмите на кнопку <b>&laquo;Считать&raquo;</b></h4>
+                                <h2 class="alt"><strong>Кількість прожитого часу</strong></h2>
+                                    <h4>введіть у відповідні поля вашу дату народження та натисніть на кнопку <b>&laquo;Порахувати&raquo;</b></h4>
                                 <div class="life">
                                     <!-- FORM -->
                                     <form name=form1>
@@ -475,12 +506,12 @@
                                                         <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                                                     </label></b>
                                                 </td>
-                                                <td><b>Месяц:
+                                                <td><b>Місяць:
                                                     <label>
                                                         <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                                                     </label></b>
                                                 </td>
-                                                <td><b>Год:
+                                                <td><b>Рік:
                                                     <label>
                                                         <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
                                                     </label></b>
@@ -495,7 +526,7 @@
 
                                         <table>
                                             <tr>
-                                                <td><input type="button" name="start" onClick="run();" value="Считать"></td>
+                                                <td><input type="button" name="start" onClick="run();" value="Порахувати"></td>
                                             </tr>
                                         </table>
 
@@ -505,33 +536,33 @@
                                             </tr>
                                             <tr></tr>
                                             <tr>
-                                                <td><input type="reset" value="Сброс"></td>
+                                                <td><input type="reset" value="Очистити"></td>
                                             </tr>
                                         </table>
 
                                         <table>
-                                            <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2 class="alt"><strong>Вы живёте уже:</strong></h2></td>
+                                            <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2 class="alt"><strong>Ви живете вже:</strong></h2></td>
                                         </table>
 
                                         <table style="font-family: System, monospace;">
                                             <tr>
-                                                <td><b>Месяцев:</b></td>
+                                                <td><b>Місяців:</b></td>
                                                 <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Недель:</b></td>
+                                                <td><b>Тижнів:</b></td>
                                                 <td><input type="text" name="weeks" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Дней:</b></td>
+                                                <td><b>Днів:</b></td>
                                                 <td><input type="text" name="answer" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Часов:</b></td>
+                                                <td><b>Годин:</b></td>
                                                 <td><input type="text" name="hours" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Минут:</b></td>
+                                                <td><b>Хвилин:</b></td>
                                                 <td><input type="text" name="min" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
@@ -539,13 +570,13 @@
                                                 <td><input type="text" name="sec" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Миллисекунд:</b></td>
+                                                <td><b>Мілісекунд:</b></td>
                                                 <td><input type="text" name="milli" onKeypress="event.returnValue = false;"></td>
                                             </tr>
                                         </table>
                                         <hr>
                                         <table>
-                                            <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш следующий день рождения через:</b></td>
+                                            <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш наступний день народження через:</b></td>
                                             <td>
                                                 <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
                                             </td>
@@ -566,31 +597,31 @@
             <div class="container">
 
                 <header>
-                    <h2><strong>Обо мне</strong></h2>
+                    <h2><strong>Про мене</strong></h2>
                 </header>
 
-                <h3>Навыки</h3>
+                <h3>Навички</h3>
                     <ul>
-                        <li>CMS: Joomla, Drupal, WordPress, OpenCart</li>
-                        <li>Базовые знания: Java, С#, React, Vue.js, Laravel, Gulp, Webpack, PixiJS, THREE.js</li>
-                        <li>Front-End: HTML, CSS, SCSS, JavaScript, DOM, jQuery, Git</li>
-                        <li>Back-End: php, MySQL, Apache2, Denver, OpenServer, Vagrant, NPM, Node.js</li>
-                        <li>Среда разработки: Visual Studio, Adobe Dreamweaver, WebStorm, phpStorm</li>
-                        <li>1С:Комплексная Автоматизация, Bitrix, Figma, Photoshop</li>
-                        <li>Ремонт компьютерной техники</li>
+                        <li><b>CMS:</b> Joomla, Drupal, WordPress, OpenCart</li>
+                        <li><b>Базові знання:</b> Java, С#, React, Vue.js, Laravel, Gulp, Webpack, PixiJS, THREE.js</li>
+                        <li><b>Front-End:</b> HTML, CSS, SCSS, JavaScript, DOM, jQuery, Git</li>
+                        <li><b>Back-End:</b> php, MySQL, Apache2, Denver, OpenServer, Vagrant, NPM, Node.js</li>
+                        <li><b>Середовище розробки:</b> Visual Studio, Adobe Dreamweaver, WebStorm, phpStorm</li>
+                        <li>1С:Комплексна Автоматизація, Bitrix, Figma, Photoshop</li>
+                        <li>Ремонт комп'ютерної техніки</li>
                     </ul>
 
-                <h3>Личные качества</h3>
+                <h3>Особисті якості</h3>
                     <ul>
-                        <li>Усидчивость</li>
-                        <li>Ответственность</li>
-                        <li>Работа в команде</li>
-                        <li>Отсутствие вредных привычек</li>
-                        <li>Коммуникабельность</li>
-                        <li>Обучаемость</li>
-                        <li>Не конфликтность</li>
-                        <li>Работа на результат</li>
-                        <li>Грамотность</li>
+                        <li>Посидливий</li>
+                        <li>Відповідальний</li>
+                        <li>Комунікабельний</li>
+                        <li>Не конфліктний</li>
+                        <li>Навчальний</li>
+                        <li>Командна праця</li>
+                        <li>Відсутність шкідливих звичок</li>
+                        <li>Робота на результат</li>
+                        <li>Грамотність</li>
                     </ul>
             </div>
         </section>
@@ -600,16 +631,16 @@
             <div class="container">
 
                 <header>
-                    <h2><strong>Контакты</strong></h2>
+                    <h2><strong>Контакти</strong></h2>
                 </header>
 
-                <p>Для обратной связи со мной, можете заполнить форму отправки.</p>
+                <p>Для зворотного зв'язку зі мною заповніть форму.</p>
 
                 <form method="post" action="#">
                     <div class="row">
                         <div class="col-6 col-12-mobile">
                             <label>
-                                <input type="text" name="name" placeholder="Ваше имя"/>
+                                <input type="text" name="name" placeholder="Ваше ім'я"/>
                             </label>
                         </div>
                         <div class="col-6 col-12-mobile">
@@ -619,11 +650,14 @@
                         </div>
                         <div class="col-12">
                             <label>
-                                <textarea name="message" placeholder="Введите сообщение..."></textarea>
+                                <textarea name="message" placeholder="Введіть повідомлення..."></textarea>
                             </label>
                         </div>
                         <div class="col-12">
-                            <input type="submit" value="Отправить"/>
+                            <a href="javascript:void(0);" class="btn" style="--clr:#1e9bff">
+                                <span>Відправити</span>
+                                <i></i>
+                            </a>
                         </div>
                     </div>
                 </form>
@@ -658,6 +692,7 @@
 <script src="assets/js/homeUp.js"></script>
 <script src="assets/js/gsap.min.js"></script>
 <!--<script src="https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js"></script>-->
+<script src="assets/js/flasks.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/progressAnimation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>

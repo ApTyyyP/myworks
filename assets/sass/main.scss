@@ -93,6 +93,7 @@ input, select, textarea {
 // Set box model to border-box.
 // Based on css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
 html {
+  min-width: 350px;
   box-sizing: border-box;
 }
 
@@ -487,7 +488,6 @@ table {
 /* Button */
 
 input[type="button"],
-input[type="submit"],
 input[type="reset"],
 button,
 .button {
@@ -505,24 +505,100 @@ button,
 
   &:hover {
     background-color: #222629;
-    -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    @include vendor('box-shadow', '0 0 5px rgba(255, 255, 255, 0.5)');
   }
 
   &:active {
     background-color: rgba(0, 0, 0, 0);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    transform: scale(0.9);
+    @include vendor('transform', 'scale(0.9)');
+  }
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  border-radius: 0.35em;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75em 2.5em 0.75em 2.5em;
+  border: 0;
+  cursor: pointer;
+  @include vendor('transition', '0.5s');
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 0.35em;
+    background-color: #27282c;
+  }
+
+  &:hover {
+    color: var(--clr);
+    background-color: var(--clr);
+    @include vendor('box-shadow', '0 0 35px var(--clr)');
+
+    i {
+      &::before {
+        left: 0;
+        transform: translate(-50%) rotate(45deg);
+        @include vendor('box-shadow', '58px 57px var(--clr)');
+      }
+
+      &::after {
+        left: 100%;
+        transform: translate(-50%) rotate(-45deg);
+        @include vendor('box-shadow', '58px -57px var(--clr)');
+      }
+    }
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0);
+    @include vendor('transform', 'scale(0.9)');
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  i {
+    position: absolute;
+    inset: 0;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      left: 100%;
+      transform: translate(-50%);
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: 2px solid var(--clr);
+      @include vendor('transition', '0.5s');
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: 0;
+      transform: translate(-50%);
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: 2px solid var(--clr);
+      @include vendor('transition', '0.5s');
+    }
   }
 }
 
 .button-progress {
-  --default: rgba(255, 255, 255, .2);
-  --active: #fff;
+  --default: rgba(30, 155, 255, .4);
+  --active: #1e9bff;
   position: relative;
   border: none;
   outline: none;
@@ -532,7 +608,7 @@ button,
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   transform: scale(var(--s, 1));
-  transition: transform .2s;
+  @include vendor('transition', '0.5s');
   &:active {
     --s: .96;
   }
@@ -810,15 +886,13 @@ html {
   background: rgba(0, 0, 0, .4);
   color: #fff;
   border-radius: 50%;
-  -webkit-transition: all .5s linear;
-  -o-transition: all .5s linear;
-  transition: all .5s linear;
+  @include vendor('transition', 'all 0.5s linear');
   cursor: pointer;
 
   &:hover {
     opacity: 1;
     background: #FF0000 !important;
-    transition: all .3s ease-in;
+    @include vendor('transition', 'all 0.3s ease-in');
   }
 
   &:after {
@@ -940,6 +1014,78 @@ html {
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.25em;
     margin: 0.5em 0 0 0;
+  }
+
+  .box {
+    padding: 3px;
+    width: 100%;
+    position: relative;
+    background: rgba(0, 0, 0, .75);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
+      -webkit-animation: animateLogo 4s linear infinite;
+      -o-animation: animateLogo 4s linear infinite;
+      animation: animateLogo 4s linear infinite;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background-image: conic-gradient(transparent, transparent, transparent, #d400d4);
+      -webkit-animation: animateLogo 4s linear infinite;
+      -o-animation: animateLogo 4s linear infinite;
+      animation: animateLogo 4s linear infinite;
+      animation-delay: -2s;
+    }
+
+    .logo__wrapper {
+      padding-right: 7px;
+      width: 100%;
+      height: 64px;
+      background: #222629;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    span {
+      position: absolute;
+      inset: 5px;
+      border-radius: 16px;
+      background: #0c1022;
+      z-index: 1;
+    }
+
+    img, h1, p {
+      position: relative;
+      display: flex;
+      justify-content: right;
+      z-index: 2;
+    }
+  }
+
+  @keyframes animateLogo {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .image {
@@ -1171,11 +1317,105 @@ canvas {
 #main {
   margin-left: 375px;
 
+  .income {
+    &__flask {
+      &-wrap {
+        margin: 0 auto;
+        position: relative;
+        width: 258px;
+        height: 258px;
+        background: #313131;
+        border: 2px solid rgba(#637783, .4);
+        border-radius: 50%;
+        z-index: 2;
+      }
+    }
+  }
+
+  $waterFColor: #76FFFF;
+  $waterBColor: #559CB0;
+
+  .flask {
+    width: 245px;
+    height: 245px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #4D4D4D;
+    border-radius: 50%;
+    background: #393939;
+    overflow: hidden;
+
+    &__percent {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+    }
+
+    &__water {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transform: translate(0, 100%);
+      transition: all .3s;
+
+      &_wave {
+        width: 200%;
+        position: absolute;
+        bottom: 100%;
+
+        &_back {
+          right: 0;
+          animation: wave-back 3s infinite linear;
+        }
+
+        &_front {
+          left: 0;
+          margin-bottom: -1px;
+          animation: wave-front 1.3s infinite linear;
+        }
+      }
+    }
+
+    & #water {
+      background: $waterFColor;
+
+      .flask__water_wave_back {
+        fill: $waterBColor;
+      }
+
+      .flask__water_wave_front {
+        fill: $waterFColor;
+      }
+    }
+  }
+
+  @keyframes wave-front {
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @keyframes wave-back {
+    100% {
+      transform: translate(50%, 0);
+    }
+  }
+
   .resume {
     margin: 2% auto;
-    padding: 1%;
-    border: dashed 1px #ffffff;
-    width: 40%;
+    //padding: 1%;
+    //border: dashed 1px #ffffff;
+    //width: 40%;
 
     & p {
       margin: 0;
@@ -1201,7 +1441,7 @@ canvas {
         color: #fff;
         font-weight: bold;
         border-color: inherit;
-        transition: color 0.35s;
+        @include vendor('transition', 'color 0.35s');
 
         &:hover {
           color: rgb(255, 237, 48);
@@ -1231,7 +1471,7 @@ canvas {
       }
 
       a {
-        color: #fff;
+        //color: #fff;
         border-color: inherit;
 
         &:hover {
@@ -1261,14 +1501,10 @@ canvas {
       background: #f5fafa url("../../images/bg_two.png") fixed;
 
       img {
-        -moz-transition: all 1s ease-out;
-        -o-transition: all 1s ease-out;
-        -webkit-transition: all 1s ease-out;
+        @include vendor('transition', 'all 1s ease-out');
 
         &:hover {
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -o-transform: scale(1.1);
+          @include vendor('transform', 'scale(1.1)');
         }
       }
 
@@ -1367,6 +1603,28 @@ canvas {
 
   #main {
     margin-left: 300px;
+
+    .btn {
+      &:hover {
+        color: var(--clr);
+        background-color: var(--clr);
+        @include vendor('box-shadow', '0 0 35px var(--clr)');
+
+        i {
+          &::before {
+            left: 0;
+            transform: translate(-50%) rotate(45deg);
+            @include vendor('box-shadow', '51px 50px var(--clr)');
+          }
+
+          &::after {
+            left: 100%;
+            transform: translate(-50%) rotate(-45deg);
+            @include vendor('box-shadow', '50px -51px var(--clr)');
+          }
+        }
+      }
+    }
   }
 
 }
@@ -1428,9 +1686,17 @@ canvas {
   }
 
   #logo {
+    .box {
+      .logo__wrapper {
+        padding: 5px 0;
+        height: 110px;
+        justify-content: end;
+        align-items: center;
+      }
+    }
     .image {
       position: relative;
-      margin: 0 0 0.5em 0;
+      margin: 0 auto 0.5em auto;
     }
   }
 
@@ -1466,6 +1732,28 @@ canvas {
 
   #main {
     margin-left: 20%;
+
+    .btn {
+      &:hover {
+        color: var(--clr);
+        background-color: var(--clr);
+        @include vendor('box-shadow', '0 0 35px var(--clr)');
+
+        i {
+          &::before {
+            left: 0;
+            transform: translate(-50%) rotate(45deg);
+            @include vendor('box-shadow', '49px 48px var(--clr)');
+          }
+
+          &::after {
+            left: 100%;
+            transform: translate(-50%) rotate(-45deg);
+            @include vendor('box-shadow', '48px -49px var(--clr)');
+          }
+        }
+      }
+    }
   }
 
 }
@@ -1474,6 +1762,49 @@ canvas {
 
 #headerToggle {
   display: none;
+}
+
+@include breakpoint('narrower') {
+
+  /* Main */
+
+  #main {
+    .income {
+      &__flask {
+        &-wrap {
+          width: 246px;
+          height: 246px;
+        }
+      }
+
+      .flask {
+        width: 233px;
+        height: 233px;
+      }
+    }
+
+    .btn {
+      &:hover {
+        color: var(--clr);
+        background-color: var(--clr);
+        @include vendor('box-shadow', '0 0 35px var(--clr)');
+
+        i {
+          &::before {
+            left: 0;
+            transform: translate(-50%) rotate(45deg);
+            @include vendor('box-shadow', '49px 48px var(--clr)');
+          }
+
+          &::after {
+            left: 100%;
+            transform: translate(-50%) rotate(-45deg);
+            @include vendor('box-shadow', '48px -49px var(--clr)');
+          }
+        }
+      }
+    }
+  }
 }
 
 @include breakpoint('<=narrower') {
@@ -1686,6 +2017,28 @@ canvas {
 
         header {
           padding: 0 1em;
+        }
+      }
+    }
+
+    .btn {
+      &:hover {
+        color: var(--clr);
+        background-color: var(--clr);
+        @include vendor('box-shadow', '0 0 35px var(--clr)');
+
+        i {
+          &::before {
+            left: 0;
+            transform: translate(-50%) rotate(45deg);
+            @include vendor('box-shadow', '42px 41px var(--clr)');
+          }
+
+          &::after {
+            left: 100%;
+            transform: translate(-50%) rotate(-45deg);
+            @include vendor('box-shadow', '41px -42px var(--clr)');
+          }
         }
       }
     }

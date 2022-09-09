@@ -32,24 +32,24 @@ function run() {
         hr = parseInt(hrs.value);
         if (hr <= 0 && hr >= 13) {
             // ap = null;
-            alert("Ошибка!")
+            alert("Помилка!")
         }
     }
-    let main = "Верно заполнены поля:";
+    let main = "Правильно заповнені поля:";
     if ((mm < 1) || (mm > 12) || (dd < 1) || (dd > 31) || (yy < 1) || (mm == "") || (dd == "") || (yy == ""))
-        main = "Неверно заполнены поля:";
+        main = "Невірно заповнені поля!";
     else if (((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) && (dd > 30))
-        main = "Неверно заполнены поля:";
+        main = "Невірно заповнені поля!";
     else if (mm == 2) {
         if (dd > 29)
-            main = "Неверно заполнены поля:";
+            main = "Невірно заповнені поля!";
         else if ((dd > 28) && (!lyear(yy)))
-            main = "Неверно заполнены поля:";
+            main = "Невірно заповнені поля!";
     } else if ((yy > 9999) || (yy < 0))
-        main = "Неверно заполнены поля:";
+        main = "Невірно заповнені поля!";
     else
         main = main;
-    if (main == "Верно заполнены поля:") {
+    if (main == "Правильно заповнені поля:") {
         function leapyear(a) {
             if (((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0))
                 return true;
@@ -176,11 +176,11 @@ function run() {
         totdays = (parseInt(age) * 365);
         totdays += age / 4;
         totdays = parseInt(totdays) + gdate + m + n;
-        document.form1.answer.value = "" + totdays + " дней.";
+        document.form1.answer.value = "" + totdays + " днів.";
         months = age * 12;
         months += 12 - parseInt(mm);
         months += gmonth;
-        document.form1.months.value = months + " месяцев.";
+        document.form1.months.value = months + " місяців.";
         if (gmonth == 1) p = 31 + gdate;
         if (gmonth == 2) {
             p = 59 + gdate;
@@ -230,9 +230,9 @@ function run() {
         let weeks, time, ghour, gmin, gsec, hour, hr;
 
         weeks = totdays / 7;
-        weeks += " недель";
+        weeks += " неділь";
         weeks = parseInt(weeks);
-        document.form1.weeks.value = weeks + " недель.";
+        document.form1.weeks.value = weeks + " неділь.";
         time = new Date();
         ghour = time.getHours();
         gmin = time.getMinutes();
@@ -250,17 +250,17 @@ function run() {
         }
         */
 
-        document.form1.hours.value = hour + " часов.";
+        document.form1.hours.value = hour + " годин.";
         let min;
         min = (hour * 60) + gmin;
-        document.form1.min.value = min + " минут.";
+        document.form1.min.value = min + " хвилин.";
         sec = (min * 60) + gsec;
         document.form1.sec.value = sec + " секунд.";
         let millisec;
         let gmil;
         gmil = days.getMilliseconds();
         millisec = (sec * 1000) + gmil;
-        document.form1.milli.value = millisec + " миллисекунд.";
+        document.form1.milli.value = millisec + " мілісекунд.";
         mm = mm - 1;
         let r;
         if (mm == 0) r = 1;
@@ -333,11 +333,11 @@ function run() {
         nsec = 60 - parseInt(gsec);
         go();
         if (((bday == 366) && (leapyear(yy))) || ((bday == 365) && (!leapyear(yy)))) {
-            document.form1.bday.value = "Ваш день рождения сегодня.";
+            document.form1.bday.value = "Ваш день народження сьогодні.";
             age = age + 1;
-            alert("С Днём Рождения Вас!!! Вам сегодня исполнилось " + age + " лет."); //Появляется сообщение
+            alert("З Днем Народження Вас!!! Вам сьогодні виповнилося " + age + " років."); // Появляется сообщение
         } else {
-            document.form1.bday.value = bday + " дней " + nhour + " часов " + nmin + " минут " + nsec + " секунд.";
+            document.form1.bday.value = bday + " днів " + nhour + " годин " + nmin + " хвилин " + nsec + " секунд.";
             setTimeout("run()", 1);
         }
 
@@ -349,15 +349,15 @@ function run() {
             mm = parseInt(mm);
             dd = parseInt(dd);
             yy = parseInt(yy);
-            if ((mm < 1) || (mm > 12) || (dd < 1) || (dd > 31) || (yy < 1) || (mm == " ") || (dd == " ") || (yy == " ")) main = "Неверно заполнены поля:";
-            else if (((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) && (dd > 30)) main = "Неверно заполнены поля:";
+            if ((mm < 1) || (mm > 12) || (dd < 1) || (dd > 31) || (yy < 1) || (mm == " ") || (dd == " ") || (yy == " ")) main = "Невірно заповнені поля!";
+            else if (((mm == 4) || (mm == 6) || (mm == 9) || (mm == 11)) && (dd > 30)) main = "Невірно заповнені поля!";
             else if (mm == 2) {
                 if (dd > 29)
-                    main = "Неверно заполнены поля:";
+                    main = "Невірно заповнені поля!";
                 else if ((dd > 28) && (!lyear(yy)))
-                    main = "Неверно заполнены поля:";
+                    main = "Невірно заповнені поля!";
             } else main = main;
-            if (main == "Верно заполнены поля:") {
+            if (main == "Правильно заповнені поля:") {
                 let m;
                 if (mm == 1) n = 31;
                 if (mm == 2) n = 59 + 1;
@@ -390,28 +390,28 @@ function run() {
                 day = parseInt(day);
                 switch (day) {
                     case 1 :
-                        document.form1.age.value += "Вы родились в воскресенье.";
+                        document.form1.age.value += "Ви народились у неділю.";
                         break;
                     case 2 :
-                        document.form1.age.value += "Вы родились в понедельник.";
+                        document.form1.age.value += "Ви народилися у понеділок.";
                         break;
                     case 3 :
-                        document.form1.age.value += "Вы родились во вторник.";
+                        document.form1.age.value += "Ви народилися у вівторок.";
                         break;
                     case 4 :
-                        document.form1.age.value += "Вы родились в среду.";
+                        document.form1.age.value += "Ви народилися у середу.";
                         break;
                     case 5 :
-                        document.form1.age.value += "Вы родились в четверг.";
+                        document.form1.age.value += "Ви народилися у четвер.";
                         break;
                     case 6 :
-                        document.form1.age.value += "Вы родились в пятницу.";
+                        document.form1.age.value += "Ви народилися у п'ятницю.";
                         break;
                     case 7 :
-                        document.form1.age.value += "Вы родились в субботу.";
+                        document.form1.age.value += "Ви народилися у суботу.";
                         break;
                     case 0 :
-                        document.form1.age.value += "Вы родились в субботу.";
+                        document.form1.age.value += "Ви народилися у суботу.";
                         break
                 }
             } else {

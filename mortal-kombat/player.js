@@ -6,8 +6,8 @@ export const $player1 = {
     player: 1,
     name: "Kitana",
     hp: 100,
-    img: "http://reactmarathon-api.herokuapp.com/assets/kitana.gif",
-    weapon: ["Knife","Blade"],
+    img: "assets/kitana.gif",
+    weapon: ["Knife", "Blade"],
 
     elHP,  // если функция внешняя имеет такое же имя как в объекте, то мы можем написать просто имя функции
     changeHP,  // changeHP метод объекта player1. changeHP вызывается по ключу объекта: changeHP
@@ -19,8 +19,8 @@ export const $player2 = {
     player: 2,
     name: "Sub-Zero",
     hp: 100,
-    img: "http://reactmarathon-api.herokuapp.com/assets/subzero.gif",
-    weapon: ["Knife","Ice"],
+    img: "assets/subzero.gif",
+    weapon: ["Knife", "Ice"],
 
     elHP,
     changeHP,
