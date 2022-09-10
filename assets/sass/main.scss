@@ -541,13 +541,13 @@ button,
     i {
       &::before {
         left: 0;
-        transform: translate(-50%) rotate(45deg);
+        @include vendor('transform', 'translate(-50%) rotate(45deg)');
         @include vendor('box-shadow', '58px 57px var(--clr)');
       }
 
       &::after {
         left: 100%;
-        transform: translate(-50%) rotate(-45deg);
+        @include vendor('transform', 'translate(-50%) rotate(-45deg)');
         @include vendor('box-shadow', '58px -57px var(--clr)');
       }
     }
@@ -573,7 +573,7 @@ button,
       position: absolute;
       top: -9px;
       left: 100%;
-      transform: translate(-50%);
+      @include vendor('transform', 'translate(-50%)');
       width: 20px;
       height: 20px;
       background: transparent;
@@ -586,7 +586,7 @@ button,
       position: absolute;
       bottom: -9px;
       left: 0;
-      transform: translate(-50%);
+      @include vendor('transform', 'translate(-50%)');
       width: 20px;
       height: 20px;
       background: transparent;
@@ -607,7 +607,7 @@ button,
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  transform: scale(var(--s, 1));
+  @include vendor('transform', 'scale(var(--s, 1))');
   @include vendor('transition', '0.5s');
   &:active {
     --s: .96;
@@ -622,7 +622,7 @@ button,
   .circle {
     width: 76px;
     height: 76px;
-    transform: rotate(-90deg);
+    @include vendor('transform', 'rotate(-90deg)');
     circle {
       &.default {
         stroke: var(--default);
@@ -631,7 +631,7 @@ button,
         stroke: var(--active);
         stroke-dasharray: 227px;
         stroke-dashoffset: var(--active-offset, 227px);
-        transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s);
+        @include vendor('transition', 'stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s)');
       }
     }
   }
@@ -646,9 +646,9 @@ button,
     font-size: 10px;
     color: var(--active);
     opacity: var(--count-opacity, 0);
-    transform: translateY(var(--count-y, 4px));
+    @include vendor('transform', 'translateY(var(--count-y, 4px))');
     animation: var(--count, none) .3s ease forwards var(--all-delay, 4.6s);
-    transition: opacity .2s ease .6s, transform .3s ease .6s;
+    @include vendor('transition', 'opacity .2s ease .6s, transform .3s ease .6s');
   }
   .icon {
     --sw: 2px;
@@ -668,9 +668,9 @@ button,
         top: 0;
         stroke-dasharray: 0 33px var(--line-array, 33px) 66px;
         stroke-dashoffset: var(--line-offset, 33px);
-        transform: translateY(var(--line-y, 0));
+        @include vendor('transform', 'translateY(var(--line-y, 0))');
         opacity: var(--line-opacity, 1);
-        transition: stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s);
+        @include vendor('transition', 'stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s)');
       }
     }
     div {
@@ -681,8 +681,8 @@ button,
       left: 50%;
       bottom: 1px;
       margin-left: -20px;
-      transform: translate(var(--icon-x, 0), var(--icon-y, 0));
-      transition: transform .3s ease var(--all-delay, 4.8s);
+      @include vendor('transform', 'translate(var(--icon-x, 0), var(--icon-y, 0))');
+      @include vendor('transition', 'transform .3s ease var(--all-delay, 4.8s)');
       animation: var(--overflow, none) 0s linear forwards var(--all-delay, 4.8s);
       &:before,
       &:after {
@@ -696,15 +696,15 @@ button,
         background: var(--active);
         border-radius: 1px;
         transform-origin: var(--tx, 15px) 1px;
-        transform: rotate(var(--before-rotate, 0deg));
+        @include vendor('transform', 'rotate(var(--before-rotate, 0deg))');
         opacity: var(--tick-opacity, 0);
-        transition: transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+        @include vendor('transition', 'transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s)');
       }
       &:after {
         --l: 14px;
         --w: 26px;
         --tx: 1px;
-        transform: rotate(var(--after-rotate, 0deg));
+        @include vendor('transform', 'rotate(var(--after-rotate, 0deg))');
       }
       svg {
         stroke: var(--active);
@@ -712,7 +712,7 @@ button,
           width: 40px;
           height: 32px;
           opacity: var(--arrow-opacity, 1);
-          transition: opacity 0s linear var(--all-delay, 1s);
+          @include vendor('transition', 'opacity 0s linear var(--all-delay, 1s)');
         }
         &.progress {
           width: 444px;
@@ -720,9 +720,9 @@ button,
           position: absolute;
           left: 0;
           top: 11px;
-          transform: translateX(var(--progress-x, 0));
+          @include vendor('transform', 'translateX(var(--progress-x, 0))');
           opacity: var(--progress-opacity, 0);
-          transition: transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s);
+          @include vendor('transition', 'transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s)');
           animation: var(--hide, none) 0s linear forwards var(--all-delay, 4.8s);
         }
       }
@@ -761,7 +761,7 @@ button,
 
 @keyframes count {
   to {
-    transform: translateY(4px);
+    @include vendor('transform', 'translateY(4px)');
     opacity: 0;
   }
 }
@@ -906,9 +906,7 @@ html {
     left: 50%;
     margin-top: -4px;
     margin-left: -6px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    @include vendor('transform', 'rotate(-45deg)');
   }
 }
 
@@ -1081,10 +1079,10 @@ html {
 
   @keyframes animateLogo {
     0% {
-      transform: rotate(0deg);
+      @include vendor('transform', 'rotate(0deg)');
     }
     100% {
-      transform: rotate(360deg);
+      @include vendor('transform', 'rotate(360deg)');
     }
   }
 
@@ -1306,7 +1304,7 @@ canvas {
     background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
   }
   .four {
-    background: #e8edec url("../../images/bg_four.jpeg") fixed;
+    background: #e8edec url("../../images/bg_four.png") fixed;
 
     h2, p {
       color: inherit !important;
@@ -1341,7 +1339,7 @@ canvas {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    @include vendor('transform', 'translate(-50%, -50%)');
     border: 2px solid #4D4D4D;
     border-radius: 50%;
     background: #393939;
@@ -1351,7 +1349,7 @@ canvas {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      @include vendor('transform', 'translate(-50%, -50%)');
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1365,8 +1363,8 @@ canvas {
       z-index: 2;
       width: 100%;
       height: 100%;
-      transform: translate(0, 100%);
-      transition: all .3s;
+      @include vendor('transform', 'translate(0, 100%)');
+      @include vendor('transition', 'all .3s');
 
       &_wave {
         width: 200%;
@@ -1401,13 +1399,13 @@ canvas {
 
   @keyframes wave-front {
     100% {
-      transform: translate(-50%, 0);
+      @include vendor('transform', 'translate(-50%, 0)');
     }
   }
 
   @keyframes wave-back {
     100% {
-      transform: translate(50%, 0);
+      @include vendor('transform', 'translate(50%, 0)');
     }
   }
 
@@ -1613,13 +1611,13 @@ canvas {
         i {
           &::before {
             left: 0;
-            transform: translate(-50%) rotate(45deg);
+            @include vendor('transform', 'translate(-50%) rotate(45deg)');
             @include vendor('box-shadow', '51px 50px var(--clr)');
           }
 
           &::after {
             left: 100%;
-            transform: translate(-50%) rotate(-45deg);
+            @include vendor('transform', 'translate(-50%) rotate(-45deg)');
             @include vendor('box-shadow', '50px -51px var(--clr)');
           }
         }
@@ -1742,13 +1740,13 @@ canvas {
         i {
           &::before {
             left: 0;
-            transform: translate(-50%) rotate(45deg);
+            @include vendor('transform', 'translate(-50%) rotate(45deg)');
             @include vendor('box-shadow', '49px 48px var(--clr)');
           }
 
           &::after {
             left: 100%;
-            transform: translate(-50%) rotate(-45deg);
+            @include vendor('transform', 'translate(-50%) rotate(-45deg)');
             @include vendor('box-shadow', '48px -49px var(--clr)');
           }
         }
@@ -1792,13 +1790,13 @@ canvas {
         i {
           &::before {
             left: 0;
-            transform: translate(-50%) rotate(45deg);
+            @include vendor('transform', 'translate(-50%) rotate(45deg)');
             @include vendor('box-shadow', '49px 48px var(--clr)');
           }
 
           &::after {
             left: 100%;
-            transform: translate(-50%) rotate(-45deg);
+            @include vendor('transform', 'translate(-50%) rotate(-45deg)');
             @include vendor('box-shadow', '48px -49px var(--clr)');
           }
         }
@@ -2030,13 +2028,13 @@ canvas {
         i {
           &::before {
             left: 0;
-            transform: translate(-50%) rotate(45deg);
+            @include vendor('transform', 'translate(-50%) rotate(45deg)');
             @include vendor('box-shadow', '42px 41px var(--clr)');
           }
 
           &::after {
             left: 100%;
-            transform: translate(-50%) rotate(-45deg);
+            @include vendor('transform', 'translate(-50%) rotate(-45deg)');
             @include vendor('box-shadow', '41px -42px var(--clr)');
           }
         }

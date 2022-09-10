@@ -1584,11 +1584,17 @@ button:active,
 }
 .btn:hover i::before {
   left: 0;
+  -moz-transform: translate(-50%) rotate(45deg);
+  -webkit-transform: translate(-50%) rotate(45deg);
+  -ms-transform: translate(-50%) rotate(45deg);
   transform: translate(-50%) rotate(45deg);
   box-shadow: 58px 57px var(--clr);
 }
 .btn:hover i::after {
   left: 100%;
+  -moz-transform: translate(-50%) rotate(-45deg);
+  -webkit-transform: translate(-50%) rotate(-45deg);
+  -ms-transform: translate(-50%) rotate(-45deg);
   transform: translate(-50%) rotate(-45deg);
   box-shadow: 58px -57px var(--clr);
 }
@@ -1613,6 +1619,9 @@ button:active,
   position: absolute;
   top: -9px;
   left: 100%;
+  -moz-transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
   transform: translate(-50%);
   width: 20px;
   height: 20px;
@@ -1628,6 +1637,9 @@ button:active,
   position: absolute;
   bottom: -9px;
   left: 0;
+  -moz-transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
   transform: translate(-50%);
   width: 20px;
   height: 20px;
@@ -1650,6 +1662,9 @@ button:active,
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
+  -moz-transform: scale(var(--s, 1));
+  -webkit-transform: scale(var(--s, 1));
+  -ms-transform: scale(var(--s, 1));
   transform: scale(var(--s, 1));
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -1669,6 +1684,9 @@ button:active,
 .button-progress .circle {
   width: 76px;
   height: 76px;
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 .button-progress .circle circle.default {
@@ -1678,7 +1696,10 @@ button:active,
   stroke: var(--active);
   stroke-dasharray: 227px;
   stroke-dashoffset: var(--active-offset, 227px);
-  transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, 0.8s);
+  -moz-transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s);
+  -webkit-transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s);
+  -ms-transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s);
+  transition: stroke-dashoffset var(--all-transition, 4s) ease var(--all-delay, .8s);
 }
 .button-progress span {
   display: block;
@@ -1691,9 +1712,15 @@ button:active,
   font-size: 10px;
   color: var(--active);
   opacity: var(--count-opacity, 0);
+  -moz-transform: translateY(var(--count-y, 4px));
+  -webkit-transform: translateY(var(--count-y, 4px));
+  -ms-transform: translateY(var(--count-y, 4px));
   transform: translateY(var(--count-y, 4px));
   animation: var(--count, none) 0.3s ease forwards var(--all-delay, 4.6s);
-  transition: opacity 0.2s ease 0.6s, transform 0.3s ease 0.6s;
+  -moz-transition: opacity .2s ease .6s, transform .3s ease .6s;
+  -webkit-transition: opacity .2s ease .6s, transform .3s ease .6s;
+  -ms-transition: opacity .2s ease .6s, transform .3s ease .6s;
+  transition: opacity .2s ease .6s, transform .3s ease .6s;
 }
 .button-progress .icon {
   --sw: 2px;
@@ -1713,9 +1740,15 @@ button:active,
   top: 0;
   stroke-dasharray: 0 33px var(--line-array, 33px) 66px;
   stroke-dashoffset: var(--line-offset, 33px);
+  -moz-transform: translateY(var(--line-y, 0));
+  -webkit-transform: translateY(var(--line-y, 0));
+  -ms-transform: translateY(var(--line-y, 0));
   transform: translateY(var(--line-y, 0));
   opacity: var(--line-opacity, 1);
-  transition: stroke-dasharray 0.2s, stroke-dashoffset 0.2s, transform 0.32s ease var(--all-delay, 0.25s);
+  -moz-transition: stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s);
+  -webkit-transition: stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s);
+  -ms-transition: stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s);
+  transition: stroke-dasharray .2s, stroke-dashoffset .2s, transform .32s ease var(--all-delay, .25s);
 }
 .button-progress .icon div {
   width: 40px;
@@ -1725,8 +1758,14 @@ button:active,
   left: 50%;
   bottom: 1px;
   margin-left: -20px;
+  -moz-transform: translate(var(--icon-x, 0), var(--icon-y, 0));
+  -webkit-transform: translate(var(--icon-x, 0), var(--icon-y, 0));
+  -ms-transform: translate(var(--icon-x, 0), var(--icon-y, 0));
   transform: translate(var(--icon-x, 0), var(--icon-y, 0));
-  transition: transform 0.3s ease var(--all-delay, 4.8s);
+  -moz-transition: -moz-transform .3s ease var(--all-delay, 4.8s);
+  -webkit-transition: -webkit-transform .3s ease var(--all-delay, 4.8s);
+  -ms-transition: -ms-transform .3s ease var(--all-delay, 4.8s);
+  transition: transform .3s ease var(--all-delay, 4.8s);
   animation: var(--overflow, none) 0s linear forwards var(--all-delay, 4.8s);
 }
 .button-progress .icon div:before, .button-progress .icon div:after {
@@ -1740,14 +1779,23 @@ button:active,
   background: var(--active);
   border-radius: 1px;
   transform-origin: var(--tx, 15px) 1px;
+  -moz-transform: rotate(var(--before-rotate, 0deg));
+  -webkit-transform: rotate(var(--before-rotate, 0deg));
+  -ms-transform: rotate(var(--before-rotate, 0deg));
   transform: rotate(var(--before-rotate, 0deg));
   opacity: var(--tick-opacity, 0);
-  transition: transform 0.4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+  -moz-transition: -moz-transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+  -webkit-transition: -webkit-transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+  -ms-transition: -ms-transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
+  transition: transform .4s ease var(--all-delay, 4.8s), opacity 0s linear var(--all-delay, 4.8s);
 }
 .button-progress .icon div:after {
   --l: 14px;
   --w: 26px;
   --tx: 1px;
+  -moz-transform: rotate(var(--after-rotate, 0deg));
+  -webkit-transform: rotate(var(--after-rotate, 0deg));
+  -ms-transform: rotate(var(--after-rotate, 0deg));
   transform: rotate(var(--after-rotate, 0deg));
 }
 .button-progress .icon div svg {
@@ -1757,6 +1805,9 @@ button:active,
   width: 40px;
   height: 32px;
   opacity: var(--arrow-opacity, 1);
+  -moz-transition: opacity 0s linear var(--all-delay, 1s);
+  -webkit-transition: opacity 0s linear var(--all-delay, 1s);
+  -ms-transition: opacity 0s linear var(--all-delay, 1s);
   transition: opacity 0s linear var(--all-delay, 1s);
 }
 .button-progress .icon div svg.progress {
@@ -1765,9 +1816,15 @@ button:active,
   position: absolute;
   left: 0;
   top: 11px;
+  -moz-transform: translateX(var(--progress-x, 0));
+  -webkit-transform: translateX(var(--progress-x, 0));
+  -ms-transform: translateX(var(--progress-x, 0));
   transform: translateX(var(--progress-x, 0));
   opacity: var(--progress-opacity, 0);
-  transition: transform var(--all-transition, 4.4s) ease var(--all-delay, 0.4s), opacity 0s linear var(--all-delay, 1s);
+  -moz-transition: -moz-transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s);
+  -webkit-transition: -webkit-transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s);
+  -ms-transition: -ms-transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s);
+  transition: transform var(--all-transition, 4.4s) ease var(--all-delay, .4s), opacity 0s linear var(--all-delay, 1s);
   animation: var(--hide, none) 0s linear forwards var(--all-delay, 4.8s);
 }
 .button-progress.loading:not(.reset) {
@@ -1801,6 +1858,9 @@ button:active,
 }
 @keyframes count {
   to {
+    -moz-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    -ms-transform: translateY(4px);
     transform: translateY(4px);
     opacity: 0;
   }
@@ -1929,6 +1989,7 @@ html {
   left: 50%;
   margin-top: -4px;
   margin-left: -6px;
+  -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -2102,9 +2163,15 @@ html {
 }
 @keyframes animateLogo {
   0% {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -2305,7 +2372,7 @@ canvas {
   }
 
   .four {
-    background: #e8edec url("../../images/bg_four.jpeg") fixed;
+    background: #e8edec url("../../images/bg_four.png") fixed;
   }
   .four h2, .four p {
     color: inherit !important;
@@ -2330,6 +2397,9 @@ canvas {
   position: absolute;
   top: 50%;
   left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border: 2px solid #4D4D4D;
   border-radius: 50%;
@@ -2340,6 +2410,9 @@ canvas {
   position: absolute;
   left: 50%;
   top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
@@ -2353,8 +2426,14 @@ canvas {
   z-index: 2;
   width: 100%;
   height: 100%;
+  -moz-transform: translate(0, 100%);
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
   transform: translate(0, 100%);
-  transition: all 0.3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
 }
 #main .flask__water_wave {
   width: 200%;
@@ -2381,11 +2460,17 @@ canvas {
 }
 @keyframes wave-front {
   100% {
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   }
 }
 @keyframes wave-back {
   100% {
+    -moz-transform: translate(50%, 0);
+    -webkit-transform: translate(50%, 0);
+    -ms-transform: translate(50%, 0);
     transform: translate(50%, 0);
   }
 }
@@ -2561,11 +2646,17 @@ canvas {
   }
   #main .btn:hover i::before {
     left: 0;
+    -moz-transform: translate(-50%) rotate(45deg);
+    -webkit-transform: translate(-50%) rotate(45deg);
+    -ms-transform: translate(-50%) rotate(45deg);
     transform: translate(-50%) rotate(45deg);
     box-shadow: 51px 50px var(--clr);
   }
   #main .btn:hover i::after {
     left: 100%;
+    -moz-transform: translate(-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%) rotate(-45deg);
+    -ms-transform: translate(-50%) rotate(-45deg);
     transform: translate(-50%) rotate(-45deg);
     box-shadow: 50px -51px var(--clr);
   }
@@ -2647,11 +2738,17 @@ canvas {
   }
   #main .btn:hover i::before {
     left: 0;
+    -moz-transform: translate(-50%) rotate(45deg);
+    -webkit-transform: translate(-50%) rotate(45deg);
+    -ms-transform: translate(-50%) rotate(45deg);
     transform: translate(-50%) rotate(45deg);
     box-shadow: 49px 48px var(--clr);
   }
   #main .btn:hover i::after {
     left: 100%;
+    -moz-transform: translate(-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%) rotate(-45deg);
+    -ms-transform: translate(-50%) rotate(-45deg);
     transform: translate(-50%) rotate(-45deg);
     box-shadow: 48px -49px var(--clr);
   }
@@ -2678,11 +2775,17 @@ canvas {
   }
   #main .btn:hover i::before {
     left: 0;
+    -moz-transform: translate(-50%) rotate(45deg);
+    -webkit-transform: translate(-50%) rotate(45deg);
+    -ms-transform: translate(-50%) rotate(45deg);
     transform: translate(-50%) rotate(45deg);
     box-shadow: 49px 48px var(--clr);
   }
   #main .btn:hover i::after {
     left: 100%;
+    -moz-transform: translate(-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%) rotate(-45deg);
+    -ms-transform: translate(-50%) rotate(-45deg);
     transform: translate(-50%) rotate(-45deg);
     box-shadow: 48px -49px var(--clr);
   }
@@ -2893,11 +2996,17 @@ canvas {
   }
   #main .btn:hover i::before {
     left: 0;
+    -moz-transform: translate(-50%) rotate(45deg);
+    -webkit-transform: translate(-50%) rotate(45deg);
+    -ms-transform: translate(-50%) rotate(45deg);
     transform: translate(-50%) rotate(45deg);
     box-shadow: 42px 41px var(--clr);
   }
   #main .btn:hover i::after {
     left: 100%;
+    -moz-transform: translate(-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%) rotate(-45deg);
+    -ms-transform: translate(-50%) rotate(-45deg);
     transform: translate(-50%) rotate(-45deg);
     box-shadow: 41px -42px var(--clr);
   }

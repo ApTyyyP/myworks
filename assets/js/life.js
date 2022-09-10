@@ -77,7 +77,7 @@ function run() {
         }
         if (age == 0)
             age = age;
-        document.form1.age.value = "Вам " + age + " лет и ";
+        document.form1.age.value = "Вам " + age + " років і ";
         if (mm <= (gmonth + 1))
             age = age - 1;
         if ((mm == (gmonth + 1)) && (dd > parseInt(gdate)))
@@ -176,11 +176,13 @@ function run() {
         totdays = (parseInt(age) * 365);
         totdays += age / 4;
         totdays = parseInt(totdays) + gdate + m + n;
-        document.form1.answer.value = "" + totdays + " днів.";
+        // document.form1.answer.value = "" + totdays + " днів";
+        document.form1.answer.value = "" + totdays;
         months = age * 12;
         months += 12 - parseInt(mm);
         months += gmonth;
-        document.form1.months.value = months + " місяців.";
+        // document.form1.months.value = months + " місяців";
+        document.form1.months.value = months;
         if (gmonth == 1) p = 31 + gdate;
         if (gmonth == 2) {
             p = 59 + gdate;
@@ -232,7 +234,8 @@ function run() {
         weeks = totdays / 7;
         weeks += " неділь";
         weeks = parseInt(weeks);
-        document.form1.weeks.value = weeks + " неділь.";
+        // document.form1.weeks.value = weeks + " тижнів";
+        document.form1.weeks.value = weeks;
         time = new Date();
         ghour = time.getHours();
         gmin = time.getMinutes();
@@ -250,17 +253,21 @@ function run() {
         }
         */
 
-        document.form1.hours.value = hour + " годин.";
+        // document.form1.hours.value = hour + " годин";
+        document.form1.hours.value = hour;
         let min;
         min = (hour * 60) + gmin;
-        document.form1.min.value = min + " хвилин.";
+        // document.form1.min.value = min + " хвилин";
+        document.form1.min.value = min;
         sec = (min * 60) + gsec;
-        document.form1.sec.value = sec + " секунд.";
+        // document.form1.sec.value = sec + " секунд";
+        document.form1.sec.value = sec;
         let millisec;
         let gmil;
         gmil = days.getMilliseconds();
         millisec = (sec * 1000) + gmil;
-        document.form1.milli.value = millisec + " мілісекунд.";
+        // document.form1.milli.value = millisec + " мілісекунд";
+        document.form1.milli.value = millisec;
         mm = mm - 1;
         let r;
         if (mm == 0) r = 1;
