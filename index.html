@@ -501,25 +501,29 @@
 
                                         <table style="font-family: System, monospace;">
                                             <tr>
-                                                <td><b>Число:
+                                                <td>
                                                     <label>
+                                                        <b>Число:</b>
                                                         <input type="text" name="day" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                    </label></b>
+                                                    </label>
                                                 </td>
-                                                <td><b>Місяць:
+                                                <td>
                                                     <label>
+                                                        <b>Місяць:</b>
                                                         <input type="text" name="month" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                    </label></b>
+                                                    </label>
                                                 </td>
-                                                <td><b>Рік:
+                                                <td>
                                                     <label>
+                                                        <b>Рік:</b>
                                                         <input type="text" name="year" maxlength="4" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                    </label></b>
+                                                    </label>
                                                 </td>
-                                                <td><b>Час:
+                                                <td>
                                                     <label>
+                                                        <b>Час:</b>
                                                         <input type="text" name="hrs" maxlength="2" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
-                                                    </label></b>
+                                                    </label>
                                                 </td>
                                             </tr>
                                         </table>
@@ -541,45 +545,79 @@
                                         </table>
 
                                         <table>
-                                            <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2 class="alt"><strong>Ви живете вже:</strong></h2></td>
+                                            <tr>
+                                                <td style="font-family: System, monospace; background: #f4f4f4; text-align: center;"><h2 class="alt"><strong>Ви живете вже:</strong></h2></td>
+                                            </tr>
                                         </table>
 
                                         <table style="font-family: System, monospace;">
                                             <tr>
                                                 <td><b>Місяців:</b></td>
-                                                <td><input type="text" name="months" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="months" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Тижнів:</b></td>
-                                                <td><input type="text" name="weeks" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="weeks" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Днів:</b></td>
-                                                <td><input type="text" name="answer" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="answer" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Годин:</b></td>
-                                                <td><input type="text" name="hours" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="hours" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Хвилин:</b></td>
-                                                <td><input type="text" name="min" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="min" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Секунд:</b></td>
-                                                <td><input type="text" name="sec" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="sec" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td><b>Мілісекунд:</b></td>
-                                                <td><input type="text" name="milli" onKeypress="event.returnValue = false;"></td>
+                                                <td>
+                                                    <label>
+                                                        <input type="text" name="milli" onKeypress="event.returnValue = false;">
+                                                    </label>
+                                                </td>
                                             </tr>
                                         </table>
                                         <hr>
                                         <table>
-                                            <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш наступний день народження через:</b></td>
-                                            <td>
-                                                <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
-                                            </td>
+                                            <tr>
+                                                <td style="font-family: System, monospace; background: #f4f4f4; line-height: 1em; vertical-align: middle;"><b>Ваш наступний день народження через:</b></td>
+                                                <td>
+                                                    <label>
+                                                        <textarea disabled wrap="hard" name="bday" rows="1" cols="46" onKeypress="event.returnValue = false;"></textarea>
+                                                    </label>
+                                                </td>
+                                            </tr>
                                         </table>
 
                                     </form>
@@ -634,24 +672,21 @@
                     <h2><strong>Контакти</strong></h2>
                 </header>
 
-                <p>Для зворотного зв'язку зі мною заповніть форму.</p>
+                <p>Для зворотного зв'язку зі мною заповніть форму</p>
 
                 <form method="post" action="#">
                     <div class="row">
-                        <div class="col-6 col-12-mobile">
-                            <label>
-                                <input type="text" name="name" placeholder="Ваше ім'я"/>
-                            </label>
+                        <div class="col-6 col-12-mobile inputBox">
+                            <input name="name" id="name" type="text" required>
+                            <label for="name">Ваше ім'я</label>
                         </div>
-                        <div class="col-6 col-12-mobile">
-                            <label>
-                                <input type="text" name="email" placeholder="Ваш Email"/>
-                            </label>
+                        <div class="col-6 col-12-mobile inputBox">
+                            <input name="email" id="email" type="text" required>
+                            <label for="email">Ваш Email</label>
                         </div>
-                        <div class="col-12">
-                            <label>
-                                <textarea name="message" placeholder="Введіть повідомлення..."></textarea>
-                            </label>
+                        <div class="col-12 inputBox">
+                            <textarea name="message" id="text" required></textarea>
+                            <label for="text">Введіть повідомлення...</label>
                         </div>
                         <div class="col-12">
                             <a href="javascript:void(0);" class="btn" style="--clr:#1e9bff">

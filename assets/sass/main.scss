@@ -116,7 +116,6 @@ body {
       @include vendor('transition', 'none !important');
     }
   }
-
 }
 
 input, textarea, select {
@@ -385,10 +384,33 @@ ul.icons {
 /* Form */
 
 form {
-  label {
-    display: block;
-    text-align: left;
-    margin-bottom: 0.5em;
+  .inputBox {
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 50px 0 0 65px;
+      color: rgb(141, 141, 141);
+      pointer-events: none;
+      @include vendor('transition', '0.5s');
+    }
+
+    input,
+    textarea {
+      &:focus {
+        border: 1px solid #76ffff;
+      }
+
+      &:valid ~ label,
+      &:focus ~ label {
+        padding: 0 10px;
+        font-size: 0.65em;
+        color: #76ffff;
+        transform: translateX(50px) translateY(8px);
+      }
+    }
   }
 
   input[type="text"],
@@ -399,7 +421,7 @@ form {
     position: relative;
     -webkit-appearance: none;
     display: block;
-    outline: 0;
+    outline: none;
     background: #fff;
     background: rgba(255, 255, 255, 0.75);
     width: 100%;
@@ -407,10 +429,9 @@ form {
     padding: 0.75em 1em 0.75em 1em;
     box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
     border: solid 1px rgba(0, 0, 0, 0.15);
-    @include vendor('transition', 'all 0.35s ease-in-out');
+    @include vendor('transition', '0.5s');
 
     &:focus {
-      box-shadow: 0 0 2px 1px #8ebebc;
       background: #fff;
     }
   }
@@ -425,8 +446,8 @@ form {
 
   textarea {
     min-height: 14em;
-    resize: vertical;
     background-color: #fff;
+    resize: none;
   }
 
   ::-webkit-input-placeholder {
@@ -1280,35 +1301,17 @@ canvas {
   opacity: .05;
 }
 
-@media (min-width:992px) {
+@media (min-width:961px) {
   #bg-animation,
   #bgCanvas {
     display: block;
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:737px) {
   .well-sm {
     padding-top: 120px;
     padding-bottom: 120px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .one {
-    background: #81918E url('../../images/bg.jpg') fixed;
-    background-color: #000;
-  }
-
-  .three {
-    background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
-  }
-  .four {
-    background: #e8edec url("../../images/bg_four.png") fixed;
-
-    h2, p {
-      color: inherit !important;
-    }
   }
 }
 
@@ -1516,12 +1519,20 @@ canvas {
       }
 
       form {
+        & input {
+          @include vendor('transition', '0.5s');
+
+          &:focus {
+            border: 1px solid #888;
+          }
+        }
         & input[type=text] {
           padding: 5px;
         }
         & textarea {
           min-height: 5.6em;
           line-height: 1;
+          resize: none;
         }
       }
 
@@ -1661,6 +1672,30 @@ canvas {
     padding: 0 2em 0 2em;
   }
 
+  #logo {
+    .box span {
+      inset: 10px;
+    }
+  }
+
+  /* Form */
+
+  form {
+    .inputBox {
+      label {
+        padding: 30px 0 0 45px;
+      }
+
+      input,
+      textarea {
+        &:valid ~ label,
+        &:focus ~ label {
+          transform: translateX(32px) translateY(-9px);
+        }
+      }
+    }
+  }
+
   /* Icons */
 
   ul.icons {
@@ -1687,7 +1722,7 @@ canvas {
     .box {
       .logo__wrapper {
         padding: 5px 0;
-        height: 110px;
+        height: 120px;
         justify-content: end;
         align-items: center;
       }
@@ -1823,8 +1858,46 @@ canvas {
     }
   }
 
+  /* Form */
+
+  form {
+    .inputBox {
+      label {
+        padding: 30px 0 0 45px;
+      }
+
+      input,
+      textarea {
+        &:focus {
+          border: 1px solid #888;
+        }
+
+        &:valid ~ label,
+        &:focus ~ label {
+          color: #888;
+          transform: translateX(32px) translateY(-9px);
+        }
+      }
+    }
+  }
+
   .container {
     padding: 0 2em 0 2em;
+  }
+
+  .one {
+    background: #000 url('../../images/bg.jpg') fixed;
+  }
+
+  .three {
+    background: #ecf1f1 url("../../images/bg_ul.jpg") fixed;
+  }
+  .four {
+    background: #e8edec url("../../images/bg_four.png") fixed;
+
+    h2, p {
+      color: inherit !important;
+    }
   }
 
   /* Item */
@@ -1991,6 +2064,20 @@ canvas {
 
   .container {
     padding: 0 15px 0 15px;
+  }
+
+  /* Form */
+
+  form {
+    .inputBox {
+      input,
+      textarea {
+        &:valid ~ label,
+        &:focus ~ label {
+          transform: translateX(32px) translateY(-6px);
+        }
+      }
+    }
   }
 
   /* List */
