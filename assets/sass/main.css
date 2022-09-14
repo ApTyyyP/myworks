@@ -136,14 +136,14 @@ h3 {
 }
 
 header {
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
 }
 header > p {
   margin: 1em 0 0 0;
 }
 
 footer {
-  margin: 2em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
 strong, b {
@@ -2482,7 +2482,7 @@ canvas {
   margin: 2% auto;
 }
 #main .resume p {
-  margin: 0;
+  margin-bottom: 1em;
   color: #ffffff;
 }
 #main > section {
@@ -2548,11 +2548,11 @@ canvas {
   border-bottom-color: rgba(255, 255, 255, 0);
 }
 #main > section.cover {
-  padding: 10em 0;
+  padding: 5em 0;
   background-position: center center;
 }
 #main > section.one {
-  min-height: 25em;
+  min-height: 38em;
   height: 100vh;
 }
 #main > section.one h2 {
@@ -2592,10 +2592,14 @@ canvas {
 #main > section.two form input[type=text] {
   padding: 5px;
 }
+#main > section.two form .form1__textarea {
+  min-height: 3.6em;
+  background: none;
+  box-shadow: none;
+}
 #main > section.two form textarea {
   min-height: 5.6em;
   line-height: 1;
-  resize: none;
 }
 #main > section.two h3 {
   font-weight: bold;
@@ -2792,7 +2796,7 @@ form .inputBox textarea:focus ~ label {
     width: 246px;
     height: 246px;
   }
-  #main .income .flask {
+  #main .income__flask-wrap .flask {
     width: 233px;
     height: 233px;
   }
@@ -2869,6 +2873,9 @@ form .inputBox textarea:focus ~ label {
   /* Item */
   .item {
     margin-bottom: 15px;
+  }
+  .item header h4 {
+    line-height: 1.1em;
   }
 
   /* Icons */
@@ -2947,6 +2954,7 @@ form .inputBox textarea:focus ~ label {
     height: 100%;
     outline: 0;
     border: 0;
+    cursor: default;
   }
   #headerToggle .toggle:before {
     font-family: "FontAwesome", sans-serif;
@@ -3007,6 +3015,14 @@ form .inputBox textarea:focus ~ label {
     padding-bottom: 1px;
     margin-left: 0;
   }
+  #main .income__flask-wrap {
+    width: 218px;
+    height: 218px;
+  }
+  #main .income__flask-wrap .flask {
+    width: 205px;
+    height: 205px;
+  }
   #main > section {
     padding: 3em 0;
   }
@@ -3018,7 +3034,7 @@ form .inputBox textarea:focus ~ label {
 @media screen and (max-width: 736px) {
   /* Basic */
   body, input, textarea, select {
-    font-size: 14pt;
+    font-size: 12pt;
   }
 
   h2 {
@@ -3048,10 +3064,14 @@ form .inputBox textarea:focus ~ label {
   #main > section {
     padding: 2em 0;
   }
+  #main > section.one {
+    min-height: 40em;
+  }
   #main section.cover {
     padding: 4em 0;
   }
   #main section.cover header {
+    margin: 0 0 1em 0;
     padding: 0 1em;
   }
   #main .btn:hover {

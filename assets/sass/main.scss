@@ -162,7 +162,7 @@ h3 {
 }
 
 header {
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
 
   > p {
     margin: 1em 0 0 0;
@@ -170,7 +170,7 @@ header {
 }
 
 footer {
-  margin: 2em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
 strong, b {
@@ -1419,7 +1419,7 @@ canvas {
     //width: 40%;
 
     & p {
-      margin: 0;
+      margin-bottom: 1em;
       color: #ffffff;
     }
   }
@@ -1482,7 +1482,7 @@ canvas {
     }
 
     &.cover {
-      padding: 10em 0;
+      padding: 5em 0;
       //background-size: cover;
       background-position: center center;
     }
@@ -1490,7 +1490,7 @@ canvas {
     &.one {
       //background: #81918E url('../../images/bg.jpg') fixed;
       //background-color: #000;
-      min-height: 25em;
+      min-height: 38em;
       height: 100vh;
 
       h2 {
@@ -1529,10 +1529,14 @@ canvas {
         & input[type=text] {
           padding: 5px;
         }
+        & .form1__textarea {
+          min-height: 3.6em;
+          background: none;
+          box-shadow: none;
+        }
         & textarea {
           min-height: 5.6em;
           line-height: 1;
-          resize: none;
         }
       }
 
@@ -1807,12 +1811,12 @@ canvas {
         &-wrap {
           width: 246px;
           height: 246px;
-        }
-      }
 
-      .flask {
-        width: 233px;
-        height: 233px;
+          .flask {
+            width: 233px;
+            height: 233px;
+          }
+        }
       }
     }
 
@@ -1904,6 +1908,12 @@ canvas {
 
   .item {
     margin-bottom: 15px;
+
+    header {
+      h4 {
+        line-height: 1.1em;
+      }
+    }
   }
 
   /* Icons */
@@ -1979,6 +1989,7 @@ canvas {
       height: 100%;
       outline: 0;
       border: 0;
+      cursor: default;
 
       &:before {
         font-family: 'FontAwesome', sans-serif;
@@ -2034,6 +2045,20 @@ canvas {
     padding-bottom: 1px;
     margin-left: 0;
 
+    .income {
+      &__flask {
+        &-wrap {
+          width: 218px;
+          height: 218px;
+
+          .flask {
+            width: 205px;
+            height: 205px;
+          }
+        }
+      }
+    }
+
     > section {
       padding: 3em 0;
     }
@@ -2053,7 +2078,7 @@ canvas {
   /* Basic */
 
   body, input, textarea, select {
-    font-size: 14pt;
+    font-size: 12pt;
   }
 
   h2 {
@@ -2094,6 +2119,10 @@ canvas {
   #main {
     > section {
       padding: 2em 0;
+
+      &.one {
+        min-height: 40em;
+      }
     }
 
     section {
@@ -2101,6 +2130,7 @@ canvas {
         padding: 4em 0;
 
         header {
+          margin: 0 0 1em 0;
           padding: 0 1em;
         }
       }
@@ -2146,5 +2176,4 @@ canvas {
       }
     }
   }
-
 }
