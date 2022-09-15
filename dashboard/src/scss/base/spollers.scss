@@ -1,0 +1,104 @@
+@import "mixins";
+
+/*
+Базовые стили спойлеров
+Сниппет (HTML): spollers
+*/
+
+// Блок со спойлерами
+.spollers {
+  display: grid;
+  gap: 15px;
+}
+// Спойлер
+.spollers__item {
+  font-size: rem(20);
+}
+// Заголовок спойлера
+.spollers__title {
+  padding: rem(10) rem(15);
+  width: 100%;
+  text-align: left;
+  border: 1px solid #eee;
+  border-radius: rem(5);
+  position: relative;
+  cursor: default;
+
+  ._spoller-init & {
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 15px;
+      height: 2px;
+      background-color: #000;
+      transition: transform 0.5s ease 0s;
+    }
+
+    &::before {
+      transform: translate(-75%, -50%) rotate(40deg);
+    }
+
+    &::after {
+      transform: translate(0, -50%) rotate(-40deg);
+    }
+
+    &._spoller-active {
+      &::before {
+        transform: translateX(-75%) rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+    /*
+    ._spoller-init & {
+      width: 100%;
+      position: relative;
+      text-align: left;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: rem(12);
+        right: 0;
+        width: rem(10);
+        height: rem(1);
+        background-color: #000;
+        transition: all 0.3s ease 0s;
+      }
+
+      &::before {
+        right: rem(7);
+        transform: rotate(40deg);
+      }
+
+      &::after {
+        transform: rotate(-40deg);
+      }
+    }
+
+    &._spoller-active {
+      &::before {
+        transform: rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+    */
+  }
+}
+// Контент спойлера
+.spollers__body {
+  padding: rem(20);
+  border-radius: rem(5);
+  border: 1px solid #eee;
+}

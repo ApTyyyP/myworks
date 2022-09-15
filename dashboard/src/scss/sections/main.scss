@@ -1,0 +1,128 @@
+.main-block {
+  // .main-block__container-big
+  &__container-big {
+    position: relative;
+  }
+  // .main-block__container
+  &__container {
+  }
+  // .main-block__content
+  &__content {
+    position: relative;
+    @include adaptiveValue("padding-top", 250, 130);
+    @include adaptiveValue("padding-bottom", 200, 50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+  }
+  // .main-block__title
+  &__title {
+    max-width: rem(750);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 69, 30);
+    }
+  }
+  // .main-block__text
+  &__text {
+    max-width: rem(570);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 48, 20);
+    }
+  }
+  // .main-block__form
+  &__form {
+    @media (max-width: em(430)) {
+      width: 100%;
+    }
+  }
+  // .main-block__icons
+  &__icons {
+  }
+}
+
+.icons-main-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  @include mq($max: md) {
+    opacity: 0.2;
+  }
+  // .icons-main-block__item
+  &__item {
+    position: absolute;
+    // .icons-main-block__item_1
+    &_1 {
+      top: percent(675, 974);
+      left: rem(15);
+    }
+    // .icons-main-block__item_2
+    &_2 {
+      top: percent(380, 974);
+      left: percent(237, 1620);
+    }
+    // .icons-main-block__item_3
+    &_3 {
+      top: percent(757, 974);
+      left: percent(403, 1620);
+    }
+    // .icons-main-block__item_4
+    &_4 {
+      top: percent(134, 974);
+      left: percent(1149, 1620);
+    }
+    // .icons-main-block__item_5
+    &_5 {
+      top: percent(419, 974);
+      left: percent(1325, 1620);
+    }
+    // .icons-main-block__item_6
+    &_6 {
+      top: percent(776, 974);
+      left: percent(1321, 1620);
+    }
+    // .icons-main-block__item_7
+    &_7 {
+      top: percent(367, 974);
+      right: rem(15);
+    }
+  }
+  // .icons-main-block__circle
+  &__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include adaptiveValue("width", 585, 350);
+    @include adaptiveValue("height", 585, 350);
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      border: 1px solid #fff;
+    }
+    // .icons-main-block__circle_1
+    &_1 {
+      &::before {
+        transform: translate(calc(-50% - rem(28)), -37%);
+      }
+    }
+    // .icons-main-block__circle_2
+    &_2 {
+      &::before {
+        transform: translate(calc(-50% + rem(27)), -46%);
+      }
+    }
+  }
+}

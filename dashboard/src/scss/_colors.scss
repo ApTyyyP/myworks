@@ -1,0 +1,21 @@
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+
+$_color-primary-white: #ffffff !default;
+
+$_color-secondary-black: #000000 !default;
+
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+$palettes: (
+  "primary-white": (
+    base: $_color-primary-white,
+  ),
+  "secondary-black": (
+    base: $_color-secondary-black,
+  )
+);
