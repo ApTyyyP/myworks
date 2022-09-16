@@ -3,9 +3,23 @@
  *	The underscore Never use them directly in the sections, only for functions and mixins.
  */
 
-$_color-primary-white: #ffffff !default;
+$_color-primary-white: #FFFFFF !default;
+$_color-primary-ghost-white: #FAFBFF !default;
+$_color-primary-whisper: #EEEEEE !default;
+$_color-primary-manatee: #9197B3 !default;
+$_color-primary-purple: #5932EA !default;
+$_color-primary-red: #DF0404 !default;
+$_color-primary-pink: #FFC5C5 !default;
+$_color-primary-mountain-meadow: #16C098 !default;
+$_color-primary-atomic: #404B52 !default;
+$_color-primary-observatory: #008767 !default;
+$_color-primary-persian-green: #00B087 !default;
+$_color-primary-black: #000000 !default;
+$_color-primary-bunker: #292D32 !default;
+$_color-primary-gray: #838383 !default;
+$_color-primary-echo-blue: #B5B7C0 !default;
 
-$_color-secondary-black: #000000 !default;
+$_color-secondary-gray: #757575 !default;
 
 /**
  *  Organize color variables in a Sass Map.
@@ -15,7 +29,49 @@ $palettes: (
   "primary-white": (
     base: $_color-primary-white,
   ),
-  "secondary-black": (
-    base: $_color-secondary-black,
+  "primary-ghost-white": (
+    base: $_color-primary-ghost-white,
+  ),
+  "primary-whisper": (
+    base: $_color-primary-whisper,
+  ),
+  "primary-manatee": (
+    base: $_color-primary-manatee,
+  ),
+  "primary-purple": (
+    base: $_color-primary-purple,
+  ),
+  "primary-red": (
+    base: $_color-primary-red,
+  ),
+  "primary-pink": (
+    base: $_color-primary-pink,
+  ),
+  "primary-mountain-meadow": (
+    base: $_color-primary-mountain-meadow,
+  ),
+  "primary-atomic": (
+    base: $_color-primary-atomic,
+  ),
+  "primary-observatory": (
+    base: $_color-primary-observatory,
+  ),
+  "primary-persian-green": (
+    base: $_color-primary-persian-green,
+  ),
+  "primary-black": (
+    base: $_color-primary-black,
+  ),
+  "primary-bunker": (
+    base: $_color-primary-bunker,
+  ),
+  "primary-gray": (
+    base: $_color-primary-gray,
+  ),
+  "primary-echo-blue": (
+    base: $_color-primary-echo-blue,
+  ),
+  "secondary-gray": (
+    base: $_color-secondary-gray,
   )
 );

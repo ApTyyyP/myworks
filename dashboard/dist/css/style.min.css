@@ -1,0 +1,1119 @@
+@charset "UTF-8";
+/*
+Общий файл элементов форм
+Для подключения/отключения стилей конкретного элемента формы смотри base/forms/forms.scss
+*/
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+.form {
+  padding: 0.375rem;
+  max-width: 33.3125rem;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  gap: 0.3125rem;
+}
+@media screen and (max-width: 575px) {
+  .form {
+    flex-direction: column;
+  }
+}
+.form__input {
+  padding: 0 1.25rem;
+  height: 4rem;
+  flex: 1 1 auto;
+  color: #263238;
+  font-weight: 500;
+}
+.form__input::placeholder {
+  color: #263238;
+}
+.form__input._form-error {
+  color: red;
+}
+.form__input._form-error::placeholder {
+  color: red;
+}
+.form__error {
+  margin-top: 0.625rem;
+  padding-left: 1.625rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 1rem;
+}
+
+/*
+<BUTTONS>
+Снипет (HTML): btn
+*/
+/*
+<CHECK>
+Снипет (HTML): chk
+*/
+/*
+<CALENDAR>
+Снипет (HTML): dp
+*/
+/*
+<INPUTS>
+Снипет (HTML): inp
+*/
+/*
+<QUANTITY>
+Снипет (HTML): quantity
+*/
+/*
+<RADIO>
+Снипет (HTML): opt
+*/
+/*
+<RANGE>
+Снипет (HTML): range
+*/
+/*
+<RATING>
+Снипет (HTML): rating
+*/
+/*
+<SELECT>
+Снипет (HTML): sel
+*/
+/* Стили галереи (полный набор) */
+/*
+.gallery__image {
+  display: inline-block;
+}
+*/
+/*
+Стили Swiper
+Базовые стили
+*/
+/* Полный набор стилей из scss/libs/swiper.scss */
+/*
+.swiper__slider {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: palette(primary-white);
+  background-color: #01b6d6;
+}
+*/
+/* Плагин текст-подсказка "Tippy" */
+/* Модуль формы "колличество" */
+/*
+Стили радио
+Сниппет (HTML): opt
+*/
+/* Стили рейтинга */
+/*
+Стили для поэкранной прокрутки
+Styles for fullpage scroll
+*/
+/* Стили для полноэкранного блока */
+/* Стили карт */
+/* Стили попапов */
+/* Стили блока "показать ещё" */
+/* Стили спойлеров */
+/* Стили для липкого блока */
+/* Стили табов */
+/*
+Стили для отзывчивых картинок (IBG)
+Сниппет (HTML): ibg (div c картинкой и классами)
+Сниппет (HTML): ibga (a c картинкой и классами)
+*/
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+Шаблоны (заготовки)
+@extend %имя шаблона;
+Сниппет (SCSS): ex
+*/
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  margin: 0 auto;
+  max-width: 88.75rem;
+}
+
+[class*=__container-big] {
+  margin: 0 auto;
+  max-width: 100rem;
+  box-sizing: content-box;
+  padding: 0 0.9375rem;
+}
+
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+.btn {
+  padding: 1.3125rem 1.5625rem;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.2222222222;
+  background-color: #23b123;
+  border-radius: 0.625rem;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+}
+@media screen and (min-width: 992px) {
+  .btn {
+    min-width: 8.875rem;
+  }
+}
+@media (any-hover: hover) {
+  .btn:hover {
+    background-color: #1b8b1b;
+  }
+}
+.btn_border {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 1.25rem 1.5625rem;
+}
+@media (any-hover: hover) {
+  .btn_border:hover {
+    border: 1px solid #23b123;
+    color: #23b123;
+    background-color: transparent;
+  }
+}
+.btn._fw {
+  width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .btn {
+    padding: 0.9375rem 1.25rem;
+  }
+  .btn_border {
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+.title {
+  font-weight: 600;
+  line-height: 0.9285714286;
+  font-size: 4.375rem;
+  color: #ffffff;
+}
+@supports (font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem )) {
+  .title {
+    font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem );
+  }
+}
+@supports not (font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem )) {
+  .title {
+    font-size: calc(2.8125rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem )) {
+  .title_s64 {
+    font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem );
+  }
+}
+@supports not (font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem )) {
+  .title_s64 {
+    font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem )) {
+  .title_s56 {
+    font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem );
+  }
+}
+@supports not (font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem )) {
+  .title_s56 {
+    font-size: calc(2.1875rem + 1.3125 * (100vw - 20rem) / 56.875);
+  }
+}
+.title span {
+  color: #23b123;
+}
+
+.text {
+  line-height: 180%;
+}
+
+.image-block {
+  max-width: 37.5rem;
+  position: relative;
+  display: flex;
+  align-self: start;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+@supports (padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem );
+  }
+}
+@supports not (padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-top: calc(1.875rem + 8.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-bottom: calc(1.875rem + 8.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
+  }
+}
+@supports not (padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-left: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
+  }
+}
+@supports not (padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-right: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+.image-block__circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@supports (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+.image-block__circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+}
+.image-block__circle_1::before {
+  transform: translate(calc(50% - 1.125rem), -20%);
+}
+.image-block__circle_2::before {
+  transform: translate(calc(50% - 1.25rem), -6%);
+}
+.image-block__item {
+  position: relative;
+  flex: 1 1 100%;
+  text-align: center;
+  z-index: 2;
+}
+.image-block__item img {
+  max-width: 100%;
+  border-radius: 1.25rem;
+}
+
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.woff2") format("woff2"), url("../fonts/Poppins/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  outline: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: blue;
+  color: yellow;
+  text-shadow: none;
+  user-select: text;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:link, a:visited {
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+hgroup,
+ul, ol, dd, figure,
+pre, table, fieldset, hr {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+img, svg {
+  display: block;
+  vertical-align: middle;
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font-size: inherit;
+}
+
+button {
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+html,
+body {
+  min-width: 20rem;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  font-weight: 400;
+  background-color: #FAFBFF;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.875rem;
+  max-width: 75rem;
+}
+
+.container-full {
+  margin: 0 auto;
+  padding: 0 1.875rem;
+  max-width: 100rem;
+}
+
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+.aside {
+  max-width: 19.125rem;
+  height: 100vh;
+  padding: 2.25rem 1.75rem 4.75rem 1.75rem;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 60px rgba(226, 236, 249, 0.5);
+  overflow: auto;
+}
+.aside__header {
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+.aside__header-logo {
+  display: flex;
+  align-items: center;
+}
+.aside__header img {
+  margin-right: 0.5rem;
+  width: 2.3125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aside__logo-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.625rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.01em;
+}
+.aside__logo-version {
+  margin-left: 0.25rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.625rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #838383;
+  letter-spacing: -0.01em;
+}
+.aside__list {
+  width: 15.625rem;
+}
+.aside__list-item {
+  position: relative;
+  margin-bottom: 0.375rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.aside__list-item:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%) rotate(-135deg);
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #9197B3;
+  border-bottom: 2px solid #9197B3;
+  transition: all 0.3s ease;
+}
+.aside__list-item:hover::after {
+  border-left: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+.aside__list-item:hover .aside__link {
+  color: #FFFFFF;
+  background-color: #5932EA;
+}
+.aside__list-item:hover .aside__svg {
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.aside__list-item.active::after {
+  border-left: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+.aside__list-item.active .aside__link {
+  color: #FFFFFF;
+  background-color: #5932EA;
+}
+.aside__list-item.active .aside__svg {
+  color: #FFFFFF;
+}
+.aside__link {
+  padding: 0.8125rem 1.375rem 0.75rem 0.6875rem;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  color: #9197B3;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.aside__link svg {
+  margin-right: 0.875rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+
+.account-info {
+  margin-top: auto;
+  padding-top: 4.75rem;
+  display: flex;
+  align-items: center;
+}
+.account-info__picture {
+  margin-right: 0.75rem;
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.account-info__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.account-info__body {
+  max-width: 6.3125rem;
+}
+.account-info__name {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: 0.01em;
+}
+.account-info__job {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #757575;
+  letter-spacing: 0.01em;
+}
+
+.main-block__container-big {
+  position: relative;
+}
+.main-block__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+@supports (padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem )) {
+  .main-block__content {
+    padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem );
+  }
+}
+@supports not (padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem )) {
+  .main-block__content {
+    padding-top: calc(8.125rem + 7.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem )) {
+  .main-block__content {
+    padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem );
+  }
+}
+@supports not (padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem )) {
+  .main-block__content {
+    padding-bottom: calc(3.125rem + 9.375 * (100vw - 20rem) / 56.875);
+  }
+}
+.main-block__title {
+  max-width: 46.875rem;
+}
+@supports (margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem )) {
+  .main-block__title:not(:last-child) {
+    margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem )) {
+  .main-block__title:not(:last-child) {
+    margin-bottom: calc(1.875rem + 2.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+.main-block__text {
+  max-width: 35.625rem;
+}
+@supports (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-block__text:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-block__text:not(:last-child) {
+    margin-bottom: calc(1.25rem + 1.75 * (100vw - 20rem) / 56.875);
+  }
+}
+@media (max-width: 26.875em) {
+  .main-block__form {
+    width: 100%;
+  }
+}
+.icons-main-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  .icons-main-block {
+    opacity: 0.2;
+  }
+}
+.icons-main-block__item {
+  position: absolute;
+}
+.icons-main-block__item_1 {
+  top: 69.3018480493%;
+  left: 0.9375rem;
+}
+.icons-main-block__item_2 {
+  top: 39.0143737166%;
+  left: 14.6296296296%;
+}
+.icons-main-block__item_3 {
+  top: 77.7207392197%;
+  left: 24.8765432099%;
+}
+.icons-main-block__item_4 {
+  top: 13.7577002053%;
+  left: 70.9259259259%;
+}
+.icons-main-block__item_5 {
+  top: 43.0184804928%;
+  left: 81.7901234568%;
+}
+.icons-main-block__item_6 {
+  top: 79.6714579055%;
+  left: 81.5432098765%;
+}
+.icons-main-block__item_7 {
+  top: 37.6796714579%;
+  right: 0.9375rem;
+}
+.icons-main-block__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+@supports (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+.icons-main-block__circle::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.icons-main-block__circle_1::before {
+  transform: translate(calc(-50% - 1.75rem), -37%);
+}
+.icons-main-block__circle_2::before {
+  transform: translate(calc(-50% + 1.6875rem), -46%);
+}

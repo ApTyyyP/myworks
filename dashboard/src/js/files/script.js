@@ -2,3 +2,35 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+
+const asideLink = document.getElementsByClassName('aside__list-item');
+
+for (let i = 0; i < asideLink.length; i++) {
+  asideLink[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("active");
+
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    this.className += " active";
+  });
+}
+
+// function siblings(elem) {
+//   const nodes = [...elem.parentNode.children]
+//   return nodes.filter(node => node !== elem)
+// }
+
+// function toggleClass(elem, cls) {
+//   elem.classList.toggle(cls);
+//   siblings(elem).forEach(node => {
+//     node.classList.remove(cls)
+//   })
+// }
+
+// asideLink.forEach(el => {
+//   el.addEventListener("click", function() {
+//     toggleClass(this, 'active')
+//   })
+// })

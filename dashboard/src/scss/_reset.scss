@@ -61,6 +61,13 @@ h6 {
   font-size: inherit;
 }
 
+h1 {
+  @include font-family(base);
+  @include font(m-mid-large, 33, 600);
+  color: palette(primary-black);
+  letter-spacing: -0.01em;
+}
+
 img, svg {
   display: block;
   vertical-align: middle;
@@ -89,10 +96,10 @@ body {
 
 body {
   margin: 0;
-  color: palette(primary-white);
+  color: palette(primary-black);
   @include font-family(base);
-  @include font(l1-small, 24, 400);
-  background-color: #263238;
+  @include font(base, 24, 400);
+  background-color: palette(primary-ghost-white);;
 }
 
 .wrapper {
@@ -101,13 +108,8 @@ body {
   flex-direction: column;
   overflow: hidden;
 
-  // Прижимаем footer
   > main {
     flex: 1 1 auto;
-  }
-  // Фикс для слайдеров
-  > * {
-    min-width: 0;
   }
 }
 
