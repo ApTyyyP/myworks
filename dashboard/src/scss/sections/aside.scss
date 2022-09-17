@@ -1,10 +1,11 @@
 .aside {
-  max-width: rem(306);
+  width: rem(306);
   height: 100vh;
   padding: rem(36) rem(28) rem(76) rem(28);
   background-color: palette(primary-white);
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   box-shadow: 0 10px 60px rgba(226, 236, 249, 0.5);
   overflow: auto;
 
@@ -60,7 +61,7 @@
         content: '';
         position: absolute;
         top: 50%;
-        right: 8px;
+        right: 12px;
         transform: translateY(-50%) rotate(-135deg);
         width: 8px;
         height: 8px;
@@ -127,7 +128,7 @@
 
 .account-info {
   margin-top: auto;
-  padding-top: rem(76);
+  padding-top: rem(64);
   display: flex;
   align-items: center;
 

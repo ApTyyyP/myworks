@@ -16,21 +16,3 @@ for (let i = 0; i < asideLink.length; i++) {
     this.className += " active";
   });
 }
-
-// function siblings(elem) {
-//   const nodes = [...elem.parentNode.children]
-//   return nodes.filter(node => node !== elem)
-// }
-
-// function toggleClass(elem, cls) {
-//   elem.classList.toggle(cls);
-//   siblings(elem).forEach(node => {
-//     node.classList.remove(cls)
-//   })
-// }
-
-// asideLink.forEach(el => {
-//   el.addEventListener("click", function() {
-//     toggleClass(this, 'active')
-//   })
-// })
