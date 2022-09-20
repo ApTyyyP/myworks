@@ -18,6 +18,8 @@ $_color-primary-black: #000000 !default;
 $_color-primary-bunker: #292D32 !default;
 $_color-primary-gray: #838383 !default;
 $_color-primary-echo-blue: #B5B7C0 !default;
+$_color-primary-alice-blue: #F9FBFF !default;
+$_color-primary-white-smoke: #F5F5F5 !default;
 
 $_color-secondary-gray: #757575 !default;
 
@@ -70,6 +72,12 @@ $palettes: (
   ),
   "primary-echo-blue": (
     base: $_color-primary-echo-blue,
+  ),
+  "primary-alice-blue": (
+    base: $_color-primary-alice-blue,
+  ),
+  "primary-white-smoke": (
+    base: $_color-primary-white-smoke,
   ),
   "secondary-gray": (
     base: $_color-secondary-gray,

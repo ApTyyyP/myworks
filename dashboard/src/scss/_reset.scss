@@ -103,17 +103,18 @@ body {
 }
 
 .wrapper {
-  // max-width: rem($container-width);
-  max-height: rem(1198);
+  max-width: rem($container-width);
+  // max-height: rem(1198);
   display: flex;
   overflow: hidden;
 }
 
 .container {
-  padding: 0 rem(95) rem(258) rem(71);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  padding: 0 rem(95) 0 rem(71);
+  // max-width: rem(968);
+  // display: flex;
+  // flex-direction: column;
+  // flex-grow: 1;
   overflow: auto;
   // margin: 0 auto;
   // padding: 0 rem($container-padding);

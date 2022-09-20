@@ -1,28 +1,31 @@
 .main {
-  // max-width: rem(834);
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 
   &__card {
-    // min-width: 0;
-    padding: rem(30) rem(40) rem(40) rem(38);
+    padding: rem(30) 0 rem(40) 0;
     width: 100%;
+    max-width: rem(968);
     display: flex;
     flex-direction: column;
     background-color: palette(primary-white);
     background-clip: border-box;
     border-radius: rem(30);
     word-wrap: break-word;
-    box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+    overflow-x: auto;
+    box-shadow: 0 rem(10) rem(60) rgba(226, 236, 249, 0.5);
   }
 
   &__card-header {
+    padding: 0 rem(40) 0 rem(38);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &__card-body {
-  }
+  &__card-text {}
 
   &__card-title {
     margin-bottom: rem(7);
@@ -33,8 +36,183 @@
     @include font-family(base);
     @include font(base, 21, 400);
     color: palette(primary-mountain-meadow);
+    letter-spacing: -0.01em;
+  }
+
+  &__card-search {
+    padding: rem(7) rem(8) rem(7) rem(40);
+    max-width: rem(216);
+    width: 100%;
+    height: rem(38);
+    @include font-family(base);
+    @include font(small, 18, 400);
+    color: palette(primary-echo-blue);
+    letter-spacing: -0.01em;
+    background: palette(primary-alice-blue);
+    border-radius: rem(10);
+    background-image: url('../img/main/search.svg');
+    background-size: rem(24);
+    background-repeat: no-repeat;
+    background-position: left rem(6) center;
+    transition: all 0.3s ease;
   }
 
   &__card-body {
+    display: table;
+    overflow: hidden;
+  }
+
+  .customers-table {
+    padding: rem(16) rem(38) 0 rem(38);
+    width: 100%;
+    display: table;
+  }
+
+  .customers-area-wrapper {
+    display: table-row-group;
+  }
+
+  .customers-row {
+    display: table-row;
+    color: palette(primary-bunker);
+    border: 0;
+
+    &.customers-row--header {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 120%;
+        border-bottom: rem(1) solid palette(primary-whisper);
+      }
+
+      &.customers-row {
+        color: palette(primary-echo-blue);
+      }
+
+      .customer-cell {
+        padding-bottom: rem(14);
+        border-bottom: none;
+
+        &.status-cell {
+          text-align: center;
+        }
+      }
+    }
+
+    .customer-cell {
+      padding: rem(24) rem(16);
+      @include font-family(base);
+      @include font(base, 21, 500);
+      letter-spacing: -0.01em;
+      display: table-cell;
+      white-space: nowrap;
+      border-bottom: rem(1) solid palette(primary-whisper);
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &.status-cell {
+        text-align: right;
+      }
+
+      .status {
+        border-radius: rem(4);
+
+        &.active {
+          padding: rem(4) rem(18);
+          color: palette(primary-observatory);
+          background: rgba(22, 192, 152, 0.38);
+          border: rem(1) solid palette(primary-persian-green);
+        }
+
+        &.inactive {
+          padding: rem(4) rem(12);
+          color: palette(primary-red);
+          background: palette(primary-pink);
+          border: rem(1) solid palette(primary-red);
+        }
+      }
+    }
+  }
+
+  &__card-bottom {
+    padding: rem(30) rem(40) 0 rem(38);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card-info {
+    color: palette(primary-echo-blue);
+    white-space: pre;
+  }
+
+  &__card-pagination {
+
+  }
+
+  &__card-pagination-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(12);
+  }
+
+  &__card-pagination-item {
+    background: palette(primary-white-smoke);
+    border: 1px solid palette(primary-whisper);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: palette(primary-purple);
+
+      .main__card-pagination-link {
+        color: palette(primary-white);
+      }
+    }
+
+    &:last-child {
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &.text {
+      border: 0;
+      background-color: transparent;
+    }
+
+    &.active {
+      background: palette(primary-purple);
+      border: 1px solid palette(primary-purple);
+
+      .main__card-pagination-link {
+        color: palette(primary-white);
+      }
+    }
+  }
+
+  &__card-pagination-link {
+    width: rem(26);
+    height: rem(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font-family(base);
+    @include font(small, 12, 500);
+    color: palette(primary-atomic);
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
   }
 }
