@@ -10,7 +10,7 @@
   overflow: auto;
 
   &__header {
-    padding-bottom: rem(64);
+    padding-bottom: rem(53);
     display: flex;
     align-items: center;
 
@@ -52,7 +52,8 @@
 
   &__list-item {
     position: relative;
-    margin-bottom: rem(6);
+    height: rem(46);
+    margin-bottom: rem(18);
     border-radius: rem(8);
     transition: all 0.3s ease;
 
@@ -61,7 +62,7 @@
         content: '';
         position: absolute;
         top: 50%;
-        right: 12px;
+        right: 14px;
         transform: translateY(-50%) rotate(-135deg);
         width: 8px;
         height: 8px;
@@ -106,7 +107,7 @@
   }
 
   &__link {
-    padding: rem(13) rem(22) rem(12) rem(11);
+    padding: rem(11) rem(8) rem(11) rem(11);
     width: 100%;
     @include font-family(base);
     @include font(l-small, 21, 500);
