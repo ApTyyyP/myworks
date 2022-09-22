@@ -3,9 +3,12 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: hidden;
 
   &__card {
-    padding: rem(30) 0 rem(40) 0;
+    // padding: rem(30) 0 rem(40) 0;
+    @include adaptiveValue("padding-top", 30, 20);
+    @include adaptiveValue("padding-bottom", 40, 20);
     width: 100%;
     max-width: rem(968);
     display: flex;
@@ -14,27 +17,47 @@
     background-clip: border-box;
     border-radius: rem(30);
     word-wrap: break-word;
-    overflow-x: auto;
+    overflow: auto;
     box-shadow: 0 rem(10) rem(60) rgba(226, 236, 249, 0.5);
   }
 
   &__card-header {
-    padding: 0 rem(40) 0 rem(38);
+    // padding: 0 rem(40) 0 rem(38);
+    @include adaptiveValue("padding-top", 0, 0);
+    @include adaptiveValue("padding-right", 38, 16);
+    @include adaptiveValue("padding-bottom", 0, 0);
+    @include adaptiveValue("padding-left", 40, 16);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mq($max: sm) {
+      display: block;
+    }
   }
 
   &__card-text {}
 
   &__card-title {
-    margin-bottom: rem(7);
+    // margin-bottom: rem(7);
+    @include adaptiveValue("margin-bottom", 7, 0);
+    @include font-family(base);
+    // @include font(m-mid-large, 33, 600);
+    @include adaptiveValue("font-size", 22, 16);
+    font-weight: 600;
+    @include adaptiveValue("line-height", 33, 16);
+    // line-height: rem(33);
+    color: palette(primary-black);
+    letter-spacing: -0.01em;
   }
 
   &__card-subtitle {
     display: block;
     @include font-family(base);
-    @include font(base, 21, 400);
+    // @include font(base, 21, 400);
+    @include adaptiveValue("font-size", 14, 10);
+    font-weight: 400;
+    line-height: rem(21);
     color: palette(primary-mountain-meadow);
     letter-spacing: -0.01em;
   }
@@ -46,16 +69,24 @@
     width: 100%;
     height: rem(38);
     @include font-family(base);
-    @include font(small, 18, 400);
+    // @include font(small, 18, 400);
+    @include adaptiveValue("font-size", 12, 10);
+    font-weight: 400;
+    line-height: rem(18);
     color: palette(primary-echo-blue);
     letter-spacing: -0.01em;
     background: palette(primary-alice-blue);
     border-radius: rem(10);
     background-image: url('../img/main/search.svg');
-    background-size: rem(26);
+    @include adaptiveValue("background-size", 26, 20);
+    // background-size: rem(26);
     background-repeat: no-repeat;
     background-position: left rem(6) center;
     transition: all 0.3s ease;
+
+    @include mq($max: sm) {
+      margin-top: rem(7);
+    }
   }
 
   &__card-body {
@@ -64,9 +95,14 @@
   }
 
   .customers-table {
-    padding: rem(16) rem(38) 0 rem(38);
+    // padding: rem(16) rem(38) 0 rem(38);
+    @include adaptiveValue("padding-top", 16, 0);
+    @include adaptiveValue("padding-right", 38, 16);
+    @include adaptiveValue("padding-bottom", 0, 0);
+    @include adaptiveValue("padding-left", 38, 16);
     width: 100%;
     display: table;
+    overflow: auto;
   }
 
   .customers-area-wrapper {
@@ -95,21 +131,30 @@
       }
 
       .customer-cell {
-        padding-top: rem(24);
-        padding-bottom: rem(14);
+        // padding-top: rem(24);
+        // padding-bottom: rem(14);
+        @include adaptiveValue("padding-top", 24, 14);
+        @include adaptiveValue("padding-bottom", 14, 5);
         border-bottom: none;
 
         &.status-cell {
           text-align: left;
-          padding-left: 24px;
+          padding-left: rem(24);
         }
       }
     }
 
     .customer-cell {
-      padding: rem(19) rem(11) rem(20) rem(10);
+      // padding: rem(19) rem(11) rem(20) rem(10);
+      @include adaptiveValue("padding-top", 19, 5);
+      @include adaptiveValue("padding-right", 10, 5);
+      @include adaptiveValue("padding-bottom", 20, 5);
+      @include adaptiveValue("padding-left", 11, 5);
       @include font-family(base);
-      @include font(base, 21, 500);
+      // @include font(base, 21, 500);
+      @include adaptiveValue("font-size", 14, 10);
+      font-weight: 500;
+      line-height: rem(21);
       letter-spacing: -0.01em;
       display: table-cell;
       white-space: nowrap;
@@ -145,7 +190,6 @@
 
       &.status-cell {
         width: 10.3%;
-        // text-align: right;
       }
 
       .status {
@@ -177,13 +221,26 @@
   }
 
   &__card-bottom {
-    padding: rem(30) rem(40) 0 rem(39);
+    // padding: rem(30) rem(40) 0 rem(39);
+    @include adaptiveValue("padding-top", 30, 10);
+    @include adaptiveValue("padding-right", 39, 20);
+    @include adaptiveValue("padding-bottom", 0, 0);
+    @include adaptiveValue("padding-left", 40, 20);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mq($max: sm) {
+      display: block;
+    }
   }
 
   &__card-info {
+    @include font-family(base);
+    // @include font(base, 21, 500);
+    @include adaptiveValue("font-size", 14, 10);
+    font-weight: 500;
+    line-height: rem(21);
     color: palette(primary-echo-blue);
     letter-spacing: -0.01em;
     white-space: pre;
@@ -200,12 +257,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mq($max: sm) {
+      margin-top: rem(10);
+    }
   }
 
   &__card-pagination-item {
     background: palette(primary-white-smoke);
-    border: 1px solid palette(primary-whisper);
-    border-radius: 4px;
+    border: rem(1) solid palette(primary-whisper);
+    border-radius: rem(4);
     transition: all 0.3s ease;
 
     &:hover {
@@ -231,7 +292,7 @@
 
     &.--active {
       background: palette(primary-purple);
-      border: 1px solid palette(primary-purple);
+      border: rem(1) solid palette(primary-purple);
 
       .main__card-pagination-link {
         color: palette(primary-white);
@@ -246,7 +307,10 @@
     justify-content: center;
     align-items: center;
     @include font-family(base);
-    @include font(small, 12, 500);
+    // @include font(small, 12, 500);
+    @include adaptiveValue("font-size", 12, 8);
+    font-weight: 500;
+    line-height: rem(12);
     color: palette(primary-atomic);
     letter-spacing: -0.01em;
     transition: all 0.3s ease;

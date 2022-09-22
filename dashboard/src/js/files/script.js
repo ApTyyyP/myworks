@@ -7,7 +7,9 @@ const asideLink = document.getElementsByClassName('aside__list-item');
 const paginationItem = document.getElementsByClassName('main__card-pagination-item');
 
 for (let i = 0; i < asideLink.length; i++) {
-  asideLink[i].addEventListener("click", function () {
+  asideLink[i].addEventListener("click", function (e) {
+    e.preventDefault();
+
     let current = document.getElementsByClassName("active");
 
     if (current.length > 0) {
@@ -15,11 +17,14 @@ for (let i = 0; i < asideLink.length; i++) {
     }
 
     this.className += " active";
+
   });
 }
 
 for (let i = 0; i < paginationItem.length; i++) {
-  paginationItem[i].addEventListener("click", function () {
+  paginationItem[i].addEventListener("click", function (e) {
+    e.preventDefault();
+
     let current = document.getElementsByClassName("--active");
 
     if (current.length > 0) {
@@ -27,5 +32,6 @@ for (let i = 0; i < paginationItem.length; i++) {
     }
 
     this.className += " --active";
+
   });
 }

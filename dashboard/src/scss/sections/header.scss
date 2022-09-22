@@ -1,9 +1,16 @@
 .header {
-  padding: rem(41) rem(95) rem(51) rem(71);
+  // padding: rem(41) rem(95) rem(51) rem(71);
+  @include adaptiveValue("padding-top", 41, 41);
+  @include adaptiveValue("padding-right", 95, 16);
+  @include adaptiveValue("padding-bottom", 51, 10);
+  @include adaptiveValue("padding-left", 71, 36);
 
   &__text-name {
     @include font-family(base);
-    @include font(large, 36, 500);
+    // @include font(large, 36, 500);
+    @include adaptiveValue("font-size", 24, 16);
+    font-weight: 500;
+    line-height: rem(36);
     color: palette(primary-black);
   }
 }
