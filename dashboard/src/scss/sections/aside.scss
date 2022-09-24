@@ -1,15 +1,27 @@
 .aside {
+  padding: rem(36) rem(28) rem(76) rem(28);
   width: rem(306);
   height: 100%;
-  padding: rem(36) rem(28) rem(76) rem(28);
   background-color: palette(primary-white);
-  position: sticky;
+  position: absolute;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  box-shadow: 0 10px 60px rgba(226, 236, 249, 0.5);
+  box-shadow: 0 rem(10) rem(60) rgba(226, 236, 249, 0.5);
+  transition: all 0.2s ease-in-out;
   overflow: auto;
+  z-index: 10;
+
+  @include mq($max: lg) {
+    @include adaptiveValue("width", 306, 236);
+    left: -100%;
+
+    &._active {
+      left: 0;
+    }
+  }
 
   &__header {
     padding-bottom: rem(53);
@@ -34,7 +46,6 @@
 
     &-text {
       @include font-family(base);
-      // @include font(s-large, 39, 600);
       @include adaptiveValue("font-size", 26, 22);
       font-weight: 600;
       line-height: rem(39);
@@ -45,7 +56,6 @@
     &-version {
       margin-left: rem(4);
       @include font-family(base);
-      // @include font(m-small, 15, 500);
       @include adaptiveValue("font-size", 10, 9);
       font-weight: 500;
       line-height: rem(15);
@@ -70,20 +80,20 @@
         content: '';
         position: absolute;
         top: 50%;
-        right: 14px;
+        right: rem(14);
         transform: translateY(-50%) rotate(-135deg);
-        width: 8px;
-        height: 8px;
-        border-left: 2px solid palette(primary-manatee);
-        border-bottom: 2px solid palette(primary-manatee);
+        width: rem(8);
+        height: rem(8);
+        border-left: rem(2) solid palette(primary-manatee);
+        border-bottom: rem(2) solid palette(primary-manatee);
         transition: all 0.3s ease;
       }
     }
 
     &:hover {
       &::after {
-        border-left: 2px solid palette(primary-white);
-        border-bottom: 2px solid palette(primary-white);
+        border-left: rem(2) solid palette(primary-white);
+        border-bottom: rem(2) solid palette(primary-white);
       }
 
       .aside__link {
@@ -99,8 +109,8 @@
 
     &.active {
       &::after {
-        border-left: 2px solid palette(primary-white);
-        border-bottom: 2px solid palette(primary-white);
+        border-left: rem(2) solid palette(primary-white);
+        border-bottom: rem(2) solid palette(primary-white);
       }
 
       .aside__link {
@@ -118,7 +128,6 @@
     padding: rem(11) rem(8) rem(11) rem(11);
     width: 100%;
     @include font-family(base);
-    // @include font(l-small, 21, 500);
     @include adaptiveValue("font-size", 14, 14);
     font-weight: 500;
     line-height: rem(21);
@@ -166,22 +175,18 @@
 
   &__name {
     @include font-family(base);
-    // @include font(l-small, 21, 500);
     @include adaptiveValue("font-size", 14, 12);
     font-weight: 500;
     @include adaptiveValue("line-height", 21, 16);
-    // line-height: rem(21);
     color: palette(primary-black);
     letter-spacing: 0.01em;
   }
 
   &__job {
     @include font-family(base);
-    // @include font(small, 18, 400);
     @include adaptiveValue("font-size", 12, 9);
     font-weight: 400;
     @include adaptiveValue("line-height", 18, 11);
-    // line-height: rem(18);
     color: palette(secondary-gray);
     letter-spacing: 0.01em;
   }

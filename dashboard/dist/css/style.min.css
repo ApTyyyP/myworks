@@ -244,18 +244,61 @@ Styles for fullpage scroll
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
 */
-[class*=__container] {
+/* [class*="__container"] {
   margin: 0 auto;
-  max-width: 88.75rem;
+  max-width: rem(1420);
 }
 
-[class*=__container-big] {
-  margin: 0 auto;
-  max-width: 100rem;
-  box-sizing: content-box;
-  padding: 0 0.9375rem;
+@if ($responsiveType ==1) {
+
+  // Отзывчивая
+  [class*="__container-big"] {
+    @if ($container-max-width > 0) {
+      margin: 0 auto;
+      max-width: rem($container-max-width);
+      box-sizing: content-box;
+    }
+
+    @if ($container-padding > 0) {
+      padding: 0 rem(math.div($container-padding, 2));
+    }
+  }
 }
 
+@else {
+
+  // По брейк-поинтам
+  [class*="__container"] {
+    margin: 0 auto;
+
+    @if ($container-max-width > 0) {
+      max-width: rem($container-max-width);
+      box-sizing: content-box;
+    }
+
+    @else {
+      @if ($container-padding > 0) {
+        padding: 0 rem(math.div($container-padding, 2));
+      }
+    }
+
+    @media (max-width: $container-width-padding) {
+      max-width: rem(970);
+    }
+
+    @include mq($max: lg) {
+      max-width: rem(750);
+    }
+
+    @include mq($max: md) {
+      max-width: none;
+
+      @if ($container-padding > 0 and $container-max-width > 0) {
+        padding: 0 rem(math.div($container-padding, 2));
+      }
+    }
+  }
+} */
 /**
  *  Global color variables.
  *	The underscore Never use them directly in the sections, only for functions and mixins.
@@ -719,7 +762,7 @@ a:hover, a:link, a:visited {
 }
 
 p {
-  margin: 0 0 16px;
+  margin: 0 0 1rem;
 }
 
 ul,
@@ -846,14 +889,14 @@ body {
     padding-top: calc(2.5625rem + 0 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (padding-right: clamp( 1rem , -0.3739130435rem  +  6.8695652174vw , 5.9375rem )) {
+@supports (padding-right: clamp( 2.25rem , 0.5630434783rem  +  8.4347826087vw , 8.3125rem )) {
   .header {
-    padding-right: clamp( 1rem , -0.3739130435rem  +  6.8695652174vw , 5.9375rem );
+    padding-right: clamp( 2.25rem , 0.5630434783rem  +  8.4347826087vw , 8.3125rem );
   }
 }
-@supports not (padding-right: clamp( 1rem , -0.3739130435rem  +  6.8695652174vw , 5.9375rem )) {
+@supports not (padding-right: clamp( 2.25rem , 0.5630434783rem  +  8.4347826087vw , 8.3125rem )) {
   .header {
-    padding-right: calc(1rem + 4.9375 * (100vw - 20rem) / 71.875);
+    padding-right: calc(2.25rem + 6.0625 * (100vw - 20rem) / 71.875);
   }
 }
 @supports (padding-bottom: clamp( 0.625rem , -0.0880434783rem  +  3.5652173913vw , 3.1875rem )) {
@@ -866,15 +909,20 @@ body {
     padding-bottom: calc(0.625rem + 2.5625 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (padding-left: clamp( 2.25rem , 1.6413043478rem  +  3.0434782609vw , 4.4375rem )) {
+@supports (padding-left: clamp( 2.25rem , 1.6586956522rem  +  2.9565217391vw , 4.375rem )) {
   .header {
-    padding-left: clamp( 2.25rem , 1.6413043478rem  +  3.0434782609vw , 4.4375rem );
+    padding-left: clamp( 2.25rem , 1.6586956522rem  +  2.9565217391vw , 4.375rem );
   }
 }
-@supports not (padding-left: clamp( 2.25rem , 1.6413043478rem  +  3.0434782609vw , 4.4375rem )) {
+@supports not (padding-left: clamp( 2.25rem , 1.6586956522rem  +  2.9565217391vw , 4.375rem )) {
   .header {
-    padding-left: calc(2.25rem + 2.1875 * (100vw - 20rem) / 71.875);
+    padding-left: calc(2.25rem + 2.125 * (100vw - 20rem) / 71.875);
   }
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .header__text-name {
   font-family: "Poppins", sans-serif;
@@ -892,19 +940,82 @@ body {
     font-size: calc(1rem + 0.5 * (100vw - 20rem) / 71.875);
   }
 }
+@media screen and (max-width: 991px) {
+  .header .menu__icon {
+    width: 1.875rem;
+    height: 1.25rem;
+    position: relative;
+    display: block;
+    z-index: 10;
+  }
+  .header .menu__icon span, .header .menu__icon::before, .header .menu__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: #000000;
+    transition: all 0.3s ease 0s;
+  }
+  .header .menu__icon::before, .header .menu__icon::after {
+    content: "";
+  }
+  .header .menu__icon::before {
+    top: 0;
+  }
+  .header .menu__icon::after {
+    bottom: 0;
+  }
+  .header .menu__icon span {
+    top: 50%;
+    transform: scale(1) translate(0, -50%);
+  }
+  .header .menu__icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+  .header .menu__icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+  }
+  .header .menu__icon._active span {
+    transform: scale(0) translate(0, -50%);
+  }
+}
 
 .aside {
+  padding: 2.25rem 1.75rem 4.75rem 1.75rem;
   width: 19.125rem;
   height: 100%;
-  padding: 2.25rem 1.75rem 4.75rem 1.75rem;
   background-color: #FFFFFF;
-  position: sticky;
+  position: absolute;
+  top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  box-shadow: 0 10px 60px rgba(226, 236, 249, 0.5);
+  box-shadow: 0 0.625rem 3.75rem rgba(226, 236, 249, 0.5);
+  transition: all 0.2s ease-in-out;
   overflow: auto;
+  z-index: 10;
+}
+@media screen and (max-width: 991px) {
+  .aside {
+    left: -100%;
+  }
+  @supports (width: clamp( 14.75rem , 13.5326086957rem  +  6.0869565217vw , 19.125rem )) {
+    .aside {
+      width: clamp( 14.75rem , 13.5326086957rem  +  6.0869565217vw , 19.125rem );
+    }
+  }
+  @supports not (width: clamp( 14.75rem , 13.5326086957rem  +  6.0869565217vw , 19.125rem )) {
+    .aside {
+      width: calc(14.75rem + 4.375 * (100vw - 20rem) / 71.875);
+    }
+  }
+  .aside._active {
+    left: 0;
+  }
 }
 .aside__header {
   padding-bottom: 3.3125rem;
@@ -971,17 +1082,17 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  right: 14px;
+  right: 0.875rem;
   transform: translateY(-50%) rotate(-135deg);
-  width: 8px;
-  height: 8px;
-  border-left: 2px solid #9197B3;
-  border-bottom: 2px solid #9197B3;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-left: 0.125rem solid #9197B3;
+  border-bottom: 0.125rem solid #9197B3;
   transition: all 0.3s ease;
 }
 .aside__list-item:hover::after {
-  border-left: 2px solid #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
+  border-left: 0.125rem solid #FFFFFF;
+  border-bottom: 0.125rem solid #FFFFFF;
 }
 .aside__list-item:hover .aside__link {
   color: #FFFFFF;
@@ -992,8 +1103,8 @@ body {
   transition: all 0.3s ease;
 }
 .aside__list-item.active::after {
-  border-left: 2px solid #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
+  border-left: 0.125rem solid #FFFFFF;
+  border-bottom: 0.125rem solid #FFFFFF;
 }
 .aside__list-item.active .aside__link {
   color: #FFFFFF;
@@ -1109,11 +1220,18 @@ body {
 }
 
 .main {
+  margin-left: 19.1875rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 991px) {
+  .main {
+    margin-left: 0;
+  }
 }
 .main__card {
   width: 100%;
@@ -1182,14 +1300,14 @@ body {
     padding-bottom: calc(0.0000000625rem + 0 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (padding-left: clamp( 1rem , 0.5826086957rem  +  2.0869565217vw , 2.5rem )) {
+@supports (padding-left: clamp( 1rem , 0.6173913043rem  +  1.9130434783vw , 2.375rem )) {
   .main__card-header {
-    padding-left: clamp( 1rem , 0.5826086957rem  +  2.0869565217vw , 2.5rem );
+    padding-left: clamp( 1rem , 0.6173913043rem  +  1.9130434783vw , 2.375rem );
   }
 }
-@supports not (padding-left: clamp( 1rem , 0.5826086957rem  +  2.0869565217vw , 2.5rem )) {
+@supports not (padding-left: clamp( 1rem , 0.6173913043rem  +  1.9130434783vw , 2.375rem )) {
   .main__card-header {
-    padding-left: calc(1rem + 1.5 * (100vw - 20rem) / 71.875);
+    padding-left: calc(1rem + 1.375 * (100vw - 20rem) / 71.875);
   }
 }
 @media screen and (max-width: 575px) {
@@ -1253,7 +1371,7 @@ body {
 }
 .main__card-search {
   margin: 0.25rem 0.8125rem 0rem 0rem;
-  padding: 0.4375rem 0.5rem 0.4375rem 2.5rem;
+  padding: 0.4375rem 0.5rem 0.4375rem 2.375rem;
   max-width: 13.5rem;
   width: 100%;
   height: 2.375rem;
@@ -1279,14 +1397,14 @@ body {
     font-size: calc(0.625rem + 0.125 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (background-size: clamp( 1.25rem , 1.1456521739rem  +  0.5217391304vw , 1.625rem )) {
+@supports (background-size: clamp( 1.25rem , 1.1804347826rem  +  0.347826087vw , 1.5rem )) {
   .main__card-search {
-    background-size: clamp( 1.25rem , 1.1456521739rem  +  0.5217391304vw , 1.625rem );
+    background-size: clamp( 1.25rem , 1.1804347826rem  +  0.347826087vw , 1.5rem );
   }
 }
-@supports not (background-size: clamp( 1.25rem , 1.1456521739rem  +  0.5217391304vw , 1.625rem )) {
+@supports not (background-size: clamp( 1.25rem , 1.1804347826rem  +  0.347826087vw , 1.5rem )) {
   .main__card-search {
-    background-size: calc(1.25rem + 0.375 * (100vw - 20rem) / 71.875);
+    background-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 71.875);
   }
 }
 @media screen and (max-width: 575px) {
@@ -1458,7 +1576,7 @@ body {
   padding-right: 0;
 }
 .main .customers-row .customer-cell.customer {
-  width: 18.2%;
+  width: 18%;
 }
 .main .customers-row .customer-cell.company {
   width: 14.6%;
@@ -1470,7 +1588,7 @@ body {
   width: 23.2%;
 }
 .main .customers-row .customer-cell.country {
-  width: 15.6%;
+  width: 15.7%;
 }
 .main .customers-row .customer-cell.status-cell {
   width: 10.3%;
@@ -1503,24 +1621,24 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@supports (padding-top: clamp( 0.625rem , 0.277173913rem  +  1.7391304348vw , 1.875rem )) {
+@supports (padding-top: clamp( 0.625rem , 0.2945652174rem  +  1.652173913vw , 1.8125rem )) {
   .main__card-bottom {
-    padding-top: clamp( 0.625rem , 0.277173913rem  +  1.7391304348vw , 1.875rem );
+    padding-top: clamp( 0.625rem , 0.2945652174rem  +  1.652173913vw , 1.8125rem );
   }
 }
-@supports not (padding-top: clamp( 0.625rem , 0.277173913rem  +  1.7391304348vw , 1.875rem )) {
+@supports not (padding-top: clamp( 0.625rem , 0.2945652174rem  +  1.652173913vw , 1.8125rem )) {
   .main__card-bottom {
-    padding-top: calc(0.625rem + 1.25 * (100vw - 20rem) / 71.875);
+    padding-top: calc(0.625rem + 1.1875 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (padding-right: clamp( 1.25rem , 0.9195652174rem  +  1.652173913vw , 2.4375rem )) {
+@supports (padding-right: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem )) {
   .main__card-bottom {
-    padding-right: clamp( 1.25rem , 0.9195652174rem  +  1.652173913vw , 2.4375rem );
+    padding-right: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem );
   }
 }
-@supports not (padding-right: clamp( 1.25rem , 0.9195652174rem  +  1.652173913vw , 2.4375rem )) {
+@supports not (padding-right: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem )) {
   .main__card-bottom {
-    padding-right: calc(1.25rem + 1.1875 * (100vw - 20rem) / 71.875);
+    padding-right: calc(1.25rem + 1.25 * (100vw - 20rem) / 71.875);
   }
 }
 @supports (padding-bottom: clamp( 0.0000000625rem , 0.0000000625rem  +  0vw , 0.0000000625rem )) {
@@ -1533,14 +1651,14 @@ body {
     padding-bottom: calc(0.0000000625rem + 0 * (100vw - 20rem) / 71.875);
   }
 }
-@supports (padding-left: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem )) {
+@supports (padding-left: clamp( 1.25rem , 0.9369565217rem  +  1.5652173913vw , 2.375rem )) {
   .main__card-bottom {
-    padding-left: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem );
+    padding-left: clamp( 1.25rem , 0.9369565217rem  +  1.5652173913vw , 2.375rem );
   }
 }
-@supports not (padding-left: clamp( 1.25rem , 0.902173913rem  +  1.7391304348vw , 2.5rem )) {
+@supports not (padding-left: clamp( 1.25rem , 0.9369565217rem  +  1.5652173913vw , 2.375rem )) {
   .main__card-bottom {
-    padding-left: calc(1.25rem + 1.25 * (100vw - 20rem) / 71.875);
+    padding-left: calc(1.25rem + 1.125 * (100vw - 20rem) / 71.875);
   }
 }
 @media screen and (max-width: 575px) {
@@ -1568,7 +1686,7 @@ body {
 }
 .main__card-pagination {
   width: 16.9375rem;
-  height: 1.625rem;
+  height: 1.5625rem;
 }
 .main__card-pagination-list {
   height: 1.5rem;
@@ -1610,7 +1728,7 @@ body {
 }
 .main__card-pagination-link {
   width: 1.625rem;
-  height: 1.625rem;
+  height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1630,4 +1748,20 @@ body {
   .main__card-pagination-link {
     font-size: calc(0.5rem + 0.25 * (100vw - 20rem) / 71.875);
   }
+}
+
+.plank {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(100%);
+}
+.plank._active {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(0);
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  opacity: 85%;
+  z-index: 5;
 }

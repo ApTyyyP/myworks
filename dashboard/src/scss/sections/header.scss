@@ -1,16 +1,84 @@
 .header {
-  // padding: rem(41) rem(95) rem(51) rem(71);
   @include adaptiveValue("padding-top", 41, 41);
-  @include adaptiveValue("padding-right", 95, 16);
+  @include adaptiveValue("padding-right", 133, 36);
   @include adaptiveValue("padding-bottom", 51, 10);
-  @include adaptiveValue("padding-left", 71, 36);
+  @include adaptiveValue("padding-left", 70, 36);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__text-name {
     @include font-family(base);
-    // @include font(large, 36, 500);
     @include adaptiveValue("font-size", 24, 16);
     font-weight: 500;
     line-height: rem(36);
     color: palette(primary-black);
+  }
+
+  &__menu {
+  }
+
+  .menu {
+
+    &__icon {
+
+      @include mq($max: lg) {
+        width: rem(30);
+        height: rem(20);
+        position: relative;
+        display: block;
+        z-index: 10;
+
+        span,
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 10%;
+          background-color: palette(primary-black);
+          transition: all 0.3s ease 0s;
+        }
+
+        &::before,
+        &::after {
+          content: '';
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+
+        span {
+          top: 50%;
+          transform: scale(1) translate(0, -50%);
+        }
+
+        &._active {
+
+          &::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%);
+          }
+
+          &::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+          }
+
+          span {
+            transform: scale(0) translate(0, -50%);
+          }
+        }
+      }
+    }
   }
 }

@@ -1,8 +1,3 @@
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
-// Подключение списка активных модулей
-import { flsModules } from "./modules.js";
-
 const asideLink = document.getElementsByClassName('aside__list-item');
 const paginationItem = document.getElementsByClassName('main__card-pagination-item');
 
@@ -33,5 +28,27 @@ for (let i = 0; i < paginationItem.length; i++) {
 
     this.className += " --active";
 
+  });
+}
+
+// Burger
+
+const iconMenu = document.querySelector('.menu__icon');
+const asideMenu = document.querySelector('.aside');
+const asidePlank = document.querySelector('.plank');
+
+if (iconMenu) {
+  iconMenu.addEventListener("click", function (e) {
+    iconMenu.classList.toggle('_active');
+    asideMenu.classList.toggle('_active');
+    asidePlank.classList.toggle('_active');
+  });
+}
+
+if (asidePlank) {
+  asidePlank.addEventListener("click", function (e) {
+    iconMenu.classList.remove('_active');
+    asideMenu.classList.remove('_active');
+    asidePlank.classList.remove('_active');
   });
 }
