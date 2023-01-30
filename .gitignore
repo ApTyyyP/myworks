@@ -1,6 +1,8 @@
 .idea/
+.yarn/
 node_modules/
 dashboard/src/scss/**/*.css
 dashboard/src/scss/**/*.css.map
 react/marvel/**/*.css
 react/marvel/**/*.css.map
+react/marvel/.yarn/install-state.gz
