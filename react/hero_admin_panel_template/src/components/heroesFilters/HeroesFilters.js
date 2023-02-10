@@ -15,7 +15,7 @@ const HeroesFilters = () => {
   const dispatch = useDispatch();
   const { request } = useHttp();
 
-  // Запрос на сервер для получения фильтров и последовательной смены состояния
+  // Запит на сервер для отримання фільтрів та послідовної зміни стану
   useEffect(() => {
     dispatch(fetchFilters(request));
 
@@ -25,16 +25,16 @@ const HeroesFilters = () => {
   if (filtersLoadingStatus === 'loading') {
     return <Spinner />;
   } else if (filtersLoadingStatus === 'error') {
-    return <h5 className="text-center mt-5">Ошибка загрузки</h5>;
+    return <h5 className="text-center mt-5">Помилка завантаження</h5>;
   }
 
   const renderFilters = (arr) => {
     if (arr.length === 0) {
-      return <h5 className="text-center mt-5">Фильтры не найдены</h5>;
+      return <h5 className="text-center mt-5">Фільтри не знайдені</h5>;
     }
 
     return arr.map(({ name, className, label }) => {
-      // Используем библиотеку classnames и формируем классы динамически
+      // Використовуємо бібліотеку classnames і формуємо класи динамічно
       const btnClass = classNames('btn', className, {
         active: name === activeFilter,
       });
@@ -57,7 +57,7 @@ const HeroesFilters = () => {
   return (
     <div className="card shadow-lg mt-4">
       <div className="card-body">
-        <p className="card-text">Отфильтруйте героев по элементам</p>
+        <p className="card-text">Відфільтруйте героїв за елементами</p>
         <div className="btn-group">{elements}</div>
       </div>
     </div>

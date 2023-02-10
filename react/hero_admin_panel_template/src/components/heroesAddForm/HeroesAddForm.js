@@ -7,7 +7,7 @@ import { selectAll } from '../heroesFilters/filtersSlice';
 import { useCreateHeroMutation } from '../../api/apiSlice';
 
 const HeroesAddForm = () => {
-  // Состояния для контроля формы
+  // Стан контролю форми
   const [heroName, setHeroName] = useState('');
   const [heroDescr, setHeroDescr] = useState('');
   const [heroElement, setHeroElement] = useState('');
@@ -19,7 +19,7 @@ const HeroesAddForm = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // Генерация id через библиотеку
+    // Генерація ID через бібліотеку
     const newHero = {
       id: uuidv4(),
       name: heroName,
@@ -29,7 +29,7 @@ const HeroesAddForm = () => {
 
     createHero(newHero).unwrap();
 
-    // Очищаем форму после отправки
+    // Очищаємо форму після відправлення
     setHeroName('');
     setHeroDescr('');
     setHeroElement('');
@@ -42,7 +42,7 @@ const HeroesAddForm = () => {
       return <option>Ошибка загрузки</option>;
     }
 
-    // Если фильтры есть, то рендерим их
+    // Якщо фільтри є, то рендерим їх
     if (filters && filters.length > 0) {
       return filters.map(({ name, label }) => {
         // eslint-disable-next-line
@@ -61,7 +61,7 @@ const HeroesAddForm = () => {
     <form className="border p-4 shadow-lg rounded" onSubmit={onSubmitHandler}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label fs-4">
-          Имя нового героя
+          Ім'я нового героя
         </label>
         <input
           required
@@ -69,7 +69,7 @@ const HeroesAddForm = () => {
           name="name"
           className="form-control"
           id="name"
-          placeholder="Как меня зовут?"
+          placeholder="Як мене звати?"
           value={heroName}
           onChange={(e) => setHeroName(e.target.value)}
         />
@@ -77,14 +77,14 @@ const HeroesAddForm = () => {
 
       <div className="mb-3">
         <label htmlFor="text" className="form-label fs-4">
-          Описание
+          Опис
         </label>
         <textarea
           required
           name="text"
           className="form-control"
           id="text"
-          placeholder="Что я умею?"
+          placeholder="Що я вмію?"
           style={{ height: '130px' }}
           value={heroDescr}
           onChange={(e) => setHeroDescr(e.target.value)}
@@ -93,7 +93,7 @@ const HeroesAddForm = () => {
 
       <div className="mb-3">
         <label htmlFor="element" className="form-label">
-          Выбрать элемент героя
+          Вибрати елемент героя
         </label>
         <select
           required
@@ -103,13 +103,13 @@ const HeroesAddForm = () => {
           value={heroElement}
           onChange={(e) => setHeroElement(e.target.value)}
         >
-          <option value="">Я владею элементом...</option>
+          <option value="">Я володію елементом...</option>
           {renderFilters(filters, filtersLoadingStatus)}
         </select>
       </div>
 
       <button type="submit" className="btn btn-primary">
-        Создать
+        Створити
       </button>
     </form>
   );
