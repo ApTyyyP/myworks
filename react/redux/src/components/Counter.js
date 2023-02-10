@@ -1,5 +1,5 @@
-import { Component } from 'react';
-import { connect } from 'react-redux';
+// import { Component } from 'react';
+// import { connect } from 'react-redux';
 import { inc, dec, rnd } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -13,7 +13,7 @@ const Counter = () => {
       <button onClick={() => dispatch(dec())} className="btn btn-primary">
         DEC
       </button>
-      <button onClick={() => dispatch(inc())} className="btn btn-primary">
+      <button onClick={() => dispatch(inc())} className="btn btn-primary mx-2">
         INC
       </button>
       <button onClick={() => dispatch(rnd())} className="btn btn-primary">
