@@ -1,0 +1,1587 @@
+@charset "UTF-8";
+/*
+Общий файл элементов форм
+Для подключения/отключения стилей конкретного элемента формы смотри base/forms/forms.scss
+*/
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+.form {
+  padding: 0.375rem;
+  max-width: 33.3125rem;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  gap: 0.3125rem;
+}
+@media screen and (max-width: 575px) {
+  .form {
+    flex-direction: column;
+  }
+}
+.form__input {
+  padding: 0 1.25rem;
+  height: 4rem;
+  flex: 1 1 auto;
+  color: #263238;
+  font-weight: 500;
+}
+.form__input::placeholder {
+  color: #263238;
+}
+.form__input._form-error {
+  color: red;
+}
+.form__input._form-error::placeholder {
+  color: red;
+}
+.form__error {
+  margin-top: 0.625rem;
+  padding-left: 1.625rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 1rem;
+}
+
+/*
+<BUTTONS>
+Снипет (HTML): btn
+*/
+/*
+<CHECK>
+Снипет (HTML): chk
+*/
+/*
+<CALENDAR>
+Снипет (HTML): dp
+*/
+/*
+<INPUTS>
+Снипет (HTML): inp
+*/
+/*
+<QUANTITY>
+Снипет (HTML): quantity
+*/
+/*
+<RADIO>
+Снипет (HTML): opt
+*/
+/*
+<RANGE>
+Снипет (HTML): range
+*/
+/*
+<RATING>
+Снипет (HTML): rating
+*/
+/*
+<SELECT>
+Снипет (HTML): sel
+*/
+/* Стили галереи (полный набор) */
+/*
+.gallery__image {
+  display: inline-block;
+}
+*/
+/*
+Стили Swiper
+Базовые стили
+*/
+/* Полный набор стилей из scss/libs/swiper.scss */
+/*
+.swiper__slider {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: palette(primary-white);
+  background-color: #01b6d6;
+}
+*/
+/* Плагин текст-подсказка "Tippy" */
+/* Модуль формы "колличество" */
+/*
+Стили радио
+Сниппет (HTML): opt
+*/
+/* Стили рейтинга */
+.rating {
+  display: flex;
+  align-items: flex-end;
+  font-size: 40px;
+  line-height: 0.75;
+  transition: opacity 0.3s ease 0s;
+}
+
+.rating.rating_sending {
+  opacity: 0.2;
+}
+
+.rating.rating_set .rating__active,
+.rating.rating_set .rating__item {
+  cursor: pointer;
+}
+
+.rating__body {
+  position: relative;
+}
+
+.rating__body::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.rating__active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rating__active::before {
+  content: "★★★★★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffd300;
+}
+
+.rating__items {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rating__item {
+  height: 100%;
+  flex: 0 0 20%;
+  opacity: 0;
+}
+
+.rating__value {
+  padding: 0px 0px 0px 10px;
+  font-size: 50%;
+  line-height: 1;
+}
+
+/*
+Стили для поэкранной прокрутки
+Styles for fullpage scroll
+*/
+/* Стили для полноэкранного блока */
+/* Стили карт */
+/* Стили попапов */
+/* Стили блока "показать ещё" */
+/* Стили спойлеров */
+/* Стили для липкого блока */
+/* Стили табов */
+/*
+Стили для отзывчивых картинок (IBG)
+Сниппет (HTML): ibg (div c картинкой и классами)
+Сниппет (HTML): ibga (a c картинкой и классами)
+*/
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+Шаблоны (заготовки)
+@extend %имя шаблона;
+Сниппет (SCSS): ex
+*/
+/*
+(i) Стили будут применяться ко
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  margin: 0 auto;
+  max-width: 88.75rem;
+}
+
+[class*=__container-big] {
+  margin: 0 auto;
+  max-width: 100rem;
+  box-sizing: content-box;
+  padding: 0 0.9375rem;
+}
+
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+.btn {
+  padding: 0.8125rem 5.125rem;
+  font-family: "Arial-Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.3125;
+  font-weight: 700;
+  display: inline-block;
+  color: #ffffff;
+  background: linear-gradient(180deg, #00AAAA 0%, #008BAA 100%);
+  border-radius: 1.5rem;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  z-index: 1;
+}
+.btn span {
+  position: relative;
+  z-index: 3;
+}
+@media screen and (min-width: 992px) {
+  .btn {
+    min-width: 14rem;
+  }
+}
+@media (any-hover: hover) {
+  .btn::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #00AAAA 100%, #008BAA 0%);
+    border-radius: 1.5rem;
+    transition: opacity 0.5s ease-out;
+    z-index: 2;
+    opacity: 0;
+  }
+  .btn:hover::after {
+    opacity: 1;
+  }
+}
+
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+.title {
+  font-weight: 600;
+  line-height: 0.9285714286;
+  font-size: 4.375rem;
+  color: #ffffff;
+}
+@supports (font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem )) {
+  .title {
+    font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem );
+  }
+}
+@supports not (font-size: clamp( 2.8125rem , 2.2630494505rem  +  2.7472527473vw , 4.375rem )) {
+  .title {
+    font-size: calc(2.8125rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem )) {
+  .title_s64 {
+    font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem );
+  }
+}
+@supports not (font-size: clamp( 2.5rem , 1.9725274725rem  +  2.6373626374vw , 4rem )) {
+  .title_s64 {
+    font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem )) {
+  .title_s56 {
+    font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem );
+  }
+}
+@supports not (font-size: clamp( 2.1875rem , 1.7259615385rem  +  2.3076923077vw , 3.5rem )) {
+  .title_s56 {
+    font-size: calc(2.1875rem + 1.3125 * (100vw - 20rem) / 56.875);
+  }
+}
+.title span {
+  color: #23b123;
+}
+
+.text {
+  line-height: 180%;
+}
+
+.image-block {
+  max-width: 37.5rem;
+  position: relative;
+  display: flex;
+  align-self: start;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+@supports (padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem );
+  }
+}
+@supports not (padding-top: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-top: calc(1.875rem + 8.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.875rem , -1.092032967rem  +  14.8351648352vw , 10.3125rem )) {
+  .image-block {
+    padding-bottom: calc(1.875rem + 8.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
+  }
+}
+@supports not (padding-left: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-left: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
+  }
+}
+@supports not (padding-right: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
+  .image-block {
+    padding-right: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
+  }
+}
+.image-block__circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@supports (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .image-block__circle {
+    height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+.image-block__circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+}
+.image-block__circle_1::before {
+  transform: translate(calc(50% - 1.125rem), -20%);
+}
+.image-block__circle_2::before {
+  transform: translate(calc(50% - 1.25rem), -6%);
+}
+.image-block__item {
+  position: relative;
+  flex: 1 1 100%;
+  text-align: center;
+  z-index: 2;
+}
+.image-block__item img {
+  max-width: 100%;
+  border-radius: 1.25rem;
+}
+
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../fonts/Arial/Arial-Regular.woff2") format("woff2"), url("../fonts/Arial/Arial-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../fonts/Arial/Arial-Italic.woff2") format("woff2"), url("../fonts/Arial/Arial-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arial";
+  src: url("../fonts/Arial/Arial-Bold.woff2") format("woff2"), url("../fonts/Arial/Arial-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DMSans";
+  src: url("../fonts/DM Sans/DMSans-Regular.woff2") format("woff2"), url("../fonts/DM Sans/DMSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DMSans";
+  src: url("../fonts/DM Sans/DMSans-Bold.woff2") format("woff2"), url("../fonts/DM Sans/DMSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google-Sans";
+  src: url("../fonts/Google Sans/Google-Sans-Bold.woff2") format("woff2"), url("../fonts/Google Sans/Google-Sans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Trebuchet-MS";
+  src: url("../fonts/Trebuchet MS/Trebuchet-MS-Regular.woff2") format("woff2"), url("../fonts/Trebuchet MS/Trebuchet-MS-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Trebuchet-MS";
+  src: url("../fonts/Trebuchet MS/Trebuchet-MS-Bold.woff2") format("woff2"), url("../fonts/Trebuchet MS/Trebuchet-MS-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+/* ==========================================================================
+   Config settings
+   ========================================================================== */
+/*
+Тип адаптива:
+1 = отзывчивость (у контейнера нет брейк-поинтов),
+2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+*/
+/**
+  USAGE:
+
+  @include adaptiveFont(72, 12);
+
+ */
+/**
+ *	Media query mixin for writing Mobile First
+ */
+/**
+  USAGE:
+
+  @include adaptiveValue("padding-top", 60, 10);
+
+ */
+/**
+  USAGE:
+
+  @include mq($min: $md) {
+    width: 100%;
+  }
+
+  @include mq($max: $md) {
+    width: 100%;
+  }
+
+  @include mq($min: xs, $max: md) {
+    width: 100%;
+  }
+
+ */
+/**
+ *	A simple function for accessing the colors from our mapping
+ *	To access colors in our palette, we use a very simple custom Sass function
+
+  USAGE:
+
+  a {
+    color: palette(primary);
+
+    &:hover {
+      color: palette(primary, 400);
+    }
+  }
+
+ */
+/**
+ *	A simple function for accessing the font families from our mapping
+
+  USAGE:
+
+  span {
+    @include font-family(base);
+  }
+
+ */
+/* Check if value is number */
+/* Value to Em */
+/**
+ *  Mixin for setting font-size in REM through a Sass Map with all available sizes
+
+    USAGE:
+
+    .myClass {
+        @include font-size(l-small);
+    }
+
+ */
+/**
+ *  Calculate line-height ratio from font-size and line-height in px value
+ */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  outline: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: blue;
+  color: yellow;
+  text-shadow: none;
+  user-select: text;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:link, a:visited {
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+hgroup,
+ul, ol, dd, figure,
+pre, table, fieldset, hr {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img, svg {
+  display: block;
+  vertical-align: middle;
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  font-size: inherit;
+}
+
+button {
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+html,
+body {
+  min-width: 20rem;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #000000;
+  font-family: "Arial-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.3571428571;
+  font-weight: 400;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.875rem;
+  max-width: 75rem;
+}
+
+.container-full {
+  margin: 0 auto;
+  padding: 0 1.875rem;
+  max-width: 100rem;
+}
+
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+/**
+ * Our base font-size and line-height
+ */
+/**
+ *	Here we assign short names for the font families
+ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 104px;
+  z-index: 50;
+  color: #ffffff;
+  background: #008BAA;
+  transition: all 0.3s ease 0s;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  font-size: 1rem;
+  line-height: 1.125;
+  font-weight: 400;
+  /* .container {
+    margin: 0 auto;
+    padding: 0 rem(math.div($container-padding, 2));
+    // max-width: rem($container-width);
+    display: grid;
+    grid-template-columns: rem(300) 1fr rem(300);
+    align-items: center;
+    box-sizing: content-box;
+
+    @include mq($max: xl) {
+      grid-template-columns: auto 1fr auto;
+    }
+  } */
+}
+@supports (padding-top: clamp( 0.625rem , 0.1854395604rem  +  2.1978021978vw , 1.875rem )) {
+  .header {
+    padding-top: clamp( 0.625rem , 0.1854395604rem  +  2.1978021978vw , 1.875rem );
+  }
+}
+@supports not (padding-top: clamp( 0.625rem , 0.1854395604rem  +  2.1978021978vw , 1.875rem )) {
+  .header {
+    padding-top: calc(0.625rem + 1.25 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 0.625rem , 0.4931318681rem  +  0.6593406593vw , 1rem )) {
+  .header {
+    padding-bottom: clamp( 0.625rem , 0.4931318681rem  +  0.6593406593vw , 1rem );
+  }
+}
+@supports not (padding-bottom: clamp( 0.625rem , 0.4931318681rem  +  0.6593406593vw , 1rem )) {
+  .header {
+    padding-bottom: calc(0.625rem + 0.375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem )) {
+  .header {
+    font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem )) {
+  .header {
+    font-size: calc(0.875rem + 0.125 * (100vw - 48rem) / 27);
+  }
+}
+.header._header-scroll {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.625rem;
+  background-color: rgba(0, 139, 170, 0.6);
+}
+.header__container-big {
+  display: grid;
+  grid-template-columns: 9.4375rem 9.3125rem 1fr auto;
+  align-items: center;
+}
+@supports (column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem )) {
+  .header__container-big {
+    column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem );
+  }
+}
+@supports not (column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem )) {
+  .header__container-big {
+    column-gap: calc(0.375rem + 0.125 * (100vw - 20rem) / 56.875);
+  }
+}
+.header__logo {
+  position: relative;
+  z-index: 5;
+}
+@supports (width: clamp( 7.5rem , 4.9444444444rem  +  5.3240740741vw , 8.9375rem )) {
+  .header__logo {
+    width: clamp( 7.5rem , 4.9444444444rem  +  5.3240740741vw , 8.9375rem );
+  }
+}
+@supports not (width: clamp( 7.5rem , 4.9444444444rem  +  5.3240740741vw , 8.9375rem )) {
+  .header__logo {
+    width: calc(7.5rem + 1.4375 * (100vw - 48rem) / 27);
+  }
+}
+.header__logo img {
+  max-width: 100%;
+}
+.header__logo-info {
+  max-width: 9.3125rem;
+}
+.header__body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.125;
+  font-weight: 400;
+  /* 
+  @include mq($max: md) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+    background-color: #1b2327;
+    gap: rem(30);
+    @include adaptiveValue("padding-top", 180, 120, 768, 320, 2);
+    padding-left: rem(15);
+    padding-right: rem(15);
+    padding-bottom: rem(30);
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: -100%;
+      transition: all 0.3s ease 0s;
+      width: 100%;
+      @include adaptiveValue("height", 105, 72, 768, 320, 2);
+      background-color: #141a1d;
+      z-index: 2;
+    }
+
+    .menu-open & {
+      left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+  } */
+}
+@supports (column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem )) {
+  .header__body {
+    column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem );
+  }
+}
+@supports not (column-gap: clamp( 0.375rem , 0.331043956rem  +  0.2197802198vw , 0.5rem )) {
+  .header__body {
+    column-gap: calc(0.375rem + 0.125 * (100vw - 20rem) / 56.875);
+  }
+}
+.header__body span {
+  border-bottom: 0.0625rem dashed rgba(255, 255, 255, 0.25);
+}
+@supports (font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem )) {
+  .header__body span {
+    font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem );
+  }
+}
+@supports not (font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem )) {
+  .header__body span {
+    font-size: calc(0.875rem + 0.125 * (100vw - 48rem) / 27);
+  }
+}
+.header__body-phone {
+  font-size: 1.875rem;
+  line-height: 1.1333333333;
+  font-weight: 400;
+}
+@supports (font-size: clamp( 1.375rem , 0.4861111111rem  +  1.8518518519vw , 1.875rem )) {
+  .header__body-phone {
+    font-size: clamp( 1.375rem , 0.4861111111rem  +  1.8518518519vw , 1.875rem );
+  }
+}
+@supports not (font-size: clamp( 1.375rem , 0.4861111111rem  +  1.8518518519vw , 1.875rem )) {
+  .header__body-phone {
+    font-size: calc(1.375rem + 0.5 * (100vw - 48rem) / 27);
+  }
+}
+.header__actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 5;
+}
+.header .social {
+  display: flex;
+  gap: 1rem;
+}
+.header .social__item {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.menu {
+  padding: 0 0.625rem;
+}
+@media screen and (max-width: 767px) {
+  .menu__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+    background-color: #1b2327;
+    gap: 1.875rem;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    padding-bottom: 1.875rem;
+  }
+  @supports (padding-top: clamp( 7.5rem , 4.8214285714rem  +  13.3928571429vw , 11.25rem )) {
+    .menu__body {
+      padding-top: clamp( 7.5rem , 4.8214285714rem  +  13.3928571429vw , 11.25rem );
+    }
+  }
+  @supports not (padding-top: clamp( 7.5rem , 4.8214285714rem  +  13.3928571429vw , 11.25rem )) {
+    .menu__body {
+      padding-top: calc(7.5rem + 3.75 * (100vw - 20rem) / 28);
+    }
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    background-color: #141a1d;
+    z-index: 2;
+  }
+  @supports (height: clamp( 4.5rem , 3.0267857143rem  +  7.3660714286vw , 6.5625rem )) {
+    .menu__body::before {
+      height: clamp( 4.5rem , 3.0267857143rem  +  7.3660714286vw , 6.5625rem );
+    }
+  }
+  @supports not (height: clamp( 4.5rem , 3.0267857143rem  +  7.3660714286vw , 6.5625rem )) {
+    .menu__body::before {
+      height: calc(4.5rem + 2.0625 * (100vw - 20rem) / 28);
+    }
+  }
+  .menu-open .menu__body {
+    left: 0;
+  }
+  .menu-open .menu__body::before {
+    left: 0;
+  }
+}
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.625rem;
+  column-gap: 2.75rem;
+}
+@supports (column-gap: clamp( 0.9375rem , 0.3001373626rem  +  3.1868131868vw , 2.75rem )) {
+  .menu__list {
+    column-gap: clamp( 0.9375rem , 0.3001373626rem  +  3.1868131868vw , 2.75rem );
+  }
+}
+@supports not (column-gap: clamp( 0.9375rem , 0.3001373626rem  +  3.1868131868vw , 2.75rem )) {
+  .menu__list {
+    column-gap: calc(0.9375rem + 1.8125 * (100vw - 20rem) / 56.875);
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu__list {
+    flex-direction: column;
+    text-align: center;
+    row-gap: 1.875rem;
+  }
+}
+.menu__link {
+  transition: color 0.3s ease 0s;
+}
+@media screen and (max-width: 767px) {
+  .menu__link {
+    font-size: 2.5rem;
+  }
+}
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: #23b123;
+  }
+}
+
+.icon-menu {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.125rem;
+    border: 0;
+    cursor: default;
+    z-index: 5;
+  }
+  .icon-menu span, .icon-menu::before, .icon-menu::after {
+    content: "";
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #fff;
+  }
+  .icon-menu::before {
+    top: 0;
+  }
+  .icon-menu::after {
+    bottom: 0;
+  }
+  .icon-menu span {
+    top: calc(50% - 0.0625rem);
+  }
+  .menu-open .icon-menu span {
+    width: 0;
+    background-color: #fff;
+  }
+  .menu-open .icon-menu::before, .menu-open .icon-menu::after {
+    background-color: #fff;
+  }
+  .menu-open .icon-menu::before {
+    top: calc(50% - 0.0625rem);
+    transform: rotate(-45deg);
+  }
+  .menu-open .icon-menu::after {
+    bottom: calc(50% - 0.0625rem);
+    transform: rotate(45deg);
+  }
+}
+
+.main-block__container-big {
+  position: relative;
+}
+.main-block__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+@supports (padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem )) {
+  .main-block__content {
+    padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem );
+  }
+}
+@supports not (padding-top: clamp( 8.125rem , 5.4876373626rem  +  13.1868131868vw , 15.625rem )) {
+  .main-block__content {
+    padding-top: calc(8.125rem + 7.5 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem )) {
+  .main-block__content {
+    padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem );
+  }
+}
+@supports not (padding-bottom: clamp( 3.125rem , -0.1717032967rem  +  16.4835164835vw , 12.5rem )) {
+  .main-block__content {
+    padding-bottom: calc(3.125rem + 9.375 * (100vw - 20rem) / 56.875);
+  }
+}
+.main-block__title {
+  max-width: 46.875rem;
+}
+@supports (margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem )) {
+  .main-block__title:not(:last-child) {
+    margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.875rem , 1.0178571429rem  +  4.2857142857vw , 4.3125rem )) {
+  .main-block__title:not(:last-child) {
+    margin-bottom: calc(1.875rem + 2.4375 * (100vw - 20rem) / 56.875);
+  }
+}
+.main-block__text {
+  max-width: 35.625rem;
+}
+@supports (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-block__text:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-block__text:not(:last-child) {
+    margin-bottom: calc(1.25rem + 1.75 * (100vw - 20rem) / 56.875);
+  }
+}
+@media (max-width: 26.875em) {
+  .main-block__form {
+    width: 100%;
+  }
+}
+.icons-main-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  .icons-main-block {
+    opacity: 0.2;
+  }
+}
+.icons-main-block__item {
+  position: absolute;
+}
+.icons-main-block__item_1 {
+  top: 69.3018480493%;
+  left: 0.9375rem;
+}
+.icons-main-block__item_2 {
+  top: 39.0143737166%;
+  left: 14.6296296296%;
+}
+.icons-main-block__item_3 {
+  top: 77.7207392197%;
+  left: 24.8765432099%;
+}
+.icons-main-block__item_4 {
+  top: 13.7577002053%;
+  left: 70.9259259259%;
+}
+.icons-main-block__item_5 {
+  top: 43.0184804928%;
+  left: 81.7901234568%;
+}
+.icons-main-block__item_6 {
+  top: 79.6714579055%;
+  left: 81.5432098765%;
+}
+.icons-main-block__item_7 {
+  top: 37.6796714579%;
+  right: 0.9375rem;
+}
+.icons-main-block__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+@supports (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (width: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem );
+  }
+}
+@supports not (height: clamp( 21.875rem , 16.7101648352rem  +  25.8241758242vw , 36.5625rem )) {
+  .icons-main-block__circle {
+    height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 56.875);
+  }
+}
+.icons-main-block__circle::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.icons-main-block__circle_1::before {
+  transform: translate(calc(-50% - 1.75rem), -37%);
+}
+.icons-main-block__circle_2::before {
+  transform: translate(calc(-50% + 1.6875rem), -46%);
+}
+
+.footer {
+  background: rgba(53, 64, 70, 0.5);
+}
+.footer__main {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+}
+@supports (padding-top: clamp( 1.875rem , 1.0398351648rem  +  4.1758241758vw , 4.25rem )) {
+  .footer__main {
+    padding-top: clamp( 1.875rem , 1.0398351648rem  +  4.1758241758vw , 4.25rem );
+  }
+}
+@supports not (padding-top: clamp( 1.875rem , 1.0398351648rem  +  4.1758241758vw , 4.25rem )) {
+  .footer__main {
+    padding-top: calc(1.875rem + 2.375 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
+  .footer__main {
+    padding-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
+  .footer__main {
+    padding-bottom: calc(1.875rem + 4.375 * (100vw - 20rem) / 56.875);
+  }
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.875rem;
+}
+@supports (padding-top: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem )) {
+  .footer__bottom {
+    padding-top: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem );
+  }
+}
+@supports not (padding-top: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem )) {
+  .footer__bottom {
+    padding-top: calc(1.875rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+@supports (padding-bottom: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem )) {
+  .footer__bottom {
+    padding-bottom: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.875rem , 1.3255494505rem  +  2.7472527473vw , 3.4375rem )) {
+  .footer__bottom {
+    padding-bottom: calc(1.875rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__bottom {
+    flex-direction: column-reverse;
+  }
+}
+.footer__copy {
+  font-size: 0.75rem;
+  line-height: 1.1666666667;
+}
+.main-footer {
+  display: grid;
+  column-gap: 1.25rem;
+  row-gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 991px) {
+  .main-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 479px) {
+  .main-footer {
+    grid-template-columns: 1fr;
+  }
+}
+.main-footer__info {
+  max-width: 20.625rem;
+}
+@media screen and (max-width: 991px) {
+  .main-footer__info {
+    order: 1;
+  }
+}
+.main-footer__logo {
+  display: inline-block;
+}
+.main-footer__logo:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.main-footer__form {
+  justify-self: center;
+}
+@media screen and (max-width: 991px) {
+  .main-footer__form {
+    order: 3;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 991px) {
+  .main-footer__form {
+    grid-column: span 2;
+  }
+}
+.main-footer__contacts {
+  display: flex;
+}
+@supports (gap: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-footer__contacts {
+    gap: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem );
+  }
+}
+@supports not (gap: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3rem )) {
+  .main-footer__contacts {
+    gap: calc(1.25rem + 1.75 * (100vw - 20rem) / 56.875);
+  }
+}
+@media screen and (max-width: 1199px) {
+  .main-footer__contacts {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 991px) {
+  .main-footer__contacts {
+    order: 2;
+  }
+}
+@media screen and (min-width: 480px) {
+  .main-footer__contacts {
+    justify-self: end;
+  }
+}
+.main-footer__label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.main-footer__label:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.main-footer__phone {
+  font-size: 1rem;
+}
+
+.form-main__text:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.menu-footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@supports (gap: clamp( 0.9375rem , 0.3880494505rem  +  2.7472527473vw , 2.5rem )) {
+  .menu-footer__list {
+    gap: clamp( 0.9375rem , 0.3880494505rem  +  2.7472527473vw , 2.5rem );
+  }
+}
+@supports not (gap: clamp( 0.9375rem , 0.3880494505rem  +  2.7472527473vw , 2.5rem )) {
+  .menu-footer__list {
+    gap: calc(0.9375rem + 1.5625 * (100vw - 20rem) / 56.875);
+  }
+}
+.menu-footer__link {
+  font-size: 0.875rem;
+  line-height: 1.1428571429;
+}

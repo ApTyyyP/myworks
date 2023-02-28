@@ -1,0 +1,47 @@
+@import "colors";
+@import "mixins";
+@import "typography";
+@import "config";
+
+.btn {
+  padding: rem(13) rem(82);
+  @include font-family(arial-bold);
+  @include font(l1-small, 21, 700);
+  display: inline-block;
+  color: palette(primary-white);
+  background: linear-gradient(180deg, #00AAAA 0%, #008BAA 100%);
+  border-radius: rem(24);
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  z-index: 1;
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
+
+  @include mq($min: lg) {
+    min-width: rem(224);
+  }
+
+  @media (any-hover: hover) {
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #00AAAA 100%, #008BAA 0%);
+      border-radius: rem(24);
+      transition: opacity 0.5s ease-out;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}

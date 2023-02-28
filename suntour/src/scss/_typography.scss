@@ -1,0 +1,78 @@
+/** =====================================================================================
+ *  Defines the typographic baseline.
+ *  We define every size in pixels, the underlying system converts the
+ *  respective units to the responsive REM value.
+ ===================================================================================== */
+
+/**
+ * Our base font-size and line-height
+ */
+$base-font-size: 14 !default;
+$base-line-height: 19 !default;
+$line-height-ratio: calc($base-line-height/$base-font-size) !default;
+
+$font-sizes: (
+  // m-small: 10,
+  // m1-small: 11,
+  s-small: 12,
+  s1-small: 13,
+  l-small: 14,
+  l1-small: 16,
+  base: $base-font-size,
+  mid: 18,
+  // mid-m: 19,
+  mid-large: 20,
+  m-mid-large: 22,
+  s-large: 24,
+  s1-large: 25,
+  s2-large: 28,
+  s3-large: 30,
+  // m-large: 32,
+  m1-large: 35,
+  // l-large: 36,
+  // l1-large: 40,
+  // x-large: 46,
+  x1-large: 48,
+  // x1-large: 58,
+  // x1-mid-large: 70,
+  // x2-mid-large: 80,
+  x3-mid-large: 88,
+  x2-large: 100,
+  // x3-large: 150
+);
+
+/**
+ *	Here we assign short names for the font families
+ */
+// $font-arial-regular: 'Arial', sans-serif;
+// $font-arial-italic: 'Arial', sans-serif;
+// $font-arial-bold: 'Arial', sans-serif;
+// $font-dmsans-regular: 'DMSans', sans-serif;
+// $font-dmsans-bold: 'DMSans', sans-serif;
+// $font-google-sans-bold: 'Google-Sans', sans-serif;
+// $font-roboto-regular: 'Roboto', sans-serif;
+// $font-trebuchet-ms-regular: 'Trebuchet-MS', sans-serif;
+// $font-trebuchet-ms-bold: 'Trebuchet-MS', sans-serif;
+$font-arial-regular: 'Arial-Regular', sans-serif;
+$font-arial-italic: 'Arial-Italic', sans-serif;
+$font-arial-bold: 'Arial-Bold', sans-serif;
+$font-dmsans-regular: 'DMSans-Regular', sans-serif;
+$font-dmsans-bold: 'DMSans-Bold', sans-serif;
+$font-google-sans-bold: 'Google-Sans-Bold', sans-serif;
+$font-roboto-regular: 'Roboto-Regular', sans-serif;
+$font-trebuchet-ms-regular: 'Trebuchet-MS-Regular', sans-serif;
+$font-trebuchet-ms-bold: 'Trebuchet-MS-Bold', sans-serif;
+
+//$_font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-families: (
+  base: $font-arial-regular,
+  arial-italic: $font-arial-italic,
+  arial-bold: $font-arial-bold,
+  dmsans-regular: $font-dmsans-regular,
+  dmsans-bold: $font-dmsans-bold,
+  google-sans-bold: $font-google-sans-bold,
+  roboto-regular: $font-roboto-regular,
+  trebuchet-ms-regular: $font-trebuchet-ms-regular,
+  trebuchet-ms-bold: $font-trebuchet-ms-bold
+);
