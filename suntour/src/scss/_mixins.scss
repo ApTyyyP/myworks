@@ -41,7 +41,7 @@
   // Для calc();
   $addSize: math.div($startSize - $minSize, 16);
 
-  @if ($widthFrom ==$container-width and $container-width ==0) {
+  @if ($widthFrom ==$container-width and $container-width == 0) {
     $widthFrom: $container-max-width;
   }
 

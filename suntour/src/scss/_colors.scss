@@ -4,6 +4,8 @@
  */
 
 $_color-primary-white: #ffffff !default;
+$_color-primary-gainsboro: #e0e0e0 !default;
+$_color-primary-cobalt: #0059ac !default;
 
 $_color-secondary-black: #000000 !default;
 
@@ -14,6 +16,12 @@ $_color-secondary-black: #000000 !default;
 $palettes: (
   "primary-white": (
     base: $_color-primary-white,
+  ),
+  "primary-gainsboro": (
+    base: $_color-primary-gainsboro,
+  ),
+  "primary-cobalt": (
+    base: $_color-primary-cobalt,
   ),
   "secondary-black": (
     base: $_color-secondary-black,

@@ -45,3 +45,13 @@
     }
   }
 }
+
+.link {
+  color: palette(primary-cobalt);
+  border-bottom: rem(1) solid rgba(0, 89, 172, 0.25);
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    border-bottom: rem(1) solid rgba(0, 89, 172, 1);
+  }
+}
