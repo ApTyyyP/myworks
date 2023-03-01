@@ -208,16 +208,18 @@ Styles for fullpage scroll
 
 [class*="__container"] {
   margin: 0 auto;
-  max-width: rem(1420);
+  max-width: rem($container-width);
 }
 
-@if ($responsiveType ==1) {
+@if ($responsiveType == 1) {
 
   // Отзывчивая
   [class*="__container-big"] {
-    @if ($container-max-width > 0) {
+    @if ($container-width > 0) {
       margin: 0 auto;
-      max-width: rem($container-max-width);
+      @include adaptiveValue("padding-left", 180, 20, 1400, 780, 1);
+      @include adaptiveValue("padding-right", 180, 20, 1400, 780, 1);
+      max-width: rem($container-width);
       box-sizing: content-box;
     }
 
@@ -233,8 +235,8 @@ Styles for fullpage scroll
   [class*="__container"] {
     margin: 0 auto;
 
-    @if ($container-max-width > 0) {
-      max-width: rem($container-max-width);
+    @if ($container-width > 0) {
+      max-width: rem($container-width);
       box-sizing: content-box;
     }
 
@@ -255,7 +257,7 @@ Styles for fullpage scroll
     @include mq($max: md) {
       max-width: none;
 
-      @if ($container-padding > 0 and $container-max-width > 0) {
+      @if ($container-padding > 0 and $container-width > 0) {
         padding: 0 rem(math.div($container-padding, 2));
       }
     }
