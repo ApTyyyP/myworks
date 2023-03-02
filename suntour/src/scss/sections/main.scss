@@ -109,4 +109,23 @@
     overflow: hidden;
     @include font(s-large, 28, 700);
   }
+
+  &__hotel {
+    padding: rem(23) rem(10) rem(27) 0;
+    max-width: 65%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: rem(20);
+    flex-wrap: wrap;
+    @include font-family(trebuchet-ms-bold);
+    @include font(m1-large, 45, 700);
+  }
+
+  &__hotel-rating {
+  }
+
+  &__hotel-price {
+    text-align: center;
+  }
 }

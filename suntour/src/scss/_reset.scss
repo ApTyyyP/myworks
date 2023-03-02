@@ -61,6 +61,11 @@ h6 {
   font-size: inherit;
 }
 
+h1 {
+  @include font-family(trebuchet-ms-bold);
+  @include font(m1-large, 45, 700);
+}
+
 img, svg {
   display: block;
   vertical-align: middle;

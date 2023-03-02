@@ -8,6 +8,7 @@
   z-index: 50;
   color: palette(primary-white);
   background: #008BAA;
+  border: rem(1) solid palette(secondary-black);;
   transition: all 0.5s ease 0s;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   @include font(l1-small, 18, 400);

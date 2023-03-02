@@ -295,7 +295,7 @@ export function formRating() {
 				setRating(rating);
 			}
 		}
-		// Инициализайция переменных
+		// Инициализация переменных
 		function initRatingVars(rating) {
 			ratingActive = rating.querySelector('.rating__active');
 			ratingValue = rating.querySelector('.rating__value');
