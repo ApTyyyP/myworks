@@ -1,6 +1,6 @@
 .main-block {
   &__content {
-    @include adaptiveValue("padding-top", 128, 40);
+    @include adaptiveValue("padding-top", 128, 108);
     @include adaptiveValue("padding-bottom", 24, 15);
     // position: relative;
     // display: flex;
@@ -12,8 +12,101 @@
   }
 
   &__content-image {
+    position: relative;
     width: 100%;
     max-height: rem(553);
     border-radius: rem(6);
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: rem(422);
+    height: rem(65);
+    background: url('../img/main-block/main-polygon.png') no-repeat;
+
+    // &::before {
+    //   position: absolute;
+    //   content: '';
+    //   right: 0;
+    //   bottom: 0;
+    //   width: rem(422);
+    //   height: rem(65);
+    //   background: url('../img/main-block/main-polygon.png') no-repeat;
+    // }
+
+    span {
+    }
+  }
+
+  &__content-body {
+    position: absolute;
+    top: rem(38);
+    right: rem(112);
+    max-width: rem(144);
+  }
+
+  &__content-number {
+    top: 0;
+    @include font-family(trebuchet-ms-bold);
+    @include font(x3-mid-large, 102, 700);
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: palette(primary-gray);
+  }
+
+  &__content-text {
+    @include font-family(base);
+    @include font(s3-large, 31, 400);
+  }
+
+  &__tour-wrap {
+    position: absolute;
+    left: rem(32);
+    bottom: rem(33);
+    padding: rem(45) rem(40) rem(47) rem(41);
+    width: rem(250);
+    height: rem(250);
+    background: rgba(255, 242, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__tour-body {
+    max-width: rem(169);
+    max-height: rem(158);
+    text-align: center;
+    @include font-family(trebuchet-ms-bold);
+    @include font(base, 16, 700);
+    overflow: hidden;
+  }
+
+  &__tour-title {
+    padding-bottom: rem(16);
+    max-height: rem(158);
+    @include font-family(trebuchet-ms-bold);
+    @include font(s1-large, 29, 700);
+    overflow: hidden;
+  }
+
+  &__tour-code {
+    margin: rem(7) auto 0;
+    padding: rem(1) rem(4) rem(2) rem(5);
+    width: rem(108);
+    height: rem(31);
+    color: palette(primary-white);
+    background-color: palette(secondary-black);;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    @include font(s-large, 28, 700);
   }
 }
