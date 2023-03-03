@@ -1,7 +1,7 @@
 .main-block {
   &__content {
     @include adaptiveValue("padding-top", 128, 108);
-    @include adaptiveValue("padding-bottom", 24, 15);
+    @include adaptiveValue("padding-bottom", 48, 15);
     // position: relative;
     // display: flex;
     // flex-direction: column;
@@ -129,7 +129,6 @@
   }
 
   &__table {
-    padding-bottom: rem(48);
     width: 54%;
     display: flex;
     justify-content: space-between;

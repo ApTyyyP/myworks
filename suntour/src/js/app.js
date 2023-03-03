@@ -166,7 +166,7 @@ flsForms.formRating();
 Наблюдатель за объектами c атрибутом data-watch
 Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 */
-// import "./libs/watcher.js";
+import "./libs/watcher.js";
 
 /* Функции работы скроллом */
 import * as flsScroll from "./files/scroll/scroll.js";
@@ -191,7 +191,7 @@ flsScroll.headerScroll();
 Документация: https://template.fls.guru/template-docs/modul-animacii-cifrovogo-lichilnika.html
 Сниппет(HTML): counter
 */
-// flsScroll.digitsCounter();
+flsScroll.digitsCounter();
 
 /*
 Модуль поэкранной прокрутки

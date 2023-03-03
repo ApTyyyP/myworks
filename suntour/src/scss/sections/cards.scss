@@ -1,0 +1,81 @@
+.cards {
+  padding-bottom: rem(32);
+  display: flex;
+  justify-content: space-between;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(40);
+  }
+}
+
+.card {
+  max-width: 48%;
+
+  &:hover img {
+    transform: scale(1.2);
+  }
+
+  &:hover h2 {
+    color: palette(primary-red);
+    cursor: pointer;
+
+    .bg-title {
+      border-bottom: rem(1) solid rgba(palette(primary-red), 0.25);
+    }
+  }
+
+  &__img {
+    border-radius: rem(6);
+    overflow: hidden;
+
+    img {
+      transition: all 1s ease-out;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(10);
+  }
+
+  &__body {
+
+    h2 {
+      margin-bottom: rem(6);
+    }
+
+    p {}
+  }
+
+  &__price {
+    text-align: right;
+  }
+
+  &__price-new {
+    @include font-family(trebuchet-ms-bold);
+    @include font(m1-large, 45, 700);
+  }
+
+  &__price-old {
+    padding: 0 3px;
+    position: relative;
+    @include font-family(trebuchet-ms-regular);
+    @include font(mid-large, 23, 400);
+    display: inline-block;
+    color: palette(primary-gray);
+    // stroke: palette(primary-red);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: rem(1) solid palette(primary-red);
+    }
+  }
+}
