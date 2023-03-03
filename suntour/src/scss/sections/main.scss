@@ -40,8 +40,7 @@
     //   background: url('../img/main-block/main-polygon.png') no-repeat;
     // }
 
-    span {
-    }
+    span {}
   }
 
   &__content-body {
@@ -102,7 +101,8 @@
     width: rem(108);
     height: rem(31);
     color: palette(primary-white);
-    background-color: palette(secondary-black);;
+    background-color: palette(secondary-black);
+    ;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -122,10 +122,112 @@
     @include font(m1-large, 45, 700);
   }
 
-  &__hotel-rating {
-  }
+  &__hotel-rating {}
 
   &__hotel-price {
     text-align: center;
   }
+
+  &__table {
+    padding-bottom: rem(48);
+    width: 54%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiveValue("column-gap", 16, 6);
+    line-height: rem(14);
+    white-space: nowrap;
+    @include font-family(base);
+  }
+
+  &__table-score {
+    @include font-size(14);
+    line-height: rem(21);
+  }
+
+  &__score-title {
+
+  }
+
+  &__score-value {
+    @include font-family(arial-bold);
+    @include font(l1-small, 16, 700);
+  }
+
+  &__table-wrap {
+    letter-spacing: 0.05em;
+  }
+
+  &__table-title {
+    @include font(s-small, 14, 400);
+    font-size: rem(12);
+    text-transform: uppercase;
+  }
+
+  &__table-value {
+    @include font-family(arial-bold);
+    @include font(mid, 21, 700);
+  }
+
+  &__table-total {
+    margin: 0 rem(8) 0 rem(16);
+    padding: rem(12) rem(8) rem(12) rem(7);
+    // width: rem(52);
+    height: rem(52);
+    color: palette(primary-white);
+    background-color: palette(primary-blue);
+    @include font-family(trebuchet-ms-bold);
+    @include font(s-large, 28, 700);
+  }
+
+  // &__table {
+  //   padding-bottom: rem(48);
+  //   width: 65%;
+  //   line-height: rem(16);
+
+  //   .total {
+  //     margin: 0 rem(24) 0 rem(32);
+  //     padding: rem(12) rem(8) rem(12) rem(7);
+  //     width: rem(52);
+  //     height: rem(52);
+  //     color: palette(primary-white);
+  //     background-color: palette(primary-blue);
+  //     @include font-family(trebuchet-ms-bold);
+  //     @include font(s-large, 28, 700);
+  //   }
+
+  //   table {
+  //     border-spacing: rem(16) 0;
+  //     white-space: nowrap;
+  //   }
+
+  //   th:not(:first-child),
+  //   td:not(:first-child) {
+  //     letter-spacing: 0.05em;
+  //   }
+
+  //   th {
+  //     font-weight: normal;
+  //     font-size: rem(12);
+
+  //     &:first-child {
+  //       text-align: left;
+  //     }
+
+  //     &:not(:first-child) {
+  //       text-transform: uppercase;
+  //     }
+  //   }
+
+  //   td {
+  //     @include font-family(trebuchet-ms-bold);
+  //     @include font(mid, 21, 700);
+
+  //     &:first-child {
+  //       @include font-size(14);
+  //       line-height: rem(16);
+  //       // @include font(l-small, 16, 700);
+  //     }
+  //   }
+  // }
 }

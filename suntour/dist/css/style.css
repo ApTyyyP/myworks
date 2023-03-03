@@ -201,6 +201,14 @@
 Сниппет (HTML): opt
 */
 /* Стили рейтинга */
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
 .rating {
   display: flex;
   align-items: flex-end;
@@ -215,6 +223,7 @@
 .rating.rating_set .rating__active,
 .rating.rating_set .rating__item {
   cursor: pointer;
+  letter-spacing: 0.1875rem;
 }
 
 .rating__body {
@@ -222,8 +231,11 @@
 }
 
 .rating__body::before {
-  content: "★★★★★";
+  content: "☆☆☆☆☆";
   display: block;
+  font-weight: 400;
+  color: #dddddd;
+  letter-spacing: 0.1875rem;
 }
 
 .rating__active {
@@ -883,10 +895,19 @@ h6 {
 }
 
 h1 {
+  position: relative;
   font-family: "Trebuchet-MS-Bold", sans-serif;
   font-size: 2.1875rem;
   line-height: 1.2857142857;
   font-weight: 700;
+}
+h1::after {
+  position: absolute;
+  bottom: 0.0625rem;
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.25);
 }
 
 img, svg {
@@ -1291,6 +1312,63 @@ body {
 }
 .main-block__hotel-price {
   text-align: center;
+}
+.main-block__table {
+  padding-bottom: 3rem;
+  width: 54%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 0.875rem;
+  white-space: nowrap;
+  font-family: "Arial-Regular", sans-serif;
+}
+@supports (column-gap: clamp( 0.375rem , 0.1898148148rem  +  0.9259259259vw , 1rem )) {
+  .main-block__table {
+    column-gap: clamp( 0.375rem , 0.1898148148rem  +  0.9259259259vw , 1rem );
+  }
+}
+@supports not (column-gap: clamp( 0.375rem , 0.1898148148rem  +  0.9259259259vw , 1rem )) {
+  .main-block__table {
+    column-gap: calc(0.375rem + 0.625 * (100vw - 20rem) / 67.5);
+  }
+}
+.main-block__table-score {
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+}
+.main-block__score-value {
+  font-family: "Arial-Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.main-block__table-wrap {
+  letter-spacing: 0.05em;
+}
+.main-block__table-title {
+  font-size: 0.75rem;
+  line-height: 1.1666666667;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.main-block__table-value {
+  font-family: "Arial-Bold", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.1666666667;
+  font-weight: 700;
+}
+.main-block__table-total {
+  margin: 0 0.5rem 0 1rem;
+  padding: 0.75rem 0.5rem 0.75rem 0.4375rem;
+  height: 3.25rem;
+  color: #ffffff;
+  background-color: #008baa;
+  font-family: "Trebuchet-MS-Bold", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.1666666667;
+  font-weight: 700;
 }
 
 .footer {

@@ -1,6 +1,9 @@
+@import "../../colors";
+
 // <RATING>
 // Снипет (HTML): rating
 .rating {
+  // width: rem(146);
   display: flex;
   align-items: flex-end;
   font-size: rem(35);
@@ -15,6 +18,7 @@
 .rating.rating_set .rating__active,
 .rating.rating_set .rating__item {
   cursor: pointer;
+  letter-spacing: rem(3);
 }
 
 .rating__body {
@@ -22,8 +26,11 @@
 }
 
 .rating__body::before {
-  content: "★★★★★";
+  content: "☆☆☆☆☆";
   display: block;
+  font-weight: 400;
+  color: palette(secondary-gainsboro);
+  letter-spacing: rem(3);
 }
 
 .rating__active {

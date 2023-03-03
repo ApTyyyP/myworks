@@ -7,8 +7,10 @@ $_color-primary-white: #ffffff !default;
 $_color-primary-gainsboro: #e0e0e0 !default;
 $_color-primary-cobalt: #0059ac !default;
 $_color-primary-gray: #777777 !default;
+$_color-primary-blue: #008baa !default;
 
 $_color-secondary-black: #000000 !default;
+$_color-secondary-gainsboro: #dddddd !default;
 
 /**
  *  Organize color variables in a Sass Map.
@@ -27,7 +29,13 @@ $palettes: (
   "primary-gray": (
     base: $_color-primary-gray,
   ),
+  "primary-blue": (
+    base: $_color-primary-blue,
+  ),
   "secondary-black": (
     base: $_color-secondary-black,
+  ),
+  "secondary-gainsboro": (
+    base: $_color-secondary-gainsboro,
   )
 );
