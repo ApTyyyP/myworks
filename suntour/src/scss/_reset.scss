@@ -63,7 +63,6 @@ h6 {
 
 h1,
 h2 {
-  position: relative;
   @include font-family(trebuchet-ms-bold);
   @include font(m1-large, 45, 700);
   transition: all 0.3s ease 0s;
@@ -71,6 +70,20 @@ h2 {
   .bg-title {
     border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
   }
+
+  // &::after {
+  //   position: absolute;
+  //   bottom: rem(1);
+  //   content: '';
+  //   display: block;
+  //   width: 100%;
+  //   border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
+  // }
+}
+
+h3 {
+  @include font-family(arial-bold);
+  @include font(m-mid-large, 29, 700);
 
   // &::after {
   //   position: absolute;

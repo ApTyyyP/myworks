@@ -9,6 +9,7 @@ $_color-primary-cobalt: #0059ac !default;
 $_color-primary-gray: #777777 !default;
 $_color-primary-blue: #008baa !default;
 $_color-primary-red: #cb0000 !default;
+$_color-primary-white-smoke: #f7f7f7 !default;
 
 $_color-secondary-black: #000000 !default;
 $_color-secondary-gainsboro: #dddddd !default;
@@ -35,6 +36,9 @@ $palettes: (
   ),
   "primary-red": (
     base: $_color-primary-red,
+  ),
+  "primary-white-smoke": (
+    base: $_color-primary-white-smoke,
   ),
   "secondary-black": (
     base: $_color-secondary-black,

@@ -46,8 +46,6 @@
     h2 {
       margin-bottom: rem(6);
     }
-
-    p {}
   }
 
   &__price {
@@ -66,7 +64,6 @@
     @include font(mid-large, 23, 400);
     display: inline-block;
     color: palette(primary-gray);
-    // stroke: palette(primary-red);
 
     &::before {
       position: absolute;
