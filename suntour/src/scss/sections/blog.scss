@@ -1,0 +1,44 @@
+.blog {
+  padding-bottom: rem(24);
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(37);
+  }
+
+  &__body {
+    width: 78%;
+  }
+
+  &__body-title {
+    padding-bottom: rem(32);
+  }
+
+  &__aside {
+    width: 21%;
+  }
+
+  &__aside-wrap {
+    color: palette(primary-gray);
+    @include font(mid-large, 25, 400);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__aside-number {
+    padding-bottom: rem(4);
+    @include font-family(trebuchet-ms-bold);
+    @include font(x2-large, 116, 700);
+    letter-spacing: -0.05em;
+  }
+
+  &__aside-title {
+    padding-bottom: rem(8);
+    @include font(s3-large, 31, 400);
+    color: palette(secondary-black);
+  }
+}

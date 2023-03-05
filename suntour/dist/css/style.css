@@ -894,7 +894,13 @@ h6 {
   font-size: inherit;
 }
 
-h1,
+h1 {
+  font-family: "Trebuchet-MS-Bold", sans-serif;
+  font-size: 3rem;
+  line-height: 1.2916666667;
+  font-weight: 700;
+}
+
 h2 {
   font-family: "Trebuchet-MS-Bold", sans-serif;
   font-size: 2.1875rem;
@@ -902,7 +908,6 @@ h2 {
   font-weight: 700;
   transition: all 0.3s ease 0s;
 }
-h1 .bg-title,
 h2 .bg-title {
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.25);
 }
@@ -1237,6 +1242,8 @@ body {
   top: 2.375rem;
   right: 7rem;
   max-width: 9rem;
+  height: 13.75rem;
+  overflow: hidden;
 }
 .main-block__content-number {
   top: 0;
@@ -1246,6 +1253,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.05em;
   text-transform: uppercase;
+  text-align: center;
   color: #777777;
 }
 .main-block__content-text {
@@ -1253,6 +1261,7 @@ body {
   font-size: 1.875rem;
   line-height: 1.0333333333;
   font-weight: 400;
+  word-break: break-all;
 }
 .main-block__tour-wrap {
   position: absolute;
@@ -1324,6 +1333,7 @@ body {
   align-items: center;
   line-height: 0.875rem;
   white-space: nowrap;
+  flex-wrap: wrap;
   font-family: "Arial-Regular", sans-serif;
 }
 @supports (column-gap: clamp( 0.375rem , 0.1898148148rem  +  0.9259259259vw , 1rem )) {
@@ -1461,6 +1471,7 @@ body {
   width: 7.5625rem;
   color: #008baa;
   text-align: center;
+  overflow-wrap: break-word;
   font-family: "Arial-Bold", sans-serif;
   font-size: 1.75rem;
   line-height: 1.2142857143;
@@ -1468,6 +1479,7 @@ body {
 }
 .promo__info {
   margin-left: 0.9375rem;
+  word-break: break-all;
 }
 .promo__info h3 {
   margin-bottom: 0.5rem;
@@ -1502,7 +1514,7 @@ body {
   position: relative;
   padding-right: 1.125rem;
 }
-.promo__details span:after {
+.promo__details span::after {
   content: "";
   position: absolute;
   top: 0.125rem;
@@ -1512,6 +1524,49 @@ body {
   border-left: 0.125rem solid #777777;
   border-bottom: 0.125rem solid #777777;
   transform: rotate(-45deg);
+}
+
+.blog {
+  padding-bottom: 1.5rem;
+}
+.blog__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.3125rem;
+}
+.blog__body {
+  width: 78%;
+}
+.blog__body-title {
+  padding-bottom: 2rem;
+}
+.blog__aside {
+  width: 21%;
+}
+.blog__aside-wrap {
+  color: #777777;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.blog__aside-wrap p:last-child {
+  margin-bottom: 0;
+}
+.blog__aside-number {
+  padding-bottom: 0.25rem;
+  font-family: "Trebuchet-MS-Bold", sans-serif;
+  font-size: 6.25rem;
+  line-height: 1.16;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+.blog__aside-title {
+  padding-bottom: 0.5rem;
+  font-size: 1.875rem;
+  line-height: 1.0333333333;
+  font-weight: 400;
+  color: #000000;
 }
 
 .footer {

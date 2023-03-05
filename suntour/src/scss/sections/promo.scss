@@ -19,12 +19,14 @@
     width: rem(121);
     color: palette(primary-blue);
     text-align: center;
+    overflow-wrap: break-word;
     @include font-family(arial-bold);
     @include font(s2-large, 34, 700);
   }
 
   &__info {
     margin-left: rem(15);
+    word-break: break-all;
 
     h3 {
       margin-bottom: rem(8);
@@ -64,7 +66,7 @@
       position: relative;
       padding-right: rem(18);
 
-      &:after {
+      &::after {
         content: '';
         position: absolute;
         top: rem(2);

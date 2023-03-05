@@ -48,6 +48,8 @@
     top: rem(38);
     right: rem(112);
     max-width: rem(144);
+    height: rem(220);
+    overflow: hidden;
   }
 
   &__content-number {
@@ -56,12 +58,14 @@
     @include font(x3-mid-large, 102, 700);
     letter-spacing: -0.05em;
     text-transform: uppercase;
+    text-align: center;
     color: palette(primary-gray);
   }
 
   &__content-text {
     @include font-family(base);
     @include font(s3-large, 31, 400);
+    word-break: break-all;
   }
 
   &__tour-wrap {
@@ -136,6 +140,7 @@
     @include adaptiveValue("column-gap", 16, 6);
     line-height: rem(14);
     white-space: nowrap;
+    flex-wrap: wrap;
     @include font-family(base);
   }
 
