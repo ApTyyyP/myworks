@@ -52,6 +52,7 @@
     align-items: center;
     color: palette(primary-gray);
     background-color: palette(primary-white-smoke);
+    border-top: rem(1) solid palette(primary-gainsboro);
     transition: all 0.3s ease 0s;
     @include font(s1-small, 16, 400);
 

@@ -1489,6 +1489,7 @@ body {
   align-items: center;
   color: #777777;
   background-color: #f7f7f7;
+  border-top: 0.0625rem solid #e0e0e0;
   transition: all 0.3s ease 0s;
   font-size: 0.8125rem;
   line-height: 1.2307692308;
