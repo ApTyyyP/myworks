@@ -13,7 +13,7 @@
   }
 
   &__body-title {
-    padding-bottom: rem(32);
+    margin-bottom: rem(32);
   }
 
   &__aside {
@@ -23,10 +23,6 @@
   &__aside-wrap {
     color: palette(primary-gray);
     @include font(mid-large, 25, 400);
-
-    p:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &__aside-number {

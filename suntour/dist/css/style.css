@@ -531,6 +531,83 @@ Styles for fullpage scroll
  *  Organize color variables in a Sass Map.
  *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
  */
+.strong {
+  font-family: "Arial-Bold", sans-serif;
+}
+
+blockquote {
+  padding: 0.5rem 0 1.5rem 3rem;
+  font-family: "Arial-Italic", sans-serif;
+}
+blockquote .blockquote-text {
+  position: relative;
+  padding: 0.5625rem 0 0.5625rem 1.5rem;
+}
+blockquote .blockquote-text::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 0.5rem solid #008baa;
+}
+
+.table {
+  padding: 1rem 1rem 1.5rem;
+}
+.table table {
+  width: 100%;
+  line-height: 1.25rem;
+  letter-spacing: 0.00625rem;
+  border-spacing: 8px 7px;
+  border-collapse: collapse;
+  font-family: "DMSans-Regular", sans-serif;
+}
+.table thead {
+  font-family: "DMSans-Bold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.4285714286;
+  font-weight: 700;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+.table th {
+  padding: 0.5rem;
+  width: 22%;
+  height: 3rem;
+}
+.table td {
+  padding: 0.4375rem 0.25rem;
+  width: 23%;
+  height: 3.125rem;
+}
+.table tr {
+  transition: all 0.3s ease 0s;
+}
+.table tr:not(:last-child) {
+  border-bottom: 0.0625rem solid #e0e0e0;
+}
+.table tr:hover {
+  background-color: #f7f7f7;
+}
+
+.list {
+  padding-left: 1.9375rem;
+}
+.list:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.list li {
+  list-style: disc;
+}
+.list li:not(:last-child) {
+  padding-bottom: 0.5rem;
+}
+
+.paragraph__before-list {
+  margin-bottom: 0.5rem;
+}
+
 .title {
   font-weight: 600;
   line-height: 0.9285714286;
@@ -869,6 +946,9 @@ a:hover, a:link, a:visited {
 p {
   margin: 0 0 16px;
 }
+p:last-child {
+  margin-bottom: 0;
+}
 
 ul,
 li {
@@ -913,9 +993,20 @@ h2 .bg-title {
 }
 
 h3 {
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
   font-family: "Arial-Bold", sans-serif;
   font-size: 1.375rem;
   line-height: 1.3181818182;
+  font-weight: 700;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  font-family: "Arial-Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.3125;
   font-weight: 700;
 }
 
@@ -1482,13 +1573,9 @@ body {
   word-break: break-all;
 }
 .promo__info h3 {
-  margin-bottom: 0.5rem;
-}
-.promo__info p:last-child {
-  margin-bottom: 0;
+  padding-top: 0.25rem;
 }
 .promo__code {
-  margin-bottom: 0.25rem;
   color: #008baa;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
@@ -1539,7 +1626,7 @@ body {
   width: 78%;
 }
 .blog__body-title {
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .blog__aside {
   width: 21%;
@@ -1549,9 +1636,6 @@ body {
   font-size: 1.25rem;
   line-height: 1.25;
   font-weight: 400;
-}
-.blog__aside-wrap p:last-child {
-  margin-bottom: 0;
 }
 .blog__aside-number {
   padding-bottom: 0.25rem;

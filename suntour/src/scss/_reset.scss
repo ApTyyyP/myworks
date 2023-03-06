@@ -35,6 +35,10 @@ a {
 
 p {
   margin: 0 0 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 ul,
@@ -85,6 +89,8 @@ h2 {
 }
 
 h3 {
+  margin-bottom: rem(8);
+  padding-top: rem(8);
   @include font-family(arial-bold);
   @include font(m-mid-large, 29, 700);
 
@@ -96,6 +102,13 @@ h3 {
   //   width: 100%;
   //   border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
   // }
+}
+
+h4 {
+  margin-bottom: rem(8);
+  padding-top: rem(8);
+  @include font-family(arial-bold);
+  @include font(l1-small, 21, 700);
 }
 
 img, svg {

@@ -29,16 +29,11 @@
     word-break: break-all;
 
     h3 {
-      margin-bottom: rem(8);
-    }
-
-    p:last-child {
-      margin-bottom: 0;
+      padding-top: rem(4);
     }
   }
 
   &__code {
-    margin-bottom: rem(4);
     color: palette(primary-blue);
     letter-spacing: rem(1);
     text-transform: uppercase;

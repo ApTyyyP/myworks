@@ -1,5 +1,94 @@
 // Заголовки, общие БЭМ-блоки и прочее...
+
+.strong {
+  @include font-family(arial-bold);
+}
+
+blockquote {
+  padding: rem(8) 0 rem(24) rem(48);
+  @include font-family(arial-italic);
+
+  .blockquote-text {
+    position: relative;
+    padding: rem(9) 0 rem(9) rem(24);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-left: rem(8) solid palette(primary-blue);
+    }
+  }
+}
+
+.table {
+  padding: rem(16) rem(16) rem(24);
+
+  table {
+    width: 100%;
+    line-height: rem(20);
+    letter-spacing: rem(0.1);
+    border-spacing: 8px 7px;
+    border-collapse: collapse;
+    @include font-family(dmsans-regular);
+  }
+
+  thead {
+    @include font-family(dmsans-bold);
+    @include font(base, 20, 700);
+    background-color: palette(primary-white-smoke);
+    text-align: left;
+  }
+
+  th {
+    padding: rem(8);
+    width: 22%;
+    height: rem(48);
+  }
+
+  td {
+    padding: rem(7) rem(4);
+    width: 23%;
+    height: rem(50);
+  }
+
+  tr {
+    transition: all 0.3s ease 0s;
+
+    &:not(:last-child) {
+      border-bottom: rem(1) solid palette(primary-gainsboro);
+    }
+
+    &:hover {
+      background-color: palette(primary-white-smoke);
+    }
+  }
+}
+
+.list {
+  padding-left: rem(31);
+
+  &:not(:last-child) {
+    margin-bottom: rem(8);
+  }
+
+  li {
+    list-style: disc;
+
+    &:not(:last-child) {
+      padding-bottom: rem(8);
+    }
+  }
+}
+
+.paragraph__before-list {
+  margin-bottom: rem(8);
+}
+
 .page {
+
   // .page__main
   &__main {}
 
