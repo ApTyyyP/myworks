@@ -17,7 +17,7 @@
 // ====================================================================================================
 // Функционал =========================================================================================
 // ====================================================================================================
-import * as flsFunctions from "./files/functions.js";
+import * as flsFunctions from './files/functions.js';
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 /* (i) необходимо для корректного отображения webp из css */
@@ -27,7 +27,7 @@ flsFunctions.isWebp();
 /* Добавление loaded для HTML после полной загрузки страницы */
 flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Учёт плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();
 
@@ -69,7 +69,7 @@ flsFunctions.addLoadedClass();
 // ====================================================================================================
 // Работа с формами ===================================================================================
 // ====================================================================================================
-import * as flsForms from "./files/forms/forms.js";
+import * as flsForms from './files/forms/forms.js';
 
 /*
 Работа с полями формы
@@ -77,8 +77,8 @@ import * as flsForms from "./files/forms/forms.js";
 */
 
 flsForms.formFieldsInit({
-	viewPass: false,
-	autoHeight: false
+  viewPass: false,
+  autoHeight: false,
 });
 
 /*
@@ -166,10 +166,10 @@ flsForms.formRating();
 Наблюдатель за объектами c атрибутом data-watch
 Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 */
-import "./libs/watcher.js";
+import './libs/watcher.js';
 
 /* Функции работы скроллом */
-import * as flsScroll from "./files/scroll/scroll.js";
+import * as flsScroll from './files/scroll/scroll.js';
 
 /*
 Плавная навигация по странице
@@ -225,7 +225,7 @@ flsScroll.digitsCounter();
 Динамический адаптив
 Документация: https://template.fls.guru/template-docs/dinamicheskij-adaptiv.html
 */
-import "./libs/dynamic_adapt.js";
+import './libs/dynamic_adapt.js';
 
 /* Форматирование чисел */
 // import "./libs/wNumb.min.js";
@@ -235,5 +235,5 @@ import "./libs/dynamic_adapt.js";
 // ====================================================================================================
 
 /* Подключаем файлы со своим кодом */
-import "./files/script.js";
+import './files/script.js';
 // ====================================================================================================
