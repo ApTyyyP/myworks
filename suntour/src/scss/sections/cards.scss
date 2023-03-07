@@ -6,12 +6,19 @@
   &__wrap {
     display: flex;
     justify-content: space-between;
-    gap: rem(40);
+    flex-wrap: wrap;
+    // gap: rem(40);
+    @include adaptiveValue("gap", 40, 14);
   }
 }
 
 .card {
   max-width: 48%;
+
+  @include mq($max: sm) {
+    flex-direction: column;
+    max-width: 100%;
+  }
 
   &:hover img {
     transform: scale(1.2);
@@ -45,6 +52,9 @@
 
     h2 {
       margin-bottom: rem(6);
+      // font-weight: 700;
+      @include adaptiveValue("font-size", 35, 20);
+      @include adaptiveValue("line-height", 45, 21);
     }
   }
 
@@ -54,7 +64,10 @@
 
   &__price-new {
     @include font-family(trebuchet-ms-bold);
-    @include font(m1-large, 45, 700);
+    // @include font(m1-large, 45, 700);
+    font-weight: 700;
+    @include adaptiveValue("font-size", 35, 20);
+    @include adaptiveValue("line-height", 45, 21);
   }
 
   &__price-old {

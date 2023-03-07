@@ -5,8 +5,15 @@
 }
 
 blockquote {
-  padding: rem(8) 0 rem(24) rem(48);
+  // padding: rem(8) 0 rem(24) rem(48);
+  @include adaptiveValue("padding-top", 8, 4);
+  padding-right: 0;
+  @include adaptiveValue("padding-left", 48, 24);
   @include font-family(arial-italic);
+
+  &:not(:last-child) {
+    @include adaptiveValue("padding-bottom", 24, 12);
+  }
 
   .blockquote-text {
     position: relative;
@@ -24,7 +31,19 @@ blockquote {
 }
 
 .table {
-  padding: rem(16) rem(16) rem(24);
+  // padding: rem(16) rem(16) rem(24);
+  @include adaptiveValue("padding-top", 16, 10);
+  @include adaptiveValue("padding-right", 16, 10);
+  @include adaptiveValue("padding-left", 16, 10);
+
+  &:not(:last-child) {
+    @include adaptiveValue("padding-bottom", 24, 10);
+  }
+
+  @include mq($max: xl) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   table {
     width: 100%;
@@ -43,13 +62,16 @@ blockquote {
   }
 
   th {
-    padding: rem(8);
+    // padding: rem(8);
+    @include adaptiveValue("padding", 8, 4);
     width: 22%;
     height: rem(48);
   }
 
   td {
-    padding: rem(7) rem(4);
+    // padding: rem(7) rem(4);
+    @include adaptiveValue("padding-top", 7, 4);
+    @include adaptiveValue("padding-bottom", 4, 1);
     width: 23%;
     height: rem(50);
   }

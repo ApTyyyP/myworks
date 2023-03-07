@@ -49,8 +49,14 @@ li {
 }
 
 hgroup,
-ul, ol, dd, figure,
-pre, table, fieldset, hr {
+ul,
+ol,
+dd,
+figure,
+pre,
+table,
+fieldset,
+hr {
   margin: 0;
 }
 
@@ -67,8 +73,12 @@ h6 {
 
 h1 {
   @include font-family(trebuchet-ms-bold);
-  @include font(x1-large, 62, 700);
+  // @include font(x1-large, 62, 700);
+  font-weight: 700;
+  @include adaptiveValue("font-size", 48, 32);
+  @include adaptiveValue("line-height", 62, 36);
 }
+
 h2 {
   @include font-family(trebuchet-ms-bold);
   @include font(m1-large, 45, 700);
@@ -111,7 +121,8 @@ h4 {
   @include font(l1-small, 21, 700);
 }
 
-img, svg {
+img,
+svg {
   display: block;
   vertical-align: middle;
   border: none;
@@ -152,11 +163,12 @@ body {
   overflow: hidden;
 
   // Прижимаем footer
-  > main {
+  >main {
     flex: 1 1 auto;
   }
+
   // Фикс для слайдеров
-  > * {
+  >* {
     min-width: 0;
   }
 }

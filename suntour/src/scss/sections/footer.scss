@@ -8,6 +8,11 @@
     align-items: center;
     @include adaptiveValue("column-gap", 8, 6);
     border-top: rem(1) solid palette(primary-gainsboro);
+
+    @include mq($max: sm) {
+      flex-direction: column;
+      gap: rem(16);
+    }
   }
 
   &__copy {

@@ -1,6 +1,10 @@
 .promo {
   padding-bottom: rem(63);
 
+  @include mq($max: xl) {
+    padding-bottom: rem(20);
+  }
+
   &__wrap {
     border: rem(1) solid palette(primary-gainsboro);
     border-radius: rem(6);
@@ -8,11 +12,22 @@
   }
 
   &__body {
-    padding: rem(35) rem(24) rem(35) rem(25);
+    // padding: rem(35) rem(24) rem(35) rem(25);
+    @include adaptiveValue("padding-top", 35, 15);
+    @include adaptiveValue("padding-right", 24, 16);
+    @include adaptiveValue("padding-bottom", 35, 15);
+    @include adaptiveValue("padding-left", 25, 15);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: rem(16);
+    // gap: rem(16);
+    @include adaptiveValue("column-gap", 16, 6);
+
+    @include mq($max: lg) {
+      flex-direction: column;
+      row-gap: rem(16);
+      // @include adaptiveValue("row-gap", 16, 6);
+    }
   }
 
   &__discount {
@@ -22,14 +37,28 @@
     overflow-wrap: break-word;
     @include font-family(arial-bold);
     @include font(s2-large, 34, 700);
+    // font-weight: 700;
+    // @include adaptiveValue("font-size", 28, 20);
+    // @include adaptiveValue("line-height", 34, 21);
   }
 
   &__info {
-    margin-left: rem(15);
-    word-break: break-all;
+    // margin-left: rem(15);
+    @include adaptiveValue("margin-left", 15, 8);
+    // word-break: break-all;
 
     h3 {
       padding-top: rem(4);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-shrink: 0;
+
+    @include mq($max: sm) {
+      display: grid;
+      width: 100%;
     }
   }
 
