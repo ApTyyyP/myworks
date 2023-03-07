@@ -5,12 +5,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // gap: rem(37);
     @include adaptiveValue("row-gap", 37, 15);
 
     @include mq($max: xl) {
       flex-direction: column-reverse;
-      // flex-direction: row-reverse;
     }
   }
 
@@ -23,7 +21,6 @@
   }
 
   &__body-title {
-    // margin-bottom: rem(32);
     @include adaptiveValue("margin-bottom", 32, 14);
   }
 

@@ -19,31 +19,22 @@ $_color-secondary-gainsboro: #dddddd !default;
  *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
  */
 $palettes: (
-  "primary-white": (
-    base: $_color-primary-white,
+  "primary-white": (base: $_color-primary-white,
   ),
-  "primary-gainsboro": (
-    base: $_color-primary-gainsboro,
+  "primary-gainsboro": (base: $_color-primary-gainsboro,
   ),
-  "primary-cobalt": (
-    base: $_color-primary-cobalt,
+  "primary-cobalt": (base: $_color-primary-cobalt,
   ),
-  "primary-gray": (
-    base: $_color-primary-gray,
+  "primary-gray": (base: $_color-primary-gray,
   ),
-  "primary-blue": (
-    base: $_color-primary-blue,
+  "primary-blue": (base: $_color-primary-blue,
   ),
-  "primary-red": (
-    base: $_color-primary-red,
+  "primary-red": (base: $_color-primary-red,
   ),
-  "primary-white-smoke": (
-    base: $_color-primary-white-smoke,
+  "primary-white-smoke": (base: $_color-primary-white-smoke,
   ),
-  "secondary-black": (
-    base: $_color-secondary-black,
+  "secondary-black": (base: $_color-secondary-black,
   ),
-  "secondary-gainsboro": (
-    base: $_color-secondary-gainsboro,
+  "secondary-gainsboro": (base: $_color-secondary-gainsboro,
   )
 );

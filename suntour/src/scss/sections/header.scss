@@ -9,7 +9,7 @@
   background: #008BAA;
   border: rem(1) solid palette(secondary-black);
   transition: all 0.5s ease 0s;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 rem(4) rem(4) rgba(0, 0, 0, 0.25));
   @include font(l1-small, 18, 400);
   @include adaptiveValue("padding-top", 36, 10);
   @include adaptiveValue("padding-bottom", 16, 10);

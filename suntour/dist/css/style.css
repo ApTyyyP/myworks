@@ -17,11 +17,6 @@
 /* ==========================================================================
    Config settings
    ========================================================================== */
-/*
-Тип адаптива:
-1 = отзывчивость (у контейнера нет брейк-поинтов),
-2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-*/
 /**
   USAGE:
 
@@ -376,11 +371,6 @@ Styles for fullpage scroll
 /* ==========================================================================
    Config settings
    ========================================================================== */
-/*
-Тип адаптива:
-1 = отзывчивость (у контейнера нет брейк-поинтов),
-2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-*/
 /**
   USAGE:
 
@@ -466,11 +456,6 @@ Styles for fullpage scroll
 /* ==========================================================================
    Config settings
    ========================================================================== */
-/*
-Тип адаптива:
-1 = отзывчивость (у контейнера нет брейк-поинтов),
-2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-*/
 .btn {
   padding: 0.8125rem 2.625rem;
   font-family: "Arial-Bold", sans-serif;
@@ -719,159 +704,9 @@ blockquote .blockquote-text::before {
   gap: 1rem;
 }
 
-.title {
-  font-weight: 600;
-  line-height: 0.9285714286;
-  font-size: 4.375rem;
-  color: #ffffff;
-}
-@supports (font-size: clamp( 2.8125rem , 2.349537037rem  +  2.3148148148vw , 4.375rem )) {
-  .title {
-    font-size: clamp( 2.8125rem , 2.349537037rem  +  2.3148148148vw , 4.375rem );
-  }
-}
-@supports not (font-size: clamp( 2.8125rem , 2.349537037rem  +  2.3148148148vw , 4.375rem )) {
-  .title {
-    font-size: calc(2.8125rem + 1.5625 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (font-size: clamp( 2.5rem , 2.0555555556rem  +  2.2222222222vw , 4rem )) {
-  .title_s64 {
-    font-size: clamp( 2.5rem , 2.0555555556rem  +  2.2222222222vw , 4rem );
-  }
-}
-@supports not (font-size: clamp( 2.5rem , 2.0555555556rem  +  2.2222222222vw , 4rem )) {
-  .title_s64 {
-    font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (font-size: clamp( 2.1875rem , 1.7986111111rem  +  1.9444444444vw , 3.5rem )) {
-  .title_s56 {
-    font-size: clamp( 2.1875rem , 1.7986111111rem  +  1.9444444444vw , 3.5rem );
-  }
-}
-@supports not (font-size: clamp( 2.1875rem , 1.7986111111rem  +  1.9444444444vw , 3.5rem )) {
-  .title_s56 {
-    font-size: calc(2.1875rem + 1.3125 * (100vw - 20rem) / 67.5);
-  }
-}
-.title span {
-  color: #23b123;
-}
-
-.text {
-  line-height: 180%;
-}
-
-.image-block {
-  max-width: 37.5rem;
-  position: relative;
-  display: flex;
-  align-self: start;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1.25rem;
-  overflow: hidden;
-}
-@supports (padding-top: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem )) {
-  .image-block {
-    padding-top: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem );
-  }
-}
-@supports not (padding-top: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem )) {
-  .image-block {
-    padding-top: calc(1.875rem + 8.4375 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (padding-bottom: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem )) {
-  .image-block {
-    padding-bottom: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem );
-  }
-}
-@supports not (padding-bottom: clamp( 1.875rem , -0.625rem  +  12.5vw , 10.3125rem )) {
-  .image-block {
-    padding-bottom: calc(1.875rem + 8.4375 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (padding-left: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem )) {
-  .image-block {
-    padding-left: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem );
-  }
-}
-@supports not (padding-left: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem )) {
-  .image-block {
-    padding-left: calc(1.875rem + 0.9375 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (padding-right: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem )) {
-  .image-block {
-    padding-right: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem );
-  }
-}
-@supports not (padding-right: clamp( 1.875rem , 1.5972222222rem  +  1.3888888889vw , 2.8125rem )) {
-  .image-block {
-    padding-right: calc(1.875rem + 0.9375 * (100vw - 20rem) / 67.5);
-  }
-}
-.image-block__circle {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-@supports (width: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem )) {
-  .image-block__circle {
-    width: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem );
-  }
-}
-@supports not (width: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem )) {
-  .image-block__circle {
-    width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 67.5);
-  }
-}
-@supports (height: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem )) {
-  .image-block__circle {
-    height: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem );
-  }
-}
-@supports not (height: clamp( 21.875rem , 17.5231481481rem  +  21.7592592593vw , 36.5625rem )) {
-  .image-block__circle {
-    height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 67.5);
-  }
-}
-.image-block__circle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.37);
-}
-.image-block__circle_1::before {
-  transform: translate(calc(50% - 1.125rem), -20%);
-}
-.image-block__circle_2::before {
-  transform: translate(calc(50% - 1.25rem), -6%);
-}
-.image-block__item {
-  position: relative;
-  flex: 1 1 100%;
-  text-align: center;
-  z-index: 2;
-}
-.image-block__item img {
-  max-width: 100%;
-  border-radius: 1.25rem;
-}
-
 /* ==========================================================================
    Config settings
    ========================================================================== */
-/*
-Тип адаптива:
-1 = отзывчивость (у контейнера нет брейк-поинтов),
-2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-*/
 @font-face {
   font-family: "Roboto-Regular";
   src: url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff");
@@ -949,11 +784,6 @@ blockquote .blockquote-text::before {
 /* ==========================================================================
    Config settings
    ========================================================================== */
-/*
-Тип адаптива:
-1 = отзывчивость (у контейнера нет брейк-поинтов),
-2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
-*/
 /**
   USAGE:
 
@@ -1228,7 +1058,7 @@ body {
   background: #008BAA;
   border: 0.0625rem solid #000000;
   transition: all 0.5s ease 0s;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
   font-size: 1rem;
   line-height: 1.125;
   font-weight: 400;
@@ -2194,7 +2024,7 @@ body {
   }
 }
 .card__price-old {
-  padding: 0 3px;
+  padding: 0 0.1875rem;
   position: relative;
   font-family: "Trebuchet-MS-Regular", sans-serif;
   font-size: 1.25rem;

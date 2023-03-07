@@ -2,13 +2,6 @@
   &__content {
     @include adaptiveValue("padding-top", 128, 108);
     @include adaptiveValue("padding-bottom", 48, 15);
-    // position: relative;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: center;
-    // z-index: 2;
   }
 
   &__content-image {
@@ -40,16 +33,6 @@
       height: auto;
       background-image: none;
     }
-
-    // &::before {
-    //   position: absolute;
-    //   content: '';
-    //   right: 0;
-    //   bottom: 0;
-    //   width: rem(422);
-    //   height: rem(65);
-    //   background: url('../img/main-block/main-polygon.png') no-repeat;
-    // }
   }
 
   &__content-body {
@@ -79,38 +62,29 @@
   &__content-number {
     top: 0;
     @include font-family(trebuchet-ms-bold);
-    // @include font(x3-mid-large, 102, 700);
     font-weight: 700;
     @include adaptiveValue("font-size", 88, 58);
-    // @include adaptiveValue("line-height", 102, 82);
     letter-spacing: -0.05em;
     text-transform: uppercase;
     text-align: center;
     color: palette(primary-gray);
-
-    @include mq($max: md) {}
   }
 
   &__content-text {
     @include font-family(base);
-    // @include font(s3-large, 31, 400);
     font-weight: 400;
     @include adaptiveValue("font-size", 30, 20);
     @include adaptiveValue("line-height", 31, 21);
-    // word-break: break-all;
   }
 
   &__tour-wrap {
     position: absolute;
     left: rem(32);
     bottom: rem(33);
-    // padding: rem(45) rem(40) rem(47) rem(41);
     @include adaptiveValue("padding-top", 45, 15);
     @include adaptiveValue("padding-right", 40, 10);
     @include adaptiveValue("padding-bottom", 47, 17);
     @include adaptiveValue("padding-left", 41, 11);
-    // width: rem(250);
-    // height: rem(250);
     @include adaptiveValue("width", 250, 170);
     @include adaptiveValue("height", 250, 170);
     background: rgba(255, 242, 0, 0.7);
@@ -136,42 +110,34 @@
   }
 
   &__tour-title {
-    // padding-bottom: rem(16);
     @include adaptiveValue("padding-bottom", 16, 8);
     max-height: rem(158);
     @include font-family(trebuchet-ms-bold);
-    // @include font(s1-large, 29, 700);
     font-weight: 700;
-    // line-height: rem(29);
     @include adaptiveValue("font-size", 25, 18, 992, 576, 1);
     @include adaptiveValue("line-height", 29, 21);
     overflow: hidden;
   }
 
   &__tour-code {
-    // margin: rem(7) auto 0;
     @include adaptiveValue("margin-top", 7, 4);
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
     padding: rem(1) rem(4) rem(2) rem(5);
     width: rem(108);
-    // height: rem(31);
     color: palette(primary-white);
     background-color: palette(secondary-black);
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
-    // @include font(s-large, 28, 700);
     font-weight: 700;
     line-height: rem(28);
     @include adaptiveValue("font-size", 24, 20);
-    // @include adaptiveValue("line-height", 28, 21);
   }
 
   &__hotel {
-    // padding: rem(23) rem(10) rem(27) 0;
     @include adaptiveValue("padding-top", 23, 10);
     @include adaptiveValue("padding-right", 10, 0);
     @include adaptiveValue("padding-bottom", 27, 10);
@@ -181,13 +147,11 @@
     justify-content: start;
     align-items: center;
     @include adaptiveValue("gap", 20, 10);
-    // gap: rem(20);
     flex-wrap: wrap;
     @include font-family(trebuchet-ms-bold);
     font-weight: 700;
     @include adaptiveValue("font-size", 35, 30);
     @include adaptiveValue("line-height", 45, 25);
-    // @include font(m1-large, 45, 700);
 
     @include mq($max: md) {
       max-width: 100%;
@@ -198,8 +162,6 @@
     }
   }
 
-  &__hotel-rating {}
-
   &__hotel-price {
     text-align: center;
   }
@@ -209,7 +171,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // column-gap: rem(16);
     @include adaptiveValue("column-gap", 16, 6);
     line-height: rem(14);
     white-space: nowrap;
@@ -218,24 +179,19 @@
 
     @include mq($max: md) {
       width: 100%;
-      // column-gap: rem(6);
     }
   }
 
   &__table-score {
-    // @include font-size(14);
     @include adaptiveValue("font-size", 14, 10);
     line-height: rem(21);
   }
-
-  &__score-title {}
 
   &__score-value {
     @include font-family(arial-bold);
     font-weight: 700;
     @include adaptiveValue("font-size", 16, 12);
     line-height: rem(16);
-    // @include font(l1-small, 16, 700);
   }
 
   &__table-wrap {
@@ -243,8 +199,6 @@
   }
 
   &__table-title {
-    // @include font(s-small, 14, 400);
-    // font-size: rem(12);
     font-weight: 400;
     @include adaptiveValue("font-size", 12, 8);
     line-height: rem(14);
@@ -256,21 +210,17 @@
     font-weight: 700;
     @include adaptiveValue("font-size", 18, 14);
     line-height: rem(21);
-    // @include font(mid, 21, 700);
   }
 
   &__table-total {
-    // margin: 0 rem(8) 0 rem(16);
     margin-top: 0;
     @include adaptiveValue("margin-right", 8, 5);
     margin-bottom: 0;
     @include adaptiveValue("margin-left", 16, 13);
-    // padding: rem(12) rem(8) rem(12) rem(7);
     @include adaptiveValue("padding-top", 12, 8);
     @include adaptiveValue("padding-right", 8, 4);
     @include adaptiveValue("padding-bottom", 12, 8);
     @include adaptiveValue("padding-left", 7, 4);
-    // width: rem(52);
     height: rem(52);
     color: palette(primary-white);
     background-color: palette(primary-blue);
@@ -278,61 +228,9 @@
     font-weight: 700;
     @include adaptiveValue("font-size", 24, 18);
     line-height: rem(28);
-    // @include font(s-large, 28, 700);
 
     @include mq($max: lg) {
       height: auto;
     }
   }
-
-  // &__table {
-  //   padding-bottom: rem(48);
-  //   width: 65%;
-  //   line-height: rem(16);
-
-  //   .total {
-  //     margin: 0 rem(24) 0 rem(32);
-  //     padding: rem(12) rem(8) rem(12) rem(7);
-  //     width: rem(52);
-  //     height: rem(52);
-  //     color: palette(primary-white);
-  //     background-color: palette(primary-blue);
-  //     @include font-family(trebuchet-ms-bold);
-  //     @include font(s-large, 28, 700);
-  //   }
-
-  //   table {
-  //     border-spacing: rem(16) 0;
-  //     white-space: nowrap;
-  //   }
-
-  //   th:not(:first-child),
-  //   td:not(:first-child) {
-  //     letter-spacing: 0.05em;
-  //   }
-
-  //   th {
-  //     font-weight: normal;
-  //     font-size: rem(12);
-
-  //     &:first-child {
-  //       text-align: left;
-  //     }
-
-  //     &:not(:first-child) {
-  //       text-transform: uppercase;
-  //     }
-  //   }
-
-  //   td {
-  //     @include font-family(trebuchet-ms-bold);
-  //     @include font(mid, 21, 700);
-
-  //     &:first-child {
-  //       @include font-size(14);
-  //       line-height: rem(16);
-  //       // @include font(l-small, 16, 700);
-  //     }
-  //   }
-  // }
 }

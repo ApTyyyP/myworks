@@ -73,7 +73,6 @@ h6 {
 
 h1 {
   @include font-family(trebuchet-ms-bold);
-  // @include font(x1-large, 62, 700);
   font-weight: 700;
   @include adaptiveValue("font-size", 48, 32);
   @include adaptiveValue("line-height", 62, 36);
@@ -87,15 +86,6 @@ h2 {
   .bg-title {
     border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
   }
-
-  // &::after {
-  //   position: absolute;
-  //   bottom: rem(1);
-  //   content: '';
-  //   display: block;
-  //   width: 100%;
-  //   border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
-  // }
 }
 
 h3 {
@@ -103,15 +93,6 @@ h3 {
   padding-top: rem(8);
   @include font-family(arial-bold);
   @include font(m-mid-large, 29, 700);
-
-  // &::after {
-  //   position: absolute;
-  //   bottom: rem(1);
-  //   content: '';
-  //   display: block;
-  //   width: 100%;
-  //   border-bottom: rem(1) solid rgba(palette(secondary-black), 0.25);
-  // }
 }
 
 h4 {
@@ -162,12 +143,10 @@ body {
   flex-direction: column;
   overflow: hidden;
 
-  // Прижимаем footer
   >main {
     flex: 1 1 auto;
   }
 
-  // Фикс для слайдеров
   >* {
     min-width: 0;
   }

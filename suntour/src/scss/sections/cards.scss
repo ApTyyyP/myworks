@@ -7,7 +7,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    // gap: rem(40);
     @include adaptiveValue("gap", 40, 14);
   }
 }
@@ -52,7 +51,6 @@
 
     h2 {
       margin-bottom: rem(6);
-      // font-weight: 700;
       @include adaptiveValue("font-size", 35, 20);
       @include adaptiveValue("line-height", 45, 21);
     }
@@ -64,14 +62,13 @@
 
   &__price-new {
     @include font-family(trebuchet-ms-bold);
-    // @include font(m1-large, 45, 700);
     font-weight: 700;
     @include adaptiveValue("font-size", 35, 20);
     @include adaptiveValue("line-height", 45, 21);
   }
 
   &__price-old {
-    padding: 0 3px;
+    padding: 0 rem(3);
     position: relative;
     @include font-family(trebuchet-ms-regular);
     @include font(mid-large, 23, 400);

@@ -1,11 +1,8 @@
-// Заголовки, общие БЭМ-блоки и прочее...
-
 .strong {
   @include font-family(arial-bold);
 }
 
 blockquote {
-  // padding: rem(8) 0 rem(24) rem(48);
   @include adaptiveValue("padding-top", 8, 4);
   padding-right: 0;
   @include adaptiveValue("padding-left", 48, 24);
@@ -31,7 +28,6 @@ blockquote {
 }
 
 .table {
-  // padding: rem(16) rem(16) rem(24);
   @include adaptiveValue("padding-top", 16, 10);
   @include adaptiveValue("padding-right", 16, 10);
   @include adaptiveValue("padding-left", 16, 10);
@@ -62,14 +58,12 @@ blockquote {
   }
 
   th {
-    // padding: rem(8);
     @include adaptiveValue("padding", 8, 4);
     width: 22%;
     height: rem(48);
   }
 
   td {
-    // padding: rem(7) rem(4);
     @include adaptiveValue("padding-top", 7, 4);
     @include adaptiveValue("padding-bottom", 4, 1);
     width: 23%;
@@ -117,116 +111,4 @@ blockquote {
   background-color: transparent;
   flex-shrink: 0;
   gap: rem(16);
-}
-
-.page {
-
-  // .page__main
-  &__main {}
-
-  // .page__partners
-  &__partners {}
-
-  // .page__how
-  &__how {}
-
-  // .page__pathway
-  &__pathway {}
-
-  // .page__why
-  &__why {}
-
-  // .page__reviews
-  &__reviews {}
-
-  // .page__download
-  &__download {}
-}
-
-// ====================================================================================================
-.title {
-  font-weight: 600;
-  line-height: math.div(65, 70);
-  font-size: rem(70);
-  color: #ffffff;
-  @include adaptiveValue("font-size", 70, 45);
-
-  &_s64 {
-    @include adaptiveValue("font-size", 64, 40);
-  }
-
-  &_s56 {
-    @include adaptiveValue("font-size", 56, 35);
-  }
-
-  span {
-    color: #23b123;
-  }
-}
-
-// ====================================================================================================
-.text {
-  line-height: 180%;
-}
-
-// ====================================================================================================
-.image-block {
-  max-width: rem(600);
-  position: relative;
-  display: flex;
-  align-self: start;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: rem(20);
-  @include adaptiveValue("padding-top", 165, 30);
-  @include adaptiveValue("padding-bottom", 165, 30);
-  @include adaptiveValue("padding-left", 45, 30);
-  @include adaptiveValue("padding-right", 45, 30);
-  overflow: hidden;
-
-  // .image-block__circle
-  &__circle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    @include adaptiveValue("width", 585, 350);
-    @include adaptiveValue("height", 585, 350);
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.37);
-    }
-
-    // .image-block__circle_1
-    &_1 {
-      &::before {
-        transform: translate(calc(50% - rem(18)), -20%);
-      }
-    }
-
-    // .image-block__circle_2
-    &_2 {
-      &::before {
-        transform: translate(calc(50% - rem(20)), -6%);
-      }
-    }
-  }
-
-  // .image-block__item
-  &__item {
-    position: relative;
-    flex: 1 1 100%;
-    text-align: center;
-    z-index: 2;
-
-    img {
-      max-width: 100%;
-      border-radius: rem(20);
-    }
-  }
 }
