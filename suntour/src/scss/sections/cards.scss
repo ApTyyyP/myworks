@@ -17,6 +17,7 @@
   @include mq($max: sm) {
     flex-direction: column;
     max-width: 100%;
+    width: 100%;
   }
 
   &:hover img {
@@ -37,6 +38,7 @@
     overflow: hidden;
 
     img {
+      width: 100%;
       transition: all 1s ease-out;
     }
   }

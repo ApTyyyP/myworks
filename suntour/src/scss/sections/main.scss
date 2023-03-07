@@ -1,7 +1,11 @@
 .main-block {
   &__content {
-    @include adaptiveValue("padding-top", 128, 108);
+    @include adaptiveValue("padding-top", 128, 100);
     @include adaptiveValue("padding-bottom", 48, 15);
+
+    @include mq($max: md) {
+      @include adaptiveValue("padding-top", 100, 80);
+    }
   }
 
   &__content-image {
