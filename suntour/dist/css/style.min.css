@@ -1064,24 +1064,24 @@ body {
   font-weight: 400;
   z-index: 50;
 }
-@supports (padding-top: clamp( 0.625rem , 0.1435185185rem  +  2.4074074074vw , 2.25rem )) {
+@supports (padding-top: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem )) {
   .header {
-    padding-top: clamp( 0.625rem , 0.1435185185rem  +  2.4074074074vw , 2.25rem );
+    padding-top: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem );
   }
 }
-@supports not (padding-top: clamp( 0.625rem , 0.1435185185rem  +  2.4074074074vw , 2.25rem )) {
+@supports not (padding-top: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem )) {
   .header {
-    padding-top: calc(0.625rem + 1.625 * (100vw - 20rem) / 67.5);
+    padding-top: calc(0.625rem + 1.25 * (100vw - 20rem) / 67.5);
   }
 }
-@supports (padding-bottom: clamp( 0.625rem , 0.5138888889rem  +  0.5555555556vw , 1rem )) {
+@supports (padding-bottom: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem )) {
   .header {
-    padding-bottom: clamp( 0.625rem , 0.5138888889rem  +  0.5555555556vw , 1rem );
+    padding-bottom: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem );
   }
 }
-@supports not (padding-bottom: clamp( 0.625rem , 0.5138888889rem  +  0.5555555556vw , 1rem )) {
+@supports not (padding-bottom: clamp( 0.625rem , 0.2546296296rem  +  1.8518518519vw , 1.875rem )) {
   .header {
-    padding-bottom: calc(0.625rem + 0.375 * (100vw - 20rem) / 67.5);
+    padding-bottom: calc(0.625rem + 1.25 * (100vw - 20rem) / 67.5);
   }
 }
 @supports (font-size: clamp( 0.875rem , 0.6527777778rem  +  0.462962963vw , 1rem )) {
@@ -1112,6 +1112,7 @@ body {
 }
 .header._header-scroll {
   padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   height: 4.1875rem;
   background-color: rgba(0, 139, 170, 0.6);
 }
@@ -1130,34 +1131,42 @@ body {
   align-items: center;
 }
 @supports (column-gap: clamp( 0.375rem , 0.337962963rem  +  0.1851851852vw , 0.5rem )) {
-  .header__container-big {
+  .header__container-big:not(:last-child) {
     column-gap: clamp( 0.375rem , 0.337962963rem  +  0.1851851852vw , 0.5rem );
   }
 }
 @supports not (column-gap: clamp( 0.375rem , 0.337962963rem  +  0.1851851852vw , 0.5rem )) {
-  .header__container-big {
+  .header__container-big:not(:last-child) {
     column-gap: calc(0.375rem + 0.125 * (100vw - 20rem) / 67.5);
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__container-big {
+    width: 100%;
   }
 }
 .header__logo {
   position: relative;
   z-index: 5;
 }
-@supports (width: clamp( 8.125rem , 6.6805555556rem  +  3.0092592593vw , 8.9375rem )) {
-  .header__logo {
-    width: clamp( 8.125rem , 6.6805555556rem  +  3.0092592593vw , 8.9375rem );
-  }
-}
-@supports not (width: clamp( 8.125rem , 6.6805555556rem  +  3.0092592593vw , 8.9375rem )) {
-  .header__logo {
-    width: calc(8.125rem + 0.8125 * (100vw - 48rem) / 27);
-  }
-}
 .header__logo img {
   max-width: 100%;
 }
+.header__menu {
+  width: 100%;
+}
 .header__logo-info {
   max-width: 9.3125rem;
+}
+@supports (margin-left: clamp( 0.25rem , -0.0833333333rem  +  1.6666666667vw , 1.375rem )) {
+  .header__logo-info {
+    margin-left: clamp( 0.25rem , -0.0833333333rem  +  1.6666666667vw , 1.375rem );
+  }
+}
+@supports not (margin-left: clamp( 0.25rem , -0.0833333333rem  +  1.6666666667vw , 1.375rem )) {
+  .header__logo-info {
+    margin-left: calc(0.25rem + 1.125 * (100vw - 20rem) / 67.5);
+  }
 }
 .header__body {
   display: flex;
@@ -1184,7 +1193,7 @@ body {
     width: 100%;
     height: 100%;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     bottom: 8%;
     left: -100%;
     transition: all 0.3s ease 0s;
@@ -1192,9 +1201,7 @@ body {
     gap: 0.25rem;
   }
   .menu-open .header__body {
-    left: 0;
-  }
-  .menu-open .header__body::before {
+    top: 0;
     left: 0;
   }
 }
@@ -1256,6 +1263,7 @@ body {
 
 .menu__body {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
@@ -1277,10 +1285,8 @@ body {
     padding-bottom: 1.875rem;
   }
   .menu-open .menu__body {
-    top: 10%;
-  }
-  .menu-open .menu__body::before {
-    top: 10%;
+    padding-top: 4rem;
+    top: 0;
   }
 }
 .menu__list {

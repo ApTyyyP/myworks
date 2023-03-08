@@ -10,8 +10,8 @@
   transition: all 0.5s ease 0s;
   filter: drop-shadow(0 rem(4) rem(4) rgba(0, 0, 0, 0.25));
   @include font(l1-small, 18, 400);
-  @include adaptiveValue("padding-top", 36, 10);
-  @include adaptiveValue("padding-bottom", 16, 10);
+  @include adaptiveValue("padding-top", 30, 10);
+  @include adaptiveValue("padding-bottom", 30, 10);
   @include adaptiveValue("font-size", 16, 14, 1200, 768, 1);
   z-index: 50;
 
@@ -33,6 +33,7 @@
 
   &._header-scroll {
     padding-top: rem(12);
+    padding-bottom: rem(12);
     height: rem(67);
     background-color: rgba(0, 139, 170, 0.6);
 
@@ -52,12 +53,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include adaptiveValue("column-gap", 8, 6);
+
+    &:not(:last-child) {
+      @include adaptiveValue("column-gap", 8, 6);
+    }
+
+    @include mq($min: md) {
+      width: 100%;
+    }
   }
 
   &__logo {
     position: relative;
-    @include adaptiveValue("width", 143, 130, 1200, 768, 1);
     z-index: 5;
 
     img {
@@ -65,7 +72,12 @@
     }
   }
 
+  &__menu {
+    width: 100%;
+  }
+
   &__logo-info {
+    @include adaptiveValue("margin-left", 22, 4);
     max-width: rem(149);
   }
 
@@ -82,8 +94,7 @@
       width: 100%;
       height: 100%;
       flex-direction: column;
-      justify-content: flex-end;
-
+      justify-content: center;
       bottom: 8%;
       left: -100%;
       transition: all 0.3s ease 0s;
@@ -91,11 +102,8 @@
       gap: rem(4);
 
       .menu-open & {
+        top: 0;
         left: 0;
-
-        &::before {
-          left: 0;
-        }
       }
     }
   }
@@ -103,7 +111,6 @@
   &__body-phone {
     @include font(s3-large, 34, 400);
     @include adaptiveValue("font-size", 30, 26, 1200, 768, 1);
-    // @include font-size(30);
   }
 
   &__body-phone-link {
@@ -146,6 +153,7 @@
 
   &__body {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: rem(16);
 
@@ -166,11 +174,8 @@
       padding-bottom: rem(30);
 
       .menu-open & {
-        top: 10%;
-
-        &::before {
-          top: 10%;
-        }
+        padding-top: rem(64);
+        top: 0;
       }
     }
   }
