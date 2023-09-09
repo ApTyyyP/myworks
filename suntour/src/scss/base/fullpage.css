@@ -1,0 +1,18 @@
+/* Error: There is no module with the namespace "math".
+ *     ,
+ * 231 |   $result: math.div($px, 16)+rem;
+ *     |            ^^^^^^^^^^^^^^^^^
+ *     '
+ *   ..\_mixins.scss 231:12  rem()
+ *   fullpage.scss 66:10     root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "math".\a     \2577 \a 231 \2502    $result: math.div($px, 16)+rem;\d\a     \2502             ^^^^^^^^^^^^^^^^^\a     \2575 \a   ..\\_mixins.scss 231:12  rem()\a   fullpage.scss 66:10     root stylesheet';
+}

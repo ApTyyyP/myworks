@@ -1,0 +1,94 @@
+.select {
+  position: relative;
+}
+.select__body {
+  position: relative;
+  color: #000;
+}
+.select__title {
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  border: 1px solid #d9d9d9;
+  background-color: #c0c9ff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.select__value {
+  padding: 0 rem(15);
+  height: rem(30);
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
+.select__value > * {
+  flex: 1 1 auto;
+}
+.select__value::after {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex: 0 0 10px;
+  transition: all 0.3s ease 0s;
+}
+._select-open .select__value::after {
+  transform: rotate(-180deg);
+}
+.select__value._select-pseudo-label::before {
+  content: attr(data-pseudo-label);
+  opacity: 0.5;
+}
+.select__text {
+  flex: 1 1 auto;
+}
+.select__input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.select__options {
+  padding: 10px 0px 5px 0px;
+  min-width: 100%;
+  color: #000;
+  position: absolute;
+  top: 29px;
+  left: 0;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 0;
+}
+.select__scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.select__option {
+  padding: 5px 15px;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+.select__option._select-selected {
+  background-color: #eee;
+}
+@media (any-hover: hover) {
+  .select__option:hover {
+    background: #c0c9ff;
+  }
+}
+.select__row {
+  display: inline-flex;
+  align-items: center;
+}
+.select._select-open {
+  z-index: 5;
+}
+._select-tag {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=select.css.map */

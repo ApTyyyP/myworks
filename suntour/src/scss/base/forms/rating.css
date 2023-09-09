@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/**
+ *  Global color variables.
+ *	The underscore Never use them directly in the sections, only for functions and mixins.
+ */
+/**
+ *  Organize color variables in a Sass Map.
+ *  This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+.rating {
+  display: flex;
+  align-items: flex-end;
+  font-size: rem(35);
+  transition: opacity 0.3s ease 0s;
+}
+
+.rating.rating_sending {
+  opacity: 0.2;
+}
+
+.rating.rating_set .rating__active,
+.rating.rating_set .rating__item {
+  cursor: pointer;
+  letter-spacing: rem(3);
+}
+
+.rating__body {
+  position: relative;
+}
+
+.rating__body::before {
+  content: "☆☆☆☆☆";
+  display: block;
+  font-weight: 400;
+  color: palette(secondary-gainsboro);
+  letter-spacing: rem(3);
+}
+
+.rating__active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rating__active::before {
+  content: "★★★★★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ff9900;
+}
+
+.rating__items {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rating__item {
+  height: 100%;
+  flex: 0 0 20%;
+  opacity: 0;
+}
+
+.rating__value {
+  padding: 0 0 0 rem(10);
+  font-size: 50%;
+  line-height: 1;
+  display: none;
+}
+
+/*# sourceMappingURL=rating.css.map */
