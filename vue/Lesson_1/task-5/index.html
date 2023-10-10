@@ -3,45 +3,57 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Task-5</title>
+  <title>Задача 5</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <style>
-    #form-box {
-      display: flex;
-      justify-content: center;
-      padding-top: 50px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <div id="app">
     <div class="container pt-5">
       <div class="d-flex justify-content-center text-black">
-        <h3>Task-5</h3>
+        <h3>Задача 5</h3>
       </div>
 
-      <div id="form-box">
-        <div class="mt-5 col-6">
+      <p>Додаток містить масив об'єктів <i>(логін, пароль)</i> — інсуючи логіни і паролі. Користувач вводить логін і
+        пароль, а
+        програма повідомляє, чи може користувач бути авторизованим.</p>
+      <hr>
 
-          <div class="d-flex justify-content-center">
-            <p v-show="getErrors">{{errors.message}}</p>
-          </div>
-
-          <div class="form-group mt-5">
-            <label for="login-input">Логін</label>
-            <input type="text" class="form-control" id="login-input" placeholder="Введить ваш логін" v-model="login">
-          </div>
-          <div class="form-group mt-5">
-            <label for="password-input">Пароль</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Введить ваш пароль"
-              v-model="password">
-          </div>
-
-          <button type="submit" class="mt-5 btn btn-primary" @click="makeLogin()">Увійти</button>
+      <div class="form-field col-lg-4 col-md-6 col-sm-6 m-auto">
+        <div class="form-group mt-2">
+          <label class="label" for="inputName">Логін:</label>
+          <input class="form-control" type="text" id="inputName" v-model="inputName">
         </div>
+        <div class="form-group mt-2">
+          <label class="label" for="inputPass">Пароль:</label>
+          <!-- <input class="form-control" type="password" id="inputPass" v-model="inputPass"> -->
+          <div class="input-group">
+            <input v-if="showPassword" type="text" class="form-control" v-model="inputPass" />
+            <input v-else type="password" class="form-control" v-model="inputPass" />
+            <div class="input-group-text">
+              <button class="btn check" @click="toggleShow">
+                <span class="icon is-small is-right">
+                  <i class="fas" :class="{
+                      'fa-eye-slash': showPassword,
+                      'fa-eye': !showPassword
+                    }"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="mt-4 w-100 btn btn-outline-dark" @click="userAuth">Увійти</button>
+      </div>
+      <div class="mt-4 text-info text-center" v-if="this.permissionAccess">Вітаю, <b>{{ name }}</b>!</div>
+      <div class="mt-4 text-danger text-center" v-if="this.permissionCancel">Вхід не дозволено!</div>
+      <div class="mt-4 text-danger text-center" v-if="this.permissionEmpty">Заповніть поля!</div>
+
+      <div class="field has-addons">
+
       </div>
     </div>
   </div>
@@ -49,70 +61,104 @@
   <script>
     const { createApp } = Vue;
 
+    const users = [
+      {
+        username: "user1",
+        password: "pass1",
+      },
+      {
+        username: "user2",
+        password: "pass2",
+      },
+      {
+        username: "user3",
+        password: "pass3",
+      }
+    ];
+
     const app = createApp({
       data() {
         return {
-          users: [
-            {
-              'login': 'user',
-              'password': 'password'
-            },
-            {
-              'login': 'user2',
-              'password': 'password2'
-            },
-          ],
-          login: '',
-          password: '',
-          user: null,
-          errors: {
-            result: false,
-            message: ''
-          }
+          inputName: null,
+          inputPass: null,
+          permissionAccess: false,
+          permissionCancel: false,
+          permissionEmpty: false,
+          name: null,
+          showPassword: false,
+          password: null
         }
       },
+
       computed: {
-        getErrors() {
-          return this.errors.result
+        buttonLabel() {
+          return this.showPassword ? "Hide" : "Show";
         }
       },
+
       methods: {
-        makeLogin() {
-          console.log('makeLogin')
-          this.resetErrors()
+        userAuth() {
+          if (this.inputName !== null || this.inputPass !== null) {
+            var pass,
+              username,
+              flag = false;
 
-          this.getUser()
+            for (var i = 0; i < users.length; i++) {
+              // name
+              for (var j = 0; j < users[i].username.length; j++) {
+                username = users[i].username;
+              }
 
-          if (this.user) {
-            this.checkPassword()
-          }
+              // pass
+              for (var j = 0; j < users[i].password.length; j++) {
+                pass = users[i].password;
+              }
 
-          this.errors.result = true
-          this.errors.message = 'Користувач не знайден'
-        },
-        resetErrors() {
-          console.log('resetErrors')
-          this.errors.result = false
-          this.errors.message = ''
-        },
-        getUser() {
-          this.users.forEach((user) => {
-            if (user.login === this.login) {
-              this.user = user
+              // conclusion
+              if (this.inputName === username && this.inputPass === pass) {
+                flag = true;
+                this.permissionAccess = true;
+                this.permissionCancel = false;
+                this.permissionEmpty = false;
+
+                this.name = this.inputName;
+
+                this.inputName = null;
+                this.inputPass = null;
+              }
             }
-          })
-        },
-        checkPassword() {
-          if (this.password !== this.user.password) {
-            this.errors.result = true
-            this.errors.message = 'Логін або пароль неправильні'
+
+            if (!flag) {
+              this.permissionAccess = false;
+              this.permissionCancel = true;
+              this.permissionEmpty = false;
+            }
+          } else {
+            this.permissionEmpty = true;
+            this.permissionCancel = false;
+            this.permissionAccess = false;
           }
+        },
+
+        toggleShow() {
+          this.showPassword = !this.showPassword;
         }
       }
     })
 
-    app.mount('#app')
+    app.mount('#app');
   </script>
+
+  <style>
+    .input-group-text {
+      padding: 0;
+    }
+
+    .btn.check {
+      width: 46px;
+      border: 0;
+    }
+  </style>
 </body>
 
 </html>
