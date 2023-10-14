@@ -64,21 +64,18 @@
       data() {
         return {
           countPassengers: 0,
-          bus: 0,
-          water: 0,
-          eat: 0
         }
       },
 
       computed: {
         calculateBus() {
-          return this.bus = Math.ceil(this.countPassengers / 20);
+          return Math.ceil(this.countPassengers / 20);
         },
         calculateWater() {
-          return this.water = Math.ceil(this.countPassengers * 2);
+          return this.countPassengers * 2;
         },
         calculateHamburgers() {
-          return this.eat = Math.ceil(this.countPassengers * 3);
+          return this.countPassengers * 3;
         }
       }
     })

@@ -47,14 +47,14 @@
           <!-- Форма для операцій-->
           <div class="col-12 d-flex justify-content-between btn-success mb-3">
             <div class="col-3">
-              <button class="col-12 btn btn-success" @click="addTocurrentSumUAH()">Зарахувати</button>
+              <button class="col-12 btn btn-success" @click="addTocurrentSumUAH">Зарахувати</button>
             </div>
             <div class="col-2 mx-5">
               <input type="number" min="0" class="col-12 form-control" :class="{error : !getErrors}"
                 v-model="currentSum.UAH">
             </div>
             <div class="col-3">
-              <button class="col-12 btn btn-danger" @click="subTocurrentSumUAH()">Зняти</button>
+              <button class="col-12 btn btn-danger" @click="subTocurrentSumUAH">Зняти</button>
             </div>
           </div>
           <!-- Повідомлення з помилками -->

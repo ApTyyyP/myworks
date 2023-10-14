@@ -49,9 +49,9 @@
         </div>
         <button class="mt-4 w-100 btn btn-outline-dark" @click="userAuth">Увійти</button>
       </div>
-      <div class="mt-4 text-info text-center" v-if="this.permissionAccess">Вітаю, <b>{{ name }}</b>!</div>
-      <div class="mt-4 text-danger text-center" v-if="this.permissionCancel">Вхід не дозволено!</div>
-      <div class="mt-4 text-danger text-center" v-if="this.permissionEmpty">Заповніть поля!</div>
+      <div class="mt-4 text-info text-center" v-if="permissionAccess">Вітаю, <b>{{ name }}</b>!</div>
+      <div class="mt-4 text-danger text-center" v-else-if="permissionCancel">Вхід не дозволено!</div>
+      <div class="mt-4 text-danger text-center" v-else-if="permissionEmpty">Заповніть поля!</div>
 
       <div class="field has-addons">
 
@@ -100,18 +100,18 @@
       methods: {
         userAuth() {
           if (this.inputName !== null || this.inputPass !== null) {
-            var pass,
+            let pass,
               username,
               flag = false;
 
-            for (var i = 0; i < users.length; i++) {
+            for (let i = 0; i < users.length; i++) {
               // name
-              for (var j = 0; j < users[i].username.length; j++) {
+              for (let j = 0; j < users[i].username.length; j++) {
                 username = users[i].username;
               }
 
               // pass
-              for (var j = 0; j < users[i].password.length; j++) {
+              for (let j = 0; j < users[i].password.length; j++) {
                 pass = users[i].password;
               }
 
