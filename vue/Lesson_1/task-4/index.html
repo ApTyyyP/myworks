@@ -47,14 +47,14 @@
           <!-- Форма для операцій-->
           <div class="col-12 d-flex justify-content-between btn-success mb-3">
             <div class="col-3">
-              <button class="col-12 btn btn-success" @click="addTocurrentSumUAH">Зарахувати</button>
+              <button class="col-12 btn btn-success" @click="addToCurrentSumUAH">Зарахувати</button>
             </div>
             <div class="col-2 mx-5">
               <input type="number" min="0" class="col-12 form-control" :class="{error : !getErrors}"
                 v-model="currentSum.UAH">
             </div>
             <div class="col-3">
-              <button class="col-12 btn btn-danger" @click="subTocurrentSumUAH">Зняти</button>
+              <button class="col-12 btn btn-danger" @click="subToCurrentSumUAH">Зняти</button>
             </div>
           </div>
           <!-- Повідомлення з помилками -->
@@ -70,7 +70,7 @@
         <hr class="border border-dark border-2 mt-3">
 
         <p>Сума у доларах: <b>${{ accounts.USD }}</b></p>
-        <p>Сума у евро: <b>&#8364;{{ accounts.EUR }}</b></p>
+        <p>Сума у євро: <b>&#8364;{{ accounts.EUR }}</b></p>
 
         <!-- Історія -->
         <div class="row mt-5">
@@ -152,13 +152,13 @@
       },
 
       methods: {
-        addTocurrentSumUAH() {
+        addToCurrentSumUAH() {
           this.directionOperation = 'add';
 
           this.calculateOperation();
         },
 
-        subTocurrentSumUAH() {
+        subToCurrentSumUAH() {
           this.directionOperation = 'sub';
 
           this.calculateOperation();
@@ -168,16 +168,16 @@
           // 0. Вирахувати відсоток за обслуговування
           this.setPercents();
 
-          // 1. Валідація сумми
+          // 1. Валідація суми
           if (this.checkSum()) {
 
-            // 2. Вирахувати остаток після віднімання відсотка
+            // 2. Вирахувати залишок після віднімання відсотка
             this.amountUAH();
 
-            // 3. Вирахувати скільки в долларах
+            // 3. Вирахувати скільки в доларах
             this.amountUSD();
 
-            // 4. Вирахувати скільки в евро
+            // 4. Вирахувати скільки в євро
             this.amountEUR();
 
             // 5. Установлення значень рахунку
@@ -186,7 +186,7 @@
             // 6. Передати в історію
             this.addOperationToHistory();
 
-            // 7. Сброс значеня
+            // 7. Скидання значення
             this.resetCurrentSum();
           }
         },
@@ -202,15 +202,15 @@
         },
 
         setPercents() {
-          // Поточний відсоток від сумми
+          // Поточний відсоток від суми
           this.percents.current = (parseFloat(this.currentSum.UAH) / 100 * 3).toFixed(2);
 
-          // Сумма всіх снятих відсотків
+          // Сума всіх знятих відсотків
           this.percents.all = (parseFloat(this.percents.all) + parseFloat(this.percents.current)).toFixed(2);
         },
 
         amountUAH() {
-          // В залежності від направлення операції ми повинні або зняти відсотки з введеної сумми, або додати, щоб зняти більше
+          // В залежності від направлення операції ми повинні або зняти відсотки з введеної суми, або додати, щоб зняти більше
           if (this.directionOperation === 'add') {
             this.currentSum.UAH = parseFloat(this.currentSum.UAH - this.percents.current).toFixed(2);
           } else {
@@ -243,23 +243,23 @@
           // Правила валідації введеної суми
           if (this.directionOperation === 'sub' && this.accounts.UAH < this.currentSum.UAH) {
             this.validation.result = false;
-            this.validation.message = 'Сумма зняття має бути меньша аніж на рахунку!';
+            this.validation.message = 'Сума зняття має бути менша аніж на рахунку!';
           }
 
           if (this.currentSum.UAH === 0) {
             this.validation.result = false;
-            this.validation.message = 'Сумма не має бути 0!';
+            this.validation.message = 'Сума не має бути 0!';
           }
 
           if (this.currentSum.UAH < 0) {
             this.validation.result = false;
-            this.validation.message = 'Сумма не може бути меньше 0!';
+            this.validation.message = 'Сума не може бути менше 0!';
           }
 
           if (this.directionOperation === 'sub') {
             if (parseFloat(this.currentSum.UAH) + parseFloat(this.percents.current) > this.accounts.UAH) {
               this.validation.result = false;
-              this.validation.message = 'Сумма разом з комісією більша ніж рахунок!';
+              this.validation.message = 'Сума разом з комісією більша ніж рахунок!';
             }
           }
 
