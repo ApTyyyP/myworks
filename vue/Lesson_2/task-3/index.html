@@ -80,7 +80,7 @@
 
       <div class="card" :class="statusTranslate">
         <figure class="figure">
-          <img :src="cardToDisplay.img" class="figure-img img-fluid rounded" alt="...">
+          <img :src="cardToDisplay.img" class="figure-img img-fluid rounded" :alt="cardToDisplay.englishWord">
         </figure>
         <span class="english-word">
           {{ cardToDisplay.englishWord }}
