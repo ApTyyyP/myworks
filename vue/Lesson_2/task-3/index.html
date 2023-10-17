@@ -87,7 +87,7 @@
         </span>
         <h2 class="card-title">Ваш переклад:</h2>
         <input type="text" class="form-control w-75" v-model="translation" @keyup.enter="onTestTranslation">
-        <button class="btn btn-outline-info m-2" @click="onTestTranslation">Перевірити</button>
+        <button class="btn btn-outline-info m-2" @click="onTestTranslation" :disabled="!translation">Перевірити</button>
         <button class="btn btn-dark m-3" @click="onRandomizeCard">Наступне слово</button>
         <div class="message">{{ message }}</div>
       </div>

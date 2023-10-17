@@ -12,6 +12,45 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    .order__block {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .order__status {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .order__column .order__status:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .order__column {
+      padding: 0.9375rem;
+      border: 1px solid #ccc;
+    }
+
+    .order__title {
+      margin-bottom: 0.9375rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    button {
+      min-width: 200px;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,11 +60,16 @@
         <h3>Задача 6</h3>
       </div>
 
-      <p>На кухню поступають замовлення. Спочатку ми додаємо їх у список <span class="bg-warning text-dark rounded-pill p-1 lh-lg">“Очікують на виконання”</span></p>
+      <p>На кухню поступають замовлення. Спочатку ми додаємо їх у список <span
+          class="bg-warning text-dark rounded-pill p-1 lh-lg">“Очікують на виконання”</span></p>
       <ul>
-        <li>якщо повар береться робити — замовлення переходить у список <span class="bg-primary text-white rounded-pill p-1 lh-lg">“Виконуються”</span>;</li>
-        <li>якщо замовлення виконано — переходить у список <span class="bg-success text-white rounded-pill p-1 lh-lg"> “Готові до виносу”</span>;</li>
-        <li>якщо натиснути на <span class="bg-secondary text-white rounded-pill p-1 lh-lg">“Подано”</span> — страва зникає з таблиці.</p></li>
+        <li>якщо повар береться робити — замовлення переходить у список <span
+            class="bg-primary text-white rounded-pill p-1 lh-lg">“Виконуються”</span>;</li>
+        <li>якщо замовлення виконано — переходить у список <span class="bg-success text-white rounded-pill p-1 lh-lg">
+            “Готові до виносу”</span>;</li>
+        <li>якщо натиснути на <span class="bg-secondary text-white rounded-pill p-1 lh-lg">“Подано”</span> — страва
+          зникає з таблиці.</p>
+        </li>
       </ul>
 
       <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left"
@@ -35,126 +79,98 @@
 
       <hr>
 
-      <div class="form-field col-lg-4 col-md-6 col-sm-6 m-auto">
-        <div class="form-group mt-2">
-          <label class="label" for="inputName">Логін:</label>
-          <input class="form-control" type="text" id="inputName" v-model="inputName">
+      <div class="order p-3">
+        <div class="input-group">
+          <div class="form-floating">
+            <input class="form-control" type="text" placeholder="Leave a comment here" v-model="order"
+              @keyup.enter="onWaiting">
+            <label class="order__label" for="floatingInput">Нова замовлена страва</label>
+          </div>
+          <button class="btn btn-primary btn-lg" @click="onWaiting" :disabled="!order">Додати</button>
         </div>
-        <div class="form-group mt-2">
-          <label class="label" for="inputPass">Пароль:</label>
-          <!-- <input class="form-control" type="password" id="inputPass" v-model="inputPass"> -->
-          <div class="input-group">
-            <input v-if="showPassword" type="text" class="form-control" v-model="inputPass" />
-            <input v-else type="password" class="form-control" v-model="inputPass" />
-            <div class="input-group-text">
-              <button class="btn check" @click="toggleShow">
-                <span class="icon is-small is-right">
-                  <i class="fas" :class="{
-                      'fa-eye-slash': showPassword,
-                      'fa-eye': !showPassword
-                    }"></i>
-                </span>
-              </button>
+        <div class="order__block my-3">
+          <div class="order__column p-3">
+            <h3 class="order__title">Очiкують виконання</h3>
+            <div v-for="(product, index) in getWaitingList" :key="index" class="order__status">
+              <div>{{ product }}</div>
+              <button @click="onProcessing(index)"
+                class="btn bg-warning text-dark rounded-pill p-1 lh-lg">Готувати</button>
+            </div>
+          </div>
+          <div class="order__column p-3">
+            <h3 class="order__title">Виконуються</h3>
+            <div v-for="(product, index) in processingList" :key="index" class="order__status">
+              <div>{{ product }}</div>
+              <button @click="onCompleted(index)"
+                class="btn bg-primary text-white rounded-pill p-1 lh-lg">Приготовлено</button>
+            </div>
+          </div>
+          <div class="order__column p-3">
+            <h3 class="order__title">Готовi до виносу</h3>
+            <div v-for="(product, index) in completedList" :key="index" class="order__status">
+              <div>{{ product }}</div>
+              <button @click="onDeleted(index)" class="btn bg-success text-white rounded-pill p-1 lh-lg">Подано</button>
             </div>
           </div>
         </div>
-        <button class="mt-4 w-100 btn btn-outline-dark" @click="userAuth">Увійти</button>
-      </div>
-      <div class="mt-4 text-info text-center" v-if="this.permissionAccess">Вітаю, <b>{{ name }}</b>!</div>
-      <div class="mt-4 text-danger text-center" v-if="this.permissionCancel">Вхід не дозволено!</div>
-      <div class="mt-4 text-danger text-center" v-if="this.permissionEmpty">Заповніть поля!</div>
-
-      <div class="field has-addons">
-
       </div>
     </div>
+  </div>
   </div>
 
   <script>
     const { createApp } = Vue;
 
-    const users = [
-      {
-        username: "user1",
-        password: "pass1",
-      },
-      {
-        username: "user2",
-        password: "pass2",
-      },
-      {
-        username: "user3",
-        password: "pass3",
-      }
+    const waitingList = [
+      'Борщ',
+      'Капусняк запорізький',
+      'Холодець',
+      'Полядвиця',
+      'Деруни житомирські',
+      'Банош',
+      'Полтавські галушки',
+      'Вареники',
+      'Голубці',
+      'Котлети по-київськи',
+      'Вергуни',
+      'Торт «Київський»',
     ];
 
     const app = createApp({
       data() {
         return {
-          inputName: null,
-          inputPass: null,
-          permissionAccess: false,
-          permissionCancel: false,
-          permissionEmpty: false,
-          name: null,
-          showPassword: false,
-          password: null
+          order: null,
+          processingList: [],
+          completedList: [],
         }
       },
 
       computed: {
-        buttonLabel() {
-          return this.showPassword ? "Hide" : "Show";
+        getWaitingList() {
+          return waitingList;
         }
       },
 
       methods: {
-        userAuth() {
-          if (this.inputName !== null || this.inputPass !== null) {
-            var pass,
-              username,
-              flag = false;
-
-            for (var i = 0; i < users.length; i++) {
-              // name
-              for (var j = 0; j < users[i].username.length; j++) {
-                username = users[i].username;
-              }
-
-              // pass
-              for (var j = 0; j < users[i].password.length; j++) {
-                pass = users[i].password;
-              }
-
-              // conclusion
-              if (this.inputName === username && this.inputPass === pass) {
-                flag = true;
-                this.permissionAccess = true;
-                this.permissionCancel = false;
-                this.permissionEmpty = false;
-
-                this.name = this.inputName;
-
-                this.inputName = null;
-                this.inputPass = null;
-              }
-            }
-
-            if (!flag) {
-              this.permissionAccess = false;
-              this.permissionCancel = true;
-              this.permissionEmpty = false;
-            }
-          } else {
-            this.permissionEmpty = true;
-            this.permissionCancel = false;
-            this.permissionAccess = false;
-          }
+        onProcessing(index) {
+          this.processingList.push(waitingList[index])
+          waitingList.splice(index, 1)
         },
 
-        toggleShow() {
-          this.showPassword = !this.showPassword;
-        }
+        onCompleted(index) {
+          this.completedList.push(this.processingList[index])
+          this.processingList.splice(index, 1)
+        },
+
+        onDeleted(index) {
+          this.completedList.splice(index, 1)
+        },
+
+        onWaiting(index) {
+          if (this.order)
+            waitingList.push(this.order)
+          this.order = null
+        },
       }
     })
 
@@ -167,17 +183,6 @@
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
   </script>
-
-  <style>
-    .input-group-text {
-      padding: 0;
-    }
-
-    .btn.check {
-      width: 46px;
-      border: 0;
-    }
-  </style>
 </body>
 
 </html>
