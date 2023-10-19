@@ -11,54 +11,36 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
 
   <style>
+    dl,
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+
     .btn {
       margin: 0 auto;
       max-width: 200px;
       width: 100%;
     }
 
-
-
-
-
-    .dance__container {
-      margin-bottom: 20px;
+    .boys__item,
+    .girls__item,
+    .pair__item {
+      margin: 5px 0;
+      padding: 3px 10px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
     }
 
-    .dance__container,
-    .pair__container,
-    .pair {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .pair__container {
-      align-items: center;
-      border: 1px solid cyan;
-      padding-bottom: 20px;
-    }
-
-    .dance__participants {
-      display: flex;
-      gap: 30px;
-    }
-
-    .add-button,
-    .pair-delete {
-      align-self: center;
-    }
-
-    .dance__boys,
-    .dance__girls {
-      flex: 1 1 50%;
-      padding: 20px;
-      border: 1px solid cyan;
-    }
-
-    .title {
+    .empty-box {
       text-align: center;
-      font-size: 26px;
+      font-size: 20px;
+      font-weight: 700;
+      color: red;
     }
 
     .boys__list,
@@ -67,30 +49,38 @@
       font-size: 20px;
     }
 
-    .boys__item,
-    .girls__item,
-    .pair__item {
-      padding: 3px 10px;
-      cursor: pointer;
-      border: 1px solid transparent;
-      margin-bottom: 5px;
+    .boys__item::marker,
+    .girls__item::marker,
+    .pair__item::marker {
+      color: #000;
     }
 
     .boys__item:hover,
     .girls__item:hover,
     .pair__item:hover {
-      border: 1px solid blue;
-    }
-
-    .empty-box {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 700;
-      color: rgb(146, 28, 28);
+      color: #fff;
+      background-color: #0d6efd;
+      border: 1px solid #0d6efd;
     }
 
     .chosen {
-      border: 1px solid green;
+      color: #fff;
+      background-color: #198754;
+      border: 1px solid #198754;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 767.98px) {
+      .card-header {
+        font-size: 18px;
+      }
+
+      .boys__list,
+      .girls__list,
+      .pair__list,
+      .empty-box {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -108,41 +98,54 @@
 
       <hr>
 
-      <div class="dance">
-        <div class="dance__container">
-          <div class="dance__participants">
-            <div class="dance__boys boys">
-              <h2 class="boys__title title">Хлопці</h2>
+      <div class="row">
+        <div class="col-6">
+          <div class="card border-secondary h-100">
+            <h2 class="card-header text-center">Хлопці</h2>
+            <div class="card-body">
               <ol class="boys__list" v-if="getBoysList.length">
                 <li class="boys__item" :class="{'chosen': isBoySelected === index}" v-for="(boy, index) in getBoysList"
-                  :key="index" @click="onSelectItem(index, 'isBoySelected')"> {{boy.name}} </li>
+                  :key="index" @click="onSelectItem(index, 'isBoySelected')">{{ boy.name }}</li>
               </ol>
-              <div class="empty-box" v-else>{{missingMessage.BOYS}}</div>
+              <div class="empty-box" v-else>{{ messageStatus.BOYS }}</div>
             </div>
-            <div class="dance__girls girls">
-              <h2 class="girls__title title">Дівчата</h2>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card border-secondary h-100">
+            <h2 class="card-header text-center">Дівчата</h2>
+            <div class="card-body">
               <ol class="girls__list" v-if="getGirlsList.length">
                 <li class="girls__item" :class="{['chosen']: isGirlSelected === index}"
-                  v-for="(girl,index) in getGirlsList" :key="index" @click="onSelectItem(index, 'isGirlSelected')">
-                  {{girl.name}}</li>
+                  v-for="(girl, index) in getGirlsList" :key="index" @click="onSelectItem(index, 'isGirlSelected')">
+                  {{ girl.name }}</li>
               </ol>
-              <div class=" empty-box" v-else>{{missingMessage.GIRLS}}</div>
+              <div class=" empty-box" v-else>{{ messageStatus.GIRLS }}</div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary" :disabled="buttonAddDisabled" @click="onAddPair()">Додати</button>
         </div>
-        <div class="pair">
-          <div class="pair__container">
-            <h2 class="pair__title title">Обрані пари</h2>
-            <ol class="pair__list" v-if="pairsList.length">
-              <li class="pair__item" :class="{['chosen']: isPairSelected === index}" v-for="(pair,index) in pairsList"
-                :key="index" @click="onSelectItem(index, 'isPairSelected')"> {{pair.boyName}} - {{pair.girlName}}</li>
-            </ol>
-            <div class="empty-box" v-else>{{missingMessage.PAIRS}}</div>
+        <button type="button" class="btn btn-primary my-3" :disabled="btnAddDisabled"
+          @click="onAddPair()">Додати</button>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="col-sm-8 col-12 m-auto">
+            <div class="card border-secondary h-100">
+              <h2 class="card-header text-center">Обрані пари</h2>
+              <div class="card-body">
+                <ol class="pair__list" v-if="pairsList.length">
+                  <li class="pair__item" :class="{['chosen']: isPairSelected === index}"
+                    v-for="(pair, index) in pairsList" :key="index" @click="onSelectItem(index, 'isPairSelected')"> {{
+                    pair.boyName }} — {{ pair.girlName }}
+                  </li>
+                </ol>
+                <div class="empty-box" v-else>{{ messageStatus.PAIRS }}</div>
+              </div>
+            </div>
           </div>
-          <button type="button" class="btn btn-danger" :disabled="buttonDeletePairDisabled"
-            @click="onDeletePair()">Видалити пару</button>
         </div>
+        <button type="button" class="btn btn-danger my-3" :disabled="btnDeletePairDisabled"
+          @click="onDeletePair()">Видалити пару</button>
       </div>
     </div>
   </div>
@@ -182,9 +185,17 @@
         girlId: 3,
         name: "Тетяна"
       },
+      {
+        girlId: 4,
+        name: "Аліна"
+      },
+      {
+        girlId: 5,
+        name: "Олеся"
+      },
     ];
 
-    const MISSING_MESSAGE = {
+    const MESSAGE_STATUS = {
       BOYS: 'Хлопців поки ще нема.',
       GIRLS: 'Дівчат поки ще нема.',
       PAIRS: 'Пари для танців не можуть бути сформовані.',
@@ -193,7 +204,6 @@
     const app = createApp({
       data() {
         return {
-
           pairsList: [],
           isBoySelected: null,
           isGirlSelected: null,
@@ -210,16 +220,16 @@
           return girlsList;
         },
 
-        buttonAddDisabled() {
+        btnAddDisabled() {
           return this.isBoySelected === null || this.isGirlSelected === null
         },
 
-        buttonDeletePairDisabled() {
+        btnDeletePairDisabled() {
           return this.isPairSelected === null
         },
 
-        missingMessage() {
-          return MISSING_MESSAGE
+        messageStatus() {
+          return MESSAGE_STATUS
         }
       },
 
