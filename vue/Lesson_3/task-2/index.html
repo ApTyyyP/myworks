@@ -64,15 +64,15 @@
 
       <div class="words-box">
         <div class="col words-en">
-          <div class="word" v-for="word in words" :key="word.id" :class="selectBorderClass(word, 'en')"
+          <div class="word" v-for="word in getWordsList" :key="word.id" :class="selectBorderClass(word, 'en')"
             @click="selectCurrentWord(word, 'en')">
-            {{word.en}}
+            {{ word.en }}
           </div>
         </div>
         <div class="col words-ua">
           <div class="word" v-for="word in sortWordsInReverseOrder()" :key="word.id"
             :class="selectBorderClass(word, 'ua')" @click="selectCurrentWord(word, 'ua')">
-            {{word.ua}}
+            {{ word.ua }}
           </div>
         </div>
       </div>
@@ -83,22 +83,29 @@
   <script>
     const { createApp } = Vue;
 
-    const app = createApp({
+    const words = [
+      { id: 1, en: 'car', ua: 'машина' },
+      { id: 2, en: 'table', ua: 'стіл' },
+      { id: 3, en: 'street', ua: 'вулиця' },
+      { id: 4, en: 'tree', ua: 'дерево' },
+      { id: 5, en: 'train', ua: 'потяг' },
+    ];
 
+    const app = createApp({
       data() {
         return {
-          words: [
-            { id: 1, en: 'car', ua: 'машина' },
-            { id: 2, en: 'table', ua: 'стіл' },
-            { id: 3, en: 'street', ua: 'вулиця' },
-            { id: 4, en: 'tree', ua: 'дерево' },
-            { id: 5, en: 'train', ua: 'потяг' },
-          ],
           answer: {
             en: 0,
             ua: 0,
           },
+
           hasAnswerError: false
+        }
+      },
+
+      computed: {
+        getWordsList() {
+          return words; 
         }
       },
 
@@ -107,6 +114,7 @@
           if (word.id === this.answer[lang] && !this.hasAnswerError) {
             return 'word-selected'
           }
+
           if (word.id === this.answer[lang] && this.hasAnswerError) {
             return 'word-selected-with-error'
           }
@@ -116,7 +124,7 @@
 
         sortWordsInReverseOrder() {
           let reverseSortedArray = []
-          reverseSortedArray.push(...this.words);
+          reverseSortedArray.push(...words);
           return reverseSortedArray.sort((a, b) => b.id - a.id);
         },
 
@@ -130,7 +138,6 @@
           if (this.answer.en !== 0 && this.answer.ua !== 0) {
             if (this.answer.en !== this.answer.ua) {
               this.hasAnswerError = true
-
               setTimeout(() => {
                 this.resetVariables()
               }, 1000);
@@ -150,10 +157,10 @@
         },
 
         deleteWordById(id) {
-          const index = this.words.findIndex(word => word.id === id);
+          const index = words.findIndex(word => word.id === id);
 
           if (index !== -1) {
-            this.words.splice(index, 1);
+            words.splice(index, 1);
           }
         }
       }
