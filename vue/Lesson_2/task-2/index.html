@@ -128,11 +128,11 @@
         <div class="p-3">
           <label for="beer">Виберіть пиво</label>
           <select class="form-select w-25" id="beer" v-model="optionsList.beer">
-            <option v-for="(beer, index) in getBeersList" :value="beer" key="index">{{ beer }}</option>
+            <option v-for="(beer, index) in getBeersList" :value="beer" :key="index">{{ beer }}</option>
           </select>
           <label for="chips">Виберіть чипси</label>
           <select class="form-select w-25" id="chips" v-model="optionsList.chips">
-            <option v-for="(chips, index) in getChipsList" :value="chips" key="index">{{ chips }}</option>
+            <option v-for="(chips, index) in getChipsList" :value="chips" :key="index">{{ chips }}</option>
           </select>
         </div>
       </div>

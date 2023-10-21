@@ -20,6 +20,7 @@
       grid-template-columns: repeat(3, 1fr);
       border: 1px solid #ccc;
       border-radius: 10px;
+      overflow: hidden;
     }
 
     .order__status {
@@ -33,13 +34,16 @@
       align-items: center;
     }
 
+    .order__block .order__column:not(:last-child) {
+      border-right: 1px solid #ccc;
+    }
+
     .order__column .order__status:not(:last-child) {
       margin-bottom: 20px;
     }
 
     .order__column {
       padding: 0.9375rem;
-      border: 1px solid #ccc;
     }
 
     .order__title {
@@ -97,7 +101,7 @@
         </div>
         <div class="order__block my-3">
           <div class="order__column p-3">
-            <h3 class="order__title">Очiкують виконання</h3>
+            <h3 class="order__title">Очікують виконання</h3>
             <div v-for="(product, index) in getWaitingList" :key="index" class="order__status">
               <div>{{ product }}</div>
               <button @click="onProcessing(index)"
@@ -113,7 +117,7 @@
             </div>
           </div>
           <div class="order__column p-3">
-            <h3 class="order__title">Готовi до виносу</h3>
+            <h3 class="order__title">Готові до виносу</h3>
             <div v-for="(product, index) in completedList" :key="index" class="order__status">
               <div>{{ product }}</div>
               <button @click="onDeleted(index)" class="btn bg-success text-white rounded-pill p-1 lh-lg">Подано</button>
@@ -160,23 +164,23 @@
 
       methods: {
         onProcessing(index) {
-          this.processingList.push(waitingList[index])
-          waitingList.splice(index, 1)
+          this.processingList.push(waitingList[index]);
+          waitingList.splice(index, 1);
         },
 
         onCompleted(index) {
-          this.completedList.push(this.processingList[index])
-          this.processingList.splice(index, 1)
+          this.completedList.push(this.processingList[index]);
+          this.processingList.splice(index, 1);
         },
 
         onDeleted(index) {
-          this.completedList.splice(index, 1)
+          this.completedList.splice(index, 1);
         },
 
-        onWaiting(index) {
+        onWaiting() {
           if (this.order)
-            waitingList.push(this.order)
-          this.order = null
+            waitingList.push(this.order);
+          this.order = null;
         },
       }
     })
