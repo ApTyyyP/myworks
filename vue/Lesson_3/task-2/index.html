@@ -4,38 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Задача 3</title>
+  <title>Задача 2</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
 
   <style>
-    .words-box {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .words-en,
-    .words-ua {
-      padding: 20px;
-      height: 600px;
-      border: 2px solid #cccccc;
-      margin: 50px 10px;
-    }
-
     .word {
       margin: 10px 0;
       padding: 15px;
+      border-radius: 6px;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
     }
 
     .word:hover {
+      color: #fff;
+      background-color: #6c757d;
       cursor: pointer;
-      background-color: #efeeee;
     }
 
     .word-not-selected {
-      border: 2px solid #cccccc;
+      border: 2px solid #6c757d;
     }
 
     .word-selected {
@@ -44,6 +36,26 @@
 
     .word-selected-with-error {
       border: 2px solid red;
+    }
+
+    .empty-box {
+      text-align: center;
+      font-weight: 700;
+      font-size: 20px;
+      color: red;
+    }
+
+    @media (max-width: 767.98px) {
+      .word {
+        padding: 10px;
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .empty-box {
+        font-size: 14px;
+        line-height: 1;
+      }
     }
   </style>
 </head>
@@ -62,17 +74,27 @@
 
       <hr>
 
-      <div class="words-box">
-        <div class="col words-en">
-          <div class="word" v-for="word in getWordsList" :key="word.id" :class="selectBorderClass(word, 'en')"
-            @click="selectCurrentWord(word, 'en')">
-            {{ word.en }}
+      <div class="row">
+        <div class="col-6">
+          <div class="card border-secondary h-100">
+            <div class="card-body">
+              <div class="word" v-if="getWordsList.length" v-for="word in getWordsList" :key="word.id" :class="selectBorderClass(word, 'en')"
+                @click="selectCurrentWord(word, 'en')">
+                {{ word.en }}
+              </div>
+              <div class="empty-box" v-else>{{ messageStatus.EMPTY }}</div>
+            </div>
           </div>
         </div>
-        <div class="col words-ua">
-          <div class="word" v-for="word in sortWordsInReverseOrder()" :key="word.id"
-            :class="selectBorderClass(word, 'ua')" @click="selectCurrentWord(word, 'ua')">
-            {{ word.ua }}
+        <div class="col-6">
+          <div class="card border-secondary h-100">
+            <div class="card-body">
+              <div class="word" v-if="sortWordsInReverseOrder().length" v-for="word in sortWordsInReverseOrder()" :key="word.id"
+                :class="selectBorderClass(word, 'ua')" @click="selectCurrentWord(word, 'ua')">
+                {{ word.ua }}
+              </div>
+              <div class="empty-box" v-else>{{ messageStatus.EMPTY }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -84,12 +106,20 @@
     const { createApp } = Vue;
 
     const words = [
-      { id: 1, en: 'car', ua: 'машина' },
-      { id: 2, en: 'table', ua: 'стіл' },
-      { id: 3, en: 'street', ua: 'вулиця' },
-      { id: 4, en: 'tree', ua: 'дерево' },
-      { id: 5, en: 'train', ua: 'потяг' },
+      { id: 1, en: 'animals', ua: 'тварини' },
+      { id: 2, en: 'rain', ua: 'дощ' },
+      { id: 3, en: 'weather', ua: 'погода' },
+      { id: 4, en: 'exercise', ua: 'завдання' },
+      { id: 5, en: 'spider', ua: 'павук' },
+      { id: 6, en: 'language', ua: 'мова' },
+      { id: 7, en: 'apple', ua: 'яблуко' },
+      { id: 8, en: 'computer', ua: 'комп\'ютер' },
+      { id: 9, en: 'food', ua: 'їжа' },
     ];
+
+    const MESSAGE_STATUS = {
+      EMPTY: 'Список слів пустий.',
+    }
 
     const app = createApp({
       data() {
@@ -105,45 +135,51 @@
 
       computed: {
         getWordsList() {
-          return words; 
+          return words;
+        },
+
+        messageStatus() {
+          return MESSAGE_STATUS
         }
       },
 
       methods: {
         selectBorderClass(word, lang) {
           if (word.id === this.answer[lang] && !this.hasAnswerError) {
-            return 'word-selected'
+            return 'word-selected';
           }
 
           if (word.id === this.answer[lang] && this.hasAnswerError) {
-            return 'word-selected-with-error'
+            return 'word-selected-with-error';
           }
 
-          return 'word-not-selected'
+          return 'word-not-selected';
         },
 
         sortWordsInReverseOrder() {
-          let reverseSortedArray = []
+          let reverseSortedArray = [];
           reverseSortedArray.push(...words);
+
           return reverseSortedArray.sort((a, b) => b.id - a.id);
         },
 
         selectCurrentWord(word, lang) {
-          this.answer[lang] = word.id
-
-          this.checkAnswer()
+          this.answer[lang] = word.id;
+          this.checkAnswer();
         },
 
         checkAnswer() {
           if (this.answer.en !== 0 && this.answer.ua !== 0) {
             if (this.answer.en !== this.answer.ua) {
-              this.hasAnswerError = true
+              this.hasAnswerError = true;
               setTimeout(() => {
-                this.resetVariables()
+                this.resetVariables();
               }, 1000);
             } else {
-              this.deleteWordById(this.answer.en)
-              this.resetVariables()
+              setTimeout(() => {
+                this.deleteWordById(this.answer.en);
+                this.resetVariables();
+              }, 1000);
             }
           }
         },
@@ -158,10 +194,7 @@
 
         deleteWordById(id) {
           const index = words.findIndex(word => word.id === id);
-
-          if (index !== -1) {
-            words.splice(index, 1);
-          }
+          words.splice(index, 1);
         }
       }
     })
