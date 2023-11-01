@@ -1,26 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <products-list :products-list-data="raspberryList" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProductsList from './components/ProductsList.vue';
+import { raspberryList } from './constants/2_data_raspberry';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { ProductsList },
+
+  data() {
+    return {
+      raspberryList,
+    };
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  min-width: 320px;
 }
 </style>

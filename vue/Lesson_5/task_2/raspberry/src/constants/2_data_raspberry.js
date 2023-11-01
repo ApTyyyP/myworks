@@ -6,6 +6,8 @@ export const raspberryList = [
     logo: 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://florium.ua&client=VFE&size=16&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2',
     companyTitle: 'Флориум',
     description: 'Малина Эріка🌷',
+    inStock: true,
+    link: 'https://allegro.pl/oferta/malina-powtarzajaca-najslodsze-wielkie-owoce-vii-x-14221580548',
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const raspberryList = [
     logo: 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://fozzyshop.ua&client=VFE&size=16&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2',
     companyTitle: 'FOZZY',
     description: 'Малина свіжа',
+    inStock: false,
+    link: 'https://allegro.pl/oferta/malina-powtarzajaca-najslodsze-wielkie-owoce-vii-x-14221580548',
   },
   {
     id: 3,
@@ -22,5 +26,7 @@ export const raspberryList = [
     logo: 'https://encrypted-tbn2.gstatic.com/faviconV2?url=https://aif.ru&client=VFE&size=16&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2',
     companyTitle: 'Факти',
     description: 'Малина звичайна',
+    inStock: true,
+    link: 'https://allegro.pl/oferta/malina-powtarzajaca-najslodsze-wielkie-owoce-vii-x-14221580548',
   },
-]
+];
