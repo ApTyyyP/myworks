@@ -36,3 +36,13 @@ react/marvel/.yarn/install-state.gz
 package-lock.json
 react/marvel/yarn.lock
 react/marvel/package-lock.json
+vue/Lesson_5/task_1/google_favorite/.firebaserc
+vue/Lesson_5/task_1/google_favorite/firebase.json
+.gitignore
+vue/Lesson_5/task_1/google_favorite/.firebase/hosting.ZGlzdA.cache
+vue/Lesson_5/task_2/raspberry/.firebaserc
+vue/Lesson_5/task_2/raspberry/firebase.json
+vue/Lesson_5/task_2/raspberry/.firebase/hosting.ZGlzdA.cache
+vue/Lesson_5/task_3/notebooks/.firebaserc
+vue/Lesson_5/task_3/notebooks/firebase.json
+vue/Lesson_5/task_3/notebooks/.firebase/hosting.ZGlzdA.cache
