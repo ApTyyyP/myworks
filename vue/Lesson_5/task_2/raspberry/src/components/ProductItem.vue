@@ -19,10 +19,10 @@
             <img :src="itemData.logo" alt="logo" class="logo-img" />
             <h5 class="card-title">{{ itemData.companyTitle }}</h5>
           </a>
-          <div class="text text-success" v-if="itemData.inStock">
+          <div v-if="itemData.inStock" class="text text-success">
             В наявності
           </div>
-          <div class="text text-danger" v-else>Немає в наявності</div>
+          <div v-else class="text text-danger">Немає в наявності</div>
         </div>
         <div class="card-text text-white">{{ itemData.description }}</div>
       </div>
