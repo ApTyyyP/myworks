@@ -1,0 +1,27 @@
+#card {
+  height: 300px;
+}
+#card-block {
+  position: relative;
+}
+.card-date,
+.card-code,
+.card-number {
+  position: absolute;
+  color: #2b2f32;
+}
+.card-number {
+  top: 118px;
+  width: 320px;
+  left: 20px;
+}
+.card-date {
+  top: 150px;
+  width: 80px;
+  left: 170px;
+}
+.card-code {
+  top: 150px;
+  width: 80px;
+  left: 260px;
+}

@@ -1,0 +1,33 @@
+.product-filter-block {
+  border-right: 1px solid #cecdcd;
+  height: 100vh;
+  width: 300px;
+}
+
+#brand-block,
+#supplier-block {
+  padding: 10px;
+}
+
+#alphabetical-index,
+.brand-title,
+.seller-title {
+  color: #4f94fa;
+  padding: 10px;
+}
+
+.brand-title-amount,
+.seller-title-amount {
+  color: #727272;
+  margin-left: 10px;
+}
+
+.supplier-checkbox {
+  margin: 0 10px 0 10px;
+}
+
+#brand-search-input {
+  border: 1px solid #cecdcd;
+  border-radius: 10px;
+  padding: 3px 0 3px 10px;
+}

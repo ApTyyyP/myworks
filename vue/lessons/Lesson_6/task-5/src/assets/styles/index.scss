@@ -1,0 +1,15 @@
+@import "product-filter";
+@import "product-list";
+@import "product-card";
+
+html,
+body {
+  height: 100vh;
+}
+.product-block {
+  display: flex;
+  flex-direction: row;
+}
+input:focus {
+  outline: none;
+}
