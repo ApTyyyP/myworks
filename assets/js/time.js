@@ -1,53 +1,45 @@
-﻿let imgArray = [];
-let setTime24 = 1;
+﻿const imgArray = Array.from({ length: 10 }, (_, i) => {
+    const img = new Image(15, 20);
+    img.src = `images/time/${i}.gif`;
+    return img;
+});
+
+let setTime24 = true;
 
 function ImgClock() {
-    let i = 0;
-    for (i = 0; i < 10; i++) {
-        imgArray[i] = new Image(15, 20)
-    }
-    imgArray[0].src = "images/time/0.gif";
-    imgArray[1].src = "images/time/1.gif";
-    imgArray[2].src = "images/time/2.gif";
-    imgArray[3].src = "images/time/3.gif";
-    imgArray[4].src = "images/time/4.gif";
-    imgArray[5].src = "images/time/5.gif";
-    imgArray[6].src = "images/time/6.gif";
-    imgArray[7].src = "images/time/7.gif";
-    imgArray[8].src = "images/time/8.gif";
-    imgArray[9].src = "images/time/9.gif";
-    jsImgClock24hr()
+    jsImgClock24hr();
 }
 
 function jsImgClock24hr() {
+    const time = new Date();
+    const [hour, minute, second] = [time.getHours(), time.getMinutes(), time.getSeconds()];
 
-    let time = new Date();
-    let hour = time.getHours();
-    let minute = time.getMinutes();
-    let second = time.getSeconds();
-    let sec = 0;
-    let sec10 = 0;
-    let min = 0;
-    let min10 = 0;
-    let hr = 0;
-    let hr10 = 0;
+    const updateImage = (elementName, value) => {
+        const elements = document.getElementsByName(elementName);
+        if (elements.length > 0) {
+            elements[0].src = imgArray[value].src;
+        }
+    };
 
-    sec10 = Math.floor(second / 10);
-    sec = second - sec10 * 10;
-    document.img24Sec.src = imgArray[sec].src;
-    if (sec === 0 || setTime24 === 1) {
-        document.img24Sec10.src = imgArray[sec10].src;
-        min10 = Math.floor(minute / 10);
-        min = minute - min10 * 10;
-        document.img24Min.src = imgArray[min].src;
-        if (min === 0 || setTime24 === 1) {
-            document.img24Min10.src = imgArray[min10].src;
-            hr10 = Math.floor(hour / 10);
-            hr = hour - hr10 * 10;
-            document.img24Hr.src = imgArray[hr].src;
-            document.img24Hr10.src = imgArray[hr10].src;
-            setTime24 = 0
+    const [sec10, sec] = [Math.floor(second / 10), second % 10];
+    updateImage('img24Sec', sec);
+    updateImage('img24Sec10', sec10);
+
+    if (sec === 0 || setTime24) {
+        const [min10, min] = [Math.floor(minute / 10), minute % 10];
+        updateImage('img24Min', min);
+        updateImage('img24Min10', min10);
+
+        if (min === 0 || setTime24) {
+            const [hr10, hr] = [Math.floor(hour / 10), hour % 10];
+            updateImage('img24Hr', hr);
+            updateImage('img24Hr10', hr10);
+
+            setTime24 = false;
         }
     }
-    id = setTimeout("jsImgClock24hr()", 1000)
+
+    setTimeout(jsImgClock24hr, 1000);
 }
+
+window.onload = ImgClock;
