@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задача 4</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app" class="pt-5"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        // Курси валют
+        const rate = { USD: 38.0, EUR: 40.0 };
+
+        // Стан облікового рахунку
+        const [accounts, setAccounts] = useState({
+          UAH: 0.0,
+          USD: 0.0,
+          EUR: 0.0,
+        });
+
+        // Поточна введена сума в UAH
+        const [currentSumUAH, setCurrentSumUAH] = useState(0.0);
+
+        // Відсотки: current — для поточної операції, all — накопичені
+        const [percents, setPercents] = useState({
+          current: 0.0,
+          all: 0.0,
+        });
+
+        // Історія операцій
+        const [history, setHistory] = useState([]);
+
+        // Валідація введеного поля
+        const [validation, setValidation] = useState({
+          result: true,
+          message: '',
+        });
+
+        // Допоміжний метод: скидає повідомлення про помилку
+        const resetValidation = () => {
+          setValidation({ result: true, message: '' });
+        };
+
+        // Головна функція, що виконує «Зарахувати» або «Зняти»
+        const performOperation = (direction) => {
+          const sum = parseFloat(currentSumUAH);
+          const accountUAH = parseFloat(accounts.UAH);
+
+          // Обчислюємо комісію 3%
+          const feeRaw = sum * 0.03;
+          const fee = parseFloat(feeRaw.toFixed(2));
+
+          // Валідація:
+          let valid = true;
+          let message = '';
+
+          if (isNaN(sum)) {
+            valid = false;
+            message = 'Будь ласка, введіть коректне число.';
+          } else if (sum === 0) {
+            valid = false;
+            message = 'Сума не має бути 0!';
+          } else if (sum < 0) {
+            valid = false;
+            message = 'Сума не може бути менша за 0!';
+          } else if (direction === 'sub' && sum + fee > accountUAH) {
+            valid = false;
+            message = 'Сума разом з комісією більша за залишок!';
+          }
+
+          if (!valid) {
+            setValidation({ result: false, message });
+            return;
+          }
+
+          // Якщо валідно, скидаємо попередню помилку
+          resetValidation();
+
+          // Розраховуємо чисту суму після комісії
+          let netUAH;
+          if (direction === 'add') {
+            netUAH = parseFloat((sum - fee).toFixed(2));
+          } else {
+            netUAH = parseFloat((sum + fee).toFixed(2));
+          }
+
+          // Оновлюємо рахунок у гривнях (UAH)
+          const newUAH =
+            direction === 'add'
+              ? parseFloat((accountUAH + netUAH).toFixed(2))
+              : parseFloat((accountUAH - netUAH).toFixed(2));
+
+          // Перерахунок у USD та EUR для нового балансу
+          const newUSD = parseFloat((newUAH / rate.USD).toFixed(2));
+          const newEUR = parseFloat((newUAH / rate.EUR).toFixed(2));
+
+          // Оновлюємо стан облікового запису
+          setAccounts({ UAH: newUAH, USD: newUSD, EUR: newEUR });
+
+          // Оновлюємо накопичені відсотки
+          const newAllPercents = parseFloat((percents.all + fee).toFixed(2));
+          setPercents({ current: fee, all: newAllPercents });
+
+          // Додаємо операцію до історії
+          const entry = {
+            sum: sum.toFixed(2),
+            dollar: parseFloat((sum / rate.USD).toFixed(2)),
+            euro: parseFloat((sum / rate.EUR).toFixed(2)),
+            direction: direction,
+            percent: fee.toFixed(2),
+          };
+          setHistory((prev) => [...prev, entry]);
+
+          // Скидаємо введену суму
+          setCurrentSumUAH(0.0);
+        };
+
+        // Обробник для кнопки «Зарахувати»
+        const handleAdd = () => {
+          performOperation('add');
+        };
+
+        // Обробник для кнопки «Зняти»
+        const handleSub = () => {
+          performOperation('sub');
+        };
+
+        // Клас інпуту у випадку помилки
+        const inputClass = validation.result
+          ? 'form-control'
+          : 'form-control error-input';
+
+        return (
+          <div className="container">
+            <div className="d-flex justify-content-center text-black">
+              <h3>Задача 4</h3>
+            </div>
+
+            <h3>“Рахунок у банку”</h3>
+            <p>Вимоги:</p>
+            <ol>
+              <li>
+                Спочатку сума дорівнює <b>0 грн</b>. Змінити суму у гривнях
+                можна або зарахуванням на рахунок, або зняттям;
+              </li>
+              <li>
+                Сума автоматично переводиться у долари та євро{' '}
+                <i>
+                  (фіксований курс задається у <b>data</b>)
+                </i>
+                ;
+              </li>
+              <li>
+                Можливість зарахувати суму (контролювати, щоб не була
+                від'ємною);
+              </li>
+              <li>
+                Можливість зняти (щоб не можна було зняти більше, ніж є на
+                рахунку);
+              </li>
+              <li>
+                При виконанні зняття і зарахування коштів вираховувати <b>3%</b>{' '}
+                від суми (відображати кількість відсотків автоматично);
+              </li>
+            </ol>
+
+            <p>При зміні суми:</p>
+            <ul>
+              <li>
+                Якщо було зняття, то суму відображати{' '}
+                <span className="text-danger">червоним</span>;
+              </li>
+              <li>
+                Якщо було зарахування, то суму відображати{' '}
+                <span className="text-success">зеленим</span>;
+              </li>
+            </ul>
+            <p>
+              Якщо сума валюти менша за <b>100</b>, то відображати{' '}
+              <span className="text-danger">червоним</span>, інакше —{' '}
+              <span className="text-success">зеленим</span>.
+            </p>
+
+            <hr />
+
+            {/* Поточний стан рахунку */}
+            <div className="row mb-3">
+              <p>
+                Сума на рахунку: <b>{accounts.UAH.toFixed(2)} грн</b>
+              </p>
+              <p>Зарахувати на рахунок або зняти:</p>
+              <div className="col-12 d-flex justify-content-between btn-success mb-3 p-3">
+                <div className="col-3">
+                  <button
+                    className="col-12 btn btn-success"
+                    onClick={handleAdd}
+                  >
+                    Зарахувати
+                  </button>
+                </div>
+                <div className="col-2 mx-5">
+                  <input
+                    type="number"
+                    min="0"
+                    className={inputClass}
+                    value={currentSumUAH}
+                    onChange={(e) => setCurrentSumUAH(e.target.value)}
+                  />
+                </div>
+                <div className="col-3">
+                  <button className="col-12 btn btn-danger" onClick={handleSub}>
+                    Зняти
+                  </button>
+                </div>
+              </div>
+              {/* Повідомлення з помилками */}
+              <div className="error-row mb-3">
+                {!validation.result && (
+                  <p className="text-danger">{validation.message}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Відсотки за всі операції */}
+            <div className="mt-3">
+              <p>
+                Відсотки за обслуговування <i>(всі операції)</i>:{' '}
+                <b>{percents.all.toFixed(2)} грн</b>
+              </p>
+            </div>
+
+            <hr className="border border-dark border-2 mt-3" />
+
+            <p>
+              Сума у доларах: <b>${accounts.USD.toFixed(2)}</b>
+            </p>
+            <p>
+              Сума у євро: <b>&#8364;{accounts.EUR.toFixed(2)}</b>
+            </p>
+
+            {/* Історія */}
+            <div className="row mt-5">
+              <table className="table table-hover">
+                <thead>
+                  <tr className="text-center">
+                    <th scope="col">№</th>
+                    <th scope="col">Сума (грн)</th>
+                    <th scope="col">Сума ($)</th>
+                    <th scope="col">Сума (&#8364;)</th>
+                    <th scope="col">Напрямок</th>
+                    <th scope="col">Відсотки (грн)</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {history.map((operation, index) => (
+                    <tr
+                      key={index}
+                      className={`text-center ${
+                        operation.direction === 'add' ? 'add' : 'sub'
+                      }`}
+                    >
+                      <th scope="row">{index + 1}</th>
+                      <td>{operation.sum}</td>
+                      <td>{operation.dollar.toFixed(2)}</td>
+                      <td>{operation.euro.toFixed(2)}</td>
+                      <td>
+                        {operation.direction === 'add'
+                          ? 'Поповнення'
+                          : 'Зняття'}
+                      </td>
+                      <td>{operation.percent}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(<App />);
+    </script>
+
+    <style>
+      #app {
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+
+      .add {
+        background-color: #dafdcc;
+      }
+
+      .sub {
+        background-color: #f5d8c9;
+      }
+
+      .error-row {
+        height: 20px;
+        padding-left: 54px;
+      }
+
+      .error-input {
+        border-color: red;
+      }
+    </style>
+  </body>
+</html>
