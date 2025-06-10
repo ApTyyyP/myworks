@@ -1,0 +1,56 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 20px auto;
+  padding: 20px 0;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  border: 2px solid #000;
+}
+
+.card p {
+  margin: 0;
+}
+
+.figure {
+  padding: 10px;
+  text-align: center;
+}
+
+.img-fluid {
+  height: 300px;
+  object-fit: cover;
+}
+
+.english-word {
+  padding: 5px;
+  border: 1px dashed #0dcaf0;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.success {
+  border: 3px solid green;
+}
+
+.error {
+  border: 3px solid red;
+}
+
+.error .message {
+  color: red;
+}

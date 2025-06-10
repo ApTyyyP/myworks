@@ -1,0 +1,48 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-fluid {
+  object-fit: cover;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+}
+
+.smoke {
+  width: 100%;
+  background-color: #ffffffb6;
+}
+
+.business {
+  margin: 0px auto;
+  max-width: 1000px;
+  height: 600px;
+  background: url('image/business_class.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 2rem;
+}
+
+.economy {
+  margin: 0px auto;
+  max-width: 1000px;
+  height: 600px;
+  background: url('image/economy_class.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 2rem;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+}
+
+select {
+  min-width: 300px;
+  cursor: pointer;
+}

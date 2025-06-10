@@ -1,0 +1,133 @@
+* {
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-box-dark {
+  background-color: #1f1f1f;
+}
+
+.container-box-dark h3,
+.container-box-dark p,
+.container-box-dark hr {
+  color: rgba(255, 255, 255, .87);
+}
+
+a {
+  text-decoration: none;
+}
+
+.data-item-box {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #565656;
+  color: black;
+}
+
+.data-item-box:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.data-item-box-dark {
+  background-color: #2a2a2a;
+}
+
+.data-item-box-dark .item-domain,
+.data-item-box-dark .item-breadcrumbs,
+.data-item-box-dark .item-description {
+  color: rgba(235, 235, 235, .6);
+}
+
+.item-box-thumb {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.item-box-img {
+  margin-right: 15px;
+}
+
+.thumb-img {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.item-domain,
+.item-breadcrumbs,
+.item-description {
+  color: rgba(60, 60, 60, .7);
+}
+
+.item-breadcrumbs {
+  font-size: 14px;
+}
+
+.item-title {
+  font-size: 24px;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  content: '';
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch.dark-theme .slider {
+  background-color: #1a1a1a;
+}
+
+.switch.dark-theme .slider::before {
+  background-color: rgba(235, 235, 235, .6);
+}
+
+.round {
+  border-radius: 34px;
+}
+
+.switch input:checked+.slider {
+  background-color: #1a1a1a;
+}
+
+.switch input:checked+.slider::before {
+  margin-left: 26px;
+  background-color: rgba(235, 235, 235, .6);
+}
