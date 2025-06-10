@@ -1,0 +1,369 @@
+* {
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+#root {
+  margin: 0 auto auto;
+  width: 100%;
+}
+
+/* Animation = START */
+.fade-in {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInAnim 0.5s forwards;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-appear {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* Animation = END */
+
+/* Task1 = START */
+.task-1 .card {
+  padding: 2em;
+}
+
+.task-1 .read-the-docs {
+  color: #888;
+}
+
+.task-1 .task-1 .table {
+  max-width: 500px;
+}
+
+.task-1 .input-group-text {
+  padding: 0;
+}
+
+.task-1 .btn.check {
+  width: 46px;
+  border: 0;
+}
+
+.task-1 .result {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.task-1 .success-image {
+  max-width: 400px;
+}
+/* Task1 = END */
+
+/* Task2 = START */
+.task-2 .img-fluid {
+  object-fit: cover;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+}
+
+.task-2 .smoke {
+  width: 100%;
+  background-color: #ffffffb6;
+}
+
+.task-2 .business {
+  margin: 0px auto;
+  max-width: 1000px;
+  height: 600px;
+  background: url('image/business_class.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 2rem;
+}
+
+.task-2 .economy {
+  margin: 0px auto;
+  max-width: 1000px;
+  height: 600px;
+  background: url('image/economy_class.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 2rem;
+}
+
+.task-2 label {
+  user-select: none;
+  cursor: pointer;
+}
+
+.task-2 select {
+  min-width: 300px;
+  cursor: pointer;
+}
+/* Task2 = END */
+
+/* Task3 = START */
+.task-3 .card {
+  margin: 20px auto;
+  padding: 20px 0;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  border: 2px solid #000;
+  text-align: center;
+}
+
+.task-3 .card p {
+  margin: 0;
+}
+
+.task-3 .figure {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.task-3 .img-fluid {
+  height: 300px;
+  object-fit: cover;
+}
+
+.task-3 .english-word {
+  padding: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #0dcaf0;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.task-3 .message {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.task-3 .success {
+  border: 3px solid green;
+}
+
+.task-3 .success .message {
+  color: green;
+}
+
+.task-3 .error {
+  border: 3px solid red;
+}
+
+.task-3 .error .message {
+  color: red;
+}
+/* Task3 = END */
+
+/* Task5 = START */
+.container-box-dark {
+  background-color: #1f1f1f;
+}
+
+.container-box-dark h3,
+.container-box-dark p,
+.container-box-dark hr {
+  color: rgba(255, 255, 255, .87);
+}
+
+.task-5 a {
+  text-decoration: none;
+}
+
+.task-5 .data-item-box {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #565656;
+  color: black;
+}
+
+.task-5 .data-item-box:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.task-5 .data-item-box-dark {
+  background-color: #2a2a2a;
+}
+
+.task-5 .data-item-box-dark .item-domain,
+.task-5 .data-item-box-dark .item-breadcrumbs,
+.task-5 .data-item-box-dark .item-description {
+  color: rgba(235, 235, 235, .6);
+}
+
+.task-5 .item-box-thumb {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.task-5 .item-box-img {
+  margin-right: 15px;
+}
+
+.task-5 .thumb-img {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.task-5 .item-domain,
+.task-5 .item-breadcrumbs,
+.task-5 .item-description {
+  color: rgba(60, 60, 60, .7);
+}
+
+.task-5 .item-breadcrumbs {
+  font-size: 14px;
+}
+
+.task-5 .item-title {
+  font-size: 24px;
+}
+
+.task-5 .switch {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+}
+
+.task-5 .switch input {
+  display: none;
+}
+
+.task-5 .slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.task-5 .slider::before {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  content: '';
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.task-5 .switch.dark-theme .slider {
+  background-color: #1a1a1a;
+}
+
+.task-5 .switch.dark-theme .slider::before {
+  background-color: rgba(235, 235, 235, .6);
+}
+
+.task-5 .round {
+  border-radius: 34px;
+}
+
+.task-5 .switch input:checked+.slider {
+  background-color: #1a1a1a;
+}
+
+.task-5 .switch input:checked+.slider::before {
+  margin-left: 26px;
+  background-color: rgba(235, 235, 235, .6);
+}
+/* Task5 = END */
+
+/* Task6 = START */
+.task-6 .order__block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.task-6 .order__status {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.task-6 .order__column .order__status:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.task-6 .order__column {
+  padding: 0.9375rem;
+  border: 1px solid #ccc;
+}
+
+.task-6 .order__title {
+  margin-bottom: 0.9375rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.task-6 button {
+  min-width: 200px;
+}
+
+@media (max-width: 1199.98px) {
+  .task-6 .order__block {
+    grid-template-columns: auto;
+  }
+}
+/* Task6 = END */
