@@ -127,7 +127,7 @@ function MainContent() {
         )}
       </div>
 
-      {/* Роуты */}
+      {/* Роути */}
       <Routes location={location}>
         <Route
           path="/task1"

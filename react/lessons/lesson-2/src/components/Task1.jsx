@@ -87,7 +87,7 @@ function Task1() {
   }
 
   return (
-    <div className="container task-1">
+    <div className="task-1">
       <div className="d-flex justify-content-center text-black mb-3">
         <h3>Задача 1</h3>
       </div>

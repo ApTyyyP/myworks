@@ -63,8 +63,8 @@ function Task6() {
   */
 
   return (
-    <div className="container pt-5 task-6">
-      <div className="d-flex justify-content-center text-black">
+    <div className="task-6">
+      <div className="d-flex justify-content-center text-black mb-3">
         <h3>Задача 6</h3>
       </div>
 

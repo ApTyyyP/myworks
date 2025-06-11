@@ -48,7 +48,7 @@ function Task5() {
   const tooltip = <Tooltip id="toggle-tooltip">{helpText}</Tooltip>;
 
   return (
-    <div className="container pt-5 task-5">
+    <div className="task-5">
       <div className="d-flex justify-content-center text-black mb-3">
         <h3>Задача 5</h3>
       </div>

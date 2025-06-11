@@ -27,7 +27,7 @@ const list = getWorkersList();
 
 function Task4() {
   return (
-    <div className="container pt-5 task-4">
+    <div className="task-4">
       <div className="d-flex justify-content-center text-black mb-3">
         <h3>Задача 4</h3>
       </div>
