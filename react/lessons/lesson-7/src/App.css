@@ -1,0 +1,92 @@
+* {
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+#root {
+  margin: 0 auto auto;
+  width: 100%;
+}
+
+.table {
+  max-width: 700px;
+}
+
+.table > tbody {
+  vertical-align: middle;
+}
+
+.number-column {
+  width: 50px;
+}
+
+.action-column {
+  width: 105px;
+}
+
+/* Animation = START */
+.fade-in {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInAnim 0.5s forwards;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-appear {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* Animation = END */
+
+/* Task1 = START */
+.card-img-top {
+  width: 180px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 0.875rem;
+  }
+}
+/* Task1 = END */
