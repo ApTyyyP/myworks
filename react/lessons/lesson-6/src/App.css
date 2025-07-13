@@ -1,0 +1,96 @@
+* {
+  -webkit-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+#root {
+  margin: 0 auto auto;
+  width: 100%;
+}
+
+.table {
+  max-width: 700px;
+}
+
+.table>tbody {
+  vertical-align: middle;
+}
+
+.number-column {
+  width: 50px;
+}
+
+.action-column {
+  width: 105px;
+}
+
+.bi {
+  font-size: 10rem;
+}
+
+/* Animation = START */
+.fade-in {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInAnim 0.5s forwards;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-appear {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* Animation = END */
+
+/* Task1 = START */
+/* Task1 = END */
+
+/* Task2 = START */
+/* Task2 = END */
+
+/* Task3 = START */
+/* Task3 = END */
+
+/* Task4 = START */
+/* Task4 = END */
+
+/* Task5 = START */
+/* Task5 = END */
+
+/* Task6 = START */
+/* Task6 = END */
