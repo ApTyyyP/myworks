@@ -3,7 +3,6 @@ import {
   Formik,
   Form,
   Field,
-  ErrorMessage as FormikErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
@@ -15,7 +14,7 @@ import './charSearchForm.scss';
 
 const CharSearchForm = () => {
   const [char, setChar] = useState(null);
-  const { loading, error, getCharacterByName, clearError } = useMarvelService();
+  const { process, setProcess, getCharacterByName, clearError } = useMarvelService();
 
   const onCharLoaded = (char) => {
     setChar(char);
@@ -24,10 +23,11 @@ const CharSearchForm = () => {
   const updateChar = (name) => {
     clearError();
 
-    getCharacterByName(name).then(onCharLoaded);
+    setChar(null);
+    getCharacterByName(name).then(onCharLoaded).then(() => setProcess('confirmed')).catch(() => {});
   };
 
-  const errorMessage = error ? (
+  const errorMessage = process === 'error' ? (
     <div className="char__search-critical-error">
       <ErrorMessage />
     </div>
@@ -63,6 +63,7 @@ const CharSearchForm = () => {
           updateChar(charName);
         }}
       >
+        {({ errors, touched, submitCount }) => (
         <Form>
           <label className="char__search-label" htmlFor="charName">
             Or find a character by name:
@@ -77,17 +78,16 @@ const CharSearchForm = () => {
             <button
               type="submit"
               className="button button__main"
-              disabled={loading}
+              disabled={process === 'loading'}
             >
               <div className="inner">find</div>
             </button>
           </div>
-          <FormikErrorMessage
-            component="div"
-            className="char__search-error"
-            name="charName"
-          />
+          {(touched.charName || submitCount > 0) && errors.charName ? (
+            <div className="char__search-error">{errors.charName}</div>
+          ) : null}
         </Form>
+        )}
       </Formik>
       {results}
       {errorMessage}

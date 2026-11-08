@@ -7,7 +7,7 @@ const ComicsPage = () => {
   return (
     <>
       <Helmet>
-        <meta name="description" content="Page with list of our comics" />
+        <meta name="description" content="Marvel first appearances from Superhero API by akabab" />
         <title>Comics page</title>
       </Helmet>
       <AppBanner />

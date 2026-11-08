@@ -27,6 +27,9 @@ const App = () => {
             </Routes>
           </Suspense>
         </main>
+        <footer style={{ marginTop: 40, textAlign: "center", fontSize: 14 }}>
+          <a href="https://github.com/akabab/superhero-api">Data: Superhero API by akabab</a>
+        </footer>
       </div>
     </Router>
   );

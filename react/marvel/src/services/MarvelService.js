@@ -1,78 +1,116 @@
 import { useHttp } from '../hooks/http.hook';
 
+const API_URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json';
+let charactersPromise;
+
+const hasValue = (value) => Boolean(value && value.trim() && value.trim() !== '-');
+
+const loadCharacters = () => {
+  if (!charactersPromise) {
+    charactersPromise = fetch(API_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Could not fetch characters, status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((characters) =>
+        characters.filter((char) => char.biography.publisher === 'Marvel Comics')
+      )
+      .catch((error) => {
+        charactersPromise = undefined;
+        throw error;
+      });
+  }
+  return charactersPromise;
+};
+
+const buildComics = (characters) => {
+  const issues = new Map();
+  characters.forEach((char) => {
+    const title = char.biography.firstAppearance;
+    if (!hasValue(title)) return;
+    if (!issues.has(title)) {
+      issues.set(title, {
+        id: issues.size + 1,
+        title,
+        names: [],
+        thumbnail: char.images.lg,
+      });
+    }
+    issues.get(title).names.push(char.name);
+  });
+  return Array.from(issues.values(), ({ names, ...comic }) => ({
+    ...comic,
+    description: `First appearance of ${names.join(', ')}`,
+    pageCount: 'No information about the number of pages',
+    language: 'NOT AVAILABLE',
+    price: 'NOT AVAILABLE',
+  }));
+};
+
+const transformCharacter = (char) => {
+  const fullName = hasValue(char.biography.fullName) ? char.biography.fullName : char.name;
+  const occupation = hasValue(char.work.occupation) ? char.work.occupation : 'Occupation unknown';
+  const alignment = hasValue(char.biography.alignment) ? char.biography.alignment : 'unknown';
+  const query = encodeURIComponent(char.name);
+  return {
+    id: char.id,
+    name: char.name,
+    description: `${fullName}. ${occupation}. Alignment: ${alignment}.`,
+    thumbnail: char.images.lg,
+    homepage: `https://www.marvel.com/search?limit=20&query=${query}`,
+    wiki: `https://marvel.fandom.com/wiki/Special:Search?query=${query}`,
+    comics: hasValue(char.biography.firstAppearance)
+      ? [{ name: char.biography.firstAppearance }]
+      : [],
+  };
+};
+
 const useMarvelService = () => {
-  const { request, clearError, process, setProcess } = useHttp();
+  const { clearError, process, setProcess } = useHttp();
 
-  const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-  const _apiKey = 'apikey=0686bd09dfb09b03ff4231e30dfeea9c';
-  const _baseOffset = 210;
-
-  const getAllCharacters = async (offset = _baseOffset) => {
-    const res = await request(
-      `${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`
-    );
-    return res.data.results.map(_transformCharacter);
+  const withCharacters = async (select) => {
+    setProcess('loading');
+    try {
+      return select(await loadCharacters());
+    } catch (error) {
+      setProcess('error');
+      throw error;
+    }
   };
 
-  // Вариант модификации готового метода для поиска по имени.
-  // Вызывать его можно вот так: getAllCharacters(null, name)
+  const getAllCharacters = (offset = 0) =>
+    withCharacters((characters) => characters.slice(offset, offset + 9).map(transformCharacter));
 
-  /* 	const getAllCharacters = async (offset = _baseOffset, name = '') => {
-	    const res = await request(`${_apiBase}characters?limit=9&offset=${offset}${name ? `&name=${name}` : '' }&${_apiKey}`);
-	    return res.data.results.map(_transformCharacter);
-	} */
+  const getCharacterByName = (name) =>
+    withCharacters((characters) => {
+      const query = name.trim().toLowerCase();
+      return characters.filter((char) => query && (
+        char.name.toLowerCase().includes(query) ||
+        char.biography.fullName.toLowerCase().includes(query)
+      )).map(transformCharacter);
+    });
 
-  // Или можно создать отдельный метод для поиска по имени
+  // Omitting the id selects a random Marvel character from the same cached list.
+  const getCharacter = (id) =>
+    withCharacters((characters) => {
+      const char = id === undefined
+        ? characters[Math.floor(Math.random() * characters.length)]
+        : characters.find((item) => item.id === Number(id));
+      if (!char) throw new Error('Character not found');
+      return transformCharacter(char);
+    });
 
-  const getCharacterByName = async (name) => {
-    const res = await request(`${_apiBase}characters?name=${name}&${_apiKey}`);
-    return res.data.results.map(_transformCharacter);
-  };
+  const getAllComics = (offset = 0) =>
+    withCharacters((characters) => buildComics(characters).slice(offset, offset + 8));
 
-  const getCharacter = async (id) => {
-    const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
-    return _transformCharacter(res.data.results[0]);
-  };
-
-  const getAllComics = async (offset = 0) => {
-    const res = await request(
-      `${_apiBase}comics?orderBy=issueNumber&limit=8&offset=${offset}&${_apiKey}`
-    );
-    return res.data.results.map(_transformComics);
-  };
-
-  const getComic = async (id) => {
-    const res = await request(`${_apiBase}comics/${id}?${_apiKey}`);
-    return _transformComics(res.data.results[0]);
-  };
-
-  const _transformCharacter = (char) => {
-    return {
-      id: char.id,
-      name: char.name,
-      description: char.description
-        ? `${char.description.slice(0, 210)}...`
-        : 'There is no description for this character',
-      thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
-      homepage: char.urls[0].url,
-      wiki: char.urls[1].url,
-      comics: char.comics.items,
-    };
-  };
-
-  const _transformComics = (comics) => {
-    return {
-      id: comics.id,
-      title: comics.title,
-      description: comics.description || 'There is no description',
-      pageCount: comics.pageCount
-        ? `${comics.pageCount} p.`
-        : 'No information about the number of pages',
-      thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
-      language: comics.textObjects.language || 'en-us',
-      price: comics.prices.price ? `${comics.prices.price}$` : 'not available',
-    };
-  };
+  const getComic = (id) =>
+    withCharacters((characters) => {
+      const comic = buildComics(characters).find((item) => item.id === Number(id));
+      if (!comic) throw new Error('Comic not found');
+      return comic;
+    });
 
   return {
     clearError,

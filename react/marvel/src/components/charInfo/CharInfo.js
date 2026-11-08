@@ -64,7 +64,7 @@ const View = ({ data }) => {
         </div>
       </div>
       <div className="char__descr">{description}</div>
-      <div className="char__comics">Comics:</div>
+      <div className="char__comics">First appearance:</div>
       <ul className="char__comics-list">
         {comics.length > 0 ? null : 'There is no comics with this character'}
         {comics.map((item, i) => {
