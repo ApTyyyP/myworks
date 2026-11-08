@@ -33,7 +33,6 @@ dashboard/src/scss/**/*.css.map
 react/marvel/**/*.css
 react/marvel/**/*.css.map
 react/marvel/.yarn/install-state.gz
-package-lock.json
 react/marvel/yarn.lock
 vue/Lesson_5/task_1/google_favorite/.firebaserc
 vue/Lesson_5/task_1/google_favorite/firebase.json
