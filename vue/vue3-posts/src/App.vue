@@ -2,7 +2,7 @@
     <div v-bind:style="{backgroundImage: backImg}">
         <navbar></navbar>
         <div class="app">
-            <router-view></router-view>
+            <router-view :key="$route.fullPath"></router-view>
         </div>
     </div>
 </template>
