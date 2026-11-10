@@ -30,6 +30,8 @@
     }
 
     .dialog__content {
+        background: #fff;
+        color: #222;
         margin: auto;
         border-radius: 12px;
         min-height: 50px;
