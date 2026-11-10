@@ -47,18 +47,20 @@ export const postModule = {
         }
     },
     actions: {
-        async fetchPosts({state, commit}) {
+        async fetchPosts({state, commit}, page = state.page) {
+            if (state.isPostsLoading) return;
             commit('setError', '');
             try {
                 commit('setLoading', true);
                 const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
                     params: {
-                        _page: state.page,
+                        _page: page,
                         _limit: state.limit
                     }
                 });
                 commit('setTotalPages', Math.ceil(response.headers['x-total-count'] / state.limit))
                 commit('setPosts', response.data)
+                commit('setPage', page)
             } catch (e) {
                 commit('setError', 'Unable to load posts. Please try again.');
             } finally {

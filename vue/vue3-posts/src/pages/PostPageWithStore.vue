@@ -40,7 +40,6 @@
             v-if="!isPostsLoading"
         />
         <div v-else>Идёт загрузка...</div>
-        <div v-intersection="loadMorePosts" class="observer"></div>
                 <div class="page__wrapper">
                     <div
                         v-for="pageNumber in totalPages"
@@ -86,9 +85,12 @@
                 setSelectedSort: 'post/setSelectedSort'
             }),
             ...mapActions({
-                loadMorePosts: 'post/loadMorePosts',
                 fetchPosts: 'post/fetchPosts'
             }),
+            changePage(pageNumber) {
+                if (this.isPostsLoading || pageNumber === this.page) return;
+                this.fetchPosts(pageNumber);
+            },
             createPost(post) {
                 this.setPosts([...this.posts, post]);
                 this.dialogVisible = false;
@@ -102,7 +104,7 @@
 
         },
         mounted() { // наблюдение отслеживания и пересечения какого-либо элемента
-            this.fetchPosts();
+            this.fetchPosts(1);
         },
         computed: {
             ...mapState({
