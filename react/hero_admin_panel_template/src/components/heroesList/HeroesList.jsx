@@ -35,7 +35,7 @@ const HeroesList = () => {
   if (isLoading) {
     return <Spinner />;
   } else if (isError) {
-    return <h5 className="text-center mt-5">Помилка завантаження</h5>;
+    return <h5 className="text-center mt-5">Не вдалося завантажити дані. Перевірте з’єднання та спробуйте оновити сторінку.</h5>;
   }
 
   const renderHeroesList = (arr) => {

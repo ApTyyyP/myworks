@@ -25,7 +25,7 @@ const HeroesFilters = () => {
   if (filtersLoadingStatus === 'loading') {
     return <Spinner />;
   } else if (filtersLoadingStatus === 'error') {
-    return <h5 className="text-center mt-5">Помилка завантаження</h5>;
+    return <h5 className="text-center mt-5">Не вдалося завантажити дані. Перевірте з’єднання та спробуйте оновити сторінку.</h5>;
   }
 
   const renderFilters = (arr) => {
